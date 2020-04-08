@@ -139,20 +139,20 @@ input {
 .about_us_block_top{
 	/*width:100vw;*/
 	margin-left:18%;
-	display: inline-block;
+	/*display: inline-block;*/
 	/*margin:auto;*/
 }
 .about_us_block_mid{
 	/*width:100vw;*/
 	margin-left:18%;
-	vertical-align:top;
-	display: inline-block;
+	/*vertical-align:top;
+	display: inline-block;*/
 }
 .about_us_block_bottom{
 	/*width:100vw;*/
 	 margin-left:18%;
-	vertical-align:top;
-	display: inline-block;
+	/*vertical-align:top;
+	display: inline-block;*/
 }
 .ab_us{
 	display: inline-block;
