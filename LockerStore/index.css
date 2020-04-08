@@ -170,18 +170,18 @@ p{
 }
 .l2 {
     position: absolute;
-    left: 50%;
+    left: 0;
     top: 0%;
     height: 98%;
 }
 .r1 {
     position: absolute;
-    left: 32.5%;
+    left: 0;
     top: 0%;
 }
 .r2 {
     position: absolute;
-    left: 48.7%;
+    left: 0;
     top: 0%;
     height: 98%;
 }
