@@ -154,9 +154,9 @@ input {
 	display: inline-block;
 }
 .ab_us{
-	position:absolute;
+	/*position:absolute;*/
 	display: inline-block;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 }
 /*p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
