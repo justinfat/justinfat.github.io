@@ -5,5 +5,25 @@ $(function(){
 		},function(){
 			$(".text_a").fadeOut();
 		});
+		$(".pic_b").hover(function(){
+			$(".text_b").fadeIn();
+		},function(){
+			$(".text_b").fadeOut();
+		});
+		$(".pic_c").hover(function(){
+			$(".text_c").fadeIn();
+		},function(){
+			$(".text_c").fadeOut();
+		});
+		$(".pic_d").hover(function(){
+			$(".text_d").fadeIn();
+		},function(){
+			$(".text_d").fadeOut();
+		});
+		$(".pic_e").hover(function(){
+			$(".text_e").fadeIn();
+		},function(){
+			$(".text_e").fadeOut();
+		});
 	});
 });
