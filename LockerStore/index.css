@@ -177,22 +177,21 @@ p{
 }
 .l2 {
     position: absolute;
-    left: 16.2%;
+    left: 20.9%;
     top: 0%;
     height: 98%;
 }
 .r1 {
     position: absolute;
-    left: 32.5%;
+    left: 41.7%;
     top: 0%;
 }
 .r2 {
     position: absolute;
-    left: 48.7%;
+    left: 62.6%;
     top: 0%;
     height: 98%;
 }
-
 
 #row_1{
     display: flex;
@@ -270,4 +269,4 @@ p{
     width: 13vw;
     top: 0;
     color: #E8C41C;
-  }
+}
