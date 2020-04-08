@@ -151,6 +151,7 @@ input {
 }
 .ab_us{
 	display: inline-block;
+	float: left;
 }
 /*p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
