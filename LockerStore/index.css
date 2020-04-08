@@ -136,13 +136,13 @@ input {
     }
 }
 .about_us_block_top{
-	 margin-left:18%;
+	 margin: 0 auto;
 }
 .about_us_block_mid{
-	 margin-left:18%;
+	 margin-left:15%;
 	vertical-align:top;
 }
 .about_us_block_bottom{
-	 margin-left:18%;
+	 margin-left:15%;
 	vertical-align:top;
 }
