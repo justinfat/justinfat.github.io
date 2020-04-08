@@ -1,10 +1,9 @@
 $(function(){
 	$(document).ready(function(){
-		$(".pic_a").mouseenter(function(){
+		$(".pic_a").hover(function(){
 			$(".text_a").fadeIn();
-			$(".pic_a").mouseleaver(function(){
-				$(".text_a").fadeOut;
-			});
+		},function(){
+			$(".text_a").fadeOut();
 		});
 	});
 });
