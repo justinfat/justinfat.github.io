@@ -4,7 +4,7 @@ $(function(){
 			$(".text_a").fadeIn();
 		});
 		$(".pic_a").mouseleaver(function(){
-           	     $(".text_a").fadeOut;
+			$(".text_a").fadeOut;
 		});
 	});
 });
