@@ -139,21 +139,24 @@ input {
 	width:100vw;
 	/*margin-left:18%;*/
 	display: inline-block;
-	margin:auto;
+	/*margin:auto;*/
 }
 .about_us_block_mid{
+	width:100vw;
 	margin-left:18%;
 	vertical-align:top;
 	display: inline-block;
 }
 .about_us_block_bottom{
+	width:100vw;
 	 margin-left:18%;
 	vertical-align:top;
 	display: inline-block;
 }
 .ab_us{
+	position:absolute;
 	display: inline-block;
-	/*margin: 0 auto;*/
+	margin: 0 auto;
 }
 /*p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
