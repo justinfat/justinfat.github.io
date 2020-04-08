@@ -1,6 +1,6 @@
 $(function(){
 	$(document).ready(function(){
-		$(".coverpic").hover(function(){
+		$(".coverpic_a").hover(function(){
 			$(".text_a").fadeIn();
 			$(".pic_a").fadeIn();
 		},function(){});
@@ -8,25 +8,38 @@ $(function(){
 			$(".text_a").fadeOut();
 			$(".pic_a").fadeOut();			
 		});
-		$(".pic_b").hover(function(){
+		$(".coverpic_b").hover(function(){
 			$(".text_b").fadeIn();
-		},function(){
+			$(".pic_b").fadeIn();
+		},function(){});
+		$(".pic_b").hover(function(){},function(){
 			$(".text_b").fadeOut();
+			$(".pic_b").fadeOut();			
 		});
-		$(".pic_c").hover(function(){
+		$(".coverpic_c").hover(function(){
 			$(".text_c").fadeIn();
-		},function(){
+			$(".pic_c").fadeIn();
+		},function(){});
+		$(".pic_c").hover(function(){},function(){
 			$(".text_c").fadeOut();
+			$(".pic_c").fadeOut();			
 		});
-		$(".pic_d").hover(function(){
+		$(".coverpic_d").hover(function(){
 			$(".text_d").fadeIn();
-		},function(){
+			$(".pic_d").fadeIn();
+		},function(){});
+		$(".pic_d").hover(function(){},function(){
 			$(".text_d").fadeOut();
+			$(".pic_d").fadeOut();			
 		});
-		$(".pic_e").hover(function(){
+		$(".coverpic_e").hover(function(){
 			$(".text_e").fadeIn();
-		},function(){
+			$(".pic_e").fadeIn();
+		},function(){});
+		$(".pic_e").hover(function(){},function(){
 			$(".text_e").fadeOut();
+			$(".pic_e").fadeOut();			
 		});
+		
 	});
 });
