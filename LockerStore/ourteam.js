@@ -3,9 +3,10 @@ $(function(){
 		$(".coverpic").hover(function(){
 			$(".text_a").fadeIn();
 			$(".pic_a").fadeIn();
-		},function(){
+		},function(){});
+		$(".pic_a").hover(function(){},function(){
 			$(".text_a").fadeOut();
-			$(".pic_a").fadeOut();
+			$(".pic_a").fadeOut();			
 		});
 		$(".pic_b").hover(function(){
 			$(".text_b").fadeIn();
