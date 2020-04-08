@@ -137,15 +137,17 @@ input {
 }
 .about_us_block_top{
 	  margin-left:18%;
-	display: block;
+	display: inline-block;
 }
 .about_us_block_mid{
 	 margin-left:18%;
 	vertical-align:top;
+	display: inline-block;
 }
 .about_us_block_bottom{
 	 margin-left:18%;
 	vertical-align:top;
+	display: inline-block;
 }
 /*p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
