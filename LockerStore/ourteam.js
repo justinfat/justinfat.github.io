@@ -1,9 +1,9 @@
 $(function(){
 	$(document).ready(function(){
-		$(".pic_a").mouseover(function(){
+		$(".pic_a").mouseenter(function(){
 			$(".text_a").fadeIn();
 		});
-		$(".pic_a").mouseout(function(){
+		$(".pic_a").mouseleaver(function(){
            	     $(".text_a").fadeOut;
 		});
 	});
