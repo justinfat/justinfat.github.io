@@ -137,7 +137,7 @@ input {
 }
 .about_us_block_top{
 	width:100vw;
-	/*margin-left:18%;*/
+	margin-left:18%;
 	display: inline-block;
 	/*margin:auto;*/
 }
@@ -154,9 +154,7 @@ input {
 	display: inline-block;
 }
 .ab_us{
-	/*position:absolute;*/
 	display: inline-block;
-	/*margin: 0 auto;*/
 }
 /*p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
