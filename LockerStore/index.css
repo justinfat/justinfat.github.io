@@ -136,7 +136,8 @@ input {
     }
 }
 .about_us_block_top{
-	 margin-left:20%;
+	 /*margin-left:20%;*/
+	vertical-align:50%;
 }
 .about_us_block_mid{
 	 margin-left:20%;
