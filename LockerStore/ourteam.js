@@ -2,8 +2,10 @@ $(function(){
 	$(document).ready(function(){
 		$(".coverpic").hover(function(){
 			$(".text_a").fadeIn();
+			$(".coverpic").fadeOut();
 		},function(){
 			$(".text_a").fadeOut();
+			$(".coverpic").fadeIn();
 		});
 		$(".pic_b").hover(function(){
 			$(".text_b").fadeIn();
