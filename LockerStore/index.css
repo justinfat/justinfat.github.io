@@ -157,6 +157,10 @@ input {
 .ab_us{
 	display: inline-block;
 }
+#Who_we_are{
+	background-color:#FFFFFF;
+	width=100vw;
+}
 p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
 	/*background-repeat:no-repeat;*/
