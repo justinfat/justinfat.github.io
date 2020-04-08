@@ -1,6 +1,6 @@
 $(function(){
 	$(document).ready(function(){
-		$(".pic_a").hover(function(){
+		$(".coverpic").hover(function(){
 			$(".text_a").fadeIn();
 		},function(){
 			$(".text_a").fadeOut();
