@@ -278,6 +278,5 @@ p{
 .coverpic{
 	display: inline-block;
 	position: absolute;
-	height: 200px;
-	width: 200px;
+	width: 15vw;
 }
