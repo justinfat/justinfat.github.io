@@ -165,6 +165,7 @@ input {
     position: absolute;
     display: inline-block;
     width: 15vw;
+    top: 0;
 }
 p{
 	/*background-color:#2C50A1;*/
