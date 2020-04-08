@@ -2,10 +2,8 @@ $(function(){
 	$(document).ready(function(){
 		$(".pic_a").hover(function(){
 			$(".text_a").fadeIn();
-			$(".pic_a").attr("src","./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_wei.svg");
 		},function(){
 			$(".text_a").fadeOut();
-			$(".pic_a").attr("src","./public/images/about_us/our-team-undone/under_cover/undercover_wei_07.png");
 		});
 		$(".pic_b").hover(function(){
 			$(".text_b").fadeIn();
