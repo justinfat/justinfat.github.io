@@ -136,9 +136,10 @@ input {
     }
 }
 .about_us_block_top{
-	margin-left:18%;
+	width:100vw;
+	/*margin-left:18%;*/
 	display: inline-block;
-	/*margin:auto;*/
+	margin:auto;
 }
 .about_us_block_mid{
 	margin-left:18%;
