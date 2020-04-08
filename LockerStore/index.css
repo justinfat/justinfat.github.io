@@ -275,7 +275,7 @@ p{
 .text_a,.text_b,.text_c,.text_d,.text_e{
 	display: none;
 }
-.coverpic{
+.coverpic_a,.coverpic_b,.coverpic_c,.coverpic_d,.coverpic_e{
 	display: inline-block;
 	position: absolute;
 	width: 15vw;
