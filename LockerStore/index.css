@@ -158,7 +158,9 @@ input {
 	display: inline-block;
 }
 p{
-	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
+	background-color:#E8C41C;
+	width:200px;
+	height:200px;
 	/*background-repeat:no-repeat;*/
 	/*background-size:auto;*/
 }
