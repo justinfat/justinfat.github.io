@@ -136,22 +136,22 @@ input {
     }
 }
 .about_us_block_top{
-	  /*margin-left:18%;*/
+	 margin-left:18%;
 	display: inline-block;
 }
 .about_us_block_mid{
-	 /*margin-left:18%;*/
+	margin-left:18%;
 	vertical-align:top;
 	display: inline-block;
 }
 .about_us_block_bottom{
-	 /*margin-left:18%;*/
+	 margin-left:18%;
 	vertical-align:top;
 	display: inline-block;
 }
 .ab_us{
 	display: inline-block;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 }
 /*p{
 	background-image:url("public/images/about_us/our-team-undone/blue-square.svg");
