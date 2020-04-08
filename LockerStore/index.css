@@ -275,3 +275,9 @@ p{
 .text_a,.text_b,.text_c,.text_d,.text_e{
 	display: none;
 }
+.coverpic{
+	display: inline-block;
+	position: absolute;
+	height: 200px;
+	width: 200px;
+}
