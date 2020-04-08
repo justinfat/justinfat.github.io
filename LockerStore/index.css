@@ -158,7 +158,8 @@ input {
 	display: inline-block;
 }
 p{
-	background-color:#2C50A1;
+	/*background-color:#2C50A1;*/
+	
 	width:200px;
 	height:200px;
 	/*background-repeat:no-repeat;*/
