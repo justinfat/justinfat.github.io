@@ -280,3 +280,6 @@ p{
 	position: absolute;
 	width: 15vw;
 }
+.pic_a{
+	display: none;
+}
