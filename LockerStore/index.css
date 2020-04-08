@@ -149,6 +149,7 @@ input {
 	display: inline-block;*/
 }
 .about_us_block_bottom{
+    position: relative;
 	/*width:100vw;*/
 	 margin-left:18%;
 	/*vertical-align:top;
@@ -166,4 +167,21 @@ p{
 	text-justify:inter-ideograph;
 	/*background-repeat:no-repeat;*/
 	/*background-size:auto;*/
+}
+.l2 {
+    position: absolute;
+    left: 20.9%;
+    top: 0%;
+    height: 98%;
+}
+.r1 {
+    position: absolute;
+    left: 41.7%;
+    top: 0%;
+}
+.r2 {
+    position: absolute;
+    left: 62.6%;
+    top: 0%;
+    height: 98%;
 }
