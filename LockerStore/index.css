@@ -280,6 +280,6 @@ p{
 	position: absolute;
 	width: 15vw;
 }
-.pic_a{
+.pic_a,.pic_b,.pic_c,.pic_d,.pic_e{
 	display: none;
 }
