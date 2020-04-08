@@ -14,9 +14,6 @@ body {
     padding: 0 0;
     /*overflow-x: hidden;*/
 }
-img{
-  display: block;
-}
 .background {
     background-repeat: no-repeat;
     background-size: contain;
@@ -140,6 +137,7 @@ input {
 }
 .about_us_block_top{
 	  margin-left:18%;
+	display: block;
 }
 .about_us_block_mid{
 	 margin-left:18%;
