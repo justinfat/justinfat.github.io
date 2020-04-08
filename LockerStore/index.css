@@ -21,6 +21,12 @@ body {
     padding: 0;
     margin: 0;
 }
+img{
+	width: auto;
+	height: auto;
+	/*max-width: 100%;*/
+	/*max-height: 100%;	*/
+}
 .image {
     width: 100%;
 }
@@ -156,7 +162,8 @@ input {
 	display: inline-block;*/
 }
 .ab_us{
-	display: inline-block;
+    display: inline-block;
+    width: 15vw;
 }
 p{
 	/*background-color:#2C50A1;*/
@@ -185,3 +192,82 @@ p{
     top: 0%;
     height: 98%;
 }
+
+
+#row_1{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 24vh;
+    left:5vw;
+    top:4vw;
+}
+#row_2{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 24vh;
+    left:5vw;
+    top:16vh;
+}
+#row_3{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 24vh;
+    left:5vw;
+    top:23vh;
+}
+.column{
+    display: inline-block;
+    position: absolute;
+    /*width: 20vw;
+    height: 30vh;*/
+    /*padding-right: 10vw;*/
+}
+.intro{
+    display: inline-block;
+    /*height: auto;
+    width: 16vw;
+    max-width:100%;
+    position: absolute;
+    top:7vh;*/
+  }
+.Name_b{
+    font-family:Noto Sans TC;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin: 15% 0 0 9%;
+    top: 0;
+    color: #2c50a2;
+}
+.Name_y{
+    font-family:Noto Sans TC;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin: 10% 0 0 9%;
+    top: 0;
+    color: #E8C41C;
+}
+.intro_b{
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    margin: 0 9%;
+    width: 13vw;
+    top: 0;
+    color: #2c50a2;
+}
+.intro_y{
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    margin: 0 9%;
+    width: 13vw;
+    top: 0;
+    color: #E8C41C;
+  }
