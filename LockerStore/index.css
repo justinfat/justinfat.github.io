@@ -136,7 +136,7 @@ input {
     }
 }
 .about_us_block_top{
-	 margin: 0 auto 0 auto;
+	 position: absolute;
 }
 .about_us_block_mid{
 	 margin-left:15%;
