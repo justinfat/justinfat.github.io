@@ -80,13 +80,13 @@
 			</div>
 			<div id = "content_3">
                 <div id = "row_1">
-                    <div class = "column c1" style="left:15vw;">
+                    <div class = "column c1" onclick="on_all()" onmouseover="on_all()" onmouseout="out_all()" style="left:15vw;">
                         <img class = "ab_us" src="public/images/about_us/our-team-undone/our-team-logo.svg" alt="our-team-logo">
                     </div>
 					<div class="column c2" style="left:30vw ;">
                         <img class = "ab_us" src="public/images/about_us/our-team-undone/our-team-yellow.svg" alt="our-team-yellow">
                     </div>
-                    <div class = "column c3" onmouseover="on_a()" onmouseout="out_a()" style="left:45vw ;">
+                    <div class = "column c3" onclick="on_a()" onmouseover="on_a()" onmouseout="out_a()" style="left:45vw ;">
 						<img class="coverpic_a" id="cover_a" src="./public/images/about_us/our-team-undone/under_cover/undercover_wei_07.png">
                         <img class = "ab_us pic_a" id="pic_a" src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_wei.svg" alt="nocover_wei">
                     </div>
@@ -102,7 +102,7 @@
 							<h3 class = "Name_y text_b" id="name_b">李&nbsp;&nbsp;&nbsp;&nbsp;昀&emsp;&emsp;&emsp;{&nbsp;&nbsp;*＆*&nbsp;&nbsp;}</h3>
 							<div class="intro_y text_b" id="intro_b" style="top:9vh;">喜歡游泳<br>但很久沒游了<br>喜歡桌遊<br>但手邊只有一副狼人殺卡牌<br>喜歡美食<br>但身材沒有本錢吃</div>
 					</div>
-                    <div class = "column c2" onmouseover="on_b()" onmouseout="out_b()" style="left:30vw ;">
+                    <div class = "column c2" onclick="on_b()" onmouseover="on_b()" onmouseout="out_b()" style="left:30vw ;">
 						<img class="coverpic_b" id="cover_b" src="./public/images/about_us/our-team-undone/under_cover/undercover_yun_03.png">
                         <img class = "ab_us pic_b" id="pic_b" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_yun.svg" alt="nocover_yun">
                     </div>
@@ -111,13 +111,13 @@
 							<h3 class = "Name_y text_c" id="name_c">簡&nbsp;&nbsp;&nbsp;丞珮&emsp;&emsp;｛&nbsp;＞/＜&nbsp;}</h3>
 							<div class="intro_y text_c" id="intro_c" style="top:9vh;">雖然是資訊系<br>但是是第一次開發網頁<br>也是第一次跟設計師合作<br>有美美的圖可以用真是太好了＞＜</div>
 					</div>
-					<div class = "column c4" onmouseover="on_c()" onmouseout="out_c()" style="left:60vw ;">
+					<div class = "column c4" onclick="on_c()" onmouseover="on_c()" onmouseout="out_c()" style="left:60vw ;">
 						<img class="coverpic_c" id="cover_c" src="./public/images/about_us/our-team-undone/under_cover/undercover_pei_06.png">
                         <img class = "ab_us pic_c" id="pic_c" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_pei.svg" alt="nocover_pei">
                     </div>
 				</div>
 				<div id="row_3">
-                    <div class = "column c1" onmouseover="on_d()" onmouseout="out_d()" style="left:15vw ;">
+                    <div class = "column c1" onclick="on_d()" onmouseover="on_d()" onmouseout="out_d()" style="left:15vw ;">
 						<img class="coverpic_d" id="cover_d" src="./public/images/about_us/our-team-undone/under_cover/undercover_jay_05.png">
                         <img class = "ab_us pic_d" id="pic_d" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_jay.svg" alt="nocover_jay">
                     </div>
@@ -126,7 +126,7 @@
 						<h3 class = "Name_b text_d" id="name_d">吳&nbsp;&nbsp;&nbsp;岱桀&emsp;&emsp;{&nbsp;&nbsp;# /＜&nbsp;&nbsp;}</h3>
                         <div class="intro_b text_d" id="intro_d" style="top:13vh;">熱愛各式電影與音樂<br>但說到底戶外山林才是我的歸屬</div>
                     </div>
-                    <div class = "column c3" onmouseover="on_e()" onmouseout="out_e()" style="left:45vw ;">
+                    <div class = "column c3" onclick="on_e()" onmouseover="on_e()" onmouseout="out_e()" style="left:45vw ;">
 						<img class="coverpic_e" id="cover_e" src="./public/images/about_us/our-team-undone/under_cover/undercover_zong_04.png">
                         <img class = "ab_us pic_e" id="pic_e" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_zong.svg" alt="nocover_zong">
                     </div>
@@ -217,6 +217,50 @@
 				document.getElementById("intro_e").className = "intro_a_in";
 			}
 			function out_e() {
+				document.getElementById("pic_e").className = "pic_a_in";
+				document.getElementById("cover_e").className = "cover_a_close";
+				document.getElementById("name_e").className = "name_a_out";
+				document.getElementById("intro_e").className = "intro_a_out";
+			}
+			function on_all() {
+				document.getElementById("pic_a").className = "pic_a_in";
+				document.getElementById("cover_a").className = "cover_a_open";
+				document.getElementById("name_a").className = "name_a_in";
+				document.getElementById("intro_a").className = "intro_a_in";
+				document.getElementById("pic_b").className = "pic_a_in";
+				document.getElementById("cover_b").className = "cover_c_open";
+				document.getElementById("name_b").className = "name_c_in";
+				document.getElementById("intro_b").className = "intro_c_in";
+				document.getElementById("pic_c").className = "pic_a_in";
+				document.getElementById("cover_c").className = "cover_c_open";
+				document.getElementById("name_c").className = "name_c_in";
+				document.getElementById("intro_c").className = "intro_c_in";
+				document.getElementById("pic_d").className = "pic_a_in";
+				document.getElementById("cover_d").className = "cover_a_open";
+				document.getElementById("name_d").className = "name_a_in";
+				document.getElementById("intro_d").className = "intro_a_in";
+				document.getElementById("pic_e").className = "pic_a_in";
+				document.getElementById("cover_e").className = "cover_a_open";
+				document.getElementById("name_e").className = "name_a_in";
+				document.getElementById("intro_e").className = "intro_a_in";
+			}
+			function out_all() {
+				document.getElementById("pic_a").className = "pic_a_in";
+				document.getElementById("cover_a").className = "cover_a_close";
+				document.getElementById("name_a").className = "name_a_out";
+				document.getElementById("intro_a").className = "intro_a_out";
+				document.getElementById("pic_b").className = "pic_a_in";
+				document.getElementById("cover_b").className = "cover_c_close";
+				document.getElementById("name_b").className = "name_c_out";
+				document.getElementById("intro_b").className = "intro_c_out";
+				document.getElementById("pic_c").className = "pic_a_in";
+				document.getElementById("cover_c").className = "cover_c_close";
+				document.getElementById("name_c").className = "name_c_out";
+				document.getElementById("intro_c").className = "intro_c_out";
+				document.getElementById("pic_d").className = "pic_a_in";
+				document.getElementById("cover_d").className = "cover_a_close";
+				document.getElementById("name_d").className = "name_a_out";
+				document.getElementById("intro_d").className = "intro_a_out";
 				document.getElementById("pic_e").className = "pic_a_in";
 				document.getElementById("cover_e").className = "cover_a_close";
 				document.getElementById("name_e").className = "name_a_out";

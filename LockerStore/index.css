@@ -219,7 +219,7 @@ p{
     width: 100%;
     height: 24vh;
     left:5vw;
-    top:16vh;
+    top:15.8vh;
 }
 #row_3{
     display: inline-block;
@@ -227,7 +227,7 @@ p{
     width: 100%;
     height: 24vh;
     left:5vw;
-    top:23.9vh;
+    top:23vh;
 }
 .column{
     display: inline-block;
@@ -326,6 +326,7 @@ p{
         opacity: 0%;
     }
     25% {
+        left: 15vw;
         z-index: 100;
         opacity: 95%;
     }
@@ -334,7 +335,6 @@ p{
         opacity: 100%;
     }
     75%{
-        left: 15vw;
         z-index: 100;
         opacity: 100%;
     }
@@ -376,6 +376,7 @@ p{
         opacity: 0%;
     }
     25% {
+        left: -15vw;
         z-index: 100;
         opacity: 95%;
     }
@@ -384,7 +385,6 @@ p{
         opacity: 100%;
     }
     75%{
-        left: -15vw;
         z-index: 100;
         opacity: 100%;
     }
@@ -446,9 +446,6 @@ p{
     top: 0;
     opacity: 0%;
     color: #2c50a2;
-    animation-name: fade_out;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
 }
 .intro_a_out {
     font-family:Noto Sans TC;
@@ -460,9 +457,6 @@ p{
     top: 0;
     opacity: 0%;
     color: #2c50a2;
-    animation-name: fade_out;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
 }
 .cover_a_open {
     display: inline-block;
@@ -478,7 +472,7 @@ p{
 	position: absolute;
 	width: 15vw;
     animation-name: slip_left;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     z-index: 100;
 }
@@ -528,10 +522,6 @@ p{
     top: 0;
     color: #E8C41C;
     opacity: 0%;
-    animation-name: fade_out;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 0.5s;
 }
 .intro_c_out {
     font-family:Noto Sans TC;
@@ -543,10 +533,6 @@ p{
     top: 0;
     color: #E8C41C;
     opacity: 0%;
-    animation-name: fade_out;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 0.5s;
 }
 .cover_c_open {
     display: inline-block;
@@ -562,7 +548,7 @@ p{
 	position: absolute;
 	width: 15vw;
     animation-name: c_slip_right;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     z-index: 100;
 }
