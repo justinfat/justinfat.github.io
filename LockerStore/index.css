@@ -130,6 +130,14 @@ input {
         opacity: 100%;
     }
 }
+@keyframes fade_out {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 @keyframes zoom_in {
 	0% {
         top: 35%;
@@ -162,6 +170,8 @@ input {
 	display: inline-block;*/
 }
 .ab_us{
+    /*position: absolute;*/
+    display: inline-block;
     width: 15vw;
     top: 0;
 }
@@ -192,9 +202,11 @@ p{
     top: 0%;
     height: 98%;
 }
-
+#content_3{
+    display: block;
+  }
 #row_1{
-    display: flex;
+    display: inline-block;
     position: relative;
     width: 100%;
     height: 24vh;
@@ -202,7 +214,7 @@ p{
     top:4vw;
 }
 #row_2{
-    display: flex;
+    display: inline-block;
     position: relative;
     width: 100%;
     height: 24vh;
@@ -210,7 +222,7 @@ p{
     top:16vh;
 }
 #row_3{
-    display: flex;
+    display: inline-block;
     position: relative;
     width: 100%;
     height: 24vh;
@@ -279,5 +291,5 @@ p{
 	width: 15vw;
 }
 .pic_a,.pic_b,.pic_c,.pic_d,.pic_e{
-	display: none;
+    display: none;
 }
