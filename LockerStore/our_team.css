@@ -1,4 +1,4 @@
-#content_3{
+#people{
     display: block;
     min-height: 112vh;
   }
@@ -96,9 +96,10 @@
     font-size: 20px;
     position: absolute;
     margin: 1.5vw 0 0 1.5vw;
+    width: 13vw;
     top: 0;
-    opacity: 0%;
     color: #2c50a2;
+    opacity: 0%;
     animation-name: fade_in;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
@@ -112,8 +113,8 @@
     margin: 0 0 0 1.5vw;
     width: 13vw;
     top: 0;
-    opacity: 0%;
     color: #2c50a2;
+    opacity: 0%;
     animation-name: fade_in;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
@@ -128,9 +129,10 @@
     font-size: 20px;
     position: absolute;
     margin: 1.5vw 0 0 1.5vw;
+    width: 13vw;
     top: 0;
-    opacity: 0%;
     color: #2c50a2;
+    opacity: 0%;
 }
 .intro_a_out {
     font-family:Noto Sans TC;
@@ -140,8 +142,8 @@
     margin: 0 0 0 1.5vw;;
     width: 13vw;
     top: 0;
-    opacity: 0%;
     color: #2c50a2;
+    opacity: 0%;
 }
 .cover_a_open {
     display: inline-block;

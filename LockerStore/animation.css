@@ -126,3 +126,14 @@
         opacity: 100;
     }
 }
+@keyframes fade_in_and_out {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
