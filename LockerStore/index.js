@@ -1,78 +1,131 @@
 $(document).ready(() => { 
-  /****************** First Time ******************/
+  /****************** Animation in the part of What_we_do ******************/
+  /* First Time */
   document.getElementById("d1").id = "d1_show";
   setTimeout(function() {
     document.getElementById("d2").id = "d2_show";
-  }, 2000);
+  }, 3000);
   setTimeout(function() {
     document.getElementById("d3").id = "d3_show";
-  }, 4000);
-  setTimeout(function() {
-    document.getElementById("d4").id = "d4_show";
   }, 6000);
   setTimeout(function() {
-    document.getElementById("d5").id = "d5_show";
-  }, 8000);
-  setTimeout(function() {
-    document.getElementById("d6").id = "d6_show";
-  }, 10000);
-  setTimeout(function() {
-    document.getElementById("d1_show").id = "d1";
-  }, 5000);
-  setTimeout(function() {
-    document.getElementById("d2_show").id = "d2";
-  }, 7000);
-  setTimeout(function() {
-    document.getElementById("d3_show").id = "d3";
+    document.getElementById("d4").id = "d4_show";
   }, 9000);
   setTimeout(function() {
-    document.getElementById("d4_show").id = "d4";
-  }, 11000);
+    document.getElementById("d5").id = "d5_show";
+  }, 12000);
   setTimeout(function() {
-    document.getElementById("d5_show").id = "d5";
+    document.getElementById("d6").id = "d6_show";
+  }, 15000);
+  setTimeout(function() {
+    document.getElementById("d1_show").id = "d1";
+  }, 7000);
+  setTimeout(function() {
+    document.getElementById("d2_show").id = "d2";
+  }, 10000);
+  setTimeout(function() {
+    document.getElementById("d3_show").id = "d3";
   }, 13000);
   setTimeout(function() {
+    document.getElementById("d4_show").id = "d4";
+  }, 16000);
+  setTimeout(function() {
+    document.getElementById("d5_show").id = "d5";
+  }, 19000);
+  setTimeout(function() {
     document.getElementById("d6_show").id = "d6";
-  }, 15000);
+  }, 22000);
 
-  /****************** Repeat ******************/
+  /* Replay */
   setInterval(() => {
     document.getElementById("d1").id = "d1_show";
     setTimeout(function() {
       document.getElementById("d2").id = "d2_show";
-    }, 2000);
+    }, 3000);
     setTimeout(function() {
       document.getElementById("d3").id = "d3_show";
-    }, 4000);
-    setTimeout(function() {
-      document.getElementById("d4").id = "d4_show";
     }, 6000);
     setTimeout(function() {
-      document.getElementById("d5").id = "d5_show";
-    }, 8000);
-    setTimeout(function() {
-      document.getElementById("d6").id = "d6_show";
-    }, 10000);
-    setTimeout(function() {
-      document.getElementById("d1_show").id = "d1";
-    }, 5000);
-    setTimeout(function() {
-      document.getElementById("d2_show").id = "d2";
-    }, 7000);
-    setTimeout(function() {
-      document.getElementById("d3_show").id = "d3";
+      document.getElementById("d4").id = "d4_show";
     }, 9000);
     setTimeout(function() {
-      document.getElementById("d4_show").id = "d4";
-    }, 11000);
+      document.getElementById("d5").id = "d5_show";
+    }, 12000);
     setTimeout(function() {
-      document.getElementById("d5_show").id = "d5";
+      document.getElementById("d6").id = "d6_show";
+    }, 15000);
+    setTimeout(function() {
+      document.getElementById("d1_show").id = "d1";
+    }, 7000);
+    setTimeout(function() {
+      document.getElementById("d2_show").id = "d2";
+    }, 10000);
+    setTimeout(function() {
+      document.getElementById("d3_show").id = "d3";
     }, 13000);
     setTimeout(function() {
+      document.getElementById("d4_show").id = "d4";
+    }, 16000);
+    setTimeout(function() {
+      document.getElementById("d5_show").id = "d5";
+    }, 19000);
+    setTimeout(function() {
       document.getElementById("d6_show").id = "d6";
-    }, 15000);
-  }, 14000);
+    }, 22000);
+  }, 19000);
+
+  /****************** Animation in the part of Our_approach ******************/
+  /* First Time */
+  document.getElementById("logo_1").id = "logo_1_show";
+  setTimeout(function() {
+    document.getElementById("logo_2").id = "logo_2_show";
+  }, 1000);
+  setTimeout(function() {
+    document.getElementById("logo_3").id = "logo_3_show";
+  }, 2000);
+  setTimeout(function() {
+    document.getElementById("logo_4").id = "logo_4_show";
+  }, 3000);
+  setTimeout(function() {
+    document.getElementById("logo_1_show").id = "logo_1";
+  }, 2000);
+  setTimeout(function() {
+    document.getElementById("logo_2_show").id = "logo_2";
+  }, 3000);
+  setTimeout(function() {
+    document.getElementById("logo_3_show").id = "logo_3";
+  }, 4000);
+  setTimeout(function() {
+    document.getElementById("logo_4_show").id = "logo_4";
+  }, 5000);
+
+  /* Replay */
+  setInterval(() => {
+    document.getElementById("logo_1").id = "logo_1_show";
+    setTimeout(function() {
+      document.getElementById("logo_2").id = "logo_2_show";
+    }, 1000);
+    setTimeout(function() {
+      document.getElementById("logo_3").id = "logo_3_show";
+    }, 2000);
+    setTimeout(function() {
+      document.getElementById("logo_4").id = "logo_4_show";
+    }, 3000);
+    setTimeout(function() {
+      document.getElementById("logo_1_show").id = "logo_1";
+    }, 2000);
+    setTimeout(function() {
+      document.getElementById("logo_2_show").id = "logo_2";
+    }, 3000);
+    setTimeout(function() {
+      document.getElementById("logo_3_show").id = "logo_3";
+    }, 4000);
+    setTimeout(function() {
+      document.getElementById("logo_4_show").id = "logo_4";
+    }, 5000);
+  }, 5000);
 })
+
 function on_a() {
   document.getElementById("pic_a").className = "pic_a_in";
   document.getElementById("cover_a").className = "cover_a_open";

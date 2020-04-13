@@ -1,0 +1,71 @@
+#part5 {
+    position: relative;
+}
+#logo_1 {
+    width: 6vw;
+    position: absolute;
+    top: 17vh;
+    left: 15vw;
+    opacity: 0;
+}
+#logo_2 {
+    width: 11vw;
+    position: absolute;
+    top: 25.8vh;
+    left: 10.2vw;
+    opacity: 0; 
+}
+#logo_3 {
+    width: 6vw;
+    position: absolute;
+    bottom: 18vh;
+    right: 15vw;
+    opacity: 0;
+}
+#logo_4 {
+    width: 11vw;
+    position: absolute;
+    bottom: 26.8vh;
+    right: 10.2vw;
+    opacity: 0; 
+}
+#logo_1_show {
+    width: 6vw;
+    position: absolute;
+    top: 17vh;
+    left: 15vw;
+    opacity: 0;
+    animation-name: fade_in_and_out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+#logo_2_show {
+    width: 11vw;
+    position: absolute;
+    top: 25.8vh;
+    left: 10.2vw;
+    opacity: 0;
+    animation-name: fade_in_and_out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; 
+}
+#logo_3_show {
+    width: 6vw;
+    position: absolute;
+    bottom: 18vh;
+    right: 15vw;
+    opacity: 0;
+    animation-name: fade_in_and_out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+#logo_4_show {
+    width: 11vw;
+    position: absolute;
+    bottom: 26.8vh;
+    right: 10.2vw;
+    opacity: 0;
+    animation-name: fade_in_and_out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; 
+}
