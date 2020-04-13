@@ -1,3 +1,6 @@
+section {
+    min-height: 100%;
+}
 .part {
     position: relative;
     width: 100%;

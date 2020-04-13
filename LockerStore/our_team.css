@@ -1,0 +1,239 @@
+#content_3{
+    display: block;
+    min-height: 112vh;
+  }
+#row_1{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 24vh;
+    left:5vw;
+    top:4vw;
+}
+#row_2{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 24vh;
+    left:5vw;
+    top:15.8vh;
+}
+#row_3{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 24vh;
+    left:5vw;
+    top:23vh;
+}
+.column{
+    display: inline-block;
+    position: absolute;
+    /*width: 20vw;
+    height: 30vh;*/
+    /*padding-right: 10vw;*/
+}
+.intro{
+    display: inline-block;
+    /*height: auto;
+    width: 16vw;
+    max-width:100%;
+    position: absolute;
+    top:7vh;*/
+  }
+.Name_a{
+    font-family:"Noto Sans TC";
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin: 15% 0 0 9%;
+    top: 0;
+    color: #2c50a2;
+}
+.Name_b{
+    font-family:"Noto Sans TC";
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin: 10% 0 0 9%;
+    top: 0;
+    color: #E8C41C;
+}
+.intro_a{
+    font-family:"Noto Sans TC";
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    margin: 0 9%;
+    width: 13vw;
+    top: 0;
+    color: #2c50a2;
+}
+.intro_b{
+    font-family:"Noto Sans TC";
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    margin: 0 9%;
+    width: 13vw;
+    top: 0;
+    color: #E8C41C;
+}
+.pic_a_in {
+    display: inline-block;
+	position: absolute;
+	width: 15vw;
+    animation-name: fade_in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.name_a_in {
+    display: inline-block;
+	position: absolute;
+    width: 15vw;
+    font-family:Noto Sans TC;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin: 1.5vw 0 0 1.5vw;
+    top: 0;
+    opacity: 0%;
+    color: #2c50a2;
+    animation-name: fade_in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+.intro_a_in {
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    margin: 0 0 0 1.5vw;
+    width: 13vw;
+    top: 0;
+    opacity: 0%;
+    color: #2c50a2;
+    animation-name: fade_in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+.name_a_out {
+    display: inline-block;
+	position: absolute;
+    width: 15vw;
+    font-family:Noto Sans TC;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    margin: 1.5vw 0 0 1.5vw;
+    top: 0;
+    opacity: 0%;
+    color: #2c50a2;
+}
+.intro_a_out {
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    margin: 0 0 0 1.5vw;;
+    width: 13vw;
+    top: 0;
+    opacity: 0%;
+    color: #2c50a2;
+}
+.cover_a_open {
+    display: inline-block;
+	position: absolute;
+	width: 15vw;
+    animation-name: open_to_right;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+.cover_a_close {
+    display: inline-block;
+	position: absolute;
+	width: 15vw;
+    animation-name: back_to_left;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+.name_b_in {
+    display: inline-block;
+	position: absolute;
+    width: 15vw;
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    margin: 1.5vw 0 0 1.5vw;
+    width: 13vw;
+    top: 0;
+    color: #E8C41C;
+    opacity: 0%;
+    animation-name: fade_in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+.intro_b_in {
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    margin: 0 0 0 1.3vw;
+    width: 13vw;
+    top: 0;
+    color: #E8C41C;
+    opacity: 0%;
+    animation-name: fade_in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+.name_b_out {
+    display: inline-block;
+	position: absolute;
+    width: 15vw;
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    margin: 1.5vw 0 0 1.5vw;
+    width: 13vw;
+    top: 0;
+    color: #E8C41C;
+    opacity: 0%;
+}
+.intro_b_out {
+    font-family:Noto Sans TC;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    margin: 0 0 0 1.3vw;
+    width: 13vw;
+    top: 0;
+    color: #E8C41C;
+    opacity: 0%;
+}
+.cover_b_open {
+    display: inline-block;
+	position: absolute;
+	width: 15vw;
+    animation-name: open_to_left;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+.cover_b_close {
+    display: inline-block;
+	position: absolute;
+	width: 15vw;
+    animation-name: back_to_right;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
