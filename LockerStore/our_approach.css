@@ -3,68 +3,68 @@
     padding-bottom: 4.5vh;
 }
 #logo_1 {
-    width: 6vw;
+    width: 5.8%;
     position: absolute;
-    top: 17vh;
-    left: 15vw;
+    top: 21%;
+    left: 15.9%;
     opacity: 0;
 }
 #logo_2 {
-    width: 11vw;
+    width: 11%;
     position: absolute;
-    top: 25.8vh;
-    left: 10.2vw;
-    opacity: 0; 
+    top: 30.5%;
+    left: 11%;
+    opacity: 0;
 }
 #logo_3 {
-    width: 6vw;
+    width: 5.8%;
     position: absolute;
-    bottom: 18vh;
-    right: 15vw;
+    bottom: 26%;
+    right: 16%;
     opacity: 0;
 }
 #logo_4 {
-    width: 11vw;
+    width: 11%;
     position: absolute;
-    bottom: 26.8vh;
-    right: 10.2vw;
-    opacity: 0; 
+    bottom: 36%;
+    right: 11.1%;
+    opacity: 0;
 }
 #logo_1_show {
-    width: 6vw;
+    width: 5.8%;
     position: absolute;
-    top: 17vh;
-    left: 15vw;
+    top: 21%;
+    left: 15.9%;
     opacity: 0;
     animation-name: fade_in_and_out;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 #logo_2_show {
-    width: 11vw;
+    width: 11%;
     position: absolute;
-    top: 25.8vh;
-    left: 10.2vw;
+    top: 30.5%;
+    left: 11%;
     opacity: 0;
     animation-name: fade_in_and_out;
     animation-duration: 2s;
     animation-fill-mode: forwards; 
 }
 #logo_3_show {
-    width: 6vw;
+    width: 5.8%;
     position: absolute;
-    bottom: 18vh;
-    right: 15vw;
+    bottom: 26%;
+    right: 16%;
     opacity: 0;
     animation-name: fade_in_and_out;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 #logo_4_show {
-    width: 11vw;
+    width: 11%;
     position: absolute;
-    bottom: 26.8vh;
-    right: 10.2vw;
+    bottom: 36%;
+    right: 11.1%;
     opacity: 0;
     animation-name: fade_in_and_out;
     animation-duration: 2s;
