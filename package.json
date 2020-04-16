@@ -1,0 +1,12 @@
+{
+  "name": "justinfat.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/justinfat/justinfat.github.io.git",
+  "author": "JCP1014 <believe861014@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.5.0"
+  }
+}

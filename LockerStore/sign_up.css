@@ -1,0 +1,69 @@
+* {
+    font-size: 20px;
+}
+body {
+    background-image: url('public/images/about_us/part1/background-no-word.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+input {
+    display: inline-block;
+    font-size: 20px;
+    size:auto;
+}
+#ajax-form {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    text-align: right;
+    size:auto;
+}
+#check_same {
+    display: inline-block;
+    position: absolute;
+    top: 42%;
+    left: 60%;
+    color: red;
+    font-weight: 700;
+
+}
+#submit_btn {
+    display: block;
+    position: relative;
+    top: 2vh;
+    left: 15vw;
+}
+#userName {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 23.5%;
+    z-index: 100;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: right;
+    width: 27%;
+}
+#t1 {
+    display: none;
+    position: absolute;
+    top: 29.3%;
+    left: 51.5%;
+    z-index: 100;
+    font-size: 25px;
+}
+#t2 {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 49%;
+    z-index: 100;
+    font-size: 25px;
+}
+#t3{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  font-size: 20px;
+}
