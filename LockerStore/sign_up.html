@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta content="width=device-width, initial-scale=1" name="viewport">
-		<title>Sign up</title>
-		<link href="./sign_up.css" rel="stylesheet" type="text/css">
-		<link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg"/>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Sign up</title>
+    <link href="./sign_up.css" rel="stylesheet" type="text/css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg"/>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  </head>
+    </head>
 
-	<body>
-    <p id="userName">User</p>
-    <p id="t1">註冊成功</p>
-    <p id="t2">歡迎使用</p>
-    <form id="ajax-form">
-      請輸入帳號: <input type="text" name="account" maxlength="15" size="15"><br><br>
-      請輸入密碼: <input type="password" name="password" size="15"><br><br>
-      請再輸入一次密碼: <input type="password" size="15" name="password_2">
-      <button id="submit_btn" type="submit">註冊</button>
-    </form>
-    <p id="check_same"></p>
-    <p id="t3"></p> 
-    <script src="./sign_up.js"></script>
+  <body>
+    <!---------------------Top page---------------------->
+    <div>
+      <header class="header">
+        <div class="header_content d-flex flex-row align-items-center justify-content-center">
+          <!---------------------Upper left logo---------------------->
+          <div class="logo active">
+            <a href="./index.html">
+              <img class="image" src="./public/images/about_us/part1/logo+typo.svg" alt="logo+typo">
+            </a>
+          </div>
+
+          <!---------------------Top navigation bar---------------------->
+          <nav class="main_nav">
+            <ul class="menu d-flex flex-row align-items-start justify-content-start">
+              <li><a class="btn" href="./index.html#What_we_do">What we do</a></li>
+              <li><a class="btn" href="./index.html#Our_approach">Our approach</a></li>
+              <li><a class="btn" href="./index.html#Who_we_are">Who we are</a></li>
+              <li><a class="btn" href="./index.html#Contact_us">Contact us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!---------------------Middle content---------------------->
+      <div class="home" id="home">
+        <img class="image" src="./public/images/about_us/part1/background-no-word.svg" alt="background-no-word">
+          <p id="userName">User</p>
+          <p id="t1">註冊成功</p>
+          <p id="t2">歡迎使用</p>
+          <form id="ajax-form">
+            請輸入帳號: <input type="text" name="account" maxlength="15" size="15"><br><br>
+            請輸入密碼: <input type="password" name="password" size="15"><br><br>
+            請再輸入一次密碼: <input type="password" size="15" name="password_2">
+            <button id="submit_btn" type="submit">註冊</button>
+          </form>
+          <p id="check_same"></p>
+          <p id="t3"></p> 
+          <script src="./sign_up.js"></script>
+
+      </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src='./index.js'></script>
+    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
   </body>
 </html>
+
