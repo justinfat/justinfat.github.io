@@ -72,7 +72,7 @@ li a:active{
 
 }
 .home {
-    font-family:"微軟正黑體";
+    font-family: "Century Gothic";
     font-size: 20px;
     position: relative;
     top: 0;
@@ -102,7 +102,7 @@ input {
 
 }
 #submit_btn {
-    font-family:"微軟正黑體";
+    font-family: "Century Gothic";
     font-size: 20px;
     display: block;
     position: relative;

@@ -8,7 +8,7 @@ $(document).ready(function() {
     
     if(password != password_2) {
       load = false;
-      $('#check_same').text('密碼不符合，請再輸入一次')
+      $('#check_same').text('Confiremd Password is not the same')
     }
     else {
       $('#check_same').text('')
