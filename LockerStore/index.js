@@ -231,7 +231,8 @@ $(function () {
 
 var $win = $(window);
 
-var $backToTop = $('.back_btn');
+//var $backToTop = $('.back_btn');
+var $backToTop = $('footer');
   
 // 當用戶點擊按鈕時，通過動畫效果返回頭部
 
