@@ -225,3 +225,20 @@ function out_all() {
   document.getElementById("name_e").className = "name_a_out";
   document.getElementById("intro_e").className = "intro_a_out";
 }
+
+//back to top
+$(function () {
+
+var $win = $(window);
+
+var $backToTop = $('.back-to-top');
+  
+// 當用戶點擊按鈕時，通過動畫效果返回頭部
+
+$backToTop.click(function () {
+
+$('html, body').animate({scrollTop: 0}, 500);
+
+});
+
+});
