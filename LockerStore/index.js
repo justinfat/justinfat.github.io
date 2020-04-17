@@ -277,8 +277,8 @@ $(function () {
 
 });
 
-$(window).scroll(function(){ 
-  if ($(window).scrollTop() > $(window).height() && $(window).scrollTop() <= $(window).height()*1.5)
+$(window).scroll(function(){
+  if ($(window).scrollTop() > $(window).height()*1.5 && $(window).scrollTop() <= $(window).height()*2)
   {
     reset_animation();
   }
