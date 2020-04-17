@@ -31,6 +31,7 @@
     top: 45%;
     left: 2.2vw;
     color: #2c50a2;
+
 }
 .intro_b{
     font-family:"Noto Sans TC";
@@ -199,6 +200,7 @@
     border: 0;
     padding: 0;
     position: relative;
+    height: 15.4vw;
     /*border: 1px solid rgba(0, 0, 0, 0.8);*/
 }
 #item3_1{
@@ -213,11 +215,11 @@
 #item4_1{
     grid-row: 1;
     grid-column: 4;
-    z-index: 100;
 }
 #item4_2{
     grid-row: 1;
     grid-column: 4;
+    z-index:-100;
 }
 #item5_1{
     grid-row: 2;
@@ -267,11 +269,11 @@
 #item10_1{
     grid-row: 3;
     grid-column: 2;
-    z-index: 100;
 }
 #item10_2{
     grid-row: 3;
     grid-column: 2;
+    z-index:-100;
 }
 #item11_1{
     grid-row: 3;
@@ -285,9 +287,9 @@
 #item12_1{
     grid-row: 3;
     grid-column: 4;
-    z-index: 100;
 }
 #item12_2{
     grid-row: 3;
     grid-column: 4;
+    z-index:-100;
 }
