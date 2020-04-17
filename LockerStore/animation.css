@@ -41,24 +41,24 @@
         opacity: 100%;
     }
     75%{
-        left: 15vw;
+        left: 15.4vw;
         z-index: 100;
         opacity: 95%;
     }
     100% {
-        left: 15vw;
+        left: 15.4vw;
         z-index: 0;
         opacity: 0;
     }
 }
 @keyframes back_to_left {
 	0% {
-        left: 15vw;
+        left: 15.4vw;
         z-index: 0;
         opacity: 0%;
     }
     25% {
-        left: 15vw;
+        left: 15.4vw;
         z-index: 100;
         opacity: 95%;
     }
@@ -73,7 +73,7 @@
     100% {
         left: 0vw;
         z-index: 100;
-        opacity: 100;
+        opacity: 100%;
     }
 }
 @keyframes open_to_left {
@@ -91,24 +91,24 @@
         opacity: 100%;
     }
     75%{
-        left: -15vw;
+        left: -15.4vw;
         z-index: 100;
         opacity: 95%;
     }
     100% {
-        left: -15vw;
+        left: -15.4vw;
         z-index: 0;
         opacity: 0;
     }
 }
 @keyframes back_to_right {
 	0% {
-        left: -15vw;
+        left: -15.4vw;
         z-index: 0;
         opacity: 0%;
     }
     25% {
-        left: -15vw;
+        left: -15.4vw;
         z-index: 100;
         opacity: 95%;
     }
@@ -123,7 +123,7 @@
     100% {
         left: 0vw;
         z-index: 100;
-        opacity: 100;
+        opacity: 100%;
     }
 }
 @keyframes fade_in_and_out {
