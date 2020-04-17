@@ -1,20 +1,26 @@
-.contact {
-    background-color: #CACACA;
+#part7 {
     position: relative;
 }
-.info {
-    display: inline-block;
-    margin: 3% 8% 3% 25%;
+#info_left {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 17%;
+}
+#info_right {
+    position: absolute;
+    top: 20%;
+    left: 72.5%;
+    width: 9.2%;
 }
 .blog {
-    display: inline-block;
-    width: 8.5%;
+    width: 10%;
     position: absolute;
-    top: 60.7%;
+    top: 64.5%;
     left: 69.7%;
 }
 .icon {
     display: inline-block;
-    width: 30%;
+    width: 26.5%;
     padding: 0 1% 0 0;
 }

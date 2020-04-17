@@ -47,13 +47,21 @@ ul {
     margin: 0;
 }
 .logo {
-    float: left;
+    position: absolute;
     display: inline-block;
-    margin: 0 0 1.1% 5.5%;
+    top:3%;
+    left: 5.5%;
     width: 6.8%;
 }
+.sign_btn {
+    position: absolute;
+    display: inline-block;
+    top: 4.3%;
+    right: 3.7%;
+    width: 6.6%;
+}
 .main_nav {
-    margin: 1.6% 0 2% 0;
+    margin: 1.5% 0 2.5% 0;
     text-align: center;
 }
 li {
@@ -73,35 +81,27 @@ li a:active{
     font-weight: bold;
     color: #272727;
 }*/
-.log_btn{
-    width: 90%;
-}
-.log_reg {
-    float: right;
-    display: inline-block;
-    margin: 0.6% 5.7% 0 0;
-}
 .home {
     position: relative;
     top: 0;
     left: 0;
 }
-.slogan {
+#slogan {
     position: absolute;
-    top: 33.5%;
-    left: 17.5%;
-    width: 65%;
-    animation-name: zoom_in;
+    top: 35%;
+    left: 35%;
+    width: 28%;
     animation-duration: 2.5s;
+    animation-name: zoom_in;
     animation-fill-mode: forwards;
     /*animation-timing-function: ease-in;*/
 }
-.search_bar {
+#search_bar {
     position: absolute;
     top: 77%;
     left: 29%;
     width: 71%;
-    opacity: 0;
+    opacity: 0%;
     animation-name: fade_in;
     animation-delay: 2s;
     animation-duration: 1.5s;

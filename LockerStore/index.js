@@ -1,4 +1,4 @@
-$(document).ready(() => { 
+$(document).ready(() => {
   /****************** Animation in the part of What_we_do ******************/
   /* First Time */
   document.getElementById("d1").id ="d1_show";
@@ -249,21 +249,37 @@ function out_all() {
   document.getElementById("name_e").className = "name_a_out";
   document.getElementById("intro_e").className = "intro_a_out";
 }
+function reset_animation() {
+  var slogan = document.getElementById('slogan');
+  var searchBar = document.getElementById('search_bar');
+  slogan.style.animation = 'none';
+  slogan.offsetHeight; /* trigger reflow */
+  slogan.style.animation = null; 
+  searchBar.style.animation = 'none';
+  searchBar.offsetHeight; /* trigger reflow */
+  searchBar.style.animation = null; 
+}
 
 //back to top
 $(function () {
 
-var $win = $(window);
+  var $win = $(window);
 
-//var $backToTop = $('.back_btn');
-var $backToTop = $('footer');
+  //var $backToTop = $('.back_btn');
+  var $backToTop = $('footer');
   
-// 當用戶點擊按鈕時，通過動畫效果返回頭部
+  // 當用戶點擊按鈕時，通過動畫效果返回頭部
 
-$backToTop.click(function () {
+  $backToTop.click(function () {
 
-$('html, body').animate({scrollTop: 0}, 200);
+    $('html, body').animate({scrollTop: 0}, 200);
+  });
 
 });
 
-});
+$(window).scroll(function(){ 
+  if ($(window).scrollTop() > $(window).height() && $(window).scrollTop() <= $(window).height()*1.5)
+  {
+    reset_animation();
+  }
+})

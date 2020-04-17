@@ -21,38 +21,29 @@
 		<!---------------------Top page---------------------->
 		<div>
 			<header class="header">
-				<div class="header_content d-flex flex-row align-items-center justify-content-center">
-					<!---------------------Upper left logo---------------------->
-					<div class="logo active">
-						<a href="./index.html">
-							<img class="image" src="./public/images/about_us/part1/logo+typo.svg" alt="logo+typo">
-						</a>
-					</div>
-					<!---------------------Upper right sign up---------------------->
-					<div class="log_reg">
-						<ul class="log_btn d-flex flex-row align-items-start justify-content-start">
-							<li class="log_btn"><a href="http://luffy.ee.ncku.edu.tw:1126/sign_up.html">
-									<img class="image" src="./public/images/about_us/part1/sign-up.svg" alt="sign-up">
-								</a>
-							</li>
-						</ul>
-					</div>
-					<!---------------------Top navigation bar---------------------->
-					<nav class="main_nav">
-						<ul class="menu d-flex flex-row align-items-start justify-content-start">
-							<li><a class="btn" href="#What_we_do">What we do</a></li>
-							<li><a class="btn" href="#Our_approach">Our approach</a></li>
-							<li><a class="btn" href="#Who_we_are">Who we are</a></li>
-							<li><a class="btn" href="#Contact_us">Contact us</a></li>
-						</ul>
-					</nav>
-				</div>
+				<!---------------------Upper left logo---------------------->
+				<a href="./index.html">
+					<img class="logo" src="./public/images/about_us/part1/logo+typo.svg" alt="logo+typo">
+				</a>
+				<!---------------------Top navigation bar---------------------->
+				<nav class="main_nav">
+					<ul class="menu">
+						<li><a class="btn" href="#What_we_do">What we do</a></li>
+						<li><a class="btn" href="#Our_approach">Our approach</a></li>
+						<li><a class="btn" href="#Who_we_are">Who we are</a></li>
+						<li><a class="btn" href="#Contact_us">Contact us</a></li>
+					</ul>
+				</nav>
+				<!---------------------Upper right sign up---------------------->
+				<a href="http://luffy.ee.ncku.edu.tw:1126/sign_up.html">
+					<img class="sign_btn" src="./public/images/about_us/part1/sign-up.svg" alt="sign-up">
+				</a>
 			</header>
 			<!---------------------Middle content---------------------->
 			<div class="home" id="home">
 				<img class="image" src="./public/images/about_us/part1/background-no-word.svg" alt="background-no-word">
-				<img class="image slogan" src="./public/images/about_us/part1/background-only-word.svg" alt="background-only-word.svg">
-				<div class="search_bar">
+				<img class="image slogan_init" id="slogan" src="./public/images/about_us/part1/background-only-word.svg" alt="background-only-word.svg">
+				<div id="search_bar">
 					<img class="loc_icon" src="./public/images/about_us/part1/location-icon-small.svg" alt="location-icon-small">
 					<input type="search" id="addressBlank" placeholder="Enter delivery address">
 					<a href="#">
@@ -170,28 +161,27 @@
 			</div>		
 		</section>
 		<!---------------------Contact us----------------------->
-		<section class="contact" id="Contact_us">
-			<img class="info" src="public/images/about_us/part7/get-in-touch.svg" alt="get-in-touch">
-			<img class="info" src="public/images/about_us/part7/Follow us.svg" alt="follow us">
-			<div class="blog">
-				<a href="">
-					<img class="icon" src="public/images/about_us/part7/google+.svg" alt="google+">
-				</a>
-				<a href="https://www.instagram.com/uidd_lockerstore/" target="_blank">
-					<img class="icon" src="public/images/about_us/part7/IG.svg" alt="ig">
-				</a>
-				<a href="https://www.facebook.com/Uidd_LockerStore-110386727291098" target="_blank">
-					<img class="icon" src="public/images/about_us/part7/FB.svg" alt="fb">
-				</a>
+		<section id="Contact_us">
+			<div id="part7">
+				<img class="part" src="public/images/about_us/part7/part7-background.svg" alt="part7-background">
+				<img id="info_left" src="public/images/about_us/part7/get-in-touch.svg" alt="get-in-touch">
+				<img id="info_right" src="public/images/about_us/part7/Follow us.svg" alt="follow us">
+				<div class="blog">
+					<a href="">
+						<img class="icon" src="public/images/about_us/part7/google+.svg" alt="google+">
+					</a>
+					<a href="https://www.instagram.com/uidd_lockerstore/" target="_blank">
+						<img class="icon" src="public/images/about_us/part7/IG.svg" alt="ig">
+					</a>
+					<a href="https://www.facebook.com/Uidd_LockerStore-110386727291098" target="_blank">
+						<img class="icon" src="public/images/about_us/part7/FB.svg" alt="fb">
+					</a>
+				</div>
 			</div>
 		</section>
 		<!---------------------Bottom button----------------------->
 		<footer>
-			<!--a href="./index.html"-->
-			<!--button class="back-to-top"-->
-				<img class="back_btn" src="public/images/about_us/part8/back-to-top.svg" alt="back-to-top">
-			<!--/button-->
-			<!--/a-->
+			<img class="back_btn" src="public/images/about_us/part8/back-to-top.svg" alt="back-to-top">
 		</footer>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
