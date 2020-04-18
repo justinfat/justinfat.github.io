@@ -59,12 +59,12 @@ ul {
 .sign_btn {
     position: absolute;
     display: inline-block;
-    top: 1vh;
+    top: 1.3vh;
     right: 3.7vw;
     width: 6.5vw;
 }
 .main_nav {
-    margin: 1.5% 0 2.5% 0;
+    margin: 1.6% 0 2.6% 0;
     text-align: center;
 }
 li {
