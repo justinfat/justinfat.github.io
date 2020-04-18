@@ -49,16 +49,16 @@ ul {
 .logo {
     position: absolute;
     display: inline-block;
-    top:3%;
-    left: 5.5%;
-    width: 6.8%;
+    top:3vh;
+    left: 5.5vw;
+    width: 6.8vw;
 }
 .sign_btn {
     position: absolute;
     display: inline-block;
-    top: 4.3%;
-    right: 3.7%;
-    width: 6.6%;
+    top: 4.3vh;
+    right: 3.7vw;
+    width: 6.6vw;
 }
 .main_nav {
     margin: 1.5% 0 2.5% 0;
