@@ -150,62 +150,62 @@ $(document).ready(() => {
   }, 5500);
 })
 
-function on_a() {
+window.on_a = function() {
   document.getElementById("pic_a").className = "pic_a_in";
   document.getElementById("cover_a").className = "cover_a_open";
   document.getElementById("name_a").className = "name_a_in";
   document.getElementById("intro_a").className = "intro_a_in";
 }
-function out_a() {
+window.out_a = function() {
   document.getElementById("cover_a").className = "cover_a_close";
   document.getElementById("name_a").className = "name_a_out";
   document.getElementById("intro_a").className = "intro_a_out";
 }
-function on_b() {
+window.on_b = function() {
   document.getElementById("pic_b").className = "pic_a_in";
   document.getElementById("cover_b").className = "cover_b_open";
   document.getElementById("name_b").className = "name_b_in";
   document.getElementById("intro_b").className = "intro_b_in";
 }
-function out_b() {
+window.out_b = function() {
   document.getElementById("cover_b").className = "cover_b_close";
   document.getElementById("name_b").className = "name_b_out";
   document.getElementById("intro_b").className = "intro_b_out";
 }
-function on_c() {
+window.on_c = function() {
   document.getElementById("pic_c").className = "pic_a_in";
   document.getElementById("cover_c").className = "cover_b_open";
   document.getElementById("name_c").className = "name_b_in";
   document.getElementById("intro_c").className = "intro_b_in";
 }
-function out_c() {
+window.out_c = function() {
   document.getElementById("cover_c").className = "cover_b_close";
   document.getElementById("name_c").className = "name_b_out";
   document.getElementById("intro_c").className = "intro_b_out";
 }
-function on_d() {
+window.on_d = function() {
   document.getElementById("pic_d").className = "pic_a_in";
   document.getElementById("cover_d").className = "cover_a_open";
   document.getElementById("name_d").className = "name_a_in";
   document.getElementById("intro_d").className = "intro_a_in";
 }
-function out_d() {
+window.out_d = function() {
   document.getElementById("cover_d").className = "cover_a_close";
   document.getElementById("name_d").className = "name_a_out";
   document.getElementById("intro_d").className = "intro_a_out";
 }
-function on_e() {
+window.on_e = function() {
   document.getElementById("pic_e").className = "pic_a_in";
   document.getElementById("cover_e").className = "cover_a_open";
   document.getElementById("name_e").className = "name_a_in";
   document.getElementById("intro_e").className = "intro_a_in";
 }
-function out_e() {
+window.out_e = function() {
   document.getElementById("cover_e").className = "cover_a_close";
   document.getElementById("name_e").className = "name_a_out";
   document.getElementById("intro_e").className = "intro_a_out";
  }
-function on_all() {
+window.on_all = function() {
   document.getElementById("pic_a").className = "pic_a_in";
   document.getElementById("cover_a").className = "cover_a_open";
   document.getElementById("name_a").className = "name_a_in";
@@ -227,7 +227,7 @@ function on_all() {
   document.getElementById("name_e").className = "name_a_in";
   document.getElementById("intro_e").className = "intro_a_in";
 }
-function out_all() {
+window.out_all = function() {
   document.getElementById("pic_a").className = "pic_a_in";
   document.getElementById("cover_a").className = "cover_a_close";
   document.getElementById("name_a").className = "name_a_out";
