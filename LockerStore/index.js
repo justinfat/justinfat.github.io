@@ -4,75 +4,75 @@ $(document).ready(() => {
   document.getElementById("d1").id ="d1_show";
   setTimeout(function() {
     document.getElementById("d2").id="d2_show";
-  }, 3000);
+  }, 1500);
   setTimeout(function() {
     document.getElementById("d3").id="d3_show";
-  }, 6000);
+  }, 3000);
   setTimeout(function() {
     document.getElementById("d4").id="d4_show";
-  }, 9000);
+  }, 4500);
   setTimeout(function() {
     document.getElementById("d5").id ="d5_show";
-  }, 12000);
+  }, 6000);
   setTimeout(function() {
     document.getElementById("d6").id ="d6_show";
-  }, 15000);
+  }, 7500);
   setTimeout(function() {
     document.getElementById("d1_show").id ="d1";
-  },6000);
+  },3000);
   setTimeout(function() {
     document.getElementById("d2_show").id="d2";
-  }, 9000);
+  }, 4500);
   setTimeout(function() {
     document.getElementById("d3_show").id="d3";
-  }, 12000);
+  }, 6000);
   setTimeout(function() {
     document.getElementById("d4_show").id="d4";
-  }, 15000);
+  }, 7500);
   setTimeout(function() {
     document.getElementById("d5_show").id="d5";
-  }, 18000);
+  }, 9000);
   setTimeout(function() {
     document.getElementById("d6_show").id="d6";
-  }, 21000);
+  }, 10500);
 
   /* Replay */
   setInterval(() => {
     document.getElementById("d1").id="d1_show";
     setTimeout(function() {
       document.getElementById("d2").id="d2_show";
-    }, 3000);
+    }, 1500);
     setTimeout(function() {
       document.getElementById("d3").id="d3_show";
-    }, 6000);
+    }, 3000);
     setTimeout(function() {
       document.getElementById("d4").id="d4_show";
-    }, 9000);
+    }, 4500);
     setTimeout(function() {
       document.getElementById("d5").id="d5_show";
-    }, 12000);
-    setTimeout(function() {
-      document.getElementById("d6").id="d6_show";
-    }, 15000);
-    setTimeout(function() {
-      document.getElementById("d1_show").id="d1";
     }, 6000);
     setTimeout(function() {
+      document.getElementById("d6").id="d6_show";
+    }, 7500);
+    setTimeout(function() {
+      document.getElementById("d1_show").id="d1";
+    }, 3000);
+    setTimeout(function() {
       document.getElementById("d2_show").id="d2";
-    }, 9000);
+    }, 4500);
     setTimeout(function() {
       document.getElementById("d3_show").id="d3";
-    }, 12000);
+    }, 6000);
     setTimeout(function() {
       document.getElementById("d4_show").id="d4";
-    }, 15000);
+    }, 7500);
     setTimeout(function() {
       document.getElementById("d5_show").id="d5";
-    }, 18000);
+    }, 9000);
     setTimeout(function() {
       document.getElementById("d6_show").id="d6";
-    }, 21000);
-  }, 18000);
+    }, 10500);
+  }, 9000);
 
   /****************** Animation in the part of Our_approach ******************/
   /* First Time */
@@ -278,7 +278,7 @@ $(function () {
 });
 
 $(window).scroll(function(){
-  if ($(window).scrollTop() > $(window).height()*1.5 && $(window).scrollTop() <= $(window).height()*2)
+  if ($(window).scrollTop() > $(window).height()*1 && $(window).scrollTop() <= $(window).height()*1.5)
   {
     reset_animation();
   }

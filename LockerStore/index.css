@@ -94,7 +94,7 @@ li a:active{
     top: 35%;
     left: 35%;
     width: 28%;
-    animation-duration: 2.5s;
+    animation-duration: 2s;
     animation-name: zoom_in;
     animation-fill-mode: forwards;
     /*animation-timing-function: ease-in;*/
@@ -104,11 +104,6 @@ li a:active{
     top: 77%;
     left: 29%;
     width: 71%;
-    opacity: 0%;
-    animation-name: fade_in;
-    animation-delay: 2s;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
 }
 input {
     font-size: 1.1rem;

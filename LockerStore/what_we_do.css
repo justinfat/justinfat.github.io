@@ -43,7 +43,7 @@
     left: 15%;
     opacity: 0;
     animation-name: fade_in_and_out;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
 #d2_show {
@@ -51,7 +51,7 @@
     right: 3%;
     opacity: 0;
     animation-name: fade_in_and_out;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
 #d3_show {
@@ -59,7 +59,7 @@
     left: 16.5%;
     opacity: 0;
     animation-name: fade_in_and_out;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
 #d4_show {
@@ -67,7 +67,7 @@
     right: 21%;
     opacity: 0;
     animation-name: fade_in_and_out;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
 #d5_show {
@@ -75,7 +75,7 @@
     left: 6%;
     opacity: 0;
     animation-name: fade_in_and_out;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
 #d6_show {
@@ -83,6 +83,6 @@
     right: 8.3%;
     opacity: 0;
     animation-name: fade_in_and_out;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
