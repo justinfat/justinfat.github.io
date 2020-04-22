@@ -6,6 +6,7 @@
   "author": "JCP1014 <believe861014@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/jquery": "^3.3.35",
     "express": "^4.17.1",
     "jquery": "^3.5.0"
   }
