@@ -2,7 +2,7 @@
 ## Automation with parcel
 ```
 $ ../node_modules/.bin/parcel ./parcel/index.pug --port [port]
-gi```
+```
 Please replace [port] to an appropriate value.
 Then, open ```http://luffy.ee.ncku.edu.tw:[port]``` in your browser.
 
