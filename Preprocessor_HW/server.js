@@ -4,7 +4,7 @@ const express = require('express')
 // create an express, aka web server, instance
 const app = express()
 
-const port = 6543
+const port = process.argv[2]
 
 // start the server
 app.listen(port, () => {
