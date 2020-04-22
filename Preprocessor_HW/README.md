@@ -3,7 +3,7 @@
 ```
 $ ../node_modules/.bin/parcel ./parcel/index.pug --port [port]
 ```
-Please replace [port] to an appropriate value.  
+Please replace **[port]** to an appropriate value.  
 Then, open http://luffy.ee.ncku.edu.tw:[port] in your browser.  
   
 For example, if you replace [port] to 9876,   
