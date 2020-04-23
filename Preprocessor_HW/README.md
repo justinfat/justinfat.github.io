@@ -21,7 +21,7 @@ $ ../node_modules/.bin/node-sass ./src -o ./dst
 ```
 ### Step 3: ts to js
 ```
-$ tsc src/*.ts --outDir dst/
+$ ../node_modules/.bin/tsc src/*.ts --outDir dst/
 ```
 ### Step 4: Run server
 ```
