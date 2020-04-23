@@ -19,8 +19,9 @@ $ ../node_modules/.bin/pug ./src -o ./dst/ --pretty
 $ ../node_modules/.bin/node-sass ./src -o ./dst
 ```
 ### Step 3: ts to js
-
-
+```
+$ tsc [file name]
+```
 ### Step 4: Run server
 ```
 $ node ./server.js [port]
