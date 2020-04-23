@@ -28,5 +28,5 @@ $ tsc src/*.ts --outDir dst/
 $ node ./server.js [port]
 ```
 In the above command, please replace **[port]** to an appropriate value.  
-Then, open http://luffy.ee.ncku.edu.tw:[port] in your browser.
+Then, open http://luffy.ee.ncku.edu.tw:[port] in your browser.  
 If you just run on localhost, please open http://localhost:[port] in the browser.
