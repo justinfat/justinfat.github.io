@@ -4,7 +4,7 @@ const express = require('express')
 // create an express, aka web server, instance
 const app = express()
 
-const port = 6789
+const port = process.argv[2]
 
 // start the server
 app.listen(port, () => {
@@ -14,6 +14,6 @@ app.listen(port, () => {
 // handle other urls
 app.use(express.static(`${__dirname}/LockerStore`))
 
-app.get('/sign_up', (req, res) => {
+app.get('./sign_up', (req, res) => {
   res.send(`${req.query.account}`)
 })

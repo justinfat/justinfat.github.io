@@ -43,13 +43,11 @@
 			<div class="home" id="home">
 				<img class="image" src="./public/images/about_us/part1/background-no-word.svg" alt="background-no-word">
 				<img class="image slogan_init" id="slogan" src="./public/images/about_us/part1/background-only-word.svg" alt="background-only-word.svg">
-				<div id="search_bar">
-					<img class="loc_icon" src="./public/images/about_us/part1/location-icon-small.svg" alt="location-icon-small">
-					<input type="search" id="addressBlank" placeholder="Enter delivery address">
-					<a href="#">
-						<img class="find_btn" src="./public/images/about_us/part1/find.svg" alt="find">
-					</a>
-				</div>
+				<form action="./test_map.html" method="get" id="search_bar">
+					<input type="image" id="loc_icon" name="locate_btn" src="./public/images/about_us/part1/location-icon-small.svg" alt="location-icon-small">
+					<input type="search" id="addressBlank" name="address" placeholder="Enter delivery address">
+					<input type="image" id="find_btn" src="./public/images/about_us/part1/find.svg" alt="find">
+				</form>
 			</div>
 		</div>
 
