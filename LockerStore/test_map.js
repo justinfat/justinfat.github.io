@@ -2,13 +2,13 @@ var map, marker, lat, lng, addr;
 var isLocate = false;
 var styles = {
     default: null,
-    hide: [
+    hide: [ // Hide stores and bus stations in the map
         {
             featureType: 'poi.business',
             stylers: [{ visibility: 'off' }]
         },
         {
-            featureType: 'transit',
+            featureType: 'transit.station.bus',
             elementType: 'labels.icon',
             stylers: [{ visibility: 'off' }]
         }
@@ -37,7 +37,7 @@ function autoLocate() {
         var response = JSON.parse(this.responseText);
         lat = response.location.lat;
         lng = response.location.lng;
-        console.log(lat + ' ' + lng);
+        //console.log(lat + ' ' + lng);
 
         /************ Draw Map ************/
         map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -92,7 +92,8 @@ function codeAddress() {
         if (status == google.maps.GeocoderStatus.OK) {
             map = new google.maps.Map(document.getElementById('map-canvas'), {
                 zoom: 18,
-                center: results[0].geometry.location
+                center: results[0].geometry.location,
+                styles: styles['hide'],
             });
             var marker = new google.maps.Marker({
                 map: map,
@@ -103,7 +104,6 @@ function codeAddress() {
                 },
                 animation: google.maps.Animation.DROP,
             });
-            map.setOptions({ styles: styles['hide'] });
         } else {
             alert("Failed, reason: " + status);
         }
