@@ -17,7 +17,7 @@ var styles = {
 function initMap() {
     var urlParams = new URLSearchParams(window.location.search);
     var isAuto = urlParams.get('locate_btn.x');
-    if (isAuto) {
+    if (isAuto > 0) {
         autoLocate();
     }
     else {

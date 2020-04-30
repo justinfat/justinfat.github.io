@@ -149,14 +149,24 @@ $(document).ready(() => {
     }, 5000);
   }, 5500);
 })
-/****************** If click find_btn without entering address ******************/
-$('#find_btn').click((event) => {
+
+$('#find_btn').click(check_blank);
+$("#addressBlank").on('keydown', function (e) {
+  if (e.keyCode === 13) { // Detect 'enter' is pressed when focus on addressBlank
+    check_blank();
+  }
+});
+
+/********** Check whether the input address is empty when submitting the form ***********/
+function check_blank() {
   var addr = $('#addressBlank').val();
   if (!addr.length) {
     event.preventDefault();
     alert("Please ensure that you have entered delivery address");
   }
-})
+}
+
+/********** Control animations in the part of who_we_are *************/
 window.on_a = function () {
   document.getElementById("pic_a").className = "pic_a_in";
   document.getElementById("cover_a").className = "cover_a_open";
