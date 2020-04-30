@@ -1,7 +1,20 @@
 var map, marker, lat, lng, addr;
-function initialize() {
-    geocoder = new google.maps.Geocoder();
-    map = new google.maps.Map(document.getElementById('map-canvas'));
+var isLocate = false;
+var styles = {
+    default: null,
+    hide: [
+        {
+            featureType: 'poi.business',
+            stylers: [{ visibility: 'off' }]
+        },
+        {
+            featureType: 'transit',
+            elementType: 'labels.icon',
+            stylers: [{ visibility: 'off' }]
+        }
+    ]
+};
+function initMap() {
     var urlParams = new URLSearchParams(window.location.search);
     var isAuto = urlParams.get('locate_btn.x');
     if (isAuto) {
@@ -14,23 +27,27 @@ function initialize() {
 }
 function autoLocate() {
     navigator.geolocation.watchPosition((position) => {
-        console.log(position.coords);
-        lat = position.coords.latitude;
-        lng = position.coords.longitude;
-        // 初始化地圖
-        map = new google.maps.Map(document.getElementById('map-canvas'), {
-            zoom: 18,
-            center: { lat: lat, lng: lng }
-        });
-        marker = new google.maps.Marker({
-            map: map,
-            position: { lat: lat, lng: lng },
-            icon: {
-                url: './public/images/about_us/part5/part5-logo.svg',
-                scaledSize: new google.maps.Size(50, 50),
-            },
-            animation: google.maps.Animation.DROP,
-        });
+        if (!isLocate) {
+            isLocate = true;
+            console.log(position.coords);
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            // 初始化地圖
+            map = new google.maps.Map(document.getElementById('map-canvas'), {
+                zoom: 18,
+                center: { lat: lat, lng: lng }
+            });
+            marker = new google.maps.Marker({
+                map: map,
+                position: { lat: lat, lng: lng },
+                icon: {
+                    url: './public/images/about_us/part5/part5-logo.svg',
+                    scaledSize: new google.maps.Size(50, 50),
+                },
+                animation: google.maps.Animation.DROP,
+            });
+            map.setOptions({ styles: styles['hide'] });
+        }
     });
 }
 
@@ -51,8 +68,9 @@ function codeAddress() {
                 },
                 animation: google.maps.Animation.DROP,
             });
+            map.setOptions({ styles: styles['hide'] });
         } else {
-            alert("失敗, 原因: " + status);
+            alert("Failed, reason: " + status);
         }
     })
 }
