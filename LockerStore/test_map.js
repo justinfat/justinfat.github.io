@@ -26,6 +26,40 @@ function initMap() {
     }
 }
 function autoLocate() {
+    /************ Get location ************/
+    xhr = new XMLHttpRequest();
+    xhr.open(
+        "POST",
+        "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk",
+        true
+    );
+    xhr.onload = function () {
+        var response = JSON.parse(this.responseText);
+        lat = response.location.lat;
+        lng = response.location.lng;
+        console.log(lat + ' ' + lng);
+
+        /************ Draw Map ************/
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            zoom: 18,
+            center: { lat: lat, lng: lng },
+            styles: styles['hide'],
+        });
+        marker = new google.maps.Marker({
+            map: map,
+            position: { lat: lat, lng: lng },
+            icon: {
+                url: './public/images/about_us/part5/part5-logo.svg',
+                scaledSize: new google.maps.Size(50, 50),
+            },
+            animation: google.maps.Animation.DROP,
+        });
+    };
+    xhr.send();
+}
+
+/*  Only works for https, but luffy is http
+function autoLocate() {
     navigator.geolocation.watchPosition((position) => {
         if (!isLocate) {
             isLocate = true;
@@ -50,6 +84,7 @@ function autoLocate() {
         }
     });
 }
+*/
 
 function codeAddress() {
     geocoder = new google.maps.Geocoder();
