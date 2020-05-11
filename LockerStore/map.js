@@ -38,7 +38,11 @@ function locate_once() {
             map = new google.maps.Map(document.getElementById('map-canvas'), {
                 zoom: 18,
                 center: { lat: lat, lng: lng },
-                styles: styles['hide']
+                styles: styles['hide'],
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+                zoomControl: false,
             });
             marker = new google.maps.Marker({
                 map: map,
@@ -79,6 +83,10 @@ function alt_locate() {
             zoom: 18,
             center: { lat: lat, lng: lng },
             styles: styles['hide'],
+            mapTypeControl: false,
+            fullscreenControl: false,
+            streetViewControl: false,
+            zoomControl: false,
         });
         marker = new google.maps.Marker({
             map: map,
@@ -103,7 +111,12 @@ function locate_watch() {
             lng = position.coords.longitude;
             map = new google.maps.Map(document.getElementById('map-canvas'), {
                 zoom: 18,
-                center: { lat: lat, lng: lng }
+                center: { lat: lat, lng: lng },
+                styles: styles['hide'],
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+                zoomControl: false,
             });
             marker = new google.maps.Marker({
                 map: map,
@@ -127,6 +140,10 @@ function codeAddress() {
                 zoom: 18,
                 center: results[0].geometry.location,
                 styles: styles['hide'],
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+                zoomControl: false,
             });
             var marker = new google.maps.Marker({
                 map: map,

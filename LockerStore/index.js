@@ -32,17 +32,17 @@ var styles = {
         },
     ]
 };
-function initMap() { 
+function initMap() {
     lat = 22.9988146;
     lng = 120.2195148;
     map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 16,
         center: { lat: lat, lng: lng },
         styles: styles['hide_more'],
-        mapTypeControl:false,
-        fullscreenControl:false,
-        streetViewControl:false,
-        zoomControl:false,
+        mapTypeControl: false,
+        fullscreenControl: false,
+        streetViewControl: false,
+        zoomControl: false,
     });
 }
 
@@ -163,3 +163,13 @@ function codeAddress() {
         }
     })
 }
+
+$(document).ready(function () {
+    $('#find_btn').click((event) => {
+        var addr = $('#addressBlank').val();
+        if (!addr.length) {
+            event.preventDefault();
+            alert("請輸入地址");
+        }
+    })
+});
