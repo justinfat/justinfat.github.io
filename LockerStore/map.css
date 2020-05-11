@@ -9,7 +9,7 @@ html, body, #map-canvas {
     padding: 0;
 }
 ::placeholder {
-    color: #9d9d9d;
+    color:#5072b4;
     font-weight: 500;
 }
 html {
@@ -30,11 +30,16 @@ img {
 #onMap_top {
     position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: 0;
 }
 #searchdBox {
     position: relative;
     
+}
+#box_outer {
+    position: absolute;
+    width: 26vw;
+    z-index: -1;
 }
 #menu_btn {
     position: absolute;
@@ -50,6 +55,7 @@ img {
     border-radius: 0.6rem;
     width: 26vw;
     padding: 2% 2% 2% 15%;
+    z-index: 0;
 }
 #search_btn {
     position: absolute;
@@ -58,6 +64,22 @@ img {
     top: 30%;
     left: 23.35%;
     border: 0;
+}
+#dropDown_btn {
+    position: absolute;
+    padding: 0;
+    width: 2.1vw;
+    top: 110%;
+    left: 2.02%;
+    border: 0;
+}
+#dropDown_txt {
+    color: white;
+    font-size: 0.98rem;
+    position: absolute;
+    top: 114%;
+    left: 5.1%;
+    font-weight: 600;
 }
 #square {
     width: 1.6vw;
@@ -68,10 +90,27 @@ img {
     width: 6.5vw;
     margin-top: 4%;
 }
+#onMap_mid {
+    position: absolute;
+    top: 40%;
+    z-index: 0;
+}
+#freq {
+    margin: 10% 0;
+    width: 2vw;
+}
+#like {
+    margin: 10% 0;
+    width: 2vw;
+}
+#group {
+    margin: 10% 0;
+    width: 2vw;
+}
 #onMap_bottom {
     position: absolute;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
 }
 #locate{
     width: 1.9vw;
@@ -94,47 +133,11 @@ img {
     left: 31%;
     width: 0.75vw;
 }
-#front{
-    position: absolute;
-    top: 0;
-    z-index: 0;
-}
-#sign_front {
-    width: 6.5vw;
-}
-#logo {
-    width: 6.7vw;
-}
-#slogan {
-    width: 63vw;
-}
-#searchBar {
-    position: relative;
-    margin-left: 29%;
-    margin-top: 0.5%;
-}
 input {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 2% 2% 2% 10%;
     width: 34.5vw;
+    line-height: 1.8rem;
     border: 2px solid #ccc;
     outline: none;
-}
-#loc_icon {
-    position: absolute;
-    padding: 0;
-    width: 1.2vw;
-    top: 26%;
-    left: 4%;
-    border: 0;
-    cursor: pointer;
-}
-#find_btn {
-    position: absolute;
-    padding: 0;
-    width: auto;
-    height: 96%;
-    margin: 0.1% 0 0 2.4%;
-    border: 0;
-    cursor: pointer;
 }

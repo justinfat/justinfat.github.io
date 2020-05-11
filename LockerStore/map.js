@@ -1,4 +1,6 @@
 var map, marker, lat, lng, addr;
+var pos_marker = './public/images/a1/a1-08.svg';
+var locker_marker = './public/images/about_us/part5/part5-logo.svg';
 var isLocate = false;
 var styles = {
     default: null,
@@ -48,8 +50,8 @@ function locate_once() {
                 map: map,
                 position: { lat: lat, lng: lng },
                 icon: {
-                    url: './public/images/about_us/part5/part5-logo.svg',
-                    scaledSize: new google.maps.Size(50, 50),
+                    url: pos_marker,
+                    scaledSize: new google.maps.Size(58, 58),
                 },
                 animation: google.maps.Animation.DROP,
             });
@@ -92,8 +94,8 @@ function alt_locate() {
             map: map,
             position: { lat: lat, lng: lng },
             icon: {
-                url: './public/images/about_us/part5/part5-logo.svg',
-                scaledSize: new google.maps.Size(50, 50),
+                url: pos_marker,
+                scaledSize: new google.maps.Size(58, 58),
             },
             animation: google.maps.Animation.DROP,
         });
@@ -122,8 +124,8 @@ function locate_watch() {
                 map: map,
                 position: { lat: lat, lng: lng },
                 icon: {
-                    url: './public/images/about_us/part5/part5-logo.svg',
-                    scaledSize: new google.maps.Size(50, 50),
+                    url: pos_marker,
+                    scaledSize: new google.maps.Size(58, 58),
                 },
                 animation: google.maps.Animation.DROP,
             });
@@ -149,8 +151,8 @@ function codeAddress() {
                 map: map,
                 position: results[0].geometry.location,
                 icon: {
-                    url: './public/images/about_us/part5/part5-logo.svg',
-                    scaledSize: new google.maps.Size(50, 50),
+                    url: pos_marker,
+                    scaledSize: new google.maps.Size(58, 58),
                 },
                 animation: google.maps.Animation.DROP,
             });
