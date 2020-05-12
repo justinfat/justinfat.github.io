@@ -1,6 +1,6 @@
-var map, marker, lat, lng, addr;
+var map, marker, lat, lng;
 var pos_marker = './public/images/a1/a1-08.svg';
-var locker_marker = './public/images/about_us/part5/part5-logo.svg';
+var locker_marker = './public/images/a1/a1-31前.svg'
 var isLocate = false;
 var styles = {
     default: null,
@@ -17,14 +17,28 @@ var styles = {
     ]
 };
 function initMap() {
+    document.getElementById('map-canvas').style.opacity = '0';
     var urlParams = new URLSearchParams(window.location.search);
     var isAuto = urlParams.get('locate_btn.x');
+    lat = 22.9988146;
+    lng = 120.2195148;
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 18,
+        center: { lat: lat, lng: lng },
+        styles: styles['hide_more'],
+        mapTypeControl: false,
+        fullscreenControl: false,
+        streetViewControl: false,
+        zoomControl: false,
+    });
     if (isAuto) {
         locate_once();
+        document.getElementById('map-canvas').style.opacity = '1';
     }
     else {
-        addr = urlParams.get('address');
-        codeAddress();
+        var addr = urlParams.get('address');
+        codeAddress(addr);
+        document.getElementById('map-canvas').style.opacity = '1';
     }
 }
 
@@ -46,15 +60,7 @@ function locate_once() {
                 streetViewControl: false,
                 zoomControl: false,
             });
-            marker = new google.maps.Marker({
-                map: map,
-                position: { lat: lat, lng: lng },
-                icon: {
-                    url: pos_marker,
-                    scaledSize: new google.maps.Size(58, 58),
-                },
-                animation: google.maps.Animation.DROP,
-            });
+            createMarker(pos_marker, { lat: lat, lng: lng }, true)
         }, function () {
             //alert('Error: The Geolocation service failed.');
             alt_locate();
@@ -90,15 +96,7 @@ function alt_locate() {
             streetViewControl: false,
             zoomControl: false,
         });
-        marker = new google.maps.Marker({
-            map: map,
-            position: { lat: lat, lng: lng },
-            icon: {
-                url: pos_marker,
-                scaledSize: new google.maps.Size(58, 58),
-            },
-            animation: google.maps.Animation.DROP,
-        });
+        createMarker(pos_marker, { lat: lat, lng: lng }, true);
     };
     xhr.send();
 }
@@ -120,23 +118,63 @@ function locate_watch() {
                 streetViewControl: false,
                 zoomControl: false,
             });
-            marker = new google.maps.Marker({
-                map: map,
-                position: { lat: lat, lng: lng },
-                icon: {
-                    url: pos_marker,
-                    scaledSize: new google.maps.Size(58, 58),
-                },
-                animation: google.maps.Animation.DROP,
-            });
-            map.setOptions({ styles: styles['hide'] });
+            createMarker(pos_marker, { lat: lat, lng: lng }, true);
         }
     });
 }
+function createMarker(marker_url, location, isDrop) {
+    var marker;
+    if (isDrop) {
+        marker = new google.maps.Marker({
+            map: map,
+            position: location,
+            icon: {
+                url: marker_url,
+                scaledSize: new google.maps.Size(60, 60),
+            },
+            animation: google.maps.Animation.DROP,
+        });
+    }
+    else {
+        marker = new google.maps.Marker({
+            map: map,
+            position: location,
+            icon: {
+                url: marker_url,
+                scaledSize: new google.maps.Size(60, 60),
+            },
+        });
+    }
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
+}
 
-function codeAddress() {
-    geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': addr }, function (results, status) {
+function codeAddress(address) {
+    var request = {
+        query: address,
+        fields: ['name', 'geometry', 'formatted_address'],
+    };
+    var service = new google.maps.places.PlacesService(map);
+    service.findPlaceFromQuery(request, function (results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            map = new google.maps.Map(document.getElementById('map-canvas'), {
+                zoom: 18,
+                center: results[0].geometry.location,
+                styles: styles['hide'],
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+                zoomControl: false,
+            });
+            createMarker(pos_marker, results[0].geometry.location, true)
+        } else {
+            alert("Failed, reason: " + status);
+        }
+    });
+    /*geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             map = new google.maps.Map(document.getElementById('map-canvas'), {
                 zoom: 18,
@@ -152,12 +190,45 @@ function codeAddress() {
                 position: results[0].geometry.location,
                 icon: {
                     url: pos_marker,
-                    scaledSize: new google.maps.Size(58, 58),
+                    scaledSize: new google.maps.Size(60, 60),
                 },
                 animation: google.maps.Animation.DROP,
             });
         } else {
             alert("Failed, reason: " + status);
         }
-    })
+    })*/
 }
+
+function getLockerPos(address) {
+    var service = new google.maps.places.PlacesService(map);
+    var getNextPage = null;
+    var moreButton = document.getElementById('dropDown_btn');
+    moreButton.onclick = function () {
+        moreButton.disabled = true;
+        if (getNextPage) getNextPage();
+    };
+
+    // Perform a nearby search.
+    service.nearbySearch(
+        { location: map.getCenter(), radius: 26415, keyword: '7-11' },
+        function (results, status, pagination) {
+            if (status !== 'OK') {
+                console.log('error');
+            }
+            else {
+                console.log(results.length);
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(locker_marker, results[i].geometry.location, false);
+                }
+            }
+        });
+}
+function writeDB() {
+
+}
+
+$(document).ready(function () {
+    $('.toast').toast('show');
+    $('[data-toggle="popover"]').popover();
+});
