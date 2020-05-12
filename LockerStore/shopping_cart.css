@@ -4,5 +4,6 @@
 #object_1{
   border-style: solid;
   border-color: #2C50A1;
-  border-radius: 5px;
+  border-radius: 15px;
+  border-width:5px;
 }
