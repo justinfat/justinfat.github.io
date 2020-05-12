@@ -1,20 +1,17 @@
 #logo{
   margin-top:10vh;
 }
-.object_1{
-  border-style: solid;
-  border-color: #2C50A1;
-  border-radius: 15px;
-  border-width:5px;
-  width:50%;
-}
 .shop_name{
   color: #2C50A1;
   font-family:微軟正黑體;
+  font-size:15px;
+  text-align: left;
 }
 .shop_content{
   font-family:微軟正黑體;
   color: #000000;
+  font-size:10px;
+  text-align: left;
 }
 .item1 {
   grid-area: myArea;
@@ -33,5 +30,4 @@
 
 .grid-container > div {
   text-align: left;
-  font-size: 20px;
 }
