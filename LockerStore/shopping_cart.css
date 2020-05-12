@@ -17,7 +17,7 @@
   display: grid;
   grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
   grid-gap: 10px;
-  padding: 10px;
+  padding: 5px;
   width:50%;
   border-style: solid;
   border-color: #2C50A1;
@@ -26,7 +26,7 @@
 }
 
 .grid-container > div {
-  text-align: center;
+  text-align: left;
   padding: 20px 0;
-  font-size: 30px;
+  font-size: 20px;
 }
