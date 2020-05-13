@@ -144,12 +144,12 @@ function createMarker(marker_url, location, isDrop) {
         $.get('/searchInfo', {
             lat: marker.getPosition().lat(),
             lng: marker.getPosition().lng(),
-          }, (data) => {
-              console.log(data.name);
-              console.log(data.addr);
-              $('#info_t1').html(data.name+'站');
-              $('#info_t2').html(data.addr);
-          })
+        }, (data) => {
+            console.log(data.name);
+            console.log(data.addr);
+            $('#info_t1').html(data.name + '站');
+            $('#info_t2').html(data.addr);
+        })
         $('#infoBox').show();
     });
 }
@@ -238,9 +238,9 @@ function getLockerPos(center, query) {
                     lng: results[i].geometry.location.lng(),
                     name: lockerName,
                     addr: address,
-                  }, (data) => {
-                      //console.log(data)
-                  })
+                }, (data) => {
+                    //console.log(data)
+                })
             }
             if (pagination.hasNextPage) {
                 sleep: 2;
@@ -248,12 +248,17 @@ function getLockerPos(center, query) {
             }
         });
 }
-
+function zoomIn() {
+    map.setZoom(map.getZoom()+1)
+}
+function zoomOut() {
+    map.setZoom(map.getZoom()-1)
+}
 $(document).ready(function () {
     $('.toast').toast('show');
     $('[data-toggle="popover"]').popover();
     $('#infoBox').hide();
 });
-$('#close').click(function(){
+$('#close').click(function () {
     $('#infoBox').hide();
 });

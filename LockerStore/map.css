@@ -1,5 +1,6 @@
 * {
     font-family: "Century Gothic";
+    user-select: none;
 }
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
