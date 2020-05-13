@@ -108,7 +108,7 @@ function locate_watch() {
     navigator.geolocation.watchPosition((position) => {
         if (!isLocate) {
             isLocate = true;
-            console.log(position.coords);
+            //console.log(position.coords);
             lat = position.coords.latitude;
             lng = position.coords.longitude;
             map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -141,7 +141,15 @@ function createMarker(marker_url, location, isDrop) {
     marker.addListener('click', function () {
         //map.setZoom(8);
         //map.setCenter(marker.getPosition());
-        console.log(marker.getPosition().lat());
+        $.get('/searchInfo', {
+            lat: marker.getPosition().lat(),
+            lng: marker.getPosition().lng(),
+          }, (data) => {
+              console.log(data.name);
+              console.log(data.addr);
+              $('#info_t1').html(data.name+'站');
+              $('#info_t2').html(data.addr);
+          })
         $('#infoBox').show();
     });
 }
@@ -169,31 +177,31 @@ function codeAddress(address) {
             alert("Failed, reason: " + status);
         }
     });
-    /*geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map = new google.maps.Map(document.getElementById('map-canvas'), {
-                zoom: 18,
-                center: results[0].geometry.location,
-                styles: styles['hide'],
-                mapTypeControl: false,
-                fullscreenControl: false,
-                streetViewControl: false,
-                zoomControl: false,
-            });
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location,
-                icon: {
-                    url: pos_marker,
-                    scaledSize: new google.maps.Size(60, 60),
-                },
-                animation: google.maps.Animation.DROP,
-            });
-        } else {
-            alert("Failed, reason: " + status);
-        }
-    })*/
+    // geocoder = new google.maps.Geocoder();
+    // geocoder.geocode({ 'address': address }, function (results, status) {
+    //     if (status == google.maps.GeocoderStatus.OK) {
+    //         map = new google.maps.Map(document.getElementById('map-canvas'), {
+    //             zoom: 18,
+    //             center: results[0].geometry.location,
+    //             styles: styles['hide'],
+    //             mapTypeControl: false,
+    //             fullscreenControl: false,
+    //             streetViewControl: false,
+    //             zoomControl: false,
+    //         });
+    //         var marker = new google.maps.Marker({
+    //             map: map,
+    //             position: results[0].geometry.location,
+    //             icon: {
+    //                 url: pos_marker,
+    //                 scaledSize: new google.maps.Size(60, 60),
+    //             },
+    //             animation: google.maps.Animation.DROP,
+    //         });
+    //     } else {
+    //         alert("Failed, reason: " + status);
+    //     }
+    // })
 }
 
 function getLockerPos(center, query) {
@@ -221,18 +229,24 @@ function getLockerPos(center, query) {
                     end = tmp.lastIndexOf('縣');
                     var county = tmp.slice(end - 2, end + 1);
                 }
-                console.log(lockerName + '站');
-                console.log(county + results[i].vicinity);
+                var address = county + results[i].vicinity;
+                //console.log(lockerName + '站');
+                //console.log(address);
                 createMarker(locker_marker, results[i].geometry.location, false);
+                $.get('/insertInfo', {
+                    lat: results[i].geometry.location.lat(),
+                    lng: results[i].geometry.location.lng(),
+                    name: lockerName,
+                    addr: address,
+                  }, (data) => {
+                      //console.log(data)
+                  })
             }
             if (pagination.hasNextPage) {
                 sleep: 2;
                 pagination.nextPage();
             }
         });
-}
-function writeDB() {
-
 }
 
 $(document).ready(function () {
