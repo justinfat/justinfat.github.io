@@ -60,13 +60,14 @@ function locate_once() {
                 streetViewControl: false,
                 zoomControl: false,
             });
-            createMarker(pos_marker, { lat: lat, lng: lng }, true)
+            createMarker(pos_marker, { lat: lat, lng: lng }, true);
+            getLockerPos({ lat: lat, lng: lng }, '7-11');
         }, function () {
-            //alert('Error: The Geolocation service failed.');
+            alert('Error: The Geolocation service failed.');
             alt_locate();
         });
     } else { // Browser doesn't support Geolocation
-        //alert('Error: Your browser doesn\'t support geolocation.');
+        alert('Error: Your browser doesn\'t support geolocation.');
         alt_locate();
     }
 }
@@ -97,6 +98,7 @@ function alt_locate() {
             zoomControl: false,
         });
         createMarker(pos_marker, { lat: lat, lng: lng }, true);
+        getLockerPos({ lat: lat, lng: lng }, '7-11');
     };
     xhr.send();
 }
@@ -119,35 +121,28 @@ function locate_watch() {
                 zoomControl: false,
             });
             createMarker(pos_marker, { lat: lat, lng: lng }, true);
+            getLockerPos({ lat: lat, lng: lng }, '7-11');
         }
     });
 }
 function createMarker(marker_url, location, isDrop) {
     var marker;
+    marker = new google.maps.Marker({
+        map: map,
+        position: location,
+        icon: {
+            url: marker_url,
+            scaledSize: new google.maps.Size(60, 60),
+        },
+    });
     if (isDrop) {
-        marker = new google.maps.Marker({
-            map: map,
-            position: location,
-            icon: {
-                url: marker_url,
-                scaledSize: new google.maps.Size(60, 60),
-            },
-            animation: google.maps.Animation.DROP,
-        });
+        marker.setAnimation(google.maps.Animation.DROP);
     }
-    else {
-        marker = new google.maps.Marker({
-            map: map,
-            position: location,
-            icon: {
-                url: marker_url,
-                scaledSize: new google.maps.Size(60, 60),
-            },
-        });
-    }
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
+    marker.addListener('click', function () {
+        //map.setZoom(8);
+        //map.setCenter(marker.getPosition());
+        console.log(marker.getPosition().lat());
+        $('#infoBox').show();
     });
 }
 
@@ -168,7 +163,8 @@ function codeAddress(address) {
                 streetViewControl: false,
                 zoomControl: false,
             });
-            createMarker(pos_marker, results[0].geometry.location, true)
+            createMarker(pos_marker, results[0].geometry.location, true);
+            getLockerPos(results[0].geometry.location, '7-11');
         } else {
             alert("Failed, reason: " + status);
         }
@@ -200,27 +196,38 @@ function codeAddress(address) {
     })*/
 }
 
-function getLockerPos(address) {
+function getLockerPos(center, query) {
     var service = new google.maps.places.PlacesService(map);
-    var getNextPage = null;
-    var moreButton = document.getElementById('dropDown_btn');
-    moreButton.onclick = function () {
-        moreButton.disabled = true;
-        if (getNextPage) getNextPage();
-    };
-
     // Perform a nearby search.
     service.nearbySearch(
-        { location: map.getCenter(), radius: 26415, keyword: '7-11' },
+        { location: center, keyword: query, rankBy: google.maps.places.RankBy.DISTANCE },
         function (results, status, pagination) {
             if (status !== 'OK') {
-                console.log('error');
+                alert("Failed, reason: " + status);
+                return;
             }
-            else {
-                console.log(results.length);
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(locker_marker, results[i].geometry.location, false);
+            console.log(results.length);
+            for (var i = 0; i < results.length; i++) {
+                var tmp = results[i].name;
+                var start = tmp.indexOf(' ');
+                var end = tmp.indexOf('門市');
+                var lockerName = tmp.slice(start + 1, end);
+                tmp = results[i].plus_code.compound_code;
+                end = tmp.lastIndexOf('市');
+                if (end > -1) {
+                    var county = tmp.slice(end - 2, end + 1);
                 }
+                else {
+                    end = tmp.lastIndexOf('縣');
+                    var county = tmp.slice(end - 2, end + 1);
+                }
+                console.log(lockerName + '站');
+                console.log(county + results[i].vicinity);
+                createMarker(locker_marker, results[i].geometry.location, false);
+            }
+            if (pagination.hasNextPage) {
+                sleep: 2;
+                pagination.nextPage();
             }
         });
 }
@@ -231,4 +238,8 @@ function writeDB() {
 $(document).ready(function () {
     $('.toast').toast('show');
     $('[data-toggle="popover"]').popover();
+    $('#infoBox').hide();
+});
+$('#close').click(function(){
+    $('#infoBox').hide();
 });
