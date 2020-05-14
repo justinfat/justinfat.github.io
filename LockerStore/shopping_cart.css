@@ -28,7 +28,7 @@
 .shop_pic{
   position:relative;
 }
-/*.item1 {
+.item1 {
   grid-area: myArea;
 }
 
@@ -45,4 +45,4 @@
 
 .grid-container > div {
   text-align: left;
-}*/
+}
