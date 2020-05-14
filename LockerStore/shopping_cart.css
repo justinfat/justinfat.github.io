@@ -25,6 +25,9 @@
   font-size:10px;
   text-align: left;
 }
+.shop_pic{
+  position:relative;
+}
 /*.item1 {
   grid-area: myArea;
 }
