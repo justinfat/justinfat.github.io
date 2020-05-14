@@ -1,0 +1,209 @@
+* {
+    font-family: "Century Gothic";
+    user-select: none;
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+html, body, #map-canvas { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+}
+::placeholder {
+    color:#2C50A1;
+    font-weight: 500;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 1.1vw;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.btn-square {
+    border-radius: 0;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+#map-canvas {
+    z-index: 0;
+}
+.on-map {
+    z-index: 1;
+}
+#onMap_top {
+    position: absolute;
+    top: 0;
+}
+#searchdBox {
+    position: relative;
+    
+}
+#sb_outer {
+    position: absolute;
+    width: 26vw;
+    z-index: -1;
+}
+#menu_btn {
+    position: absolute;
+    padding: 0;
+    width: 1.15vw;
+    top: 50%;
+    left: 2.5%;
+    border: 0;
+}
+#keywordBlank{
+    border-width: 0.18rem;
+    border-color: #2C50A1;
+    border-radius: 0.6rem;
+    width: 26vw;
+    padding: 2% 2% 2% 15%;
+    z-index: 0;
+}
+#search_btn {
+    position: absolute;
+    padding: 0;
+    width: 3vw;
+    top: 30%;
+    left: 23.35%;
+    border: 0;
+}
+#dropDown_btn {
+    position: absolute;
+    padding: 0;
+    width: 2.1vw;
+    top: 110%;
+    left: 2.02%;
+    border: 0;
+}
+#dropDown_txt {
+    color: white;
+    font-size: 0.98rem;
+    position: absolute;
+    top: 114%;
+    left: 5.1%;
+    font-weight: bold;
+}
+#square {
+    width: 1.5vw;
+    margin-top: 0.85%;
+    margin-right: 1.1%;
+}
+#square_img{
+    width: 100%;
+}
+#sign_onMap {
+    width: 6.5vw;
+    margin-top: 4%;
+}
+#onMap_mid {
+    position: absolute;
+    top: 40%;
+}
+#freq {
+    padding: 0;
+    margin: 6% 0;
+    width: 2.1vw;
+}
+#like {
+    padding: 0;
+    margin: 6% 0;
+    width: 2.1vw;
+}
+#group {
+    padding: 0;
+    margin: 6% 0;
+    width: 2.1vw;
+}
+#onMap_bottom {
+    position: absolute;
+    bottom: 0;
+}
+#onMap_bottom_left {
+    position: relative;
+}
+#infoBox {
+    position: absolute;
+    top: 4%;
+    left: 37.7%;
+}
+#ib_outer {
+    width: 27vw;
+}
+#heart {
+    padding: 0;
+    position: absolute;
+    top: 37%;
+    left: 6.5%;
+    width: 2vw;
+}
+#info_t1{
+    position: absolute;
+    top: 15%;
+    left: 19.5%;
+    font-size: 1.05rem;
+    color: #2C50A1;
+    font-weight: bold;
+}
+#info_t2 {
+    position: absolute;
+    top: 48%;
+    left: 19.5%;
+    font-size: 0.8rem;
+}
+#info_t3 {
+    font-family: "Lane distance";
+    position: absolute;
+    top: 65%;
+    left: 19.5%;
+    font-size: 0.8rem;
+}
+#close {
+    padding: 0;
+    position: absolute;
+    top: 10.7%;
+    right: 2.1%;
+    width: 0.75vw;
+}
+#goto {
+    padding: 0;
+    position: absolute;
+    top: 32%;
+    right: 7.8%;
+    width: 2.3vw;
+}
+#locate{
+    padding: 0;
+    width: 2.05vw;
+}
+#zoom {
+    position: relative;
+}
+#zoom_rec {
+    width: 2.05vw;
+}
+#zoom_in{
+    padding: 0;
+    position: absolute;
+    top: 16%;
+    left: 31%;
+    width: 0.83vw;
+}
+#zoom_out {
+    padding: 0;
+    position: absolute;
+    top: 70%;
+    left: 31%;
+    width: 0.83vw;
+}
+input {
+    font-size: 1rem;
+    padding: 2% 2% 2% 10%;
+    width: 34.5vw;
+    line-height: 1.8rem;
+    border: 2px solid #ccc;
+    outline: none;
+}
