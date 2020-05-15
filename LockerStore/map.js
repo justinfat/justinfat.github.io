@@ -2,6 +2,9 @@ var map, marker, lat, lng;
 var pos_marker = './public/images/a1/a1-08.svg';
 var locker_marker = './public/images/a1/a1-31前.svg'
 var isLocate = false;
+var sorter_state = 1;
+var page = 1;
+var max_page = 6;
 var styles = {
     default: null,
     hide: [ // Hide stores and bus stations in the map
@@ -249,16 +252,114 @@ function getLockerPos(center, query) {
         });
 }
 function zoomIn() {
-    map.setZoom(map.getZoom()+1)
+    map.setZoom(map.getZoom() + 1)
 }
 function zoomOut() {
-    map.setZoom(map.getZoom()-1)
+    map.setZoom(map.getZoom() - 1)
+}
+function changeSorter(orig, choose) {
+    $('.sorter img:nth-child(' + orig + ')').removeClass('disabled');
+    $('.sorter img:nth-child(' + choose + ')').addClass('disabled');
+    $('.sorter img:nth-child(' + orig + ')').attr('src', './public/images/a2改/enabled_' + orig + '.svg');
+    $('.sorter img:nth-child(' + choose + ')').attr('src', './public/images/a2改/disabled_' + choose + '.svg');
+    $('#sorter_left').attr('src', './public/images/a2改/enabled_' + choose + '.svg');
+    $('#usedSorter').attr('src', './public/images/a2改/enabled_' + choose + '.svg');
+    if (choose == 3) {
+        console.log('3');
+        $('#sorter_left').css('width', '0.73vw');
+        $('#usedSorter').css('width', '0.73vw');
+        $('#sorter_left').css('left', '1.45vw');
+        $('#usedSorter').css('left', '1.36vw');
+    }
+    else {
+        $('#sorter_left').css('width', '1.53vw');
+        $('#usedSorter').css('width', '1.52vw');
+        $('#sorter_left').css('left', '1vw');
+        $('#usedSorter').css('left', '0.94vw');
+    }
+    sorter_state = choose;
 }
 $(document).ready(function () {
     $('.toast').toast('show');
     $('[data-toggle="popover"]').popover();
     $('#infoBox').hide();
+    $('#result_card').hide();
+    $('.sorterBox').hide();
+    $('.sorter img:nth-child(' + sorter_state + ')').addClass('disabled');
+    $('#sorter_left').attr('src', './public/images/a2改/enabled_' + sorter_state + '.svg');
+    $('#usedSorter').attr('src', './public/images/a2改/enabled_' + sorter_state + '.svg');
 });
 $('#close').click(function () {
     $('#infoBox').hide();
+});
+$('#search_btn').click(function () {
+    $('#dropDown_btn').hide();
+    $('#dropDown_txt').hide();
+    $('#result_card').show();
+    $('.sorterBox_before').show();
+    $('#search_btn').attr("src", "./public/images/a2/a2-05.svg");
+    $('#keywordBlank').css('border-color', '#ed9714');
+    $('#menu_btn').removeClass('menuBtn_before');
+    $('#menu_btn').attr("src", "./public/images/a2/a2-07.svg");
+    $('#menu_btn').addClass('menuBtn_after');
+    $('#maxPage').val(max_page);
+});
+$("#keywordBlank").focus(function () {
+    $(this).val('# ');
+});
+$('#keywordBlank').keyup(function (e) {
+    if (e.keyCode == 32) { // user has pressed space
+        $(this).val($(this).val() + '# ');
+    }
+});
+$('#more_btn').click(function () {
+    $('.sorterBox_before').hide();
+    $('.sorterBox_after').show();
+});
+$('.sorter').children().click(function () {
+    changeSorter(sorter_state, $(this).index() + 1);
+    $('.sorterBox_before').show();
+    $('.sorterBox_after').hide();
+});
+$('#prev_btn').click(function () {
+    --page;
+    $('#thisPage').text(page);
+    if (page <= 1) {
+        $('#prev_btn').addClass('disabled');
+        $('#prev_btn').attr('src', './public/images/a2/a2-30.svg');
+    }
+    if ($('#next_btn').hasClass('disabled') && page < max_page) {
+        $('#next_btn').removeClass('disabled');
+        $('#next_btn').attr('src', './public/images/a2/a2-28.svg');
+    }
+});
+$('#next_btn').click(function () {
+    ++page;
+    $('#thisPage').text(page);
+    if (page >= max_page) {
+        $('#next_btn').addClass('disabled');
+        $('#next_btn').attr('src', './public/images/a2/a2-29.svg');
+    }
+    if ($('#prev_btn').hasClass('disabled') && page > 1) {
+        $('#prev_btn').removeClass('disabled');
+        $('#prev_btn').attr('src', './public/images/a2/a2-27.svg');
+    }
+});
+$('#fold_btn').click(function () {
+    if ($(this).hasClass('in')) {
+        $('.onMap_left').animate({ left: '-26vw' }, 200);
+        $('.sorterBox').animate({ left: '-26vw' }, 200);
+        $('#searchBox').css('visibility', 'hidden');
+        $(this).attr('src', './public/images/a2/a2-40.svg');
+        $(this).removeClass('in');
+    }
+    else {
+        $('.onMap_left').animate({ left: '0' }, 200);
+        $('.sorterBox').animate({ left: '1.1vw' }, 200);
+        setTimeout(function () {
+            $('#searchBox').css('visibility', 'visible')
+        }, 120);
+        $(this).attr('src', './public/images/a2/a2-04.svg');
+        $(this).addClass('in');
+    }
 });
