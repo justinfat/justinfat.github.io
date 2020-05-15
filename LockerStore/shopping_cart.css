@@ -49,8 +49,6 @@
 
 .main-menu { color:#FFFFFF; background-color:#2C50A1; padding:5px; margin:0px; cursor:pointer; display:inline-block; } /* 主選單的樣式 */
 .main-menu:hover { background-color:#0000FF; }
-.sub-menu { color:#0000FF; background-color:#2C50A1; margin:5px -5px; padding:0px; list-style-type:none; position:absolute; } /* 下拉清單的樣式 */
-.sub-menu li { padding: 3px 5px; text-align:left; } /* 下拉清單每一列的樣式 */
-.sub-menu li:hover { color:#FFFFFF; background-color:#2C50A1; }
-.sub-menu a { text-align:left; display:block; text-decoration:none; color:#0000FF; }
-.sub-menu a:hover { color:#FFFFFF; background-color:#2C50A1; text-decoration:none; }
+.sub-menu { color:#FFFFFF; background-color:#2C50A1; margin:5px -5px; padding:0px; list-style-type:none; position:absolute; } /* 下拉清單的樣式 */
+.sub-menu li { padding: 3px 5px; text-align:left; width:50%;} /* 下拉清單每一列的樣式 */
+/*.sub-menu li:hover { color:#FFFFFF; background-color:#2C50A1; }*/
