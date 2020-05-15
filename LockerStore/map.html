@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Map</title>
+  <title>LockerStore</title>
   <link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg" />
   <script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -19,10 +19,25 @@
         <img id="sb_outer" src="public/images/a1/a1-05.svg" alt="a1-05">
         <img class="btn btn-square menuBtn_before" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
         <input type="search" id="keywordBlank" name="keyword" placeholder="# What do you want today :)">
-        <img class="btn btn-square" id="search_btn" src="public/images/a1/a1-02.svg" alt="a1-02"
-          onclick="getLockerPos()">
-        <img class="btn btn-square" id="dropDown_btn" src="public/images/a1/a1-06.svg" alt="a1-06">
-        <p id="dropDown_txt">Explore your nearby LOCKERs</p>
+        <img class="btn btn-square" id="clear_btn" src="public/images/a1/a1-21.svg" alt="a1-21">
+        <img class="btn btn-square" id="search_btn" src="public/images/a1/a1-02.svg" alt="a1-02">
+        <img class="btn btn-square explore_btn" id="dropDown_btn" src="public/images/a1/a1-06.svg" alt="a1-06">
+        <a class="explore_btn" id="dropDown_txt">
+          Explore your nearby LOCKERs
+        </a>
+      </div>
+      <a class="on-map" id="square" href="#" title="Header" data-toggle="popover" data-placement="bottom"
+        data-content="Content">
+        <img id="square_img" src="public/images/a1/a1-09.svg" alt="a1-09">
+      </a>
+      <a class="on-map" href="./sign_up.html">
+        <img id="sign_onMap" src="public/images/a1/a1-10.svg" alt="a1-10">
+      </a>
+    </div>
+  </div>
+  <div class="container-fluid onMap_left">
+    <div class="card square" id="result_card">
+      <div class="card_top">
         <div class="sorterBox_before sorterBox">
           <img id="usedSorter" src="public/images/a2改/enabled_1.svg" alt="used">
           <img class="btn btn-square" id="more_btn" src="public/images/a2/a2-11.svg" alt="a2-11">
@@ -38,20 +53,9 @@
           </div>
         </div>
       </div>
-      <a class="on-map" id="square" href="#" title="Header" data-toggle="popover" data-placement="bottom"
-        data-content="Content">
-        <img id="square_img" src="public/images/a1/a1-09.svg" alt="a1-09">
-      </a>
-      <a class="on-map" href="./sign_up.html">
-        <img id="sign_onMap" src="public/images/a1/a1-10.svg" alt="a1-10">
-      </a>
-    </div>
-  </div>
-  <div class="container-fluid onMap_left">
-    <div class="card square" id="result_card">
       <div class="card-body scrollbar list-group">
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -80,7 +84,7 @@
           </div>
         </button>
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -109,7 +113,7 @@
           </div>
         </button>
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -138,7 +142,7 @@
           </div>
         </button>
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -167,7 +171,7 @@
           </div>
         </button>
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -196,7 +200,7 @@
           </div>
         </button>
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -225,7 +229,7 @@
           </div>
         </button>
         <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex content">
+          <div class="d-flex result_content">
             <div class="result_left">
               <p class="result_name">Name</p>
               <div class="d-flex starBar">
@@ -266,26 +270,83 @@
           <img class="btn btn-square page_btn disabled" id="prev_btn" src="public/images/a2/a2-30.svg" alt="a2-30">
           <img class="btn btn-square page_btn" id="next_btn" src="public/images/a2/a2-28.svg" alt="a2-28">
         </div>
-        <img class="btn btn-square in" id="fold_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
+        <img class="btn btn-square in fold_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
       </div>
-      <!--
-      <div class="card-body scrollbar d-flex flex-column flex-shrink-0">
-        <div class="result"> 
-        </div>
-        <div class="result"> 
-        </div>
-        <div class="result"> 
-        </div>
-        <div class="result"> 
-        </div>
-        <div class="result"> 
-        </div>
-        <div class="result"> 
-        </div>
-        <div class="result"> 
+    </div>
+
+
+
+    <div class="card square" id="explore_card">
+      <div class="card_top">
+      </div>
+      <div class="d-flex flex-column on-card">
+        <div class="collapse" id="explore_content">
+          <button type="button" class="list-group-item list-group-item-action rounded-0">
+            <div class="d-flex align-items-start">
+              <img class="explore icon" src="public/images/a3/a3-11.svg" alt="a3-11">
+              <div class="explore txt mr-auto">
+                <p class="explore title">Home</p>
+                <p class="explore subtitle">Set location</p>
+              </div>
+              <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-16.svg"
+                alt="a3-16">
+            </div>
+          </button>
+          <button type="button" class="list-group-item list-group-item-action rounded-0">
+            <div class="d-flex align-items-start">
+              <img class="explore icon" src="public/images/a3/a3-06.svg" alt="a3-06">
+              <div class="explore txt mr-auto">
+                <p class="explore title">Work</p>
+                <p class="explore subtitle">Set location</p>
+              </div>
+              <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-16.svg"
+                alt="a3-16">
+            </div>
+          </button>
+          <div class="list-group-item rounded-0 recommend">
+            <div class="d-flex align-items-start">
+              <img class="explore icon" src="public/images/a3/a3-20.svg" alt="a3-20">
+              <div class="explore txt mr-auto">
+                <p class="explore title">Promotions</p>
+                <p class="explore subtitle dark">Happy Mother's Day !</p>
+              </div>
+              <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-23.svg"
+                alt="a3-23">
+            </div>
+            <div class="d-flex align-items-start promotion detail">
+              <div class="tag_container">
+                <span class="explore tag"># FLOWER </span>
+                <span class="explore tag"># Carnation </span>
+                <span class="explore tag"># Bag </span>
+                <span class="explore tag"># cosmetic </span>
+                <span class="explore tag"># Hand cream </span>
+                <span class="explore tag"># hand-made Card </span>
+                <span class="explore tag"># Cake </span>
+              </div>
+              <img class="btn btn-square explore arrow align-self-end" src="public/images/a3/a3-25.svg" alt="a3-25">
+            </div>
+          </div>
+          <div class="list-group-item rounded-0 recommend">
+            <div class="d-flex align-items-start">
+              <img class="explore icon" src="public/images/a3/a3-28.svg" alt="a3-28">
+              <div class="explore txt mr-auto">
+                <p class="explore title">Search this area</p>
+                <p class="explore subtitle dark">Maybe something good nearby</p>
+              </div>
+              <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-23.svg"
+                alt="a3-23">
+            </div>
+            <div class="d-flex align-items-start nearby detail justify-content-between">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-31.svg" alt="a3-31">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-32.svg" alt="a3-32">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-33.svg" alt="a3-33">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-34.svg" alt="a3-34">
+            </div>
+          </div>
+          <img class="btn btn-square explore" id="hide_btn" src="public/images/a3/a3-42.svg" alt="a3-42">
         </div>
       </div>
-    -->
+      <img class="btn btn-square in fold_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
     </div>
   </div>
   <div class="container-fluid d-flex justify-content-end layer onMap_mid">

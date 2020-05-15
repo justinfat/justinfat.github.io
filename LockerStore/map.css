@@ -36,6 +36,9 @@ html, body, #map-canvas {
     cursor: not-allowed;
     pointer-events: none;
 }
+a:link {
+    text-decoration: none;
+}
 html {
     scroll-behavior: smooth;
     font-size: 1.1vw;
@@ -89,6 +92,12 @@ img {
     z-index: 0;
     color:#2C50A1;
 }
+#clear_btn {
+    position: absolute;
+    height: 0.7vw;
+    top: 2.1vw;
+    left: 20vw;
+}
 #search_btn {
     position: absolute;
     width: 3vw;
@@ -108,6 +117,11 @@ img {
     top: 114%;
     left: 5.1%;
     font-weight: bold;
+    cursor: pointer;
+}
+.card_top {
+    position: relative;
+    height: 7.9vw;
 }
 .sorterBox_before{
     position: absolute;
@@ -122,7 +136,7 @@ img {
     border-color: #b5b5b6;
     border-radius: 1.6rem;
     background-color: #ffffff;
-    z-index: 1;
+    z-index: 2;
 }
 #usedSorter {
     position: absolute;
@@ -139,6 +153,8 @@ img {
 .sorterBox_after{
     position: absolute;
     top: 4.7vw;
+    left: 1.1vw;
+    z-index: 1;
 }
 #extendSorter {
     height: 2.47vw;
@@ -288,6 +304,11 @@ input {
     top: 0;
     height: 100%;
     width: 25.8vw;
+    margin: 0;
+    padding: 0;
+}
+#result_card {
+    left: -28vw;
 }
 .card {
     top: 0;
@@ -295,12 +316,14 @@ input {
     width: 25.8vw;
     height: 100%;
     border: 0;
+    margin: 0;
+    padding: 0;
 }
 .square {
     border-radius: 0;
 }
 .card-body {
-    margin: 30.5% 0 0 0;
+    margin: 0;
     padding: 0;
 }
 .scrollbar {
@@ -311,7 +334,7 @@ input {
 }
 .result {
     background-color: white;
-    height: 20.5%;
+    height: 21.7%;
     border-style: solid;
     border-color: #e6e7e9;
     border-width: 0.05rem;
@@ -319,7 +342,7 @@ input {
     padding-left: 8.5%;
     position: relative;
 }
-.content {
+.result_content {
     position: absolute;
     top: 6%;
 }
@@ -360,7 +383,7 @@ input {
 }
 .result_pic {
     padding-top: 4%;
-    width: 5.9vw;
+    width: 6.2vw;
 }
 #pageBar {
     width: 25.8vw;
@@ -385,11 +408,78 @@ input {
 .page_btn {
     width: 2.45vw;
 }
-#fold_btn {
+.fold_btn {
     position: absolute;
     top: 0.8vw;
     left: 100%;
     height: 3.3vw;
+}
+#explore_card {
+    position: absolute;
+    top: -100%;
+    background-color: #efefef;
+}
+.explore.icon {
+    width: 10.1%;
+    padding-top: 1.6%;
+}
+.explore.txt {
+    margin-left: 4%;
+}
+.explore.title {
+    font-size: 1.08rem;
+    color: #2C50A1;;
+}
+.explore.subtitle {
+    font-size: 0.77rem;
+    color: #9ea0a0;
+}
+p.explore {
+    margin-bottom: 0;
+}
+.explore.rightBtn {
+    margin-right: 3%;
+    width: 1vw;
+}
+.recommend {
+    margin-top: 3%;
+    padding-bottom: 3%;
+}
+.explore.subtitle.dark {
+    color:#6c6c6c;
+}
+.detail {
+    margin-left: 14.5%;
+    margin-top: 4.7%;
+}
+.promotion.detail {
+    margin-right: 0;
+    margin-bottom: 3%;
+}
+.tag_container {
+    width: 80%;
+    margin-right: 10%;
+    line-height: 1.1rem;
+}
+.explore.tag {
+    font-size: 0.95rem;
+    padding-right: 0.2rem;
+}
+.explore.arrow {
+    margin-right: 2%;
+    width: 1.6vw;
+}
+.nearby.detail {
+    margin-right: 12%;
+}
+.explore.type {
+    width: 3.45vw;
+}
+#hide_btn {
+    width: 6.5vw;
+    position: absolute;
+    bottom: 3.5%;
+    left: 37%;
 }
 @keyframes card_out {
     from {
