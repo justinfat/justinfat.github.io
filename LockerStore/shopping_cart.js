@@ -1,4 +1,4 @@
-ar VisibleMenu = ''; // 記錄目前顯示的子選單的 ID
+var VisibleMenu = ''; // 記錄目前顯示的子選單的 ID
 
 // 顯示或隱藏子選單
 function switchMenu( theMainMenu, theSubMenu, theEvent ){
