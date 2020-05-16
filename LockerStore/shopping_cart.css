@@ -80,3 +80,7 @@
   position:relative;
   margin-left:30%;
 }
+button
+{
+    outline: none;
+}
