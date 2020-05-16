@@ -60,7 +60,7 @@
   border-radius: 10px;
   border-width:3px;
 } 
-.main-menu:hover { background-color:#0000FF; }
+/*.main-menu:hover { background-color:#0000FF; }*/
 .sub-menu { /* 下拉清單的樣式 */
   color:#FFFFFF; 
   background-color:#2C50A1; 
