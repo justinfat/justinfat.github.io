@@ -17,14 +17,16 @@
     <div class="d-flex mt-2 pt-1 ml-3 mr-4 pr-1 ">
       <div class="mr-auto on-map" id="searchBox">
         <img id="sb_outer" src="public/images/a1/a1-05.svg" alt="a1-05">
-        <img class="btn btn-square menuBtn_before" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
+        <img class="btn btn-square menuIcon" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
         <input type="search" id="keywordBlank" name="keyword" placeholder="# What do you want today :)">
         <img class="btn btn-square" id="clear_btn" src="public/images/a1/a1-21.svg" alt="a1-21">
         <img class="btn btn-square" id="search_btn" src="public/images/a1/a1-02.svg" alt="a1-02">
-        <img class="btn btn-square explore_btn" id="dropDown_btn" src="public/images/a1/a1-06.svg" alt="a1-06">
+        <img class="btn btn-square explore_btn dropIcon" id="dropDown_btn" src="public/images/a1/a1-06.svg" alt="a1-06">
         <a class="explore_btn" id="dropDown_txt">
           Explore your nearby LOCKERs
         </a>
+        <img class="btn btn-square" id="save_btn" src="public/images/a3/a3-36.svg" alt="a3-36">
+        <img class="btn btn-square" id="cancel_btn" src="public/images/a3/a3-37.svg" alt="a3-37">
       </div>
       <a class="on-map" id="square" href="#" title="Header" data-toggle="popover" data-placement="bottom"
         data-content="Content">
@@ -270,7 +272,7 @@
           <img class="btn btn-square page_btn disabled" id="prev_btn" src="public/images/a2/a2-30.svg" alt="a2-30">
           <img class="btn btn-square page_btn" id="next_btn" src="public/images/a2/a2-28.svg" alt="a2-28">
         </div>
-        <img class="btn btn-square in fold_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
+        <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
       </div>
     </div>
 
@@ -279,25 +281,25 @@
     <div class="card square" id="explore_card">
       <div class="card_top">
       </div>
-      <div class="d-flex flex-column on-card">
+      <div class="d-flex flex-column on-card scrollbar">
         <div class="collapse" id="explore_content">
-          <button type="button" class="list-group-item list-group-item-action rounded-0">
+          <button type="button" class="list-group-item list-group-item-action rounded-0" id="setHome_btn">
             <div class="d-flex align-items-start">
-              <img class="explore icon" src="public/images/a3/a3-11.svg" alt="a3-11">
+              <img class="explore icon" src="public/images/a3/a3-11.svg" alt="a3-11" id="home">
               <div class="explore txt mr-auto">
                 <p class="explore title">Home</p>
-                <p class="explore subtitle">Set location</p>
+                <p class="explore subtitle" id="homeAddr">Set location</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-16.svg"
                 alt="a3-16">
             </div>
           </button>
-          <button type="button" class="list-group-item list-group-item-action rounded-0">
+          <button type="button" class="list-group-item list-group-item-action rounded-0" id="setWork_btn">
             <div class="d-flex align-items-start">
-              <img class="explore icon" src="public/images/a3/a3-06.svg" alt="a3-06">
+              <img class="explore icon" src="public/images/a3/a3-06.svg" alt="a3-06" id="work">
               <div class="explore txt mr-auto">
                 <p class="explore title">Work</p>
-                <p class="explore subtitle">Set location</p>
+                <p class="explore subtitle" id="workAddr">Set location</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-16.svg"
                 alt="a3-16">
@@ -310,7 +312,7 @@
                 <p class="explore title">Promotions</p>
                 <p class="explore subtitle dark">Happy Mother's Day !</p>
               </div>
-              <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-23.svg"
+              <img class="btn btn-square explore rightBtn align-self-center closeBtn" src="public/images/a3/a3-23.svg"
                 alt="a3-23">
             </div>
             <div class="d-flex align-items-start promotion detail">
@@ -326,27 +328,81 @@
               <img class="btn btn-square explore arrow align-self-end" src="public/images/a3/a3-25.svg" alt="a3-25">
             </div>
           </div>
-          <div class="list-group-item rounded-0 recommend">
+          <div class="list-group-item rounded-0 recommend" id="nearby">
             <div class="d-flex align-items-start">
               <img class="explore icon" src="public/images/a3/a3-28.svg" alt="a3-28">
               <div class="explore txt mr-auto">
                 <p class="explore title">Search this area</p>
                 <p class="explore subtitle dark">Maybe something good nearby</p>
               </div>
-              <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-23.svg"
+              <img class="btn btn-square explore rightBtn align-self-center closeBtn" src="public/images/a3/a3-23.svg"
                 alt="a3-23">
             </div>
             <div class="d-flex align-items-start nearby detail justify-content-between">
-              <img class="btn btn-square explore type" src="public/images/a3/a3-31.svg" alt="a3-31">
-              <img class="btn btn-square explore type" src="public/images/a3/a3-32.svg" alt="a3-32">
-              <img class="btn btn-square explore type" src="public/images/a3/a3-33.svg" alt="a3-33">
-              <img class="btn btn-square explore type" src="public/images/a3/a3-34.svg" alt="a3-34">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-31.svg" alt="a3-31" id="food_btn">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-32.svg" alt="a3-32" id="drinks_btn">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-33.svg" alt="a3-33" id="medical_btn">
+              <img class="btn btn-square explore type" src="public/images/a3/a3-34.svg" alt="a3-34" id="other_btn">
+            </div>
+          </div>
+          <div class="list-group-item rounded-0 recommend collapse" id="type_result">
+            <div class="d-flex align-items-start">
+              <img class="explore icon" id="type_icon" src="public/images/a3/a3-44.svg" alt="a3-44">
+              <div class="explore txt mr-auto">
+                <p class="explore title" id="type_title">Food</p>
+                <p class="explore subtitle dark"># hashtag Ranking chart</p>
+              </div>
+              <img class="btn btn-square explore rightBtn align-self-center closeBtn" src="public/images/a3/a3-23.svg"
+                alt="a3-23">
+            </div>
+            <div class="d-flex flex-row align-items-start rank detail justify-content-between">
+              <div class="d-flex flex-column align-items-start rank_list">
+                <div class="rank_line">
+                  <span class="rank_num">NO.1</span>
+                  <span class="hot_tag"># Fried Chicken</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.2</span>
+                  <span class="hot_tag"># Noodles</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.3</span>
+                  <span class="hot_tag"># Bento</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.4</span>
+                  <span class="hot_tag"># xxx</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.5</span>
+                  <span class="hot_tag"># xxx</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.6</span>
+                  <span class="hot_tag"># xxx</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.7</span>
+                  <span class="hot_tag"># xxx</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.8</span>
+                  <span class="hot_tag"># xxx</span>
+                </div>
+                <div class="rank_line">
+                  <span class="rank_num">NO.9</span>
+                  <span class="hot_tag"># xxx</span>
+                </div>
+              </div>
+              <img class="btn btn-square explore rightBtn align-self-end foldRank_btn" src="public/images/a3/a3-66.svg" alt="a3-66">
             </div>
           </div>
           <img class="btn btn-square explore" id="hide_btn" src="public/images/a3/a3-42.svg" alt="a3-42">
         </div>
       </div>
-      <img class="btn btn-square in fold_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
+      <div class="card_bottom">
+      </div>
+      <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
     </div>
   </div>
   <div class="container-fluid d-flex justify-content-end layer onMap_mid">
@@ -363,7 +419,7 @@
         <img class="btn btn-square" id="heart" src="public/images/a1/a1-18前.svg" alt="a1-18">
         <p id="info_t1"></p>
         <p id="info_t2"></p>
-        <img class="btn btn-square" id="close" src="public/images/a1/a1-21.svg" alt="a1-21">
+        <img class="btn btn-square" id="ib_close" src="public/images/a1/a1-21.svg" alt="a1-21">
         <img class="btn btn-square" id="goto" src="public/images/a1/a1-16前.svg" alt="a1-16">
       </div>
     </div>
