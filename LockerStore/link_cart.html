@@ -43,6 +43,12 @@
 
 }
   </style>
+	
+	<script>
+  $( function() {
+    $( "#dialog" ).dialog();
+  } );
+  </script>
 </head>
 
 <body>
@@ -59,13 +65,10 @@
 document.getElementById("demo").onclick = function() {openwin()};
 </script>
 	<script src='./link_cart.js'></script>
-	<button id="dialog"> jquery</button>
-	<script>
-  $( function() {
-    $( "#dialog" ).dialog();
-  } );
-  </script>
 	
+	<div id="dialog" title="Basic dialog">
+ <a href="https://justinfat.github.io/LockerStore/shopping_cart.html">This is jquery</a>
+</div>
 	
 </body>
 
