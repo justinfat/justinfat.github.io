@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>Shopping Cart</title>
+	<link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg" />
+	<script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+  
+  <style>
+  #MyBlog{
+
+    position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+
+    top: 50%;  /*設置垂直位置*/
+
+    right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+
+    background: #ffffff;  /*背景顏色*/
+
+    padding: 10px 20px;
+
+    border-radius: 10px;  /*圓角*/
+
+    -moz-border-radius: 10px;
+
+    -webkit-border-radius: 10px;
+
+}
+
+#MyBlog:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+
+    right: -10px;
+
+}
+
+#MyBlog #title{
+
+    padding-right: 5px;  /*讓標題與連結中間有空隙*/
+
+}
+  </style>
+</head>
+
+<body>
+	
+	<div id="MyBlog">
+
+<span id="title">部落格</span>
+
+<a target="_blank" href="http://www.dribs-drabs.com/blog">Dribs & Drabs</a>
+
+</div>
+</body>
+
+</html>
