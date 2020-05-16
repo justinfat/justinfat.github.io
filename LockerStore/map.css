@@ -13,6 +13,35 @@ html, body, #map-canvas {
     color:#2C50A1;
     font-weight: 500;
 }
+.grayHint::-webkit-input-placeholder {
+    color: #9f9fa0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0.35rem;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2C50A1;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e6e7e9; 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e6e7e9;  
+}
+.btn.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+a:link {
+    text-decoration: none;
+}
 html {
     scroll-behavior: smooth;
     font-size: 1.1vw;
@@ -23,6 +52,8 @@ img {
 }
 .btn-square {
     border-radius: 0;
+    padding: 0;
+    border: 0;
 }
 .container-fluid {
     margin: 0;
@@ -34,58 +65,159 @@ img {
 .on-map {
     z-index: 1;
 }
-#onMap_top {
+.onMap_top {
     position: absolute;
     top: 0;
 }
-#searchdBox {
+#searchBox {
     position: relative;
-    
 }
 #sb_outer {
     position: absolute;
-    width: 26vw;
+    width: 24vw;
     z-index: -1;
 }
-#menu_btn {
+.menuIcon{
     position: absolute;
-    padding: 0;
     width: 1.15vw;
-    top: 50%;
-    left: 2.5%;
-    border: 0;
+    top: 39%;
+    left: 5%;
+}
+.logoIcon {
+    position: absolute;
+    width: 0.88vw;
+    top: 20%;
+    left: 6%;
+}
+.locationIcon {
+    position: absolute;
+    width: 1.1vw;
+    top: 26%;
+    left: 5%;
 }
 #keywordBlank{
-    border-width: 0.18rem;
+    border-width: 0.17rem;
     border-color: #2C50A1;
     border-radius: 0.6rem;
-    width: 26vw;
+    width: 24vw;
     padding: 2% 2% 2% 15%;
     z-index: 0;
+    color:#2C50A1;
+}
+#clear_btn {
+    position: absolute;
+    height: 0.8vw;
+    top: 36%;
+    right: 17%;
 }
 #search_btn {
     position: absolute;
-    padding: 0;
     width: 3vw;
-    top: 30%;
-    left: 23.35%;
-    border: 0;
+    top: 11%;
+    right: 1.5%;
 }
-#dropDown_btn {
+.dropIcon {
     position: absolute;
-    padding: 0;
     width: 2.1vw;
-    top: 110%;
-    left: 2.02%;
-    border: 0;
+    top: 105%;
+    left: 3.2%;
+}
+.homeIcon {
+    position: absolute;
+    width: 1.1vw;
+    top: 120%;
+    left: 5.2%;
 }
 #dropDown_txt {
     color: white;
     font-size: 0.98rem;
     position: absolute;
     top: 114%;
-    left: 5.1%;
+    left: 16%;
     font-weight: bold;
+    cursor: pointer;
+}
+#save_btn {
+    position: absolute;
+    width: 2.5vw;
+    top: 126%;
+    right: 25%;
+}
+#cancel_btn {
+    position: absolute;
+    width: 4vw;
+    top: 115%;
+    right: 6%;
+}
+.card_top {
+    position: relative;
+    min-height: 7.9vw;
+}
+.sorterBox_before{
+    position: absolute;
+    top: 4.7vw;
+    left: 1.1vw;
+    margin: 0;
+    padding: 0;
+    width: 4.9vw;
+    height: 2.47vw;
+    border-style: solid;
+    border-width: 0.07rem;
+    border-color: #b5b5b6;
+    border-radius: 1.6rem;
+    background-color: #ffffff;
+    z-index: 2;
+}
+#usedSorter {
+    position: absolute;
+    top: 0.5vw;
+    left: 0.94vw;
+    width: 1.52vw;
+}
+#more_btn {
+    position: absolute;
+    width: 0.63vw;
+    top: 27.7%;
+    left: 68.4%;
+}
+.sorterBox_after{
+    position: absolute;
+    top: 4.7vw;
+    left: 1.1vw;
+    z-index: 1;
+}
+#extendSorter {
+    height: 2.47vw;
+}
+#sorter_left {
+    position: absolute;
+    top: 0.58vw;
+    left: 1vw;
+    width: 1.53vw;
+}
+#sorter_star {
+    position: absolute;
+    top: 0.58vw;
+    left: 4.6vw;
+    width: 1.53vw;
+}
+#sorter_heart {
+    position: absolute;
+    top: 0.58vw;
+    left: 7vw;
+    width: 1.53vw;
+}
+#sorter_money {
+    position: absolute;
+    top: 0.58vw;
+    left: 9.65vw;
+    width: 0.73vw;
+}
+#sorter_group {
+    position: absolute;
+    top: 0.58vw;
+    left: 11.5vw;
+    width: 1.53vw;
 }
 #square {
     width: 1.5vw;
@@ -99,30 +231,27 @@ img {
     width: 6.5vw;
     margin-top: 4%;
 }
-#onMap_mid {
+.onMap_mid {
     position: absolute;
-    top: 40%;
+    top: 40vh;
 }
 #freq {
-    padding: 0;
     margin: 6% 0;
     width: 2.1vw;
 }
 #like {
-    padding: 0;
     margin: 6% 0;
     width: 2.1vw;
 }
 #group {
-    padding: 0;
     margin: 6% 0;
     width: 2.1vw;
 }
-#onMap_bottom {
+.onMap_bottom {
     position: absolute;
     bottom: 0;
 }
-#onMap_bottom_left {
+.onMap_bottom_left {
     position: relative;
 }
 #infoBox {
@@ -134,7 +263,6 @@ img {
     width: 27vw;
 }
 #heart {
-    padding: 0;
     position: absolute;
     top: 37%;
     left: 6.5%;
@@ -147,36 +275,32 @@ img {
     font-size: 1.05rem;
     color: #2C50A1;
     font-weight: bold;
+    width: 15.4vw;
+    margin: 0;
 }
 #info_t2 {
     position: absolute;
-    top: 48%;
+    top: 50%;
     left: 19.5%;
     font-size: 0.8rem;
+    width: 15.4vw;
+    line-height: 1.12rem;
+    margin: 0;
+    word-wrap: break-word;
 }
-#info_t3 {
-    font-family: "Lane distance";
-    position: absolute;
-    top: 65%;
-    left: 19.5%;
-    font-size: 0.8rem;
-}
-#close {
-    padding: 0;
+#ib_close {
     position: absolute;
     top: 10.7%;
     right: 2.1%;
     width: 0.75vw;
 }
 #goto {
-    padding: 0;
     position: absolute;
     top: 32%;
     right: 7.8%;
     width: 2.3vw;
 }
 #locate{
-    padding: 0;
     width: 2.05vw;
 }
 #zoom {
@@ -186,14 +310,12 @@ img {
     width: 2.05vw;
 }
 #zoom_in{
-    padding: 0;
     position: absolute;
     top: 16%;
     left: 31%;
     width: 0.83vw;
 }
 #zoom_out {
-    padding: 0;
     position: absolute;
     top: 70%;
     left: 31%;
@@ -206,4 +328,209 @@ input {
     line-height: 1.8rem;
     border: 2px solid #ccc;
     outline: none;
+}
+.onMap_left {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 25.8vw;
+    margin: 0;
+    padding: 0;
+}
+#result_card {
+    left: -28vw;
+}
+.card {
+    top: 0;
+    background-color: #2C50A1;
+    width: 25.8vw;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.square {
+    border-radius: 0;
+}
+.card-body {
+    margin: 0;
+    padding: 0;
+}
+.scrollbar {
+    overflow-y: auto;
+}
+.on-card {
+    z-index: 2;
+}
+.result {
+    background-color: white;
+    height: 21.7%;
+    border-style: solid;
+    border-color: #e6e7e9;
+    border-width: 0.05rem;
+    flex-shrink: 0;
+    padding-left: 8.5%;
+    position: relative;
+}
+.result_content {
+    position: absolute;
+    top: 6%;
+}
+.result_left {
+    width: 66%;
+    height: 100%;
+}
+.result_name {
+    font-size: 1rem;
+    margin-bottom: 3%;
+    color: #2C50A1;;
+}
+.starBar {
+    margin-bottom: 3%;
+}
+.star {
+    width: 0.9vw;
+    margin-right: 0.1rem;
+}
+.moneyBar {
+    margin-bottom: 3.5%;
+}
+.money {
+    width: 0.45vw;
+
+}
+.tag {
+    font-size: 0.8rem;
+    color: #5c5c5c;
+}
+.result_addr {
+    font-size: 0.8rem;
+    line-height: 1.05rem;
+    color: #5c5c5c;
+}
+.result_right {
+    padding-left: 3.5%;
+}
+.result_pic {
+    padding-top: 4%;
+    width: 6.2vw;
+}
+#pageBar {
+    width: 25.8vw;
+}
+#pb_outer {
+    width: 25.4vw;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.pb_txt {
+    color: white;
+    font-size: 0.78rem;
+}
+#pageBtn_group {
+    position: absolute;
+    bottom: 0;
+    right: 1.6vw;
+}
+.page_btn {
+    width: 2.45vw;
+}
+.foldCard_btn {
+    position: absolute;
+    top: 0.8vw;
+    left: 100%;
+    height: 3.3vw;
+}
+#explore_card {
+    position: absolute;
+    top: -100%;
+    background-color: #efefef;
+}
+.explore.icon {
+    width: 10.1%;
+    padding-top: 1.6%;
+}
+.explore.txt {
+    margin-left: 4%;
+}
+.explore.title {
+    font-size: 1.08rem;
+    color: #2C50A1;;
+}
+.explore.subtitle {
+    font-size: 0.77rem;
+    color: #9f9fa0;
+}
+p.explore {
+    margin-bottom: 0;
+}
+.explore.rightBtn {
+    margin-right: 3%;
+    width: 1vw;
+}
+.recommend {
+    margin-top: 3%;
+    padding-bottom: 3%;
+}
+.explore.subtitle.dark {
+    color:#595757;
+}
+.detail {
+    margin-left: 14.5%;
+    margin-top: 4.7%;
+}
+.promotion.detail {
+    margin-right: 0;
+    margin-bottom: 3%;
+}
+.tag_container {
+    width: 80%;
+    margin-right: 10%;
+    line-height: 1.1rem;
+}
+.explore.tag {
+    font-size: 1rem;
+    padding-right: 0.2rem;
+}
+.explore.arrow {
+    margin-right: 2%;
+    width: 1.6vw;
+}
+.nearby.detail {
+    margin-right: 12%;
+}
+.explore.type {
+    width: 3.45vw;
+}
+#hide_btn {
+    width: 6.5vw;
+    position: absolute;
+    bottom: 3.5%;
+    left: 37%;
+}
+.rank.detail {
+    margin-right: 0;
+    margin-bottom: 1%;
+}
+.rank_list {
+    width: 88%;
+}
+.rank_line {
+    width: 100%;
+}
+.rank_num {
+    color: #5c5c5c;
+}
+.hot_tag {
+    color: #5c5c5c;
+    padding-left: 8%;
+}
+.card_bottom {
+    height: 17%;
+}
+.foldRank_btn {
+    width: 1vw;
 }
