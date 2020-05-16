@@ -5,6 +5,3 @@ function openwin() {
     //寫成一行
    
     }
-$( function() {
-    $( "#dialog" ).dialog();
-  } );
