@@ -4,8 +4,8 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-
+    <link rel="stylesheet" href="order.css">
+    <script src="order.js"></script>
 
 </head>
 
@@ -20,13 +20,26 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img class="modal-title" id="exampleModalLongTitle" src="../LockerStore/public/images/a6/a6-06.svg"></img>
+                    <img class="modal-title" id="exampleModalLongTitle" src="public/images/a6/a6-06.svg"></img>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <img src="../LockerStore/public/images/a6/a6-08.svg">
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <form class="form-inline order-navbar">
+                        <button class="btn order-nav-lbtn" type="button" onclick="showLeft()">Undelivered</button>
+                        <button class="btn order-nav-mbtn" type="button" onclick="showMid()">Unacclaimed</button>
+                        <button class="btn order-nav-rbtn" type="button" onclick="showRight()">Completed</button>
+                    </form>
+                    <div class="order-content order-content-left">
+                        123123
+                    </div>
+                    <div class="order-content order-content-mid">
+
+                    </div>
+                    <div class="order-content order-content-right">
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

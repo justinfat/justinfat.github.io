@@ -1,0 +1,75 @@
+
+.modal-content
+{
+    width: 40vw;
+}
+
+.order-navbar
+{
+    width: 100%;
+}
+
+.btn {
+    color: #2C50A1;
+    font-family: "Century Gothic";
+    font-weight: bold;
+    font-size: 14pt;
+    outline: 0;
+}
+
+button
+{
+    outline: none;
+}
+
+.order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn 
+{
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.order-nav-lbtn {
+    width: 33.334%;
+    background-color: #F39700;
+    border: hidden;
+}
+
+.order-nav-mbtn {
+    width: 33.333%;
+    background-color: #E8C41C;
+    border: hidden;
+}
+
+.order-nav-rbtn {
+    width: 33.333%;
+    background-color: #C9C9CA;
+    border: hidden;
+}
+
+.order-content
+{
+    width: 100%;
+    height: 10vh;
+    border: 5px solid;
+}
+
+.order-content-left {
+    background-color: #F39700;
+    border-color: #F39700;
+    display: none;
+}
+.order-content-mid {
+    background-color: #E8C41C;
+    border-color: #E8C41C;
+    display: block;
+}
+.order-content-right {
+    background-color: #C9C9CA;
+    border-color: #C9C9CA;
+    display: none;
+}
+
+.modal-body
+{
+    padding: 0;
+}
