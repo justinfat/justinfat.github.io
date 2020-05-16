@@ -64,3 +64,7 @@
 .sub-menu { color:#FFFFFF; background-color:#2C50A1; margin-left:25%; list-style-type:none; position:absolute; } /* 下拉清單的樣式 */
 .sub-menu li { padding: 3px 5px; text-align:left; width:50%;} /* 下拉清單每一列的樣式 */
 /*.sub-menu li:hover { color:#FFFFFF; background-color:#2C50A1; }*/
+.more-info{
+  position:relative;
+  margin-left:25%;
+}
