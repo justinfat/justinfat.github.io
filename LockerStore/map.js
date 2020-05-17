@@ -3,11 +3,12 @@ var pos_marker = './public/images/a1/a1-08.svg';
 var locker_marker = './public/images/a1/a1-31前.svg'
 var isLocate = false;
 var sorter_state = 1;
-var card_state = 0; // 1:result_card, 2:explore_card 
+var card_state = 0; // 1:result_card, 2:explore_card, 3:shop_card
 var input_state = 1;
 var page = 1;
 var max_page = 6;
 var otherExpand = false;
+var shopTab_state = 1;
 var styles = {
     default: null,
     hide: [ // Hide stores and bus stations in the map
@@ -282,6 +283,10 @@ function changeSorter(orig, choose) {
     sorter_state = choose;
 }
 function clear_result_card() {
+    card_state = 1;
+    $('#dropDown_btn').attr('src', './public/images/a1/a1-06.svg');
+    $('#dropDown_btn').removeClass('backBtn');
+    $('#dropDown_btn').addClass('dropIcon');
     $('#dropDown_btn').show();
     $('#dropDown_txt').show();
     $('#result_card').animate({ left: '-28vw' }, 200);
@@ -290,8 +295,9 @@ function clear_result_card() {
     $('#menu_btn').removeClass('logoIcon');
     $('#menu_btn').attr("src", "./public/images/a1/a1-04.svg");
     $('#menu_btn').addClass('menuIcon');
+    $('#shop_card').hide();
+    $('')
 }
-
 
 $(document).ready(function () {
     $('.toast').toast('show');
@@ -304,27 +310,38 @@ $(document).ready(function () {
     $('#usedSorter').attr('src', './public/images/a2改/enabled_' + sorter_state + '.svg');
     $('#save_btn').hide();
     $('#cancel_btn').hide();
+    $('#shop_card').hide();
+    $('#shopTab_group').hide();
+    $('#shareBox').hide();
 });
-$('#ib_close').click(function () {
+$('#infoBox_close').click(function () {
     $('#infoBox').hide();
 });
 $('#search_btn').click(function () {
-    $('#explore_content').collapse('hide');
+    console.log(card_state);
+    if (card_state == 3) {
+        $('#shop_card').hide();
+        $('#result_card').show();
+        $('#dropDown_btn').hide();
+    }
+    else {
+        $('#explore_content').collapse('hide');
+        $('#dropDown_btn').hide();
+        $('#dropDown_txt').hide();
+        $('#result_card').animate({ left: '0' }, 200);
+        setTimeout(function () {
+            $('#searchBox').css('visibility', 'visible')
+        }, 120);
+        $('.sorterBox_before').show();
+        $('#search_btn').attr("src", "./public/images/a2/a2-05.svg");
+        $('#keywordBlank').css('border-color', '#ed9714');
+        $('#menu_btn').removeClass('menuIcon');
+        $('#menu_btn').attr("src", "./public/images/a2/a2-07.svg");
+        $('#menu_btn').addClass('logoIcon');
+        $('#maxPage').val(max_page);
+        $('#explore_card').css('top', '-100%');
+    }
     card_state = 1;
-    $('#dropDown_btn').hide();
-    $('#dropDown_txt').hide();
-    $('#result_card').animate({ left: '0' }, 200);
-    setTimeout(function () {
-        $('#searchBox').css('visibility', 'visible')
-    }, 120);
-    $('.sorterBox_before').show();
-    $('#search_btn').attr("src", "./public/images/a2/a2-05.svg");
-    $('#keywordBlank').css('border-color', '#ed9714');
-    $('#menu_btn').removeClass('menuIcon');
-    $('#menu_btn').attr("src", "./public/images/a2/a2-07.svg");
-    $('#menu_btn').addClass('logoIcon');
-    $('#maxPage').val(max_page);
-    $('#explore_card').css('top', '-100%');
 });
 $("#keywordBlank").focus(function () {
     if (input_state == 1) {
@@ -398,6 +415,12 @@ $('.foldCard_btn').click(function () {
             $(this).attr('src', './public/images/a2/a2-40.svg');
             $(this).removeClass('in');
         }
+        else if (card_state == 3) {
+            $('#shop_card').animate({ left: '-26vw' }, 200);
+            $('#searchBox').css('visibility', 'hidden');
+            $(this).attr('src', './public/images/a2/a2-40.svg');
+            $(this).removeClass('in');
+        }
     }
     else {
         if (card_state == 1) {
@@ -416,14 +439,30 @@ $('.foldCard_btn').click(function () {
             $(this).attr('src', './public/images/a2/a2-04.svg');
             $(this).addClass('in');
         }
+        else if (card_state == 3) {
+            $('#shop_card').animate({ left: '0' }, 200);
+            setTimeout(function () {
+                $('#searchBox').css('visibility', 'visible')
+            }, 120);
+            $(this).attr('src', './public/images/a2/a2-04.svg');
+            $(this).addClass('in');
+        }
     }
 });
 $('.explore_btn').click(function () {
-    $('#explore_content').collapse('show');
-    card_state = 2;
-    $('#explore_card').css('top', '0');
-    $('.explore_btn').hide();
-    $('#explore_card').show();
+    if (card_state != 3) {
+        $('#explore_content').collapse('show');
+        card_state = 2;
+        $('#explore_card').css('top', '0');
+        $('.explore_btn').hide();
+        $('#explore_card').show();
+    }
+    else {
+        $('#shop_card').hide();
+        $('#result_card').show();
+        $('#dropDown_btn').hide();
+        card_state = 1;
+    }
 });
 $('#explore_content').on('hidden.bs.collapse', function () {
     if (!otherExpand) {
@@ -431,7 +470,6 @@ $('#explore_content').on('hidden.bs.collapse', function () {
             $('.explore_btn').show();
         }
         $('#explore_card').animate({ top: '-100%' }, 200);
-        console.log('detect');
     }
     otherExpand = false;
 });
@@ -554,4 +592,89 @@ $('#medical_btn').click(function () {
 });
 $('#other_btn').click(function () {
 
+});
+$('.likeBtn').click(function () {
+    if ($(this).hasClass('liked')) {
+        console.log('unlike');
+        $(this).attr('src', './public/images/a2/a2-19.svg');
+        $(this).removeClass('liked')
+    }
+    else {
+        console.log('like');
+        $(this).attr('src', './public/images/a2/a2-18.svg');
+        $(this).addClass('liked')
+    }
+});
+$('#result_list div:nth-child(n).result_content').click(function () {
+    card_state = 3;
+    $('#result_card').hide();
+    $('#shop_card').show();
+    $('#dropDown_btn').show();
+    $('#dropDown_txt').show();
+    //$('#result_card').animate({ left: '-28vw' }, 200);
+    $('#search_btn').attr("src", "./public/images/a1/a1-02.svg");
+    $('#keywordBlank').css('border-color', '#2C50A1');
+    $('#menu_btn').removeClass('logoIcon');
+    $('#menu_btn').attr("src", "./public/images/a1/a1-04.svg");
+    $('#menu_btn').addClass('menuIcon');
+    $('#dropDown_btn').attr('src', './public/images/a4/a4-03.svg');
+    $('#dropDown_btn').show();
+    $('#dropDown_btn').addClass('backBtn');
+    $('#dropDown_btn').removeClass('homeIcon');
+    $('#dropDown_txt').hide();
+});
+$('.shopTab_btn').click(function () {
+    if (shopTab_state == 1) {
+        $(this).attr('src', './public/images/a4/a4-44.svg');
+        $('#shopTab_single').hide();
+        $('#shopTab_group').show();
+        $('#shareBox').show();
+        shopTab_state = 2;
+    }
+    else {
+        $(this).attr('src', './public/images/a4/a4-04.svg');
+        $('#shopTab_group').hide();
+        $('#shopTab_single').show();
+        $('#shareBox').hide();
+        sorter_state = 1;
+    }
+});
+$('#shopTab_single div:nth-child(n).shopItem button.shopItem_plus').click(function () {
+    console.log('click');
+    var tmp = $(this).closest('.shopItem').find('p.itemAmount_txt').first();
+    tmp.text((+(tmp.text())) + 1);
+});
+$('#shopTab_single div:nth-child(n).shopItem button.shopItem_minus').click(function () {
+    console.log('click');
+    var tmp = $(this).closest('.shopItem').find('p.itemAmount_txt').first();
+    var val = +(tmp.text());
+    if (val > 0) {
+        tmp.text(val - 1);
+    }
+});
+$('#shopTab_group div:nth-child(n).shopItem button.shopItem_plus').click(function () {
+    console.log('click');
+    var tmp = $(this).closest('.shopItem').find('p.groupAmount_top ').first();
+    tmp.text((+(tmp.text())) + 1);
+});
+$('#shopTab_group div:nth-child(n).shopItem button.shopItem_minus').click(function () {
+    console.log('click');
+    var tmp = $(this).closest('.shopItem').find('p.groupAmount_top ').first();
+    var val = +(tmp.text());
+    if (val > 0) {
+        tmp.text(val - 1);
+    }
+});
+$('#shopTab_single div:nth-child(n).shopItem div.shopItem_bottom').click(function () {
+    tmp =  $(this).parent().parent().next();
+    console.log(tmp);
+    $(this).parent().parent().next().collapse('show');
+});
+$('#shopTab_group div:nth-child(n).shopItem div.shopItem_bottom').click(function () {
+    tmp =  $(this).parent().parent().next();
+    console.log(tmp);
+    $(this).parent().parent().next().collapse('show');
+});
+$('#shareBox_close').click(function () {
+    $('#shareBox').hide();
 });

@@ -2,6 +2,21 @@
     font-family: "Century Gothic";
     user-select: none;
 }
+.color-normal {
+    color: #595757;
+}
+.color-blue {
+    color: #2c50a1;
+}
+.color-yellow {
+    color: #e8c41c;
+}
+.color-white {
+    color: #ffffff;
+}
+.color-orange {
+    color: #eb871b;
+}
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
 html, body, #map-canvas { 
@@ -71,6 +86,7 @@ img {
 }
 #searchBox {
     position: relative;
+    z-index: 3;
 }
 #sb_outer {
     position: absolute;
@@ -102,7 +118,6 @@ img {
     width: 24vw;
     padding: 2% 2% 2% 15%;
     z-index: 0;
-    color:#2C50A1;
 }
 #clear_btn {
     position: absolute;
@@ -137,6 +152,12 @@ img {
     font-weight: bold;
     cursor: pointer;
 }
+.backBtn {
+    position: absolute;
+    top: 120%;
+    left: 5.2%;
+    width: 8vw;
+}
 #save_btn {
     position: absolute;
     width: 2.5vw;
@@ -166,7 +187,7 @@ img {
     border-color: #b5b5b6;
     border-radius: 1.6rem;
     background-color: #ffffff;
-    z-index: 2;
+    z-index: 4;
 }
 #usedSorter {
     position: absolute;
@@ -184,7 +205,7 @@ img {
     position: absolute;
     top: 4.7vw;
     left: 1.1vw;
-    z-index: 1;
+    z-index: 4;
 }
 #extendSorter {
     height: 2.47vw;
@@ -235,15 +256,15 @@ img {
     position: absolute;
     top: 40vh;
 }
-#freq {
+#freq_filter {
     margin: 6% 0;
     width: 2.1vw;
 }
-#like {
+#like_filter {
     margin: 6% 0;
     width: 2.1vw;
 }
-#group {
+#group_filter {
     margin: 6% 0;
     width: 2.1vw;
 }
@@ -256,10 +277,10 @@ img {
 }
 #infoBox {
     position: absolute;
-    top: 4%;
+    bottom: 25%;
     left: 37.7%;
 }
-#ib_outer {
+.ib_outer {
     width: 27vw;
 }
 #heart {
@@ -288,7 +309,7 @@ img {
     margin: 0;
     word-wrap: break-word;
 }
-#ib_close {
+#infoBox_close {
     position: absolute;
     top: 10.7%;
     right: 2.1%;
@@ -364,17 +385,18 @@ input {
 }
 .result {
     background-color: white;
-    height: 21.7%;
+    height: 8.3rem;
     border-style: solid;
     border-color: #e6e7e9;
     border-width: 0.05rem;
     flex-shrink: 0;
-    padding-left: 8.5%;
     position: relative;
+    padding: 0;
 }
 .result_content {
     position: absolute;
-    top: 6%;
+    height: 100%;
+    padding: 2% 29.5% 2% 9%;
 }
 .result_left {
     width: 66%;
@@ -383,7 +405,6 @@ input {
 .result_name {
     font-size: 1rem;
     margin-bottom: 3%;
-    color: #2C50A1;;
 }
 .starBar {
     margin-bottom: 3%;
@@ -400,6 +421,7 @@ input {
 
 }
 .tag {
+    display: inline-flex;
     font-size: 0.8rem;
     color: #5c5c5c;
 }
@@ -409,11 +431,19 @@ input {
     color: #5c5c5c;
 }
 .result_right {
-    padding-left: 3.5%;
+    position: absolute;
+    top: 6%;
+    right: 5%;
 }
 .result_pic {
     padding-top: 4%;
     width: 6.2vw;
+}
+.likeBtn {
+    width: 1.2vw;
+    position: absolute;
+    top: 12%;
+    right: 10%;
 }
 #pageBar {
     width: 25.8vw;
@@ -458,7 +488,6 @@ input {
 }
 .explore.title {
     font-size: 1.08rem;
-    color: #2C50A1;;
 }
 .explore.subtitle {
     font-size: 0.77rem;
@@ -492,6 +521,7 @@ p.explore {
     line-height: 1.1rem;
 }
 .explore.tag {
+    display: inline-flex;
     font-size: 1rem;
     padding-right: 0.2rem;
 }
@@ -533,4 +563,250 @@ p.explore {
 }
 .foldRank_btn {
     width: 1vw;
+}
+.shopImg {
+    position: relative;
+    background-color: #4ca6df;
+    min-height: 14.4rem;
+}
+#shop_card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+}
+.shopInfo {
+    padding: 2.5% 8% 3.5% 8%;
+}
+.shopName {
+    font-size: 1.5rem;
+    margin-bottom: 2%;
+}
+.starNum {
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin-bottom: 3%;
+    margin-left: 3%;
+}
+.commentNum {
+    font-size: 0.78rem;
+    margin-bottom: 3%;
+    margin-left: 3%;
+}
+.shopInfo_left {
+    width: 60%;
+}
+.shopTab_btn {
+    width: 19.5%;
+}
+.shopTag {
+    line-height: 0.9rem;
+}
+.shopContact {
+    padding: 2.5% 32% 2.5% 8%;
+}
+.shopAddr_icon{
+    width: 6%;
+    margin-top: 1.2%;
+}
+.shopAddr_txt{
+    font-size: 0.77rem;
+    margin-left: 3%;
+}
+.shopTel_icon{
+    width: 4%;
+    margin-top: 2%;
+}
+.shopTel_txt{
+    font-size: 0.77rem;
+    margin-left: 3%;
+}
+#shopTab_single {
+    padding: 3.2% 2.5% 15% 2.5%;
+    background-color: #ffffff;
+}
+.shopTab_title {
+    font-size: 1.08rem;
+    padding-left: 6%;
+    padding-bottom: 4%;
+    margin: 0;
+}
+.shopItem {
+    position: relative;
+    margin-bottom: 1.5%;
+}
+.shopItem_outer {
+    width: 100%;
+}
+.shopItem_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.2% 0.2% 1% 0.2%;
+    width: 100%;
+    height: 100%;
+}
+.shopItem_top {
+    position: relative;
+    height: 81%;
+    width: 100%;
+}
+.shopItem_inner {
+    width: 100%;
+}
+.shopItem_detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.shopItem_left {
+    position: relative;
+    height: 100%;
+}
+.shopItem_mid {
+    position: relative;
+    height: 100%;
+    padding: 2% 5%;
+}
+.shopItem_name {
+    font-size: 1rem;
+    line-height: 1.1rem;
+}
+.shopItem_intro {
+    font-size: 0.77rem;
+    line-height: 1rem;
+}
+.shopItem_price {
+    font-size: 1rem;
+}
+.shopItem_control {
+    position: relative;
+    height: 100%;
+    width: 7%;
+}
+.border-blue {
+    border-color: #2c50a1;
+    border-style: solid;
+    border-width: 0.1rem;
+}
+.shopItem_plus {
+    position: relative;
+    height: 50%;
+    background-color: #dcdddd;
+    padding: 20% 20%;  
+}
+.shopItem_minus {
+    position: relative;
+    height: 50%;
+    background-color: #dcdddd;
+    padding: 20% 20%;
+}
+.plusIcon {
+    width: 100%;
+}
+.minusIcon {
+    width: 100%;
+}
+.shopItem_right {
+    position: relative;
+    height: 100%;
+}
+.itemAmount_outer {
+    height: 100%;
+}
+.itemAmount_txt {
+    display: inline-block;
+    position: absolute;
+    top: 23%;
+    left: 0;
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
+}
+.shopItem_bottom {
+    position: relative;
+    width: 100%;
+    padding-top: 1.5%;
+}
+.optionBtn_left {
+    width: 20%;
+}
+.optionBtn_mid {
+    width: 60%;
+}
+.optionBtn_right {
+    margin-right: 4.5%;
+    margin-top: -2.5%;
+    width: 4%;
+}
+#shopCard_bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.addBtn {
+    width: 100%;
+}
+#shopTab_group {
+    padding: 3.2% 2.5% 15% 2.5%;
+    background-color: #2c50a1;
+}
+.border-white {
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 0.05rem;
+}
+.groupAmount_text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.groupAmount_top {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+.groupAmount_bottom {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+.optionContent {
+    position:relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 15%;
+}
+#shareBox {
+    position: absolute;
+    bottom: 25%;
+    left: 37.7%;
+}
+#shareBox_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4.5% 0 3% 6%;
+}
+#shareBox_close {
+    position: absolute;
+    top: 10.7%;
+    right: 2.1%;
+    width: 0.75vw;
+}
+#shareBox_txt {
+    width: 100%;
+}
+#appBar {
+    width: 68%;
+}
+.appIcon {
+    width: 14.2%;
 }

@@ -18,7 +18,8 @@
       <div class="mr-auto on-map" id="searchBox">
         <img id="sb_outer" src="public/images/a1/a1-05.svg" alt="a1-05">
         <img class="btn btn-square menuIcon" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
-        <input type="search" id="keywordBlank" name="keyword" placeholder="# What do you want today :)">
+        <input class="color-blue" type="search" id="keywordBlank" name="keyword"
+          placeholder="# What do you want today :)">
         <img class="btn btn-square" id="clear_btn" src="public/images/a1/a1-21.svg" alt="a1-21">
         <img class="btn btn-square" id="search_btn" src="public/images/a1/a1-02.svg" alt="a1-02">
         <img class="btn btn-square explore_btn dropIcon" id="dropDown_btn" src="public/images/a1/a1-06.svg" alt="a1-06">
@@ -55,210 +56,175 @@
           </div>
         </div>
       </div>
-      <div class="card-body scrollbar list-group">
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
+      <div class="card-body scrollbar list-group" id="result_list">
+        <div class="list-group-item list-group-item-action rounded-0 result on-card">
+          <div class="result_content">
+            <p class="result_name color-blue">Name</p>
+            <div class="d-flex starBar">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
             </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <div class="d-flex moneyBar">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <div class="tag">,</div>
+              <div class="tag">&nbsp;#&nbsp;Drinks</div>
+              <div class="tag">&nbsp;#&nbsp;tea</div>
+              <div class="tag">&nbsp;#&nbsp;Cheap</div>
             </div>
+            <p class="result_addr">
+              701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
+            </p>
           </div>
-        </button>
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
-            </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
-            </div>
+          <div class="result_right">
+            <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
           </div>
-        </button>
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
+        </div>
+        <div class="list-group-item list-group-item-action rounded-0 result on-card">
+          <div class="result_content">
+            <p class="result_name color-blue">Name</p>
+            <div class="d-flex starBar">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
             </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <div class="d-flex moneyBar">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <div class="tag">,</div>
+              <div class="tag">&nbsp;#&nbsp;Drinks</div>
+              <div class="tag">&nbsp;#&nbsp;tea</div>
+              <div class="tag">&nbsp;#&nbsp;Cheap</div>
             </div>
+            <p class="result_addr">
+              701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
+            </p>
           </div>
-        </button>
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
-            </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
-            </div>
+          <div class="result_right">
+            <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
           </div>
-        </button>
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
+        </div>
+        <div class="list-group-item list-group-item-action rounded-0 result on-card">
+          <div class="result_content">
+            <p class="result_name color-blue">Name</p>
+            <div class="d-flex starBar">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
             </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <div class="d-flex moneyBar">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <div class="tag">,</div>
+              <div class="tag">&nbsp;#&nbsp;Drinks</div>
+              <div class="tag">&nbsp;#&nbsp;tea</div>
+              <div class="tag">&nbsp;#&nbsp;Cheap</div>
             </div>
+            <p class="result_addr">
+              701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
+            </p>
           </div>
-        </button>
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
-            </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
-            </div>
+          <div class="result_right">
+            <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
           </div>
-        </button>
-        <button type="button" class="list-group-item list-group-item-action rounded-0 result on-card">
-          <div class="d-flex result_content">
-            <div class="result_left">
-              <p class="result_name">Name</p>
-              <div class="d-flex starBar">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-              </div>
-              <div class="d-flex moneyBar">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
-                <span class="tag">,</span>
-                <span class="tag">&nbsp;#&nbsp;Drinks</span>
-                <span class="tag">&nbsp;#&nbsp;tea</span>
-                <span class="tag">&nbsp;#&nbsp;Cheap</span>
-              </div>
-              <p class="result_addr">
-                701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-              </p>
+        </div>
+        <div class="list-group-item list-group-item-action rounded-0 result on-card">
+          <div class="result_content">
+            <p class="result_name color-blue">Name</p>
+            <div class="d-flex starBar">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
             </div>
-            <div class="result_right">
-              <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <div class="d-flex moneyBar">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <div class="tag">,</div>
+              <div class="tag">&nbsp;#&nbsp;Drinks</div>
+              <div class="tag">&nbsp;#&nbsp;tea</div>
+              <div class="tag">&nbsp;#&nbsp;Cheap</div>
             </div>
+            <p class="result_addr">
+              701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
+            </p>
           </div>
-        </button>
+          <div class="result_right">
+            <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
+          </div>
+        </div>
+        <div class="list-group-item list-group-item-action rounded-0 result on-card">
+          <div class="result_content">
+            <p class="result_name color-blue">Name</p>
+            <div class="d-flex starBar">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+            </div>
+            <div class="d-flex moneyBar">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <div class="tag">,</div>
+              <div class="tag">&nbsp;#&nbsp;Drinks</div>
+              <div class="tag">&nbsp;#&nbsp;tea</div>
+              <div class="tag">&nbsp;#&nbsp;Cheap</div>
+            </div>
+            <p class="result_addr">
+              701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
+            </p>
+          </div>
+          <div class="result_right">
+            <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
+          </div>
+        </div>
+        <div class="list-group-item list-group-item-action rounded-0 result on-card">
+          <div class="result_content">
+            <p class="result_name color-blue">Name</p>
+            <div class="d-flex starBar">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+              <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+            </div>
+            <div class="d-flex moneyBar">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+              <div class="tag">,</div>
+              <div class="tag">&nbsp;#&nbsp;Drinks</div>
+              <div class="tag">&nbsp;#&nbsp;tea</div>
+              <div class="tag">&nbsp;#&nbsp;Cheap</div>
+            </div>
+            <p class="result_addr">
+              701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
+            </p>
+          </div>
+          <div class="result_right">
+            <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+            <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
+          </div>
+        </div>
       </div>
       <div class="on-card" id="pageBar">
         <img id="pb_outer" src="public/images/a2/a2-22.svg" alt="a2-22">
@@ -287,18 +253,18 @@
             <div class="d-flex align-items-start">
               <img class="explore icon" src="public/images/a3/a3-11.svg" alt="a3-11" id="home">
               <div class="explore txt mr-auto">
-                <p class="explore title">Home</p>
+                <p class="explore title color-blue">Home</p>
                 <p class="explore subtitle" id="homeAddr">Set location</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-16.svg"
                 alt="a3-16">
             </div>
           </button>
-          <button type="button" class="list-group-item list-group-item-action rounded-0" id="setWork_btn">
+          <button class="list-group-item list-group-item-action rounded-0" id="setWork_btn">
             <div class="d-flex align-items-start">
               <img class="explore icon" src="public/images/a3/a3-06.svg" alt="a3-06" id="work">
               <div class="explore txt mr-auto">
-                <p class="explore title">Work</p>
+                <p class="explore title color-blue">Work</p>
                 <p class="explore subtitle" id="workAddr">Set location</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center" src="public/images/a3/a3-16.svg"
@@ -309,7 +275,7 @@
             <div class="d-flex align-items-start">
               <img class="explore icon" src="public/images/a3/a3-20.svg" alt="a3-20">
               <div class="explore txt mr-auto">
-                <p class="explore title">Promotions</p>
+                <p class="explore title color-blue">Promotions</p>
                 <p class="explore subtitle dark">Happy Mother's Day !</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center closeBtn" src="public/images/a3/a3-23.svg"
@@ -317,13 +283,13 @@
             </div>
             <div class="d-flex align-items-start promotion detail">
               <div class="tag_container">
-                <span class="explore tag"># FLOWER </span>
-                <span class="explore tag"># Carnation </span>
-                <span class="explore tag"># Bag </span>
-                <span class="explore tag"># cosmetic </span>
-                <span class="explore tag"># Hand cream </span>
-                <span class="explore tag"># hand-made Card </span>
-                <span class="explore tag"># Cake </span>
+                <div class="explore tag"># FLOWER </div>
+                <div class="explore tag"># Carnation </div>
+                <div class="explore tag"># Bag </div>
+                <div class="explore tag"># cosmetic </div>
+                <div class="explore tag"># Hand cream </div>
+                <div class="explore tag"># hand-made Card </div>
+                <div class="explore tag"># Cake </div>
               </div>
               <img class="btn btn-square explore arrow align-self-end" src="public/images/a3/a3-25.svg" alt="a3-25">
             </div>
@@ -332,7 +298,7 @@
             <div class="d-flex align-items-start">
               <img class="explore icon" src="public/images/a3/a3-28.svg" alt="a3-28">
               <div class="explore txt mr-auto">
-                <p class="explore title">Search this area</p>
+                <p class="explore title color-blue">Search this area</p>
                 <p class="explore subtitle dark">Maybe something good nearby</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center closeBtn" src="public/images/a3/a3-23.svg"
@@ -349,7 +315,7 @@
             <div class="d-flex align-items-start">
               <img class="explore icon" id="type_icon" src="public/images/a3/a3-44.svg" alt="a3-44">
               <div class="explore txt mr-auto">
-                <p class="explore title" id="type_title">Food</p>
+                <p class="explore title color-blue" id="type_title">Food</p>
                 <p class="explore subtitle dark"># hashtag Ranking chart</p>
               </div>
               <img class="btn btn-square explore rightBtn align-self-center closeBtn" src="public/images/a3/a3-23.svg"
@@ -394,7 +360,8 @@
                   <span class="hot_tag"># xxx</span>
                 </div>
               </div>
-              <img class="btn btn-square explore rightBtn align-self-end foldRank_btn" src="public/images/a3/a3-66.svg" alt="a3-66">
+              <img class="btn btn-square explore rightBtn align-self-end foldRank_btn" src="public/images/a3/a3-66.svg"
+                alt="a3-66">
             </div>
           </div>
           <img class="btn btn-square explore" id="hide_btn" src="public/images/a3/a3-42.svg" alt="a3-42">
@@ -404,23 +371,564 @@
       </div>
       <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
     </div>
+
+
+
+    <div class="card square" id="shop_card">
+      <div class="scrollbar" id="shopCard_content">
+        <div class="d-flex flex-column">
+          <div class="shopImg">
+          </div>
+          <div class="d-flex border-bottom shopInfo on-card">
+            <div class="d-flex flex-column mr-auto shopInfo_left">
+              <p class="shopName color-blue">Name</p>
+              <div class="d-flex">
+                <div class="d-flex starBar">
+                  <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                  <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                  <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                  <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                  <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                </div>
+                <span class="starNum color-yellow">4.0</span>
+                <span class="commentNum color-normal">(52)</span>
+              </div>
+              <div class="shopTag">
+                <div class="tag">#&nbsp;Drinks</div>
+                <div class="tag">#&nbsp;tea</div>
+                <div class="tag">#&nbsp;Cheap</div>
+                <div class="tag">#&nbsp;Boba</div>
+                <div class="tag">#&nbsp;juice</div>
+                <div class="tag">#&nbsp;Tainan</div>
+                <div class="tag">#&nbsp;friendly</div>
+              </div>
+            </div>
+            <img class="btn btn-square shopTab_btn align-self-center" src="public/images/a4/a4-04.svg" alt="a4-04">
+          </div>
+          <div class="d-flex flex-column border-bottom shopContact on-card">
+            <div class="d-flex align-items-start">
+              <img class="btn btn-square shopAddr_icon" src="public/images/a4/a4-15.svg" alt="a4-15">
+              <span class="shopAddr_txt color-normal">No. 1, Lane 206, Shengli Road, North District, Tainan City,
+                704</span>
+            </div>
+            <div class="d-flex align-items-start mt-1">
+              <img class="btn btn-square shopTel_icon" src="public/images/a4/a4-14.svg" alt="a4-14">
+              <span class="shopTel_txt color-normal">0912 - 345 - 678</span>
+            </div>
+          </div>
+
+          <div class="on-card" id="shopTab_single">
+            <div class="d-flex flex-column">
+              <p class="color-blue shopTab_title">Enjoy yourself !</p>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-20.svg" alt="a4-20">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg" alt="a4-23-02">
+                        <p class="itemAmount_txt color-blue">0</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-20.svg" alt="a4-20">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg" alt="a4-23-02">
+                        <p class="itemAmount_txt color-blue">0</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-20.svg" alt="a4-20">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg" alt="a4-23-02">
+                        <p class="itemAmount_txt color-blue">0</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-20.svg" alt="a4-20">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg" alt="a4-23-02">
+                        <p class="itemAmount_txt color-blue">0</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-20.svg" alt="a4-20">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg" alt="a4-23-02">
+                        <p class="itemAmount_txt color-blue">0</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-20.svg" alt="a4-20">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg" alt="a4-23-02">
+                        <p class="itemAmount_txt color-blue">0</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+            </div>
+          </div>
+          <div class="on-card" id="shopTab_group">
+            <div class="d-flex flex-column">
+              <p class="color-blue shopTab_title color-white">Group buying !</p>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-33.svg" alt="a4-33">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-41.svg" alt="a4-41">
+                        <div class="d-flex flex-column justify-content-around groupAmount_text">
+                          <p class="groupAmount_top color-orange">0</p>
+                          <p class="groupAmount_bottom color-blue">5</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-33.svg" alt="a4-33">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-41.svg" alt="a4-41">
+                        <div class="d-flex flex-column justify-content-around groupAmount_text">
+                          <p class="groupAmount_top color-orange">0</p>
+                          <p class="groupAmount_bottom color-blue">5</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-33.svg" alt="a4-33">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-41.svg" alt="a4-41">
+                        <div class="d-flex flex-column justify-content-around groupAmount_text">
+                          <p class="groupAmount_top color-orange">0</p>
+                          <p class="groupAmount_bottom color-blue">5</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-33.svg" alt="a4-33">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-41.svg" alt="a4-41">
+                        <div class="d-flex flex-column justify-content-around groupAmount_text">
+                          <p class="groupAmount_top color-orange">0</p>
+                          <p class="groupAmount_bottom color-blue">5</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-33.svg" alt="a4-33">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-41.svg" alt="a4-41">
+                        <div class="d-flex flex-column justify-content-around groupAmount_text">
+                          <p class="groupAmount_top color-orange">0</p>
+                          <p class="groupAmount_bottom color-blue">5</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+              <div class="shopItem">
+                <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
+                <div class="d-flex flex-column shopItem_content">
+                  <div class="shopItem_top">
+                    <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
+                    <div class="d-flex shopItem_detail">
+                      <img class="shopItem_left" src="public/images/a4/a4-33.svg" alt="a4-33">
+                      <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                        <div class="shopItem_name color-blue">Name</div>
+                        <span class="shopItem_intro color-normal mb-auto">introduce</span>
+                        <div class="shopItem_price color-blue">$ 100</div>
+                      </div>
+                      <div class="d-flex flex-column shopItem_control">
+                        <button type="button"
+                          class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
+                          <img class="plusIcon" src="public/images/a1/a1-24前.svg" alt="a1-24前">
+                        </button>
+                        <button class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
+                          <img class="minusIcon" src="public/images/a1/a1-25前.svg" alt="a1-25前">
+                        </button>
+                      </div>
+                      <div class="shopItem_right">
+                        <img class="itemAmount_outer" src="public/images/a4/a4-41.svg" alt="a4-41">
+                        <div class="d-flex flex-column justify-content-around groupAmount_text">
+                          <p class="groupAmount_top color-orange">0</p>
+                          <p class="groupAmount_bottom color-blue">5</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div type="button" class="d-flex shopItem_bottom">
+                    <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
+                    <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg" alt="a4-26">
+                    <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
+                  </div>
+                </div>
+              </div>
+              <div class="collapse optionContent">
+                <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn btn-square on-card" id="shopCard_bottom">
+        <img class="addBtn" src="public/images/a4/a4-28.svg" alt="a2-28">
+      </div>
+      <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
+    </div>
+
   </div>
   <div class="container-fluid d-flex justify-content-end layer onMap_mid">
     <div class="d-flex flex-column mb-4 pb-2 mr-3 pr-1 on-map">
-      <img class="btn btn-square" id="freq" src="public/images/a1/a1-11前常用.svg" alt="a1-11">
-      <img class="btn btn-square" id="like" src="public/images/a1/a1-12前最愛.svg" alt="a1-12">
-      <img class="btn btn-square" id="group" src="public/images/a1/a1-13前團購.svg" alt="a1-13">
+      <img class="btn btn-square" id="freq_filter" src="public/images/a1/a1-11前常用.svg" alt="a1-11">
+      <img class="btn btn-square" id="like_filter" src="public/images/a1/a1-12前最愛.svg" alt="a1-12">
+      <img class="btn btn-square" id="group_filter" src="public/images/a1/a1-13前團購.svg" alt="a1-13">
     </div>
   </div>
   <div class="container-fluid d-flex layer onMap_bottom">
     <div class="flex-fill onMap_bottom_left">
       <div class="on-map" id="infoBox">
-        <img id="ib_outer" src="public/images/a1/a1-22.svg" alt="a1-22">
+        <img class="ib_outer" src="public/images/a1/a1-22.svg" alt="a1-22">
         <img class="btn btn-square" id="heart" src="public/images/a1/a1-18前.svg" alt="a1-18">
         <p id="info_t1"></p>
         <p id="info_t2"></p>
-        <img class="btn btn-square" id="ib_close" src="public/images/a1/a1-21.svg" alt="a1-21">
+        <img class="btn btn-square" id="infoBox_close" src="public/images/a1/a1-21.svg" alt="a1-21">
         <img class="btn btn-square" id="goto" src="public/images/a1/a1-16前.svg" alt="a1-16">
+      </div>
+      <div class="on-map" id="shareBox">
+        <img class="ib_outer" src="public/images/a1/a1-22.svg" alt="a1-22">
+        <div class="d-flex flex-column align-items-start" id="shareBox_content">
+          <img class="mb-auto" id="shareBox_txt" src="public/images/a4++/a4++-11.svg" alt="a1-22">
+          <div class="d-flex justify-content-between" id="appBar">
+            <img class="btn btn-square appIcon" id="message_btn" src="public/images/a4++/a4++-04.svg" alt="a4++-04">
+            <img class="btn btn-square appIcon" id="email_btn" src="public/images/a4++/a4++-05.svg" alt="a4++-05">
+            <img class="btn btn-square appIcon" id="line_btn" src="public/images/a4++/a4++-06.svg" alt="a4++-06">
+            <img class="btn btn-square appIcon" id="messenger_btn" src="public/images/a4++/a4++-07.svg" alt="a4++-07">
+            <img class="btn btn-square appIcon" id="facebook_btn" src="public/images/a4++/a4++-08.svg" alt="a4++-08">
+            <img class="btn btn-square appIcon" id="otherApp_btn" src="public/images/a4++/a4++-09.svg" alt="a4++-09">
+          </div>
+        </div>
+        <img class="btn btn-square" id="shareBox_close" src="public/images/a1/a1-21.svg" alt="a1-21">
       </div>
     </div>
     <div class="d-flex flex-column mb-4 pb-2 mr-3 pr-1 on-map">
