@@ -302,17 +302,17 @@ function clear_result_card() {
 $(document).ready(function () {
     $('.toast').toast('show');
     $('[data-toggle="popover"]').popover();
-    $('#infoBox').hide();
-    $('.sorterBox_after').hide();
-    $('#clear_btn').hide();
+    //$('#infoBox').hide();
+    //$('.sorterBox_after').hide();
+    //$('#clear_btn').hide();
     $('.sorter img:nth-child(' + sorter_state + ')').addClass('disabled');
     $('#sorter_left').attr('src', './public/images/a2改/enabled_' + sorter_state + '.svg');
     $('#usedSorter').attr('src', './public/images/a2改/enabled_' + sorter_state + '.svg');
-    $('#save_btn').hide();
-    $('#cancel_btn').hide();
-    $('#shop_card').hide();
-    $('#shopTab_group').hide();
-    $('#shareBox').hide();
+    //$('#save_btn').hide();
+    //$('#cancel_btn').hide();
+    //$('#shop_card').hide();
+    //$('#shopTab_group').hide();
+    //$('#shareBox').hide();
 });
 $('#infoBox_close').click(function () {
     $('#infoBox').hide();
@@ -501,7 +501,7 @@ $('#setHome_btn').click(function () {
     $('#dropDown_btn').addClass('homeIcon');
     $('#save_btn').show();
     $('#cancel_btn').show();
-    $('#keywordBlank').focus();
+    //$('#keywordBlank').focus();
 });
 $('#setWork_btn').click(function () {
     input_state = 3;
@@ -518,7 +518,7 @@ $('#setWork_btn').click(function () {
     $('#dropDown_btn').addClass('homeIcon');
     $('#save_btn').show();
     $('#cancel_btn').show();
-    $('#keywordBlank').focus();
+    //$('#keywordBlank').focus();
 });
 
 $('#cancel_btn').click(function () {
