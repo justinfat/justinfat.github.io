@@ -319,6 +319,11 @@ $('#infoBox_close').click(function () {
 });
 $('#search_btn').click(function () {
     console.log(card_state);
+    if ($('#keywordBlank').val().length <3 ) {
+        event.preventDefault();
+        alert("Please enter what you want to search");
+        return;
+    }
     if (card_state == 3) {
         $('#shop_card').hide();
         $('#result_card').show();

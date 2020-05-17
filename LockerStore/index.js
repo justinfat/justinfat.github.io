@@ -164,11 +164,12 @@ function codeAddress() {
     })
 }
 
+$('#find_btn').click((event) => {
+    if (!$('#addressBlank').val()) {
+        event.preventDefault();
+        alert("Please enter your delivery address");
+    }
+})
 $(document).ready(function () {
-    $('#find_btn').click((event) => {
-        if (!$('#addressBlank').val()) {
-            event.preventDefault();
-            alert("請輸入地址");
-        }
-    })
+
 });
