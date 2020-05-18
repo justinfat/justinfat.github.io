@@ -96,7 +96,7 @@ button
 }
 .order_btn{
   margin:auto;
-  
+  vertical-align:bottom;
 }
 .close {
     height: 30pt;
