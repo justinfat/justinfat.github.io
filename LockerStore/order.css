@@ -24,10 +24,10 @@
 
 .modal-body {
     height: 100pt;
+    padding: 0;
 }
 
-.order-navbar
-{
+.order-navbar{
     width: 100%;
     height: 7%;
 }
@@ -38,12 +38,7 @@
     font-weight: bold;
     font-size: 14pt;
 }
-
 .btn:focus{box-shadow:none;}
-
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
-    outline: 0;
-}
 
 .order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {
     border-radius: 15px 15px 0px 0px;
@@ -75,7 +70,6 @@
     border: 5px solid;
     border-radius: 0px 0px 15px 15px;
 }
-
 .order-content-left {
     background-color: #F39700;
     border-color: #F39700;
@@ -92,7 +86,32 @@
     display: none;
 }
 
-.modal-body
-{
-    padding: 0;
+.order-unacclaimed {
+    width: 90%;
+    height: 40%;
+    background-color: #2C50A1;
+    border: 3pt #2C50A1 solid;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+.order-unacclaimed-content{
+    height: 80%;
+    width: 100%;
+    border: 0;
+}
+.order-unacclaimed-content-pic {
+    display: inline-block;
+    background-color: #C9C9CA;
+    width: 25%;
+    height: 100%;
+    float: left;
+    border-radius: 12px 0px 0px 12px;
+}
+.order-unacclaimed-content-info {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 74%;
+    height: 100%;
+    float: right;
+    border-radius: 0px 12px 12px 0px;
 }

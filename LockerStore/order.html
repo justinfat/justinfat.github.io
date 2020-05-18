@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="order.css">
     <script src="order.js"></script>
+    <script src="public/stylesheets/jquery-3.4.1.min.js"></script>
 
 </head>
 
@@ -23,7 +24,7 @@
                     <img src="public/images/a6/a6-08.svg">
                 </button>
                 <div class="modal-header">
-                    <img class="modal-title" id="exampleModalLongTitle" src="public/images/a6/a6-06.svg"></img>
+                    <img class="modal-title" id="exampleModalLongTitle" src="public/images/a6/a6-06.svg"/>
                 </div>
                 <div class="modal-body">
                     <form class="form-inline order-navbar">
@@ -32,10 +33,10 @@
                         <button class="btn order-nav-rbtn" type="button" onclick="showRight()">Completed</button>
                     </form>
                     <div class="order-content order-content-left">
-                        123123
+                        
                     </div>
                     <div class="order-content order-content-mid">
-
+                        <div w3-include-html="extra.html"></div>
                     </div>
                     <div class="order-content order-content-right">
 
@@ -51,3 +52,5 @@
 </body>
 
 </html>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script >w3.includeHTML();</script>
