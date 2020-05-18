@@ -1,5 +1,6 @@
 #logo{
   margin-top:10vh;
+  display:block;
 }
 .shop_name{
   color: #2C50A1;
@@ -97,6 +98,7 @@ button
 .order_btn{
   margin:auto;
   vertical-align:bottom;
+  display:block;
 }
 .close {
     height: 30pt;
