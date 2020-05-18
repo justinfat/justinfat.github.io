@@ -104,4 +104,9 @@ button
     top:-15pt;
     opacity:1.0;
 }
+.modal-content{
+    height: 90vh;
+    width: 40vw;
+    border-radius: 15px 15px 15px 15px;
+}
 
