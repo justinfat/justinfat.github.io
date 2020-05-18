@@ -396,7 +396,8 @@ input {
 .result_content {
     position: absolute;
     height: 100%;
-    padding: 2% 29.5% 2% 9%;
+    width: 100%;
+    padding: 2% 34% 2% 8%;
 }
 .result_left {
     width: 66%;
@@ -407,14 +408,14 @@ input {
     margin-bottom: 3%;
 }
 .starBar {
-    margin-bottom: 3%;
+    margin-bottom: 2%;
 }
 .star {
     width: 0.9vw;
     margin-right: 0.1rem;
 }
 .moneyBar {
-    margin-bottom: 3.5%;
+    margin-bottom: 3%;
 }
 .money {
     width: 0.45vw;
@@ -579,22 +580,22 @@ p.explore {
     padding: 2.5% 8% 3.5% 8%;
 }
 .shopName {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin-bottom: 2%;
 }
 .starNum {
     font-size: 0.78rem;
     font-weight: bold;
-    margin-bottom: 3%;
+    margin-bottom: 1.5%;
     margin-left: 3%;
 }
 .commentNum {
     font-size: 0.78rem;
-    margin-bottom: 3%;
+    margin-bottom: 1.5%;
     margin-left: 3%;
 }
 .shopInfo_left {
-    width: 60%;
+    width: 70%;
 }
 .shopTab_btn {
     width: 19.5%;

@@ -30,23 +30,50 @@ app.get('./sign_up', (req, res) => {
   res.send(`${req.query.account}`)
 })
 
-app.get('/insertInfo', (req, res) => {
+app.get('/insertLocker', (req, res) => {
   connection.query(
     `INSERT INTO lockers (id, lat, lng, name, addr) 
     SELECT NULL, '${req.query.lat}', '${req.query.lng}', '${req.query.name}', '${req.query.addr}' FROM DUAL
     WHERE NOT EXISTS (SELECT 1 FROM lockers WHERE name = '${req.query.name}' LIMIT 1);`, (err, result) => {
-      if (err) console.log('fail to insert:', err)
-    })
+    if (err) console.log('fail to insert:', err)
+  })
   res.send(`ok`)
 })
 
-app.get('/searchInfo', (req, res) => {
+app.get('/searchLocker', (req, res) => {
   connection.query(
     `SELECT name, addr FROM lockers WHERE lat = '${req.query.lat}' AND lng = '${req.query.lng}'`, function (error, results, fields) {
       if (error) throw error
       res.send({
         name: results[0].name,
         addr: results[0].addr,
+      })
+    })
+})
+
+app.get('/searchTag', (req, res) => {
+  var arr = req.query.keywords.split('#');
+  var keywords = arr.join('');
+  connection.query(
+    `SELECT * FROM shops WHERE MATCH (tag) AGAINST ('${keywords}' IN BOOLEAN MODE)`, function (error, results, fields) {
+      if (error) throw error
+      res.send({
+        results: results,
+      })
+    })
+})
+
+app.get('/searchShop', (req, res) => {
+  connection.query(
+    `SELECT * FROM shops WHERE name = '${req.query.name}'`, function (error, results, fields) {
+      if (error) throw error
+      res.send({
+        name: results[0].name,
+        starNum: results[0].starNum,
+        commentNum: results[0].commentNum,
+        tag: results[0].tag,
+        addr: results[0].addr,
+        tel: results[0].tel,
       })
     })
 })
