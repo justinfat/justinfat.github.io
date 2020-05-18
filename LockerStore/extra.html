@@ -1,12 +1,41 @@
-<div class="order-unacclaimed">
-    <div class="order-unacclaimed-content">
-        <div class="order-unacclaimed-content-pic"></div>
-        <div class="order-unacclaimed-content-info"></div>
-    </div>
-</div>
-<div class="order-unacclaimed">
-    <div class="order-unacclaimed-content">
-        <div class="order-unacclaimed-content-pic"></div>
-        <div class="order-unacclaimed-content-info"></div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+                <img src="public/images/a6/a6-08.svg">
+            </button>
+            <div class="modal-header">
+                <img class="modal-title" id="exampleModalLongTitle" src="public/images/a6/a6-06.svg" />
+            </div>
+            <div class="modal-body">
+                <form class="form-inline order-navbar">
+                    <button class="btn order-nav-lbtn" type="button" onclick="showLeft()">Undelivered</button>
+                    <button class="btn order-nav-mbtn" type="button" onclick="showMid()">Unacclaimed</button>
+                    <button class="btn order-nav-rbtn" type="button" onclick="showRight()">Completed</button>
+                </form>
+                <div class="order-content order-content-left">
+
+                </div>
+                <div class="order-content order-content-mid">
+                    <div class="order-unacclaimed">
+                        <div class="order-unacclaimed-content">
+                            <div class="order-unacclaimed-content-pic"></div>
+                            <div class="order-unacclaimed-content-info"></div>
+                        </div>
+                    </div>
+                    <div class="order-unacclaimed">
+                        <div class="order-unacclaimed-content">
+                            <div class="order-unacclaimed-content-pic"></div>
+                            <div class="order-unacclaimed-content-info"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="order-content order-content-right">
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
