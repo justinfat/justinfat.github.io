@@ -3,24 +3,24 @@
 }
 .shop_name{
   color: #2C50A1;
-  font-family:微軟正黑體;
+  font-family:"Century Gothic";
   font-size:25px;
   text-align: left;
 }
 .shop_content{
-  font-family:微軟正黑體;
+  font-family:"Century Gothic";
   color: #000000;
   font-size:10px;
   text-align: left;
 }
 .locker_name{
   color: #E8C41C;
-  font-family:微軟正黑體;
+  font-family:"Century Gothic";
   font-size:25px;
   text-align: left;
 }
 .locker_content{
-  font-family:微軟正黑體;
+  font-family:"Century Gothic";
   color: #000000;
   font-size:10px;
   text-align: left;
@@ -55,6 +55,7 @@
   cursor:pointer; 
   display:inline-block; 
   width:40%; 
+  font-family:"Century Gothic";
   
   border-style: solid;
   border-color: #2C50A1;
@@ -69,17 +70,24 @@
   list-style-type:none; 
   position:absolute;
   width:40%;
+  font-family:"Century Gothic";
   
   border-style: solid;
   border-color: #2C50A1;
   border-radius: 10px;
   border-width:3px;
 } 
-.sub-menu li { padding: 3px 5px; text-align:left; width:40%;} /* 下拉清單每一列的樣式 */
+.sub-menu li { /* 下拉清單每一列的樣式 */
+  padding: 3px 5px; 
+  text-align:left; 
+  width:40%;
+  font-family:"Century Gothic";
+} 
 /*.sub-menu li:hover { color:#FFFFFF; background-color:#2C50A1; }*/
 .more-info{
   /*position:relative;*/
   margin-left:30%;
+  font-family:"Century Gothic";
 }
 button
 {
