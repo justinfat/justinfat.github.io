@@ -96,7 +96,7 @@ button
 {
     outline: none;
 }
-.order_btn{
+#order_btn{
   margin:auto;
   vertical-align:bottom;
   display:block;
