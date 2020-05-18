@@ -51,7 +51,7 @@
 .main-menu { /* 主選單的樣式 */
   color:#FFFFFF; 
   background-color:#2C50A1; 
-  margin-left:28.75vw;
+  margin:auto;
   cursor:pointer; 
   display:inline-block; 
   width:80%; 
