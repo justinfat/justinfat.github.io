@@ -96,3 +96,12 @@ button
 .order_btn{
   margin:auto;
 }
+.close {
+    height: 30pt;
+    width: 30pt;
+    position: absolute;
+    right:-15pt;
+    top:-15pt;
+    opacity:1.0;
+}
+
