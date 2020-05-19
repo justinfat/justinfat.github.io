@@ -98,6 +98,8 @@ button
 .order_btn{
   margin:auto;
   vertical-align:bottom;
+  margin: 0; 
+  padding: 0;
   /*display:block;*/
   /*position:relative;*/
 }
