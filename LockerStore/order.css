@@ -110,8 +110,65 @@
 .order-unacclaimed-content-info {
     display: inline-block;
     background-color: #ffffff;
-    width: 74%;
+    width: calc(75% - 3pt);
     height: 100%;
     float: right;
     border-radius: 0px 12px 12px 0px;
+    padding: 10pt;
+}
+
+.store-name {
+    font-family: "Century Gothic";
+    color: #2C50A1;
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 5pt;
+}
+.text-content {
+    font-family: "Century Gothic";
+    color: #595757;
+    font-weight: normal;
+    font-size: 10pt;
+    line-height: 15pt;
+}
+.station-name {
+    font-family: "Century Gothic";
+    color: #F39700;
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 5pt;
+}
+
+.order-unacclaimed-bottom{
+    display: inline-block;
+    width: 100%;
+    height: 20%;
+}
+.group-buy{
+    display: inline-block;
+    position: relative;
+    top: 10%;
+    left: 6pt;
+    height: 80%;
+}
+.pickup-deadline {
+    display: inline-block;
+    position: relative;
+    top: 20%;
+    left: 25%;
+    font-family: "Century Gothic";
+    color: #F39700;
+    font-weight: bold;
+    font-size: 14pt;
+}
+.arrow-down {
+    background-color: #2C50A1;
+    width: 20pt;
+    height: 20pt;
+    border: 0;
+    display: inline-block;
+    position: relative;
+    top: 10%;
+    right: 6pt;
+    float: right;
 }
