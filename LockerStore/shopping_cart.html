@@ -28,50 +28,51 @@
                     		</button>
 		    		<div class="modal-header">
 			    		<img id="logo" style="display:block; margin:auto;" src="public/images/a5/a5-07.svg"></img> <!--My Kart字樣-->
-		    		</div>
+		    		</div> <!--modal-header-->
 		 	<div class="modal-body">
 				<div class="grid-container" style="margin:auto">
 					<div class="item1">
-		<!--img style="display:block; z-index:1;" src="public/images/a5/a5-11.svg"-->
-		<img id="shop_pic" style="z-index:2;" src="public/images/a5/a5-14.svg"></img>
-		</div>
-		<div class="col">
-		<div class="shop_name">
-			<span>範例商品1</span>
+						<!--img style="display:block; z-index:1;" src="public/images/a5/a5-11.svg"-->
+						<img id="shop_pic" style="z-index:2;" src="public/images/a5/a5-14.svg"></img>
+					</div>
+					<div class="col">
+						<div class="shop_name">
+							<span>範例商品1</span>
+							<div class="shop_content">
+								<span>TEL:06-1234567</span><br>
+								<span>ADDRESS:NO.123</span>
+							</div> <!--shop_content-->
+						</div> <!--shop_name-->
+						<br>
+						<div class="locker_name">
+							<span>範例櫃位1</span>
 		
-		<div class="shop_content">
-			<span>TEL:06-1234567</span><br>
-			<span>ADDRESS:NO.123</span>
-		</div>
-		</div>
-			<br>
-		<div class="locker_name">
-			<span>範例櫃位1</span>
-		
-		<div class="locker_content">
-			<span>ADDRESS:NO.123</span>
-		</div>
-		</div>
-	</div>
+							<div class="locker_content">
+								<span>ADDRESS:NO.123</span>
+							</div> <!--locker_content-->
+						</div> <!--locker_name-->
+					</div> <!--col-->
 	
-	</div>
+				</div> <!--grid-container-->
 	
 	
 	
-	<div class="main-menu" onclick="switchMenu( this, 'SubMenu2' )">
-		<span class="more-info">More Information</span>
-    	<ul id="SubMenu2" class="sub-menu" style="display:none;">
-        <li>商品1   數量:</li>
-        <li>商品2</li>
-        <li>商品3</li>
-    </ul>
-		</div>  <!--main-menu-->
-		 <button type="button" class="order_btn" data-dismiss="modal" aria-label="Close">
-			 <img src="public/images/a5/a5-24.svg"></img></button>  <!--order字樣-->
-		 </div>
-		 </div>
-</div>
-	</div>
+				<div class="main-menu" onclick="switchMenu( this, 'SubMenu2' )">
+					<span class="more-info">More Information</span>
+    					<ul id="SubMenu2" class="sub-menu" style="display:none;">
+        					<li>商品1   數量:1</li>
+        					<li>商品2</li>
+        					<li>商品3</li>
+    					</ul>
+				</div>  <!--main-menu-->
+		 		
+		 </div> <!--modal-body-->
+				<button type="button" class="order_btn" data-dismiss="modal" aria-label="Close">
+			 		<img src="public/images/a5/a5-24.svg"></img><!--order字樣-->
+				</button>  
+		 </div> <!--modal-content-->
+	</div> <!--modal-dialog-->
+	</div> <!--modal fade-->
 	<script src='./shopping_cart.js'></script>
 	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
