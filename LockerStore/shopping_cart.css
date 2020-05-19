@@ -56,7 +56,7 @@
   background-color:#2C50A1; 
   margin:auto;
   cursor:pointer; 
-  display:inline-block; 
+  /*display:inline-block; */
   width:80%; 
   font-family:"Century Gothic";
    padding:0;
