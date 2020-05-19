@@ -98,7 +98,7 @@ button
 .order_btn{
   margin:auto;
   vertical-align:bottom;
-  display:block;
+  /*display:block;*/
   position:relative;
 }
 .close {
