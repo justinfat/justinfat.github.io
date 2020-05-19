@@ -69,9 +69,8 @@
 .sub-menu { /* 下拉清單的樣式 */
   color:#FFFFFF; 
   background-color:#2C50A1; 
- /* margin-left:30%; */
   list-style-type:none; 
-  position:absolute;
+  /*position:absolute;*/
   width:80%;
   font-family:"Century Gothic";
   
