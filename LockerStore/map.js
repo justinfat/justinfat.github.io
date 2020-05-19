@@ -11,6 +11,7 @@ var otherExpand = false;
 var shopTab_state = 1;
 var latlng_list = [];
 var minLat, maxLat, minLng, maxLng;
+var result = 0;
 var styles = {
     default: null,
     hide: [ // Hide stores and bus stations in the map
@@ -271,20 +272,27 @@ function getSearchResult(keywords) {
         minLng: minLng,
         maxLng: maxLng,
     }, (data) => {
-        console.log(data.results.length);
-        for (var i = 0; i < data.results.length; i++) {
-            //var tmp = i+1;
-            // $('#result_list div:nth-child(' + tmp + ')').find('p.result_name').first().text(data.results[i].name);
-            // $('#result_list div:nth-child(' + tmp + ')').find('p.result_addr').first().text(data.results[i].addr);
-            $('.result :eq(' + i + ') p.result_name').text(data.results[i].name);
-            $('.result :eq(' + i + ') p.result_addr').text(data.results[i].addr);
-            for (var j = 1; j <= data.results[i].starNum; j++) {
-                $('.result :eq(' + i + ') div.starBar :nth-child(' + j + ')').attr('src', './public/images/a2/a2-14.svg')
+        console.log(data)
+        if (data.results.length<1) {
+            alert("No result");
+        }
+        else if (data == 'error') {
+            alert("Error");
+        }
+        else {
+            for (var i = 0; i < data.results.length; i++) {
+                $('.result').eq(i).find('p.result_name').text(data.results[i].name);
+                $('.result').eq(i).find('p.result_addr').text(data.results[i].addr);
+                console.log(data.results[i].starNum)
+                for (var j = 0; j < Math.trunc(data.results[i].starNum); j++) {
+                    $('.result').eq(i).find('img.star').eq(j).attr('src', './public/images/a2/a2-14.svg');
+                }
+                for (var j = 0; j < Math.trunc(data.results[i].priceNum); j++) {
+                    $('.result').eq(i).find('img.money').eq(j).attr('src', './public/images/a2/a2-36.svg');
+                }
+                $('.result').eq(i).find('div.tag').text(data.results[i].tag);
+                $('.result').eq(i).find('img.result_pic').attr('src', data.results[i].img);
             }
-            for (var j = 1; j <= data.results[i].priceNum; j++) {
-                $('.result :eq(' + i + ') div.moneyBar :nth-child(' + j + ')').attr('src', './public/images/a2/a2-36.svg')
-            }
-            $('.result :eq(' + i + ') div.moneyBar div.tag').text(data.results[i].tag);
         }
     })
 }
@@ -300,7 +308,27 @@ function getShopInfo(name) {
             $('#shop_card div.starBar :nth-child(' + j + ')').attr('src', './public/images/a2/a2-14.svg')
         }
         $('#shop_card span.starNum').text(data.starNum);
-        $('#shop_card span.commentNum').text('('+ data.commentNum + ')');
+        $('#shop_card span.commentNum').text('(' + data.commentNum + ')');
+        $('#shop_card img.shopImg').attr('src', data.img);
+        getShopItem(data.id);
+    })
+}
+
+function getShopItem(id) {
+    $.get('/getItem', {
+        id: id,
+    }, (data) => {
+        console.log(data);
+        var tmp;
+        for (var i = 1; i <= data.results.length; i++) {
+            tmp = 2 * i;
+            console.log(tmp);
+            $('#singleItemList :nth-child(' + tmp + ') div.shopItem_name').first().text(data.results[i - 1].name);
+            $('#singleItemList :nth-child(' + tmp + ') span.shopItem_intro').first().text(data.results[i - 1].introduce);
+            $('#singleItemList :nth-child(' + tmp + ') div.shopItem_price').first().text('$ ' + data.results[i - 1].price);
+            if (data.results[i - 1].img.length > 0)
+                $('#singleItemList :nth-child(' + tmp + ') img.shopItem_img').first().attr('src', data.results[i - 1].img);
+        }
     })
 }
 

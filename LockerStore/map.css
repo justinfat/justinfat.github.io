@@ -391,17 +391,12 @@ input {
     border-width: 0.05rem;
     flex-shrink: 0;
     position: relative;
-    padding: 0;
+    padding: 2% 4% 2% 8%;
 }
 .result_content {
-    position: absolute;
     height: 100%;
-    width: 100%;
-    padding: 2% 34% 2% 8%;
-}
-.result_left {
-    width: 66%;
-    height: 100%;
+    width: 68%;
+    padding: 0;
 }
 .result_name {
     font-size: 1rem;
@@ -430,21 +425,25 @@ input {
     font-size: 0.8rem;
     line-height: 1.05rem;
     color: #5c5c5c;
+    margin-bottom: 0;
 }
 .result_right {
-    position: absolute;
-    top: 6%;
-    right: 5%;
+    position: relative;
+    width: 27%;
 }
 .result_pic {
-    padding-top: 4%;
-    width: 6.2vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5% 0;
+    width: 100%;
+    height: 100%;
 }
 .likeBtn {
     width: 1.2vw;
     position: absolute;
-    top: 12%;
-    right: 10%;
+    top: 10%;
+    right: 7%;
 }
 #pageBar {
     width: 25.8vw;
@@ -565,10 +564,17 @@ p.explore {
 .foldRank_btn {
     width: 1vw;
 }
-.shopImg {
+.shopInfo_top {
     position: relative;
     background-color: #4ca6df;
     min-height: 14.4rem;
+}
+.shopImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 #shop_card {
     position: absolute;
@@ -664,16 +670,34 @@ p.explore {
 }
 .shopItem_left {
     position: relative;
+    width: 18%;
     height: 100%;
+}
+.shopItem_imgBorder {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.shopItem_img {
+    position: absolute;
+    height: 97%;
+    top: 2%;
+    left: 0;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    overflow: hidden;
 }
 .shopItem_mid {
     position: relative;
+    width: 50%;
     height: 100%;
-    padding: 2% 5%;
+    padding: 2% 5% 2% 5%;
 }
 .shopItem_name {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.1rem;
+    margin-bottom: 2%;
 }
 .shopItem_intro {
     font-size: 0.77rem;
@@ -778,8 +802,6 @@ p.explore {
 }
 .optionContent {
     position:relative;
-    bottom: 0;
-    left: 0;
     width: 100%;
     min-height: 15%;
 }

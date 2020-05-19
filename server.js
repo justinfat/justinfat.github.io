@@ -55,7 +55,7 @@ app.get('/searchTag', (req, res) => {
   var arr = req.query.keywords.split('#');
   var keywords = arr.join('');
   connection.query(
-    `SELECT * FROM shops WHERE MATCH (tag) AGAINST ('${keywords}' IN BOOLEAN MODE)`, function (error, results, fields) {
+    `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE)`, function (error, results, fields) {
       if (error) throw error
       res.send({
         results: results,
@@ -66,14 +66,31 @@ app.get('/searchTag', (req, res) => {
 app.get('/searchShop', (req, res) => {
   connection.query(
     `SELECT * FROM shops WHERE name = '${req.query.name}'`, function (error, results, fields) {
-      if (error) throw error
+      // if (error) throw error
+      if (error) {
+        res.send('error')
+      }
+      else {
+          res.send({
+            id: results[0].id,
+            name: results[0].name,
+            starNum: results[0].starNum,
+            commentNum: results[0].commentNum,
+            tag: results[0].tag,
+            addr: results[0].addr,
+            tel: results[0].tel,
+            img: results[0].img,
+          })
+        }
+    })
+})
+
+app.get('/getItem', (req, res) => {
+  connection.query(
+    `SELECT * FROM shop_${req.query.id} ORDER BY img DESC`, function (error, results, fields) {
+      // if (error) throw error
       res.send({
-        name: results[0].name,
-        starNum: results[0].starNum,
-        commentNum: results[0].commentNum,
-        tag: results[0].tag,
-        addr: results[0].addr,
-        tel: results[0].tel,
+        results: results,
       })
     })
 })
