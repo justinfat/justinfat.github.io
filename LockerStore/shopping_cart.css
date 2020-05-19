@@ -116,3 +116,6 @@ button
     width: 40vw;
     border-radius: 15px 15px 15px 15px;
 }
+.modal-footer{
+   border-radius: 15px 15px 15px 15px;
+}
