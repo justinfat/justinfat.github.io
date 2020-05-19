@@ -99,7 +99,7 @@ button
   margin:auto;
   vertical-align:bottom;
   /*display:block;*/
-  position:relative;
+  /*position:relative;*/
 }
 .close {
     height: 30pt;
