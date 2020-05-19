@@ -95,14 +95,14 @@ button
 {
     outline: none;
 }
-.order_btn{
+/*.order_btn{
   margin:auto;
   vertical-align:bottom;
   margin: 0; 
   padding: 0;
-  /*display:block;*/
-  /*position:relative;*/
-}
+  display:block;
+  position:relative;
+}*/
 .close {
     height: 30pt;
     width: 30pt;
@@ -114,5 +114,14 @@ button
 .modal-content{
     height: 90vh;
     width: 40vw;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 20px 20px 20px 20px;
+}
+.modal-footer{
+   border-radius: 20px 20px 20px 20px;
+  padding: 0;
+  margin:0;
+  height: 54px;
+}
+.modal-body {
+    padding: 0;
 }
