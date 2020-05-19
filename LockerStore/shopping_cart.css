@@ -95,14 +95,14 @@ button
 {
     outline: none;
 }
-.order_btn{
+/*.order_btn{
   margin:auto;
   vertical-align:bottom;
   margin: 0; 
   padding: 0;
   display:block;
   position:relative;
-}
+}*/
 .close {
     height: 30pt;
     width: 30pt;
