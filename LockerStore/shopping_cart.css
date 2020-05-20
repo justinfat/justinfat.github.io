@@ -115,6 +115,7 @@ button
   color: #2C50A1;
   background-color:#E8C41C; 
   font-size:21pt;
+  height:50pt;
 }
 .close {
     height: 30pt;
