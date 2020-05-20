@@ -139,7 +139,8 @@ button
   border:0;
   background-color:#E8C41C;
   /*border-radius: 0px 0px 15px 15px;*/
-  height:45pt;
+  height:48pt;
+  flex: 0 0 auto;
 }
 .modal-body {
     padding: 0;
