@@ -42,9 +42,10 @@ $('.modal').on('shown.bs.modal', function() {
 
 
 function submit(Obj) {
-if(Obj.className ="default")
+/*if(Obj.className =="default")
 {Obj.className = "after_click";}
-    else {Obj.className ="default";}
+    else {Obj.className ="default";}*/
+  Obj.className =  (Obj.className =="default")? "after_click":"default";
 };
 
 function change(){
