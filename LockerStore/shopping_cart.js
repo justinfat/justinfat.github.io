@@ -39,3 +39,9 @@ if ((getScrollHeight() - getScrollTop() - getWindowHeight()) > 51 )
 $('.modal').on('shown.bs.modal', function() {
    $(".modal-body").css("padding",'0px');
 });
+
+
+function setClass()
+{
+    document.getElementById( "default" ).className = "after_click";
+}
