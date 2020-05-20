@@ -1,3 +1,8 @@
+.cart_logo{
+  display:block; 
+  margin:auto; 
+  padding:0;
+}
 .shop_name{
   color: #2C50A1;
   font-family:"century gothic regular";
@@ -37,8 +42,9 @@
   border-color: #2C50A1;
   border-radius: 7.5px;
   border-width:3px;
-   background-color:#FFFFFF; 
-  padding:0;
+ background-color:#FFFFFF; 
+ padding:0;
+ margin:auto
 }
 
 .grid-container > div {
@@ -71,7 +77,7 @@
   /*position:absolute;*/
   width:80%;
   font-family:"century gothic regular";
-  
+ display:none;
   border-style: solid;
   border-color: #2C50A1;
   border-radius: 7.5px;
