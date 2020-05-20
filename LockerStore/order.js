@@ -18,3 +18,17 @@ function showRight()
     $('.order-content-mid').css("display", "none");
     $('.order-content-right').css("display", "block");
 }
+
+var count = 0;
+function showUnacclaimed()
+{
+    count++;
+    if (count % 2 == 1) {
+        $('.order-unacclaimed-detail').css("display", "inline-block");
+        $('.arrow-img').css("transform", "rotate(180deg)");
+    }
+    else {
+        $('.order-unacclaimed-detail').css("display", "none");
+        $('.arrow-img').css("transform", "rotate(0deg)");
+    }
+}
