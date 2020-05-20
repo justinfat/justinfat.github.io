@@ -40,7 +40,7 @@
   width:80%;
   border-style: solid;
   border-color: #2C50A1;
-  border-radius: 10px;
+  border-radius: 7.5px;
   border-width:3px;
    background-color:#FFFFFF; 
   padding:0;
@@ -65,7 +65,7 @@
    padding:0;
   border-style: solid;
   border-color: #2C50A1;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 7.5px 7.5px;
   border-width:3px;
 } 
 /*.main-menu:hover { background-color:#0000FF; }*/
@@ -79,7 +79,7 @@
   
   border-style: solid;
   border-color: #2C50A1;
-  border-radius: 10px;
+  border-radius: 7.5px;
   border-width:3px;
 } 
 .sub-menu li { /* 下拉清單每一列的樣式 */
@@ -108,12 +108,12 @@ button
  text-align:center;
   margin: auto; 
   padding: 0;
-  border-radius: 0px 0px 20px 20px;
+  
   border:0;
   font-family:"century gothic regular";
   font-weight:bold;
   color: #2C50A1;
-   
+  background-color:#E8C41C; 
 }
 .close {
     height: 30pt;
@@ -126,13 +126,14 @@ button
 .modal-content{
     height: 90vh;
     width: 500px;
-    border-radius: 15px 30px 30px 30px;
+    border-radius: 15px 15px 15px 15px;
 }
 .modal-footer{
   padding: 0;
   margin:0;
   height: 50px;
   background-color:#E8C41C;
+  border-radius: 0px 0px 15px 15px;
 }
 .modal-body {
     padding: 0;
