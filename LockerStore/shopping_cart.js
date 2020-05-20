@@ -29,7 +29,7 @@ function hideMenu(){
 // 滑動監聽
 window.onscroll = function (){
 // 滑到底部時footer定於最下方,假定<footer>的height為60 
-if ((getScrollHeight() - getScrollTop() - getWindowHeight()) > 61 )    
+if ((getScrollHeight() - getScrollTop() - getWindowHeight()) > 51 )    
   $('.footer').css('position',' fixed' );        
  else
    $('.footer').css('position','relative' );
