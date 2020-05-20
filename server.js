@@ -66,10 +66,10 @@ app.get('/searchTag', (req, res) => {
 app.get('/searchShop', (req, res) => {
   connection.query(
     `SELECT * FROM shops WHERE name = '${req.query.name}'`, function (error, results, fields) {
-      // if (error) throw error
-      if (error) {
-        res.send('error')
-      }
+      if (error) throw error
+      // if (error) {
+      //   res.send('error')
+      // }
       else {
           res.send({
             id: results[0].id,
@@ -85,9 +85,19 @@ app.get('/searchShop', (req, res) => {
     })
 })
 
-app.get('/getItem', (req, res) => {
+app.get('/getItem_single', (req, res) => {
   connection.query(
-    `SELECT * FROM shop_${req.query.id} ORDER BY img DESC`, function (error, results, fields) {
+    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 0 ORDER BY img DESC`, function (error, results, fields) {
+      // if (error) throw error
+      res.send({
+        results: results,
+      })
+    })
+})
+
+app.get('/getItem_group', (req, res) => {
+  connection.query(
+    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 1 ORDER BY img DESC`, function (error, results, fields) {
       // if (error) throw error
       res.send({
         results: results,
