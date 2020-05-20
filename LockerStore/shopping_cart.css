@@ -50,13 +50,16 @@
   grid-area: myArea;
 }*/
 .item1{
+  height: 140pt;
+    width: 100%;
+    border: 0;
+}
+.item1_all{
   width: 90%;
-  height: 130pt;
     background-color: #2C50A1;
     border: 3pt #2C50A1 solid;
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 15px;
-  /*display: inline-block;*/
 }
 .grid-container {
   display: grid;
