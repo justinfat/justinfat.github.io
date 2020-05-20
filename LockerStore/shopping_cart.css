@@ -108,6 +108,7 @@ button
 }
 .order_btn{
  text-align:center;
+  line-height:50pt;
   padding: 0;  
   border:0;
   font-family:"century gothic regular";
@@ -115,7 +116,7 @@ button
   color: #2C50A1;
   background-color:#E8C41C; 
   font-size:21pt;
-  height:50pt;
+  
   position:relative;
 }
 .close {
@@ -137,6 +138,7 @@ button
   border:0;
   background-color:#E8C41C;
   border-radius: 0px 0px 15px 15px;
+  height:50pt;
 }
 .modal-body {
     padding: 0;
