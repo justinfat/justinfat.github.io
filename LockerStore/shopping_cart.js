@@ -51,3 +51,6 @@ className 改成你要的
 Obj.className = "after_click";
 }
 
+function change(){
+    document.getElementById('defaule').className="after_click";
+}
