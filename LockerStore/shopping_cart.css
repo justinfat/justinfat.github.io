@@ -137,8 +137,8 @@ button
   margin:0;
   border:0;
   background-color:#E8C41C;
-  border-radius: 0px 0px 15px 15px;
-  height:42pt;
+  /*border-radius: 0px 0px 15px 15px;*/
+  height:45pt;
   /*position:fixed;*/
 }
 .modal-body {
