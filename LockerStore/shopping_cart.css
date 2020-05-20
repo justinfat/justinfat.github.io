@@ -111,13 +111,12 @@ button
   line-height:50pt;
   padding: 0;  
   border:0;
+  margin:0;
   font-family:"century gothic regular";
   font-weight:bolder;
   color: #2C50A1;
   background-color:#E8C41C; 
   font-size:21pt;
-  
-  position:relative;
 }
 .close {
     height: 30pt;
