@@ -48,5 +48,5 @@ obj = 按的按鈕
 parentNode 可以找到它上一層 div
 className 改成你要的
 */
-Obj.parentNode.className = "after_click";
+Obj.className = "after_click";
 }
