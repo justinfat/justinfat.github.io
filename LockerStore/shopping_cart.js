@@ -45,7 +45,7 @@ function submit(Obj) {
 /*if(Obj.className =="default")
 {Obj.className = "after_click";}
     else {Obj.className ="default";}*/
-  Obj.className =  (Obj.className =="default")? "after_click":"default";
+  Obj.className =  (Obj.className =="item1_all")? "after_click":"item1_all";
 };
 
 function change(){
