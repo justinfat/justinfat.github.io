@@ -61,6 +61,13 @@
     margin: 15px auto;
     border-radius: 15px;
 }
+.after_click{
+  width: 90%;
+    background-color: #2C50A1;
+    border: 5pt #F39700 solid;
+    margin: 15px auto;
+    border-radius: 15px;
+}
 .grid-container {
   display: grid;
   grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
