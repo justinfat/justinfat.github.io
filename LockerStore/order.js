@@ -20,15 +20,15 @@ function showRight()
 }
 
 var count = 0;
-function showUnacclaimed()
+function showDetail()
 {
     count++;
     if (count % 2 == 1) {
-        $('.order-unacclaimed-detail').css("display", "inline-block");
+        $('.order-object-detail').css("display", "inline-block");
         $('.arrow-img').css("transform", "rotate(180deg)");
     }
     else {
-        $('.order-unacclaimed-detail').css("display", "none");
+        $('.order-object-detail').css("display", "none");
         $('.arrow-img').css("transform", "rotate(0deg)");
     }
 }
