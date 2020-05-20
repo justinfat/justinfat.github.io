@@ -50,7 +50,7 @@
   grid-area: myArea;
 }*/
 .item1{
-  width: 80%;
+  width: 90%;
   height: 130pt;
     background-color: #2C50A1;
     border: 3pt #2C50A1 solid;
@@ -62,7 +62,7 @@
   display: grid;
   grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
   grid-gap: 0px;
-  width:80%;
+  width:90%;
   border-style: solid;
   border-color: #2C50A1;
   border-radius: 7.5px;
@@ -85,7 +85,7 @@
   margin:auto;
   cursor:pointer; 
   /*display:inline-block; */
-  width:80%; 
+  width:90%; 
   font-family:"century gothic";
   font-weight:bold;
    padding:0;
@@ -100,7 +100,7 @@
   background-color:#2C50A1; 
   list-style-type:none; 
   /*position:absolute;*/
-  width:80%;
+  width:90%;
   font-family:"century gothic";
 display:none;
   border-style: solid;
@@ -111,7 +111,7 @@ display:none;
 .sub-menu li { /* 下拉清單每一列的樣式 */
   padding: 3px 5px; 
   text-align:left; 
-  width:80%;
+  width:90%;
   font-family:"century gothic";
   font-weight:bold;
   font-size:10pt;
