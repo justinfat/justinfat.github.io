@@ -131,7 +131,7 @@ button
 .modal-footer{
   padding: 0;
   margin:0;
-  height: 50px;
+  border:0;
   background-color:#E8C41C;
   border-radius: 0px 0px 15px 15px;
 }
