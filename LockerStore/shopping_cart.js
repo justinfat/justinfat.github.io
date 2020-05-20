@@ -41,16 +41,15 @@ $('.modal').on('shown.bs.modal', function() {
 });
 
 
-
-    function submit(Obj) {
+function submit(Obj) {
 /*
 obj = 按的按鈕
 parentNode 可以找到它上一層 div
 className 改成你要的
 */
-Obj.className = "after_click";
-}
+Obj.parentNode.className = "new_div";
+};
 
 function change(){
-    document.getElementById('defaule').className="after_click";
-}
+    document.className="after_click";
+};
