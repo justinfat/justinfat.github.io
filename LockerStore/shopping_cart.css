@@ -108,7 +108,7 @@ button
 }
 .order_btn{
  text-align:center;
-  line-height:50pt;
+  /*line-height:50pt;*/
   padding: 0;  
   border:0;
   margin:0 auto;
