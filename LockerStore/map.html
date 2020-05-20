@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="./map.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="order.css">
 </head>
 
 <body>
@@ -574,7 +575,7 @@
         </div>
       </div>
       <div class="btn btn-square on-card" id="shopCard_bottom">
-        <img class="addBtn" src="public/images/a4/a4-28.svg" alt="a2-28">
+        <img class="addBtn" src="public/images/a4/a4-28.svg" alt="a2-28" data-toggle="modal" data-target="#orderModal">
       </div>
       <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
     </div>
@@ -622,7 +623,12 @@
       </div>
     </div>
   </div>
+  <div w3-include-html="extra.html"></div>
 
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places&callback=initMap"></script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script>w3.includeHTML();</script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
@@ -630,8 +636,7 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="./map.js"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places&callback=initMap"></script>
+  <script src="order.js"></script>
 
 </body>
 

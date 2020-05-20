@@ -69,7 +69,7 @@
     height: 93%;
     border: 5px solid;
     border-radius: 0px 0px 15px 15px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .order-content-left {
     background-color: #F39700;
