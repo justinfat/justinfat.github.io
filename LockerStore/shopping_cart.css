@@ -105,17 +105,15 @@ button
     outline: none;
 }
 .order_btn{
- vertical-align:center;
+ text-align:center;
   margin: auto; 
   padding: 0;
-  display:block;
-  position: absolute;
   border-radius: 20px 20px 20px 20px;
   border:0;
   font-family:"century gothic regular";
   font-weight:bold;
   color: #2C50A1;
-  background-color:#E8C41C; 
+   
 }
 .close {
     height: 30pt;
@@ -134,6 +132,7 @@ button
   padding: 0;
   margin:0;
   height: 50px;
+  background-color:#E8C41C;
 }
 .modal-body {
     padding: 0;
