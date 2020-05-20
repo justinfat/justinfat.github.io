@@ -159,7 +159,7 @@ button
 .modal-content{
     height: 90vh;
     width: 40vw;
-    /*border-radius: 15px 15px 15px 15px;*/
+    border-radius: 15px 15px 15px 15px;
   /*max-height:90vh;*/
 }
 .modal-footer{
@@ -167,7 +167,7 @@ button
   margin:0;
   border:0;
   background-color:#E8C41C;
-  border-radius: 0px 0px 15px 15px;
+  /*border-radius: 0px 0px 15px 15px;*/
   height:50pt;
 bottom: 0
 }
@@ -175,5 +175,5 @@ bottom: 0
     padding: 0;
 }
 .modal-header{
-  border-radius: 15px 15px 0px 0px;
+  /*border-radius: 15px 15px 0px 0px;*/
 }
