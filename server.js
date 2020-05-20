@@ -54,8 +54,18 @@ app.get('/searchLocker', (req, res) => {
 app.get('/searchTag', (req, res) => {
   var arr = req.query.keywords.split('#');
   var keywords = arr.join('');
+  var queryString;
+  if(req.query.sorter==='priceNum')
+  {
+    queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} ASC`;
+  }
+  else
+  {
+    queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} DESC`;
+  }
+  console.log(queryString)
   connection.query(
-    `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE)`, function (error, results, fields) {
+    queryString, function (error, results, fields) {
       if (error) throw error
       res.send({
         results: results,
