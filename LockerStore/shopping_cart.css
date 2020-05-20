@@ -140,7 +140,9 @@ button
   background-color:#E8C41C;
   /*border-radius: 0px 0px 15px 15px;*/
   height:48pt;
-  flex: 0 0 auto;
+  /*flex: 0 0 auto;*/
+  position: absolute;
+bottom: 0
 }
 .modal-body {
     padding: 0;
