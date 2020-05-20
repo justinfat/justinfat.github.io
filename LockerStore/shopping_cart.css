@@ -54,7 +54,7 @@
   height: 130pt;
     background-color: #2C50A1;
     border: 3pt #2C50A1 solid;
-    margin: 20px auto;
+    margin: 0 auto;
     border-radius: 15px;
   display: inline-block;
 }
