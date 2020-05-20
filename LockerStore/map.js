@@ -273,7 +273,7 @@ function getSearchResult(keywords) {
         maxLng: maxLng,
     }, (data) => {
         console.log(data)
-        if (data.results.length<1) {
+        if (data.results.length < 1) {
             alert("No result");
         }
         else if (data == 'error') {
@@ -281,17 +281,28 @@ function getSearchResult(keywords) {
         }
         else {
             for (var i = 0; i < data.results.length; i++) {
-                $('.result').eq(i).find('p.result_name').text(data.results[i].name);
-                $('.result').eq(i).find('p.result_addr').text(data.results[i].addr);
-                console.log(data.results[i].starNum)
-                for (var j = 0; j < Math.trunc(data.results[i].starNum); j++) {
-                    $('.result').eq(i).find('img.star').eq(j).attr('src', './public/images/a2/a2-14.svg');
+                if (i) {
+                    $('.result_container').eq(i - 1).clone('withDataAndEvents').appendTo($('#result_list'));
                 }
-                for (var j = 0; j < Math.trunc(data.results[i].priceNum); j++) {
-                    $('.result').eq(i).find('img.money').eq(j).attr('src', './public/images/a2/a2-36.svg');
+                else {
+                    $('.result_container').eq(0).css('display', 'block');
                 }
-                $('.result').eq(i).find('div.tag').text(data.results[i].tag);
-                $('.result').eq(i).find('img.result_pic').attr('src', data.results[i].img);
+                $('.result_container').eq(i).find('p.result_name').text(data.results[i].name);
+                $('.result_container').eq(i).find('p.result_addr').text(data.results[i].addr);
+                for (var j = 0; j < 5; j++) {
+                    if (j < Math.trunc(data.results[i].starNum))
+                        $('.result_container').eq(i).find('img.star').eq(j).attr('src', './public/images/a2/a2-14.svg');
+                    else
+                        $('.result_container').eq(i).find('img.star').eq(j).attr('src', './public/images/a2/a2-15.svg');
+                }
+                for (var j = 0; j < 3; j++) {
+                    if (j < Math.trunc(data.results[i].priceNum))
+                        $('.result_container').eq(i).find('img.money').eq(j).attr('src', './public/images/a2/a2-36.svg');
+                    else
+                        $('.result_container').eq(i).find('img.money').eq(j).attr('src', './public/images/a2/a2-32.svg');
+                }
+                $('.result_container').eq(i).find('div.tag').text(data.results[i].tag);
+                $('.result_container').eq(i).find('img.result_pic').attr('src', data.results[i].img);
             }
         }
     })
