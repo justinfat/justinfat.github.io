@@ -44,7 +44,7 @@ $('.modal').on('shown.bs.modal', function() {
 function submit(Obj) {
 if(Obj.className ="default")
 {Obj.className = "after_click";}
-    else {Obj.className ="default"}
+    else {Obj.className ="default";}
 };
 
 function change(){
