@@ -97,6 +97,9 @@
   font-weight:bold;
   font-size:14pt;
 }
+.del_btn{
+  margin-right:5pt;
+}
 button
 {
     outline: none;
