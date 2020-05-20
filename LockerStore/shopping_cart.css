@@ -105,6 +105,7 @@ button
   position: absolute;
     left:0pt;
     bottom:0pt;
+  border-radius: 20px 20px 20px 20px;
 }
 .close {
     height: 30pt;
@@ -116,14 +117,14 @@ button
 }
 .modal-content{
     height: 90vh;
-    width: 40vw;
+    width: 500px;
     border-radius: 20px 20px 20px 20px;
 }
 .modal-footer{
    border-radius: 20px 20px 20px 20px;
   padding: 0;
   margin:0;
-  height: 54px;
+  height: 50px;
 }
 .modal-body {
     padding: 0;
