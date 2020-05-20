@@ -41,8 +41,7 @@ $('.modal').on('shown.bs.modal', function() {
 });
 
 
-function setClass()
-{
+
     function submit(Obj) {
 /*
 obj = 按的按鈕
