@@ -10,6 +10,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="./map.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="order.css">
+  <link href="./shopping_cart.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -575,7 +576,7 @@
         </div>
       </div>
       <div class="btn btn-square on-card" id="shopCard_bottom">
-        <img class="addBtn" src="public/images/a4/a4-28.svg" alt="a2-28" data-toggle="modal" data-target="#orderModal">
+        <img class="addBtn" src="public/images/a4/a4-28.svg" alt="a2-28"  data-toggle="modal" data-target="#exampleModalCenter">
       </div>
       <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
     </div>
@@ -623,7 +624,8 @@
       </div>
     </div>
   </div>
-  <div w3-include-html="extra.html"></div>
+  <div w3-include-html="order_extra.html"></div>
+  <div w3-include-html="shopping_cart_extra.html"></div>
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places&callback=initMap"></script>
@@ -637,7 +639,7 @@
     crossorigin="anonymous"></script>
   <script src="./map.js"></script>
   <script src="order.js"></script>
-
+  <script src='./shopping_cart.js'></script>
 </body>
 
 </html>

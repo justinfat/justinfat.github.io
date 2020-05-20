@@ -25,10 +25,10 @@ function showDetail()
     count++;
     if (count % 2 == 1) {
         $('.order-object-detail').css("display", "inline-block");
-        $('.arrow-img').css("transform", "rotate(180deg)");
+        $('.arrow-btn').css("transform", "rotate(180deg)");
     }
     else {
         $('.order-object-detail').css("display", "none");
-        $('.arrow-img').css("transform", "rotate(0deg)");
+        $('.arrow-btn').css("transform", "rotate(0deg)");
     }
 }

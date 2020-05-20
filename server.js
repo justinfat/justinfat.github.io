@@ -63,7 +63,7 @@ app.get('/searchTag', (req, res) => {
   {
     queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} DESC`;
   }
-  console.log(queryString)
+  // console.log(queryString)
   connection.query(
     queryString, function (error, results, fields) {
       if (error) throw error
@@ -97,7 +97,7 @@ app.get('/searchShop', (req, res) => {
 
 app.get('/getItem_single', (req, res) => {
   connection.query(
-    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 0 ORDER BY img DESC`, function (error, results, fields) {
+    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 0`, function (error, results, fields) {
       // if (error) throw error
       res.send({
         results: results,
@@ -107,7 +107,7 @@ app.get('/getItem_single', (req, res) => {
 
 app.get('/getItem_group', (req, res) => {
   connection.query(
-    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 1 ORDER BY img DESC`, function (error, results, fields) {
+    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 1`, function (error, results, fields) {
       // if (error) throw error
       res.send({
         results: results,

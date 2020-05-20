@@ -616,7 +616,7 @@ p.explore {
     padding: 2.5% 32% 2.5% 8%;
 }
 .shopAddr_icon{
-    width: 6%;
+    width: 4%;
     margin-top: 1.2%;
 }
 .shopAddr_txt{
@@ -696,6 +696,7 @@ p.explore {
     width: 50%;
     height: 100%;
     padding: 2% 5% 2% 5%;
+    overflow: auto;
 }
 .shopItem_name {
     font-size: 0.95rem;
