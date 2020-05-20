@@ -115,6 +115,7 @@ button
     left:0pt;
     bottom:0pt;
   border-radius: 20px 20px 20px 20px;
+  border:0;
 }
 .close {
     height: 30pt;
