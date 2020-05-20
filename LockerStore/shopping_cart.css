@@ -161,6 +161,7 @@ button
     width: 40vw;
     border-radius: 15px 15px 15px 15px;
   /*max-height:90vh;*/
+  overflow: hidden;
 }
 .modal-footer{
   padding: 0;
