@@ -34,3 +34,8 @@ if ((getScrollHeight() - getScrollTop() - getWindowHeight()) > 51 )
  else
    $('.footer').css('position','relative' );
    }
+
+
+$('.modal').on('shown.bs.modal', function() {
+   $(".modal-body").css("padding",'0px');
+});
