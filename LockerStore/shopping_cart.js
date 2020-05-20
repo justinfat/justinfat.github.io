@@ -50,3 +50,4 @@ className 改成你要的
 */
 Obj.className = "after_click";
 }
+
