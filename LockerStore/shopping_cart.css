@@ -132,6 +132,7 @@ button
     height: 90vh;
     width: 40vw;
     border-radius: 15px 15px 15px 15px;
+  max-height:90vh;
 }
 .modal-footer{
   padding: 0;
