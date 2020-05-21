@@ -949,7 +949,16 @@ $('.addBtn').click(function () {
     console.log('price='+itemPrice)
     for(var i=0; i<itemName.length; i++)
     {
-        $('ul.sub-menu li').eq(i).html(itemName[i]+html_1+itemPrice[i]+html_2);
+        if (i) {
+            $('ul.sub-menu .product-line').eq(i - 1).clone('withDataAndEvents').appendTo($('#SubMenu2'));
+            var tmp = $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(i-1);
+            tmp.clone('withDataAndEvents').insertAfter(tmp);
+        }
+        else {
+            $('ul.sub-menu .product-line').eq(0).css('display', 'block');
+            $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(0).css('display', 'block');
+        }
+        $('ul.sub-menu .product-line').eq(i).html(itemName[i]+html_1+itemPrice[i]+html_2);
         $('.order-content-mid :nth-child(' + orderNum + ') p.product-name-text').eq(i).text(itemName[i]);
         $('.order-content-mid :nth-child(' + orderNum + ') div.product-number').eq(i).text(itemAmount[i]);
         $('.order-content-mid :nth-child(' + orderNum + ') p.product-price-text').eq(i).text(itemPrice[i]);
