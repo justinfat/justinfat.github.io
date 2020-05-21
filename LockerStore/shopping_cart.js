@@ -48,6 +48,17 @@ function submit(Obj) {
   Obj.className =  (Obj.className =="item1_all")? "after_click":"item1_all";
 };
 
-function change(){
-    document.className="after_click";
-};
+var count = 0;
+function showDetail()
+{
+    count++;
+    if (count % 2 == 1) {
+        $('.order-object-detail').css("display", "inline-block");
+        $('.arrow-btn').css("transform", "rotate(180deg)");
+    }
+    else {
+        $('.order-object-detail').css("display", "none");
+        $('.arrow-btn').css("transform", "rotate(0deg)");
+    }
+}
+
