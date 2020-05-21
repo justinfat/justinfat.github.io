@@ -22,8 +22,7 @@ function showRight()
 var count = 0;
 function showDetail()
 {
-    count++;
-    if (count % 2 == 1) {
+    if($('.order-object-detail').css("display")=='none') {
         $('.order-object-detail').css("display", "inline-block");
         $('.arrow-btn').css("transform", "rotate(180deg)");
     }
