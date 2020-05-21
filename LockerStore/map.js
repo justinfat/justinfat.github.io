@@ -1,4 +1,5 @@
 var map, marker, lat, lng;
+var autocomplte, autocompleteLsr;
 var pos_marker = './public/images/a1/a1-08.svg';
 var locker_marker = './public/images/a1/a1-31前.svg'
 var isLocate = false;
@@ -66,6 +67,28 @@ function initMap() {
         codeAddress(addr);
         document.getElementById('map-canvas').style.opacity = '1';
     }
+    addAutocomplete();
+}
+
+function addAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById('keywordBlank'));
+    autocomplete.setFields(
+        ['address_components', 'geometry', 'icon', 'name']);
+        autocompleteLsr = autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+    });
+
+}
+function removeAutocomplete() {
+    google.maps.event.removeListener(autocompleteLsr);
+    google.maps.event.clearInstanceListeners(autocomplete);
+    $(".pac-container").remove();
 }
 
 /* Only locate once when click */
@@ -377,7 +400,7 @@ function getShopInfo(name) {
         storeName = data.name;
         storeAddr = data.addr;
         storeTel = data.tel;
-        storeID　= data.id;
+        storeID = data.id;
     })
 }
 
@@ -506,7 +529,7 @@ $('#infoBox_close').click(function () {
     $('#infoBox').hide();
 });
 $('#search_btn').click(function () {
-    console.log('card_state='+card_state);
+    console.log('card_state=' + card_state);
     if ($('#keywordBlank').val().length < 3) {
         event.preventDefault();
         alert("Please enter what you want to search");
@@ -540,10 +563,14 @@ $('#search_btn').click(function () {
 });
 $("#keywordBlank").focus(function () {
     if (input_state == 1) {
+        removeAutocomplete();
         $('#clear_btn').show();
         if (!$(this).val()) {
             $(this).val('# ');
         }
+    }
+    else{
+        addAutocomplete();
     }
 });
 $('#keywordBlank').keyup(function (e) {
@@ -698,6 +725,7 @@ $('#clear_btn').click(function () {
 });
 $('#setHome_btn').click(function () {
     input_state = 2;
+    $('#keywordBlank').val('');
     $('#keywordBlank').attr('placeholder', 'Enter your home address');
     $('#keywordBlank').addClass('grayHint');
     $('#menu_btn').attr('src', './public/images/a3/a3-38.svg');
@@ -711,10 +739,14 @@ $('#setHome_btn').click(function () {
     $('#dropDown_btn').addClass('homeIcon');
     $('#save_btn').show();
     $('#cancel_btn').show();
-    //$('#keywordBlank').focus();
+    if($('#homeAddr').text() !== 'Set location')
+    {
+        codeAddress($('#homeAddr').text());
+    }
 });
 $('#setWork_btn').click(function () {
     input_state = 3;
+    $('#keywordBlank').val('');
     $('#keywordBlank').attr('placeholder', 'Enter your work address');
     $('#keywordBlank').addClass('grayHint');
     $('#menu_btn').attr('src', './public/images/a3/a3-38.svg');
@@ -728,7 +760,10 @@ $('#setWork_btn').click(function () {
     $('#dropDown_btn').addClass('homeIcon');
     $('#save_btn').show();
     $('#cancel_btn').show();
-    //$('#keywordBlank').focus();
+    if($('#workAddr').text() !== 'Set location')
+    {
+        codeAddress($('#workAddr').text());
+    }
 });
 
 $('#cancel_btn').click(function () {
@@ -749,6 +784,7 @@ $('#cancel_btn').click(function () {
 });
 
 $('#save_btn').click(function () {
+    codeAddress($('#keywordBlank').val());
     $('#keywordBlank').attr('placeholder', '# What do you want today :)');
     $('#keywordBlank').removeClass('grayHint');
     $('#menu_btn').attr('src', './public/images/a1/a1-04.svg');
@@ -933,32 +969,29 @@ $('.addBtn').click(function () {
     ++orderNum;
     var count = $('#singleItemList div.shopItem').length;
     console.log('count' + count);
-    for(var i=0; i<count; i++)
-    {
+    for (var i = 0; i < count; i++) {
         var amount = +($('#singleItemList p.itemAmount_txt').eq(i).text());
-        if(amount > 0)
-        {
+        if (amount > 0) {
             itemName.push($('#singleItemList div.shopItem_name').eq(i).text())
             itemAmount.push(amount);
-            console.log('shopItmePrice='+$('#singleItemList div.shopItem_price').eq(i).text())
-            itemPrice.push( +($('#singleItemList div.shopItem_price').eq(i).text().substr(2))*amount )
+            console.log('shopItmePrice=' + $('#singleItemList div.shopItem_price').eq(i).text())
+            itemPrice.push(+($('#singleItemList div.shopItem_price').eq(i).text().substr(2)) * amount)
         }
     }
-    console.log('item='+itemName)
-    console.log('amount='+itemAmount)
-    console.log('price='+itemPrice)
-    for(var i=0; i<itemName.length; i++)
-    {
+    console.log('item=' + itemName)
+    console.log('amount=' + itemAmount)
+    console.log('price=' + itemPrice)
+    for (var i = 0; i < itemName.length; i++) {
         if (i) {
             $('ul.sub-menu .product-line').eq(i - 1).clone('withDataAndEvents').appendTo($('#SubMenu2'));
-            var tmp = $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(i-1);
+            var tmp = $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(i - 1);
             tmp.clone('withDataAndEvents').insertAfter(tmp);
         }
         else {
             $('ul.sub-menu .product-line').eq(0).css('display', 'block');
             $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(0).css('display', 'block');
         }
-        $('ul.sub-menu .product-line').eq(i).html(itemName[i]+html_1+itemPrice[i]+html_2);
+        $('ul.sub-menu .product-line').eq(i).html(itemName[i] + html_1 + itemPrice[i] + html_2);
         $('.order-content-mid :nth-child(' + orderNum + ') p.product-name-text').eq(i).text(itemName[i]);
         $('.order-content-mid :nth-child(' + orderNum + ') div.product-number').eq(i).text(itemAmount[i]);
         $('.order-content-mid :nth-child(' + orderNum + ') p.product-price-text').eq(i).text(itemPrice[i]);
@@ -972,7 +1005,7 @@ $('.addBtn').click(function () {
     $('.order-content-mid p.store-tel-addr').eq(orderNum - 1).html(storeTel + '<br>' + storeAddr);
     $('.order-content-mid p.station-name').eq(orderNum - 1).text(stationName + ' - 02');
     $('.order-content-mid p.station-addr').eq(orderNum - 1).text(stationAddr);
-    
+
 });
 $('.order_btn').click(function () {
 });
