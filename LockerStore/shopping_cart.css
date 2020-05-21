@@ -136,6 +136,26 @@ display:none;
   font-weight:bold;
   font-size:14pt;
 }
+.arrow-btn {
+    background-color: #2C50A1;
+    width: 20pt;
+    height: 20pt;
+    border: 0;
+    display: inline-block;
+    position: relative;
+    top: 15%;
+    right: 6pt;
+    float: right;
+    background-image: url(public/images/a6/a6-22.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.arrow-img {
+    display: inline-block;
+    position: relative;
+    right: 4pt;
+    bottom: 5pt;
+}
 .del_btn{
   margin-right:3pt;
 }
