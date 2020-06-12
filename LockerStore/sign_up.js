@@ -12,7 +12,7 @@ $(document).ready(function() {
     }
     else {
       $('#check_same').text('')
-      $.get('./sign_up', {
+      $.get('/sign_up', {
         account: account,
         password: password,
       }, (data) => {

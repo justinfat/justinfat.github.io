@@ -26,7 +26,7 @@ connection.connect(err => {
   }
 })
 
-app.get('./sign_up', (req, res) => {
+app.get('/sign_up', (req, res) => {
   res.send(`${req.query.account}`)
 })
 

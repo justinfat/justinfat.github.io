@@ -1,0 +1,10 @@
+{
+    "name": "LockerStore",
+    "short_name": "LockerStore",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "icons": [{
+      "src": "./public/images/about_us/part5/part5-logo.svg",
+      "sizes": "144x144"
+    }]
+  }

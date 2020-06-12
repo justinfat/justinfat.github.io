@@ -9,6 +9,7 @@
     "@types/jquery": "^3.3.35",
     "express": "^4.17.1",
     "jquery": "^3.5.0",
+    "mongodb": "^3.5.8",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
