@@ -4,7 +4,7 @@
     "start_url": "./index.html",
     "display": "standalone",
     "icons": [{
-      "src": "./public/images/about_us/part5/part5-logo.png",
-      "sizes": "144x144"
+      "src": "./public/images/VOCA-144x144.png",
+      "sizes": "73x166"
     }]
   }

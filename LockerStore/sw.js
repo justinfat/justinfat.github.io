@@ -6,7 +6,7 @@ const cachedFiles = [
     './manifest.json',
     './public/stylesheets/jquery-3.4.1.min.js',
     './public/images/about_us/part5/part5-logo.svg',
-    './public/images/about_us/part5/part5-logo.png',
+    './public/images/VOCA-144x144.png',
     './public/images/about_us/part1/location-icon-small.svg',
     './public/images/about_us/part1/find.svg',
     './public/images/00/00-12.svg',
