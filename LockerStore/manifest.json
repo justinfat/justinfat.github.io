@@ -5,6 +5,6 @@
     "display": "standalone",
     "icons": [{
       "src": "./public/images/VOCA-144x144.png",
-      "sizes": "73x166"
+      "sizes": "144x144"
     }]
   }
