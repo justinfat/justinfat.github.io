@@ -1,5 +1,6 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 * {
-    font-family: "NotoSansCJKtc-Regular";
+    font-family: 'Noto Sans TC';
     user-select: none;
 }
 .color-normal {
