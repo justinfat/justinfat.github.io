@@ -514,6 +514,7 @@ function clear_result_card() {
 }
 
 $(document).ready(function () {
+    initMap();
     $('.toast').toast('show');
     $('[data-toggle="popover"]').popover();
     //$('#infoBox').hide();

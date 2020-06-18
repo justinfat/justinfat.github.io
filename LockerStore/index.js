@@ -197,5 +197,5 @@ $('#find_btn').click((event) => {
     }
 })
 $(document).ready(function () {
-
+    initMap();
 });
