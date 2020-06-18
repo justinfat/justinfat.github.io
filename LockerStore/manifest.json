@@ -4,7 +4,7 @@
     "start_url": "./index.html",
     "display": "standalone",
     "icons": [{
-      "src": "./public/images/VOCA-144x144.png",
+      "src": "./public/images/logo-01.png",
       "sizes": "144x144"
     }]
   }
