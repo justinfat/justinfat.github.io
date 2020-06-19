@@ -4,7 +4,7 @@
     user-select: none;
 }
 .color-normal {
-    color: #595757;
+    color: #5c5c5c;
 }
 .color-blue {
     color: #2c50a1;
@@ -18,6 +18,21 @@
 .color-orange {
     color: #eb871b;
 }
+.font-14 {
+    font-size: 1.17rem;
+}
+.font-12 {
+    font-size: 1rem;
+}
+.font-10 {
+    font-size: 0.83rem;
+}
+.font-9 {
+    font-size: 0.75rem;
+}
+.font-8 {
+    font-size: 0.67rem;
+}
 .flip { 
     transform: rotate(-180deg);
 }
@@ -29,11 +44,11 @@ html, body, #map-canvas {
     padding: 0;
 }
 ::placeholder {
-    color: #737272;
+    color: #919090;
     font-weight: 500;
 }
 .grayHint::-webkit-input-placeholder {
-    color: #9f9fa0;
+    color: #919090;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -219,7 +234,7 @@ img {
     min-height: 20.5vmin;;
 }
 .sorterBox_before{
-    display: none;
+    /* display: none;
     position: absolute;
     top: 12.8vmin;
     left: 5.5vmin;
@@ -232,11 +247,20 @@ img {
     border-color: #b5b5b6;
     border-radius: 4rem;
     background-color: #ffffff;
+    z-index: 4; */
+    display: none;
+    position: absolute;
+    top: 12.8vmin;
+    left: 5.5vmin;
+    height: 7vmin;
     z-index: 4;
+}
+#short_outer {
+    height: 100%;
 }
 #usedSorter {
     position: absolute;
-    top: 1.3vmin;
+    top: 1.5vmin;
     left: 3vmin;
     height: 4vmin;
 }
@@ -260,24 +284,24 @@ img {
 #sorter_left {
     position: absolute;
     top: 1.5vmin;
-    left: 3.2vmin;
+    left: 3vmin;
     height: 4vmin;
 }
 #sorter_star {
     position: absolute;
-    top: 1.4vmin;
+    top: 1.5vmin;
     left: 33.5%;
     height: 4vmin;
 }
 #sorter_heart {
     position: absolute;
-    top: 1.4vmin;
+    top: 1.5vmin;
     left: 50%;
     height: 4vmin;
 }
 #sorter_money {
     position: absolute;
-    top: 1.4vmin;
+    top: 1.5vmin;
     left: 68%;
     height: 4vmin;
 }
@@ -453,34 +477,33 @@ input {
     padding: 0;
 }
 .result_name {
-    font-size: 1.17rem;
     line-height: 1.4rem;
     margin-bottom: 1.2vmin;
     margin-top: 1vmin;
 }
 .starBar {
-    /* margin-bottom: 0.3rem; */
+    margin-top: 0.4rem;
 }
 .star {
     height: 3.2vmin;
     margin-right: 0.1rem;
 }
 .moneyBar {
-    /* margin-bottom: 0.3rem; */
+    /* margin-top: 0.3rem; */
 }
 .money {
     height: 3.2vmin;
 
 }
+.dot {
+    width: 1vmin;
+    margin: 0 1.7vmin;
+}
 .tag {
     display: inline-flex;
-    font-size: 1rem;
-    color: #5c5c5c;
 }
 .result_addr {
-    font-size: 0.83rem;
     line-height: 1rem;
-    color: #5c5c5c;
     margin-bottom: 0;
     position: absolute;
     bottom: 0;
@@ -502,12 +525,12 @@ input {
     top: 10%;
     right: 7%;
 }
-#pageBar {
+/* #pageBar {
     width: 25.8vw;
 }
 #pb_outer {
     width: 25.4vw;
-}
+} 
 .bottom {
     position: absolute;
     bottom: 0;
@@ -524,7 +547,7 @@ input {
 }
 .page_btn {
     width: 2.45vw;
-}
+}*/
 /* .foldCard_btn {
     position: absolute;
     top: 0.8vw;
@@ -563,11 +586,9 @@ input {
     padding: 0 4.5vmin;
 }
 .explore.title {
-    font-size: 1rem;
     line-height: 1.8rem;
 }
 .explore.subtitle {
-    font-size: 0.83rem;
     color: #9f9fa0;
 }
 p.explore {
@@ -582,7 +603,7 @@ p.explore {
     padding-bottom: 3%;
 }
 .explore.subtitle.dark {
-    color:#595757;
+    color: #5c5c5c;
 }
 .detail {
     margin-left: calc(3.3% + 4.5vmin + 7.8vmin);
@@ -598,8 +619,8 @@ p.explore {
     line-height: 1.2rem;
 }
 .explore.tag {
+    color: #5c5c5c;
     display: inline-flex;
-    font-size: 0.83rem;
     padding-right: 0.2rem;
     line-height: 1.3rem;
 }
@@ -615,11 +636,10 @@ p.explore {
     margin-right: 3.3%;
     margin-bottom: 9.5vmin;
 }
-.explore.type {
+.explore.type-btn {
     width: 12.5vmin;
 }
 .type-txt {
-    font-size: 0.67rem;
     color: #5c5c5c;
     padding-top: 1.8vmin;
 }
@@ -660,10 +680,20 @@ p.explore {
 .foldRank_btn {
     width: 1vw;
 }
+.onMap_shop {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    /* display: none; */
+}
+.shop_rect {
+    position: relative;
+    margin: 7vmin 5vmin 0 5vmin;
+}
 .shopInfo_top {
     position: relative;
-    background-color: #4ca6df;
-    min-height: 14.4rem;
+    background-color: #BDBEBF;
+    min-height: 36.9vmin;
 }
 .shopImg {
     position: absolute;
@@ -671,15 +701,26 @@ p.explore {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0;
+    opacity: 50%;
 }
 #shop_card {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffffff;
+    background-color: #ffffff; */
+    width: 100%;
+    height: calc(100vh - 7vmin);
+    border-width: 0.2rem;
+    border-bottom-width: 0.1rem;
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
 }
 .shopInfo {
-    padding: 2.5% 8% 3.5% 8%;
+    position: absolute;
+    top: 26vmin;
+    left: 5%;
+    z-index: 200;
 }
 .shopName {
     font-size: 1.1rem;
@@ -692,9 +733,8 @@ p.explore {
     margin-left: 3%;
 }
 .commentNum {
-    font-size: 0.78rem;
     margin-bottom: 1.5%;
-    margin-left: 3%;
+    margin-left: 1.5%;
 }
 .shopInfo_left {
     width: 70%;
@@ -705,14 +745,14 @@ p.explore {
 .shopTag {
     line-height: 0.9rem;
 }
-.shopContact {
-    padding: 2.5% 32% 2.5% 8%;
+.moreInfo {
+    padding: 2.5% 11vmin 2.5% 4.5vmin;
 }
-.shopAddr_icon{
+/* .shopAddr_icon{
     width: 4%;
     margin-top: 1.2%;
-}
-.shopAddr_txt{
+} */
+/* .shopAddr_txt{
     font-size: 0.77rem;
     margin-left: 3%;
 }
@@ -723,8 +763,12 @@ p.explore {
 .shopTel_txt{
     font-size: 0.77rem;
     margin-left: 3%;
+} */
+#shopCard_content {
+    position: relative;
 }
 #shopTab_single {
+    height: 125vmin;
     padding: 3.2% 2.5% 15% 2.5%;
     background-color: #ffffff;
 }
@@ -797,6 +841,7 @@ p.explore {
     margin-bottom: 2%;
 }
 .shopItem_intro {
+    color: #474645;
     font-size: 0.77rem;
     line-height: 1rem;
 }

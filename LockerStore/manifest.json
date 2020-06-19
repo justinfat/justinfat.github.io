@@ -4,7 +4,7 @@
     "start_url": "./index.html",
     "display": "standalone",
     "icons": [{
-      "src": "./public/images/logo-01.png",
+      "src": "./public/images/LOGO-01.png",
       "sizes": "144x144"
     }]
   }
