@@ -94,6 +94,7 @@ app.get('/searchShop', (req, res) => {
             id: results[0].id,
             name: results[0].name,
             starNum: results[0].starNum,
+            priceNum: results[0].priceNum,
             commentNum: results[0].commentNum,
             tag: results[0].tag,
             addr: results[0].addr,

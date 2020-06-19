@@ -390,8 +390,21 @@ function getShopInfo(name) {
         $('#shop_card p.shopName').text(data.name);
         $('#shop_card span.shopAddr_txt').text(data.addr);
         $('#shop_card span.shopTel_txt').text(data.tel);
-        for (var j = 1; j <= data.starNum; j++) {
-            $('#shop_card div.starBar :nth-child(' + j + ')').attr('src', './public/images/a2/a2-14.svg')
+        for (var j = 0; j < 5; j++) {
+            if (j < Math.trunc(data.starNum)) {
+                $('#shop_card div.starBar :nth-child(' + j + ')').attr('src', './public/images/b1/開始使用部分切圖用-65.svg');
+            }
+            else {
+                $('#shop_card div.starBar :nth-child(' + j + ')').attr('src', './public/images/b1/開始使用部分切圖用-66.svg');
+            }
+        }
+        for (var j = 0; j < 3; j++) {
+            if (j < Math.trunc(data.priceNum)) {
+                $('#shop_card div.moneyBar :nth-child(' + j + ')').attr('src', './public/images/b1/開始使用部分-32.svg');
+            }
+            else {
+                $('#shop_card div.moneyBar :nth-child(' + j + ')').attr('src', './public/images/b1/開始使用部分-27.svg');
+            }
         }
         $('#shop_card span.starNum').text(data.starNum);
         $('#shop_card span.commentNum').text('(' + data.commentNum + ')');
