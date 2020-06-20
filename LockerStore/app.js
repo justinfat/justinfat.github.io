@@ -388,8 +388,8 @@ function getShopInfo(name) {
         name: name,
     }, (data) => {
         $('#shop_card p.shopName').text(data.name);
-        $('#shop_card span.shopAddr_txt').text(data.addr);
-        $('#shop_card span.shopTel_txt').text(data.tel);
+        $('.moreInfo span.shopAddr_txt').text(data.addr);
+        $('.moreInfo span.shopTel_txt').text(data.tel);
         for (var j = 0; j < 5; j++) {
             if (j < Math.trunc(data.starNum)) {
                 $('#shop_card div.starBar :nth-child(' + j + ')').attr('src', './public/images/b1/開始使用部分切圖用-65.svg');
@@ -519,6 +519,7 @@ function clear_result_card() {
     $('#menu_btn').attr("src", "./public/images/a1/a1-04.svg");
     $('#menu_btn').addClass('menuIcon');
     $('#shop_card').hide();
+    $('.onMap_shop').css('z-index', '-1');
     // card_state = 1;
 }
 
@@ -603,6 +604,7 @@ $('#keywordBlank').keyup(function (e) {
             }
             if (card_state == 3) {
                 $('#shop_card').hide();
+                $('.onMap_shop').css('z-index', '-1');
                 // $('#result_card').show();
                 $('.onMap_rise').show();
                 $('.sorterBox_before').show();
@@ -788,6 +790,7 @@ $('.explore_btn').click(function () {
     }
     else {
         $('#shop_card').hide();
+        $('.onMap_shop').css('z-index', '-1');
         // $('#result_card').show();
         $('.onMap_rise').show();
         $('#dropDown_btn').hide();
@@ -987,6 +990,7 @@ $('#result_list div:nth-child(n).result_content').click(function () {
     // $('#result_card').hide();
     $('.onMap_rise').hide();
     $('#shop_card').show();
+    $('.onMap_shop').css('z-index', '2');
     $('#dropDown_btn').show();
     $('#dropDown_txt').show();
     //$('#result_card').animate({ left: '-28vw' }, 200);
@@ -1004,14 +1008,14 @@ $('#result_list div:nth-child(n).result_content').click(function () {
 });
 $('.shopTab_btn').click(function () {
     if (shopTab_state == 1) {
-        $(this).attr('src', './public/images/a4/a4-44.svg');
+        $(this).attr('src', './public/images/b1/開始使用部分-24.svg');
         $('#shopTab_single').hide();
         $('#shopTab_group').show();
         $('#shareBox').show();
         shopTab_state = 2;
     }
     else {
-        $(this).attr('src', './public/images/a4/a4-04.svg');
+        $(this).attr('src', './public/images/b1/開始使用部分-23.svg');
         $('#shopTab_group').hide();
         $('#shopTab_single').show();
         $('#shareBox').hide();
@@ -1135,5 +1139,74 @@ $('.addBtn').click(function () {
     $('.order-content-mid p.station-addr').eq(orderNum - 1).text(stationAddr);
 
 });
+
+$('.moreBar').click(function () {
+    $(this).hide();
+    $('.moreInfo').show();
+});
+
+$('.moreInfo img.optionBtn_right').click(function () {
+    $('.moreInfo').hide();
+    $('.moreBar').show();
+});
+
+$('#hot_btn').click(function() {
+    if(!$(this).hasClass('select')) {
+        $(this).attr('src', './public/images/b1/開始使用部分-37.svg');
+        $('#cheap_btn').attr('src', './public/images/b1/開始使用部分-39.svg');
+        $('#guess_btn').attr('src', './public/images/b1/開始使用部分-40.svg');
+        $('#class_btn').attr('src', './public/images/b1/開始使用部分-42.svg');
+        // $(this).addClass('select');
+        // $('#cheap_btn').removeClass('select');
+        // $('#guess_btn').removeClass('select');
+        // $('#class_btn').removeClass('select');
+    }
+});
+
+$('#cheap_btn').click(function() {
+    if(!$(this).hasClass('select')) {
+        $(this).attr('src', './public/images/b1/開始使用部分-38.svg');
+        $('#hot_btn').attr('src', './public/images/b1/開始使用部分-36.svg');
+        $('#guess_btn').attr('src', './public/images/b1/開始使用部分-40.svg');
+        $('#class_btn').attr('src', './public/images/b1/開始使用部分-42.svg');
+        // $(this).addClass('select');
+        // $('#hot_btn').removeClass('select');
+        // $('#guess_btn').removeClass('select');
+        // $('#class_btn').removeClass('select');
+    }
+});
+
+$('#guess_btn').click(function() {
+    if(!$(this).hasClass('select')) {
+        $(this).attr('src', './public/images/b1/開始使用部分-41.svg');
+        $('#hot_btn').attr('src', './public/images/b1/開始使用部分-36.svg');
+        $('#cheap_btn').attr('src', './public/images/b1/開始使用部分-39.svg');
+        $('#class_btn').attr('src', './public/images/b1/開始使用部分-42.svg');
+        // $(this).addClass('select');
+        // $('#hot_btn').removeClass('select');
+        // $('#cheap_btn').removeClass('select');
+        // $('#class_btn').removeClass('select');
+    }
+});
+
+$('#class_btn').click(function() {
+    if(!$(this).hasClass('select')) {
+        $(this).attr('src', './public/images/b1/開始使用部分-43.svg');
+        $('#hot_btn').attr('src', './public/images/b1/開始使用部分-36.svg');
+        $('#cheap_btn').attr('src', './public/images/b1/開始使用部分-39.svg');
+        $('#guess_btn').attr('src', './public/images/b1/開始使用部分-40.svg');
+        // $(this).addClass('select');
+        // $('#has_btn').removeClass('select');
+        // $('#cheap_btn').removeClass('select');
+        // $('#guess_btn').removeClass('select');
+    }
+});
+
+$('.tab_btn').click(function() {
+    if(!$(this).hasClass('select')) {
+        $('.tab_btn').toggleClass('select');
+    }
+});
+
 $('.order_btn').click(function () {
 });

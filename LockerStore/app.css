@@ -53,7 +53,7 @@ html, body, #map-canvas {
 /* width */
 ::-webkit-scrollbar {
     width: 1.5vmin;
-    border-bottom-right-radius: 0.2rem;
+    height: 0;
   }
   
 /* Track */
@@ -70,8 +70,9 @@ html, body, #map-canvas {
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #8E8E8F;  
+    background: #8E8E8F;
 }
+
 .btn.disabled {
     cursor: not-allowed;
     pointer-events: none;
@@ -213,8 +214,8 @@ img {
 }
 .backBtn {
     position: absolute;
-    top: 120%;
-    left: 5.2%;
+    top: 0;
+    right: 5.2%;
     width: 8vw;
 }
 #save_btn {
@@ -684,16 +685,22 @@ p.explore {
     position: absolute;
     top: 0%;
     height: 100%;
-    /* display: none; */
+    z-index: -1;
 }
 .shop_rect {
     position: relative;
-    margin: 7vmin 5vmin 0 5vmin;
+    margin: 0 5vmin 0 5vmin;
 }
 .shopInfo_top {
     position: relative;
     background-color: #BDBEBF;
     min-height: 36.9vmin;
+    border-style: solid;
+    border-width: 0.17rem;
+    border-radius: 0.25rem;
+    border-color: #FFFFFF;
+    border-top: 0;
+    z-index: 3;
 }
 .shopImg {
     position: absolute;
@@ -703,22 +710,24 @@ p.explore {
     height: 100%;
     z-index: 0;
     opacity: 50%;
+    border-radius: 0.2rem
 }
 #shop_card {
     /* position: absolute;
     top: 0;
     left: 0;
     background-color: #ffffff; */
+    margin-top: 3.9vmin;
     width: 100%;
     height: calc(100vh - 7vmin);
     border-width: 0.2rem;
     border-bottom-width: 0.1rem;
-    border-bottom-left-radius: 0.1rem;
-    border-bottom-right-radius: 0.1rem;
+    border-radius: 0.4rem;
 }
 .shopInfo {
     position: absolute;
-    top: 26vmin;
+    width: 90%;
+    top: 70.5%;
     left: 5%;
     z-index: 200;
 }
@@ -740,13 +749,35 @@ p.explore {
     width: 70%;
 }
 .shopTab_btn {
-    width: 19.5%;
+    height: 7.8vmin;
 }
 .shopTag {
     line-height: 0.9rem;
 }
+.moreBar {
+    min-height: 6.9vmin;
+    line-height: 0.9rem;
+    padding: 0.5rem 5.3% 0.3rem 5%;
+    background-color: #2C50A1;
+    border-style: solid;
+    border-width: 0.12rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-color: #FFFFFF;
+    border-top: 0;
+}
 .moreInfo {
-    padding: 2.5% 11vmin 2.5% 4.5vmin;
+    min-height: 13.3vmin;
+    margin-top: -1vmin;
+    padding: 0.9rem 5.3% 0.6rem 5%;
+    background-color: #2C50A1;
+    border-style: solid;
+    border-width: 0.12rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-color: #FFFFFF;
+    border-top: 0;
+    line-height: 0.9rem;
 }
 
 /* .shopAddr_icon{
@@ -767,17 +798,25 @@ p.explore {
 } */
 #shopCard_content {
     position: relative;
+    border-radius: 0.4rem;
+}
+.shopCard_top {
+    overflow-x: auto;
+    background-color: #FFFFFF;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+}
+.tab_container {
+    width: 104.6vmin;
+    padding: 2.1vmin 3.5vmin 2.1vmin 3.5vmin;
+}
+.tab_btn {
+    width: 22.4vmin;
 }
 #shopTab_single {
     height: 125vmin;
     padding: 3.2% 2.5% 15% 2.5%;
     background-color: #ffffff;
-}
-.shopTab_title {
-    font-size: 1.08rem;
-    padding-left: 6%;
-    padding-bottom: 4%;
-    margin: 0;
 }
 .shopItem {
     position: relative;
@@ -905,9 +944,9 @@ p.explore {
     width: 60%;
 }
 .optionBtn_right {
-    margin-right: 4.5%;
-    margin-top: -2.5%;
-    width: 4%;
+    /* margin-right: 4.5%;
+    margin-top: -2.5%; */
+    height: 2.2vmin;
 }
 #shopCard_bottom {
     position: absolute;
