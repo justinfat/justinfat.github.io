@@ -181,8 +181,8 @@
     <div class="container-fluid onMap_rise">
         <div class="rise_rect">
             <div class="card" id="result_card">
-                <div class="btn on-card" id="slipCard_btn">
-                    <img id="slipCard_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
+                <div class="btn on-card" id="slipResult_btn">
+                    <img id="slipResult_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
                 </div>
                 <div class="card-body scrollbar list-group" id="result_list">
                     <div class="result_container" style="display:none">
@@ -437,12 +437,10 @@
                     <div class="d-flex">
                         <div class="d-flex flex-column mr-auto">
                             <div class="d-flex align-items-start">
-                                <!-- <img class="btn btn-square shopAddr_icon" src="public/images/a4/a4-15.svg" alt="a4-15"> -->
                                 <div class="color-white font-9">店家位置&nbsp;:&nbsp;</div>
                                 <span class="shopAddr_txt color-white font-9"></span>
                             </div>
                             <div class="d-flex align-items-start mt-1">
-                                <!-- <img class="btn btn-square shopTel_icon" src="public/images/a4/a4-14.svg" alt="a4-14"> -->
                                 <div class="color-white font-9">營業時間&nbsp;:&nbsp;</div>
                                 <span class="shopTel_txt color-white font-9"></span>
                             </div>
@@ -454,129 +452,44 @@
             </div>
 
             <div class="card" id="shop_card" style="display:none">
-                <div id="shopCard_content">
-                    <div class="d-flex flex-column">
-                        <div class="shopCard_top">
-                            <div class="d-flex tab_container justify-content-between">
-                                <img class="btn btn-square tab_btn select" id="hot_btn" src="public/images/b1/開始使用部分-37.svg" alt="b1-37">
-                                <img class="btn btn-square tab_btn" id="cheap_btn" src="public/images/b1/開始使用部分-39.svg" alt="b1-39">
-                                <img class="btn btn-square tab_btn" id="guess_btn" src="public/images/b1/開始使用部分-40.svg" alt="b1-40">
-                                <img class="btn btn-square tab_btn" id="class_btn" src="public/images/b1/開始使用部分-42.svg" alt="b1-42">
-                            </div>
-                        </div>
-                        <div class="on-card scrollbar" id="shopTab_single">
-                            <div class="d-flex flex-column" id="singleItemList">
-                                <div class="shopItem" style="display:none;">
-                                    <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
-                                    <div class="d-flex flex-column shopItem_content">
-                                        <div class="shopItem_top">
-                                            <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
-                                            <div class="d-flex shopItem_detail">
-                                                <div class="shopItem_left">
-                                                    <img class="shopItem_imgBorder" src="public/images/a4/a4-20.svg"
-                                                        alt="a4-20">
-                                                    <img class="shopItem_img">
-                                                </div>
-                                                <div class="d-flex flex-column flex-grow-1 shopItem_mid">
-                                                    <div class="shopItem_name color-blue"></div>
-                                                    <span class="shopItem_intro mb-auto"></span>
-                                                    <div class="shopItem_price color-blue"></div>
-                                                </div>
-                                                <div class="d-flex flex-column shopItem_control">
-                                                    <button type="button"
-                                                        class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
-                                                        <img class="plusIcon" src="public/images/a1/a1-24前.svg"
-                                                            alt="a1-24前">
-                                                    </button>
-                                                    <button
-                                                        class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
-                                                        <img class="minusIcon" src="public/images/a1/a1-25前.svg"
-                                                            alt="a1-25前">
-                                                    </button>
-                                                </div>
-                                                <div class="shopItem_right">
-                                                    <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg"
-                                                        alt="a4-23-02">
-                                                    <p class="itemAmount_txt color-blue">0</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div type="button" class="d-flex shopItem_bottom">
-                                            <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
-                                            <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg"
-                                                alt="a4-26">
-                                            <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collapse optionContent">
-                                    <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="on-card" id="shopTab_group" style="display:none">
-                            <div class="d-flex flex-column" id="groupItemList">
-                                <p class="color-blue shopTab_title color-white">Group buying !</p>
-                                <div class="shopItem" style="display:none;">
-                                    <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
-                                    <div class="d-flex flex-column shopItem_content">
-                                        <div class="shopItem_top">
-                                            <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
-                                            <div class="d-flex shopItem_detail">
-                                                <div class="shopItem_left">
-                                                    <img class="shopItem_imgBorder" src="public/images/a4/a4-33.svg"
-                                                        alt="a4-33">
-                                                    <img class="shopItem_img">
-                                                </div>
-                                                <div class="d-flex flex-column flex-grow-1 shopItem_mid">
-                                                    <div class="shopItem_name color-blue">Name</div>
-                                                    <span class="shopItem_intro color-normal mb-auto">introduce</span>
-                                                    <div class="shopItem_price color-blue">$ 100</div>
-                                                </div>
-                                                <div class="d-flex flex-column shopItem_control">
-                                                    <button type="button"
-                                                        class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
-                                                        <img class="plusIcon" src="public/images/a1/a1-24前.svg"
-                                                            alt="a1-24前">
-                                                    </button>
-                                                    <button
-                                                        class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
-                                                        <img class="minusIcon" src="public/images/a1/a1-25前.svg"
-                                                            alt="a1-25前">
-                                                    </button>
-                                                </div>
-                                                <div class="shopItem_right">
-                                                    <img class="itemAmount_outer" src="public/images/a4/a4-41.svg"
-                                                        alt="a4-41">
-                                                    <div
-                                                        class="d-flex flex-column justify-content-around groupAmount_text">
-                                                        <p class="groupAmount_top color-orange">0</p>
-                                                        <p class="groupAmount_bottom color-blue">5</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div type="button" class="d-flex shopItem_bottom">
-                                            <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
-                                            <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg"
-                                                alt="a4-26">
-                                            <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collapse optionContent">
-                                    <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="btn btn-square on-card" id="shopCard_bottom">
-                            <img class="addBtn" src="public/images/b1/開始使用部分-44.svg" alt="b1-44" data-toggle="modal"
-                                data-target="#exampleModalCenter">
-                        </div>
-
+                <div class="btn btn-square on-card" id="slipShop_btn">
+                    <img id="slipShop_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
+                </div>
+                <div class="shopCard_top">
+                    <div class="d-flex tab_container">
+                        <img class="btn btn-square tab_btn select" id="hot_btn" src="public/images/b1/開始使用部分-37.svg"
+                            alt="b1-37">
+                        <img class="btn btn-square tab_btn" id="cheap_btn" src="public/images/b1/開始使用部分-39.svg"
+                            alt="b1-39">
+                        <img class="btn btn-square tab_btn" id="guess_btn" src="public/images/b1/開始使用部分-40.svg"
+                            alt="b1-40">
+                        <img class="btn btn-square tab_btn" id="class_btn" src="public/images/b1/開始使用部分-42.svg"
+                            alt="b1-42">
                     </div>
                 </div>
-                <!-- <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04"> -->
+                <div class="on-card scrollbar" id="shopTab_single">
+                    <div class="d-flex flex-column" id="singleItemList">
+                        <div class="d-flex shopItem" style="display:none;">
+                            <img class="shopItem_img">
+                            <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                                <div class="shopItem_name color-normal font-12"></div>
+                                <span class="shopItem_intro color-normal font-10 mb-auto"></span>
+                                <div class="shopItem_price color-normal font-10"></div>
+                            </div>
+                            <div class="d-flex flex-column shopItem_control">
+                                <img class="btn btn-square shopItem_plus" type="button"
+                                    src="./public/images/b1/開始使用部分-48.svg" alt="b1-48">
+                                <img class="btn btn-square shopItem_minus" type="button"
+                                    src="./public/images/b1/開始使用部分-49.svg" alt="b1-49">
+                            </div>
+                            <div class="itemAmount_txt color-blue">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn btn-square on-card" id="shopCard_bottom">
+                    <img class="addBtn" src="public/images/b1/開始使用部分-44.svg" alt="b1-44" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                </div>
             </div>
         </div>
     </div>
