@@ -1,3 +1,7 @@
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow: visible;
+}
 .cart_logo{
   display:block; 
   margin:auto; 
