@@ -48,17 +48,17 @@ function submit(Obj) {
   Obj.className =  (Obj.className =="item1_all")? "after_click":"item1_all";
 };
 
-// var count = 0;
-// function showDetail()
-// {
-//     count++;
-//     if (count % 2 == 1) {
-//         $('.sub-menu').css("display", "inline-block");
-//         $('.arrow-btn').css("transform", "rotate(180deg)");
-//     }
-//     else {
-//         $('.sub-menu').css("display", "none");
-//         $('.arrow-btn').css("transform", "rotate(0deg)");
-//     }
-// }
+var count = 0;
+ function showDetail()
+ {
+     count++;
+     if (count % 2 == 1) {
+         $('.sub-menu').css("display", "inline-block");
+         $('.arrow-btn').css("transform", "rotate(180deg)");
+     }
+     else {
+         $('.sub-menu').css("display", "none");
+         $('.arrow-btn').css("transform", "rotate(0deg)");
+     }
+ }
 
