@@ -1,29 +1,46 @@
 const fs = require('fs')
 const https = require('https')
 const config = require('./config.js')
-
 // include `express`
 const express = require('express')
-
 // create an express, aka web server, instance
 const app = express()
-
 const port = process.argv[2]
-
 const sslOptions = {
   key: fs.readFileSync(config.key_path),
   ca: fs.readFileSync(config.ca_path),
   cert: fs.readFileSync(config.cert_path)
 }
-
 const server = https.createServer(sslOptions, app)
+const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
+const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
+  if (err) console.log('fail to connect:', err)
+});
+mongoose.Promise = global.Promise
+const lockerSchema = new mongoose.Schema({
+  name: String,
+  addr: String,
+  lat: mongoose.Schema.Types.Number,
+  lng: mongoose.Schema.Types.Number
+}, { collection: 'lockers' })
+const lockerModel = conn.model('lockers', lockerSchema)
+const shopSchema = new mongoose.Schema({
+  name: String,
+  starNum: mongoose.Schema.Types.Number,
+  priceNum: mongoose.Schema.Types.Number,
+  commentNum: mongoose.Schema.Types.Number,
+  openTime: String,
+  addr: String,
+  img: String,
+  tag: String,
+  shopType: String,
+  isGroup: mongoose.Schema.Types.Number
+}, { collection: 'shops' })
+const shopModel = conn.model('shops', shopSchema)
 
 server.listen(port, () => {
 	console.log(`listen on port ${port}`)
 })
-
-const mysql = require('mysql')
-const connection = mysql.createConnection(config.mysql)
 
 // handle other urls
 app.use(express.static(`${__dirname}/LockerStore`))
@@ -40,87 +57,96 @@ app.get('./sign_up', (req, res) => {
 })
 
 app.get('/insertLocker', (req, res) => {
-  connection.query(
-    `INSERT INTO lockers (id, lat, lng, name, addr) 
-    SELECT NULL, '${req.query.lat}', '${req.query.lng}', '${req.query.name}', '${req.query.addr}' FROM DUAL
-    WHERE NOT EXISTS (SELECT 1 FROM lockers WHERE name = '${req.query.name}' LIMIT 1);`, (err, result) => {
-    if (err) console.log('fail to insert:', err)
-  })
-  res.send(`ok`)
+  var myobj = { lat: req.query.lat, lng: req.query.lng, name: req.query.name, addr: req.query.addr };
+  lockerModel.updateOne({ "name": req.query.name }, { $setOnInsert: myobj }, { upsert: true }, function (err, result) {
+    if (err) throw err;
+    res.send(`ok`);
+  });
 })
 
 app.get('/searchLocker', (req, res) => {
-  connection.query(
-    `SELECT name, addr FROM lockers WHERE lat = '${req.query.lat}' AND lng = '${req.query.lng}'`, function (error, results, fields) {
-      if (error) throw error
-      res.send({
-        name: results[0].name,
-        addr: results[0].addr,
-      })
-    })
+  lockerModel.findOne({ lat: req.query.lat, lng: req.query.lng }).select({ name: 1, addr: 1 }).exec(function (err, result) {
+    if (err) throw err;
+    res.send({
+      name: result.name,
+      addr: result.addr,
+    });
+  });
 })
 
 app.get('/searchTag', (req, res) => {
   var arr = req.query.keywords.split('#');
   var keywords = arr.join('');
-  var queryString;
-  if(req.query.sorter==='priceNum')
-  {
-    queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} ASC`;
+  var sorter = req.query.sorter;
+  var query = {};
+  if (req.query.sorter === 'priceNum') {
+    query[sorter] = 1;
+    shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
+      if (err) throw err;
+      if (results.length > 60) {
+        res.send({
+          results: results.slice(0, 60),
+        })
+      }
+      else {
+        res.send({
+          results: results,
+        })
+      }
+    });
   }
-  else
-  {
-    queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} DESC`;
+  else {
+    query[sorter] = -1;
+    shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
+      if (err) throw err;
+      if (results.length > 60) {
+        res.send({
+          results: results.slice(0, 60),
+        })
+      }
+      else {
+        res.send({
+          results: results,
+        })
+      }
+    });
   }
-  // console.log(queryString)
-  connection.query(
-    queryString, function (error, results, fields) {
-      if (error) throw error
-      res.send({
-        results: results,
-      })
-    })
 })
 
 app.get('/searchShop', (req, res) => {
-  connection.query(
-    `SELECT * FROM shops WHERE name = '${req.query.name}'`, function (error, results, fields) {
-      if (error) throw error
-      // if (error) {
-      //   res.send('error')
-      // }
-      else {
-          res.send({
-            id: results[0].id,
-            name: results[0].name,
-            starNum: results[0].starNum,
-            priceNum: results[0].priceNum,
-            commentNum: results[0].commentNum,
-            tag: results[0].tag,
-            addr: results[0].addr,
-            tel: results[0].tel,
-            img: results[0].img,
-          })
-        }
-    })
+  shopModel.findOne({ name: req.query.name }, function (err, result) {
+    if (err) throw err;
+    res.send({
+      id: result._id,
+      name: result.name,
+      starNum: result.starNum,
+      priceNum: result.priceNum,
+      commentNum: result.commentNum,
+      openTime: result.openTime,
+      addr: result.addr,
+      img: result.img,
+      tag: result.tag,
+      shopType: result.shopType
+    });
+  });
 })
 
-app.get('/getItem_single', (req, res) => {
-  connection.query(
-    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 0`, function (error, results, fields) {
-      // if (error) throw error
-      res.send({
-        results: results,
-      })
-    })
-})
+// app.get('/getItem_single', (req, res) => {
+//   connection.query(
+//     `SELECT * FROM shop_${req.query.id} WHERE isGroup = 0`, function (error, results, fields) {
+//       // if (error) throw error
+//       res.send({
+//         results: results,
+//       })
+//     })
+// })
 
-app.get('/getItem_group', (req, res) => {
-  connection.query(
-    `SELECT * FROM shop_${req.query.id} WHERE isGroup = 1`, function (error, results, fields) {
-      // if (error) throw error
-      res.send({
-        results: results,
-      })
-    })
-})
+// app.get('/getItem_group', (req, res) => {
+//   connection.query(
+//     `SELECT * FROM shop_${req.query.id} WHERE isGroup = 1`, function (error, results, fields) {
+//       // if (error) throw error
+//       res.send({
+//         results: results,
+//       })
+//     })
+// })
