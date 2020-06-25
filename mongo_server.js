@@ -7,7 +7,7 @@ const app = express()
 const port = process.argv[2]
 
 const config = require('./config')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
 
@@ -16,6 +16,27 @@ const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedT
 });
 mongoose.Promise = global.Promise
 
+const lockerSchema = new mongoose.Schema({
+  name: String,
+  addr: String,
+  lat: mongoose.Schema.Types.Number,
+  lng: mongoose.Schema.Types.Number
+}, { collection: 'lockers' })
+const lockerModel = conn.model('lockers', lockerSchema)
+
+const shopSchema = new mongoose.Schema({
+  name: String,
+  starNum: mongoose.Schema.Types.Number,
+  priceNum: mongoose.Schema.Types.Number,
+  commentNum: mongoose.Schema.Types.Number,
+  openTime: String,
+  addr: String,
+  img: String,
+  tag: String,
+  shopType: String,
+  isGroup: mongoose.Schema.Types.Number
+}, { collection: 'shops' })
+const shopModel = conn.model('shops', shopSchema)
 
 // start the server
 app.listen(port, () => {
@@ -29,107 +50,80 @@ app.get('/sign_up', (req, res) => {
   res.send(`${req.query.account}`)
 })
 
-// student schema
-const lockerCollectionName = 'lockers'
-const lockerSchema = new mongoose.Schema({
-  id: int,
-  lat: double,
-  lng: double,
-  name: String,
-  addr: String
-}, { collection: lockerCollectionName });
-const lockerModel = conn.model(lockerCollectionName, lockerSchema);
+app.get('/insertLocker', (req, res) => {
+  var myobj = { lat: req.query.lat, lng: req.query.lng, name: req.query.name, addr: req.query.addr };
+  lockerModel.updateOne({ "name": req.query.name }, { $setOnInsert: myobj }, { upsert: true }, function (err, result) {
+    if (err) throw err;
+    res.send(`ok`);
+  });
+})
 
-// insert
-const saveAll = (data, model) => {
-  for (d of data) {
-    const m = new model(d)
-    m.save((err) => {
-      if (err) {
-        console.log('fail to insert:', err)
-        conn.close()
-        process.exit()
+app.get('/searchLocker', (req, res) => {
+  lockerModel.findOne({ lat: req.query.lat, lng: req.query.lng }).select({ name: 1, addr: 1 }).exec(function (err, result) {
+    if (err) throw err;
+    res.send({
+      name: result.name,
+      addr: result.addr,
+    });
+  });
+})
+
+app.get('/searchTag', (req, res) => {
+  var arr = req.query.keywords.split('#');
+  var keywords = arr.join('');
+  var sorter = req.query.sorter;
+  var query = {};
+  if (req.query.sorter === 'priceNum') {
+    query[sorter] = 1;
+    shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
+      if (err) throw err;
+      if (results.length > 60) {
+        res.send({
+          results: results.slice(0, 60),
+        })
       }
-    })
+      else {
+        res.send({
+          results: results,
+        })
+      }
+    });
   }
-}
-saveAll(studentData, studentModel)
-saveAll(courseData, courseModel)
-
-// query
-lockerModel.findOne({ id: 'B0001'} ).exec((err, res) => {
-  if (err) console.log('fail to query:', err)
   else {
-    console.log(res.name + ' have students ' + res.students)
-    conn.close()
+    query[sorter] = -1;
+    shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
+      if (err) throw err;
+      if (results.length > 60) {
+        res.send({
+          results: results.slice(0, 60),
+        })
+      }
+      else {
+        res.send({
+          results: results,
+        })
+      }
+    });
   }
 })
 
-
-// app.get('/insertLocker', (req, res) => {
-//   connection.query(
-//     `INSERT INTO lockers (id, lat, lng, name, addr) 
-//     SELECT NULL, '${req.query.lat}', '${req.query.lng}', '${req.query.name}', '${req.query.addr}' FROM DUAL
-//     WHERE NOT EXISTS (SELECT 1 FROM lockers WHERE name = '${req.query.name}' LIMIT 1);`, (err, result) => {
-//     if (err) console.log('fail to insert:', err)
-//   })
-//   res.send(`ok`)
-// })
-
-// app.get('/searchLocker', (req, res) => {
-//   connection.query(
-//     `SELECT name, addr FROM lockers WHERE lat = '${req.query.lat}' AND lng = '${req.query.lng}'`, function (error, results, fields) {
-//       if (error) throw error
-//       res.send({
-//         name: results[0].name,
-//         addr: results[0].addr,
-//       })
-//     })
-// })
-
-// app.get('/searchTag', (req, res) => {
-//   var arr = req.query.keywords.split('#');
-//   var keywords = arr.join('');
-//   var queryString;
-//   if(req.query.sorter==='priceNum')
-//   {
-//     queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} ASC`;
-//   }
-//   else
-//   {
-//     queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} DESC`;
-//   }
-//   // console.log(queryString)
-//   connection.query(
-//     queryString, function (error, results, fields) {
-//       if (error) throw error
-//       res.send({
-//         results: results,
-//       })
-//     })
-// })
-
-// app.get('/searchShop', (req, res) => {
-//   connection.query(
-//     `SELECT * FROM shops WHERE name = '${req.query.name}'`, function (error, results, fields) {
-//       if (error) throw error
-//       // if (error) {
-//       //   res.send('error')
-//       // }
-//       else {
-//           res.send({
-//             id: results[0].id,
-//             name: results[0].name,
-//             starNum: results[0].starNum,
-//             commentNum: results[0].commentNum,
-//             tag: results[0].tag,
-//             addr: results[0].addr,
-//             tel: results[0].tel,
-//             img: results[0].img,
-//           })
-//         }
-//     })
-// })
+app.get('/searchShop', (req, res) => {
+  shopModel.findOne({ name: req.query.name }, function (err, result) {
+    if (err) throw err;
+    res.send({
+      id: result._id,
+      name: result.name,
+      starNum: result.starNum,
+      priceNum: result.priceNum,
+      commentNum: result.commentNum,
+      openTime: result.openTime,
+      addr: result.addr,
+      img: result.img,
+      tag: result.tag,
+      shopType: result.shopType
+    });
+  });
+})
 
 // app.get('/getItem_single', (req, res) => {
 //   connection.query(

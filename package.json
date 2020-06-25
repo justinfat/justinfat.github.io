@@ -13,6 +13,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "mongoose": "^5.9.20",
     "node-sass": "^4.13.1",
     "parcel-bundler": "^1.12.4",
     "pug": "^2.0.4",

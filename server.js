@@ -55,12 +55,10 @@ app.get('/searchTag', (req, res) => {
   var arr = req.query.keywords.split('#');
   var keywords = arr.join('');
   var queryString;
-  if(req.query.sorter==='priceNum')
-  {
+  if (req.query.sorter === 'priceNum') {
     queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} ASC`;
   }
-  else
-  {
+  else {
     queryString = `SELECT * FROM shops WHERE MATCH (name, tag) AGAINST ('${keywords}' IN BOOLEAN MODE) ORDER BY ${req.query.sorter} DESC`;
   }
   // console.log(queryString)
@@ -74,25 +72,22 @@ app.get('/searchTag', (req, res) => {
 })
 
 app.get('/searchShop', (req, res) => {
+  var t1 = new Date();
   connection.query(
     `SELECT * FROM shops WHERE name = '${req.query.name}'`, function (error, results, fields) {
-      if (error) throw error
-      // if (error) {
-      //   res.send('error')
-      // }
-      else {
-          res.send({
-            id: results[0].id,
-            name: results[0].name,
-            starNum: results[0].starNum,
-            priceNum: results[0].priceNum,
-            commentNum: results[0].commentNum,
-            tag: results[0].tag,
-            addr: results[0].addr,
-            tel: results[0].tel,
-            img: results[0].img,
-          })
-        }
+      if (error) throw error;
+      console.log(new Date() - t1);
+      res.send({
+        id: results[0].id,
+        name: results[0].name,
+        starNum: results[0].starNum,
+        priceNum: results[0].priceNum,
+        commentNum: results[0].commentNum,
+        tag: results[0].tag,
+        addr: results[0].addr,
+        tel: results[0].tel,
+        img: results[0].img,
+      })
     })
 })
 

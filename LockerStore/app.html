@@ -18,12 +18,10 @@
     <div class="container-fluid layer onMap_top">
         <div class="main_rect">
             <div class="on-map" id="searchBox">
-                <!-- <img id="sb_outer" src="public/images/a1/a1-05.svg" alt="a1-05"> -->
                 <img class="btn btn-square menuIcon" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
                 <input class="color-blue" type="text" id="keywordBlank" name="keyword" placeholder="# 今天你想要來點什麼 :)">
                 <img class="btn btn-square" id="clear_btn" src="public/images/a1/a1-21.svg" alt="a1-21"
                     style="display:none">
-                <!-- <img class="btn btn-square" id="search_btn" src="public/images/a1/a1-02.svg" alt="a1-02"> -->
                 <img class="btn btn-round" id="photo_btn" src="public/images/a2/a2-42.svg" alt="a2-42">
                 <img class="btn btn-square explore_btn dropIcon" id="dropDown_btn" src="public/images/a1/a1-06.svg"
                     alt="a1-06">
@@ -50,6 +48,10 @@
                         <img class="btn btn-square" id="sorter_group" src="public/images/a2改/enabled_4.svg" alt="group">
                     </div>
                 </div>
+            </div>
+            <div class="on-map" id="nameBox">
+                <input class="color-normal" type="text" id="shopName">
+                <img class="btn btn-square" id="back_btn" src="public/images/b1/開始使用部分-11.svg" alt="b1-11">
             </div>
             <div class="card collapse" id="explore_card">
                 <div class="card_top">
@@ -167,14 +169,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- <img class="btn btn-square explore on-card" id="hide_btn" src="public/images/b1/開始使用部分-20.svg"
-                            alt="b1-20"> -->
                 <div class="btn btn-square explore on-card" id="foldCard_btn">
                     <img id="foldCard_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
                 </div>
-                <!-- <div class="card_bottom">
-                </div>
-                <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04"> -->
             </div>
         </div>
     </div>
@@ -204,9 +201,9 @@
                                     <img class="dot" src="public/images/b1/開始使用部分-29.svg" alt="b1-29">
                                     <div class="shopType align-self-center color-normal font-12"></div>
                                 </div>
-                                <p class="result_addr color-normal font-10">
-                                    701, Tainan City, East District, Yidong Road, 50 Yidong Road, No.50, 2F
-                                </p>
+                                <div class="result_tag color-normal font-10">
+                                    # 好喝 # 便宜 ＃ 珍珠好吃
+                                </div>
                             </div>
                             <div class="result_right">
                                 <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
@@ -216,21 +213,6 @@
                     </div>
 
                 </div>
-                <!-- <div class="on-card" id="pageBar">
-                    <img id="pb_outer" src="public/images/a2/a2-22.svg" alt="a2-22">
-                    <div class="bottom" style="padding-left: 8.5%;">
-                        <span class="pb_txt">Showing results&emsp;&emsp;&emsp;&emsp;</span>
-                        <span class="pb_txt" id="thisPage">1</span>
-                        <span class="pb_txt">&nbsp;to&nbsp;</span>
-                        <span class="pb_txt" id="maxPage">6</span>
-                    </div>
-                    <div class="btn-group" id="pageBtn_group" role="group">
-                        <img class="btn btn-square page_btn disabled" id="prev_btn" src="public/images/a2/a2-30.svg"
-                            alt="a2-30">
-                        <img class="btn btn-square page_btn" id="next_btn" src="public/images/a2/a2-28.svg" alt="a2-28">
-                    </div>
-                    <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
-                </div> -->
             </div>
 
 
@@ -401,8 +383,8 @@
     </div>
 
     <div class="container-fluid onMap_shop">
-        <div class="shop_rect">
-            <div class="d-flex flex-column">
+        <div class="shop_rect d-flex flex-column">
+            <div class="d-flex flex-column" id="shopRect_top">
                 <div class="shopInfo_top">
                     <img class="shopImg">
                     <div class="d-flex shopInfo on-card">
@@ -426,23 +408,23 @@
                             alt="b1-23">
                     </div>
                 </div>
-                <div class="moreBar">
+                <div class="moreBar collapse">
                     <div class="d-flex">
                         <div class="color-white font-9 mr-auto">更多店家資訊</div>
                         <img class="btn btn-square optionBtn_right align-self-center" src="public/images/a4/a4-27.svg"
                             alt="a4-27">
                     </div>
                 </div>
-                <div class="collapse on-card moreInfo">
+                <div class="moreInfo on-card">
                     <div class="d-flex">
                         <div class="d-flex flex-column mr-auto">
                             <div class="d-flex align-items-start">
-                                <div class="color-white font-9">店家位置&nbsp;:&nbsp;</div>
+                                <div class="color-white font-9 flex-shrink-0">店家位置&nbsp;:&nbsp;</div>
                                 <span class="shopAddr_txt color-white font-9"></span>
                             </div>
                             <div class="d-flex align-items-start mt-1">
-                                <div class="color-white font-9">營業時間&nbsp;:&nbsp;</div>
-                                <span class="shopTel_txt color-white font-9"></span>
+                                <div class="color-white font-9 flex-shrink-0">營業時間&nbsp;:&nbsp;</div>
+                                <span class="shopTime_txt color-white font-9"></span>
                             </div>
                         </div>
                         <img class="btn btn-square optionBtn_right align-self-center flip"
@@ -451,7 +433,7 @@
                 </div>
             </div>
 
-            <div class="card" id="shop_card" style="display:none">
+            <div class="card mt-auto" id="shop_card" style="display:none">
                 <div class="btn btn-square on-card" id="slipShop_btn">
                     <img id="slipShop_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
                 </div>
@@ -532,8 +514,12 @@
                 <img class="btn btn-square" id="shareBox_close" src="public/images/a1/a1-21.svg" alt="a1-21">
             </div>
         </div>
-        <img class="btn btn-square on-map" id="locate" src="public/images/a1/a1-14定位.svg" alt="a1-14"
-            onclick="locate_once()">
+        <div class="d-flex flex-column on-map" id="shortcut_box">
+            <img class="btn btn-square on-map shortcut" id="locate" src="public/images/a1/a1-14定位.svg" alt="a1-14"
+                onclick="locate_once()">
+            <img class="btn btn-square shortcut" id="cart_shortcut" src="public/images/b1/登入增加-02.svg" alt="b1-02">
+            <img class="btn btn-square shortcut" id="group_shortcut" src="public/images/b1/登入增加-03.svg" alt="b1-03">
+        </div>
     </div>
     <div w3-include-html="order_extra.html"></div>
     <div w3-include-html="shopping_cart_extra.html"></div>
