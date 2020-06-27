@@ -35,3 +35,22 @@
 #MyBlog_2{margin-top: 0px;}
 
 #MyBlog_3{margin-top: 50px;}
+
+.float_window{
+    width: 30vw;
+    height:100vh;
+}
+.left_side{
+    background-color: #2C50B1;
+     width:20%;
+}
+.right_side{
+    background-color: #2C50A1;
+     width:80%;
+}
+.user_name{
+    height:10%;
+}
+.history{
+    height:10%;
+}
