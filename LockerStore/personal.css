@@ -39,14 +39,21 @@
 .float_window{
     width: 30vw;
     height:100vh;
+    margin:auto;
 }
 .left_side{
+    display: inline-block;
     background-color: #2C50B1;
      width:20%;
+    height: 100%;
+    float: left;
 }
 .right_side{
+    display: inline-block;
     background-color: #2C50A1;
      width:80%;
+    height: 100%;
+    float: right;
 }
 .user_name{
     height:10%;
