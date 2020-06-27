@@ -33,8 +33,8 @@ var minLat, maxLat, minLng, maxLng;
 var result = 0;
 var pageItems = 6;
 var isSelectLocker = false;
-var isSlip_result = false;
-var isSlip_shop = false;
+var isOut_result = false;
+var isOut_shop = false;
 var isDown_result = false;
 var isDown_shop = false;
 var press_y = 0
@@ -744,14 +744,14 @@ $('#foldCard_btn').click(function () {
     $('#cancel_btn').hide();
 });
 $('#slipResult_btn').click(function () {
-    if (isSlip_result) {
+    if (isOut_result) {
         $('.onMap_rise').animate({ top: '36.9vmin' }, 200);
     }
     else {
         var tmp = $('html').height() - $('#slipResult_btn').height();
         $('.onMap_rise').animate({ top: tmp }, 200);
     }
-    isSlip_result = !isSlip_result;
+    isOut_result = !isOut_result;
 });
 
 $('#slipResult_btn').mousedown(function (e) {
@@ -1081,8 +1081,25 @@ $('.tab_btn').click(function () {
 });
 
 $('#slipShop_btn').click(function () {
-    $('#shop_card').toggleClass('slip-out');
+    if (isOut_shop) {
+        $('#shop_card').animate({ position: "absolute", top: 0 }, 200);
+    } else {
+        var tmp = $('#shop_card').height() - $('#slipShop_btn').height() - parseInt($('#slipShop_btn').css("margin-bottom"));
+        $('#shop_card').animate({ position: "absolute", top: tmp }, 200);
+    }
+    isOut_shop = !isOut_shop;
 });
+
+$('#back_btn').click(function () {
+    $('#shop_card').hide();
+    $('.onMap_shop').css('z-index', '-1');
+    $('.onMap_rise').show();
+    $('#nameBox').hide();
+    $('#searchBox').show();
+    card_state = 1;
+});
+
+/************************ Handle finger swipe event **************************/
 document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
 document.getElementById("slipResult_btn").addEventListener("touchmove", handleTouchMove, false);
 document.getElementById("slipResult_btn").addEventListener("touchcancel", handleTouchCancel, false);
@@ -1119,22 +1136,23 @@ function handleTouchMove(evt) {
     var yDiff = yUp - yDown;
 
     if (isDown_result) {
-        if (yDiff > 0 && (!isSlip_result)) {
+        if (yDiff > 0 && (!isOut_result)) {
             var tmp = $('html').height() - $('#slipResult_btn').height();
             $('.onMap_rise').animate({ top: tmp }, 200);
-            isSlip_result = !isSlip_result;
-        } else if (yDiff < 0 && isSlip_result) {
+            isOut_result = !isOut_result;
+        } else if (yDiff < 0 && isOut_result) {
             $('.onMap_rise').animate({ top: '36.9vmin' }, 200);
-            isSlip_result = !isSlip_result;
+            isOut_result = !isOut_result;
         }
     }
     else if (isDown_shop) {
-        if (yDiff > 0 && (!$('#shop_card').hasClass('slip-out'))) {
-            $('#shop_card').addClass('slip-out')
-            console.log("swiped up");
-        } else if (yDiff < 0 && ($('#shop_card').hasClass('slip-out'))) {
-            $('#shop_card').removeClass('slip-out')
-            console.log("swiped down");
+        if (yDiff > 0 && (!isOut_shop)) {
+            var tmp = $('#shop_card').height() - $('#slipShop_btn').height() - parseInt($('#slipShop_btn').css("margin-bottom"));
+            $('#shop_card').animate({ position: "absolute", top: tmp }, 200);
+            isOut_shop = !isOut_shop;
+        } else if (yDiff < 0 && isOut_shop) {
+            $('#shop_card').animate({ position: "absolute", top: 0 }, 200);
+            isOut_shop = !isOut_shop;
         }
     }
     /* reset values */
@@ -1150,46 +1168,3 @@ function handleTouchCancel(evt) {
     xDown = null;
     yDown = null;
 };
-
-// $('#slipShop_btn').mousedown(function (e) {
-//     isPress_shop = true
-//     press_y = e.pageY
-// });
-
-// $('body').mousemove(function (e) {
-//     console.log("press = " + isPress_result + "up = " + e.pageY + ",press = " + press_y)
-//     if (isPress_result) {
-//         if ((e.pageY < press_y) && isSlip_result) {
-//             $('.onMap_rise').animate({ top: '36.9vmin' }, 200);
-//             isSlip_result = !isSlip_result;
-//         }
-//         else if ((e.pageY > press_y) && (!isSlip_result)) {
-//             var tmp = $('html').height() - $('#slipResult_btn').height();
-//             $('.onMap_rise').animate({ top: tmp }, 200);
-//             isSlip_result = !isSlip_result;
-//         }
-//     }
-//     else if (isPress_shop) {
-//         if ((e.pageY > press_y) && (!$('#shop_card').hasClass('slip-out')))
-//             $('#shop_card').addClass('slip-out')
-//         else if ((e.pageY < press_y) && ($('#shop_card').hasClass('slip-out')))
-//             $('#shop_card').removeClass('slip-out')
-//     }
-// });
-
-// $('body').mouseup(function (e) {
-//     isPress_result = false
-//     isPress_shop = false
-// });
-
-$('#back_btn').click(function () {
-    $('#shop_card').hide();
-    $('.onMap_shop').css('z-index', '-1');
-    $('.onMap_rise').show();
-    $('#nameBox').hide();
-    $('#searchBox').show();
-    card_state = 1;
-});
-
-$('.order_btn').click(function () {
-});

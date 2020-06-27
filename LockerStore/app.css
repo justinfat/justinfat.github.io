@@ -675,6 +675,7 @@ p.explore {
     border-radius: 0.2rem
 }
 #shop_card {
+    position: relative;
     width: 100%;
     height: calc(100vh - 53vmin);
     border-width: 0.2rem;
@@ -685,10 +686,14 @@ p.explore {
     border-color: #2C50A1;
     background-color: #FFFFFF;
 }
-.slip-out {
+/* .slip-out {
     position: absolute;
     top: calc(100vh - 6.4vmin);
-}
+} */
+@keyframes example {
+    from {top: 0px; background-color: yellow;}
+    to {top: 200px;}
+  }
 #slipShop_btn {
     position: relative;
     width: 100%;
