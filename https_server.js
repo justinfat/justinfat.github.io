@@ -46,13 +46,6 @@ server.listen(port, () => {
 // handle other urls
 app.use(express.static(`${__dirname}/LockerStore`))
 
-connection.connect(err => {
-  if (err) {
-    console.log('fail to connect:', err)
-    process.exit()
-  }
-})
-
 app.get('./sign_up', (req, res) => {
   res.send(`${req.query.account}`)
 })
