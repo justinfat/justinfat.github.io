@@ -57,14 +57,14 @@
 }
 .user_name{
     height:10%;
-    font-color:#FFFFFF;
+    color:#FFFFFF;
 }
 .history{
     height:10%;
-    font-color:#FFFFFF;
+    color:#FFFFFF;
 }
 .info .sub_history{
-font-color:#FFFFFF;
+color:#FFFFFF;
 }
 .edit{
     margin-top:90%;
