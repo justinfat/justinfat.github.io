@@ -35,8 +35,8 @@ var pageItems = 6;
 var isSelectLocker = false;
 var isSlip_result = false;
 var isSlip_shop = false;
-var isPress_result = false;
-var isPress_shop = false;
+var isDown_result = false;
+var isDown_shop = false;
 var press_y = 0
 var stationID;
 var stationName;
@@ -1083,77 +1083,104 @@ $('.tab_btn').click(function () {
 $('#slipShop_btn').click(function () {
     $('#shop_card').toggleClass('slip-out');
 });
-
-$('#slipShop_btn').addEventListener("touchstart", handleTouchStart, false);
-$('#slipShop_btn').addEventListener("touchmove", handleTouchMove, false);
+document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
+document.getElementById("slipResult_btn").addEventListener("touchmove", handleTouchMove, false);
+document.getElementById("slipResult_btn").addEventListener("touchcancel", handleTouchCancel, false);
+document.getElementById("slipShop_btn").addEventListener("touchstart", shopTouchStart, false);
+document.getElementById("slipShop_btn").addEventListener("touchmove", handleTouchMove, false);
+document.getElementById("slipShop_btn").addEventListener("touchcancel", handleTouchCancel, false);
 var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
-    console.log("touch")
     return evt.touches ||             // browser API
         evt.originalEvent.touches; // jQuery
-}
 
-function handleTouchStart(evt) {
+}
+function resultTouchStart(evt) {
+    isDown_result = true;
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+
+function shopTouchStart(evt) {
+    isDown_shop = true;
     const firstTouch = getTouches(evt)[0];
     xDown = firstTouch.clientX;
     yDown = firstTouch.clientY;
 };
 
 function handleTouchMove(evt) {
-    if (!xDown || !yDown) {
+    if (!yDown) {
         return;
     }
-
-    var xUp = evt.touches[0].clientX;
     var yUp = evt.touches[0].clientY;
+    var yDiff = yUp - yDown;
 
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    if (yDiff > 0 && (!$('#shop_card').hasClass('slip-out'))) {
-        $('#shop_card').addClass('slip-out')
-        console.log("swiped up");
-    } else if (yDiff < 0 && ($('#shop_card').hasClass('slip-out'))) {
-        $('#shop_card').removeClass('slip-out')
-        console.log("swiped down");
+    if (isDown_result) {
+        if (yDiff > 0 && (!isSlip_result)) {
+            var tmp = $('html').height() - $('#slipResult_btn').height();
+            $('.onMap_rise').animate({ top: tmp }, 200);
+            isSlip_result = !isSlip_result;
+        } else if (yDiff < 0 && isSlip_result) {
+            $('.onMap_rise').animate({ top: '36.9vmin' }, 200);
+            isSlip_result = !isSlip_result;
+        }
+    }
+    else if (isDown_shop) {
+        if (yDiff > 0 && (!$('#shop_card').hasClass('slip-out'))) {
+            $('#shop_card').addClass('slip-out')
+            console.log("swiped up");
+        } else if (yDiff < 0 && ($('#shop_card').hasClass('slip-out'))) {
+            $('#shop_card').removeClass('slip-out')
+            console.log("swiped down");
+        }
     }
     /* reset values */
     xDown = null;
     yDown = null;
+    isDown_result = false;
+    isDown_shop = false;
 };
 
-$('#slipShop_btn').mousedown(function (e) {
-    isPress_shop = true
-    press_y = e.pageY
-});
+function handleTouchCancel(evt) {
+    isDown_result = false;
+    isDown_shop = false;
+    xDown = null;
+    yDown = null;
+};
 
-$('body').mousemove(function (e) {
-    console.log("press = " + isPress_result + "up = " + e.pageY + ",press = " + press_y)
-    if (isPress_result) {
-        if ((e.pageY < press_y) && isSlip_result) {
-            $('.onMap_rise').animate({ top: '36.9vmin' }, 200);
-            isSlip_result = !isSlip_result;
-        }
-        else if ((e.pageY > press_y) && (!isSlip_result)) {
-            var tmp = $('html').height() - $('#slipResult_btn').height();
-            $('.onMap_rise').animate({ top: tmp }, 200);
-            isSlip_result = !isSlip_result;
-        }
-    }
-    else if (isPress_shop) {
-        if ((e.pageY > press_y) && (!$('#shop_card').hasClass('slip-out')))
-            $('#shop_card').addClass('slip-out')
-        else if ((e.pageY < press_y) && ($('#shop_card').hasClass('slip-out')))
-            $('#shop_card').removeClass('slip-out')
-    }
-});
+// $('#slipShop_btn').mousedown(function (e) {
+//     isPress_shop = true
+//     press_y = e.pageY
+// });
 
-$('body').mouseup(function (e) {
-    isPress_result = false
-    isPress_shop = false
-});
+// $('body').mousemove(function (e) {
+//     console.log("press = " + isPress_result + "up = " + e.pageY + ",press = " + press_y)
+//     if (isPress_result) {
+//         if ((e.pageY < press_y) && isSlip_result) {
+//             $('.onMap_rise').animate({ top: '36.9vmin' }, 200);
+//             isSlip_result = !isSlip_result;
+//         }
+//         else if ((e.pageY > press_y) && (!isSlip_result)) {
+//             var tmp = $('html').height() - $('#slipResult_btn').height();
+//             $('.onMap_rise').animate({ top: tmp }, 200);
+//             isSlip_result = !isSlip_result;
+//         }
+//     }
+//     else if (isPress_shop) {
+//         if ((e.pageY > press_y) && (!$('#shop_card').hasClass('slip-out')))
+//             $('#shop_card').addClass('slip-out')
+//         else if ((e.pageY < press_y) && ($('#shop_card').hasClass('slip-out')))
+//             $('#shop_card').removeClass('slip-out')
+//     }
+// });
+
+// $('body').mouseup(function (e) {
+//     isPress_result = false
+//     isPress_shop = false
+// });
 
 $('#back_btn').click(function () {
     $('#shop_card').hide();
