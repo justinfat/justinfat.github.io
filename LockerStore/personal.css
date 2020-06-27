@@ -57,7 +57,12 @@
 }
 .user_name{
     height:10%;
+    font-color:#FFFFFF;
 }
 .history{
     height:10%;
+    font-color:#FFFFFF;
+}
+.info .sub_history{
+font-color:#FFFFFF;
 }
