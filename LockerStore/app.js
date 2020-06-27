@@ -1084,6 +1084,46 @@ $('#slipShop_btn').click(function () {
     $('#shop_card').toggleClass('slip-out');
 });
 
+$('#slipShop_btn').addEventListener("touchstart", handleTouchStart, false);
+$('#slipShop_btn').addEventListener("touchmove", handleTouchMove, false);
+var xDown = null;
+var yDown = null;
+
+function getTouches(evt) {
+    console.log("touch")
+    return evt.touches ||             // browser API
+        evt.originalEvent.touches; // jQuery
+}
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (yDiff > 0 && (!$('#shop_card').hasClass('slip-out'))) {
+        $('#shop_card').addClass('slip-out')
+        console.log("swiped up");
+    } else if (yDiff < 0 && ($('#shop_card').hasClass('slip-out'))) {
+        $('#shop_card').removeClass('slip-out')
+        console.log("swiped down");
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+};
+
 $('#slipShop_btn').mousedown(function (e) {
     isPress_shop = true
     press_y = e.pageY
