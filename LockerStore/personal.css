@@ -95,6 +95,7 @@
     background-color: #2C50B1;
     border: none;
     transform:rotate(180deg);
+    position: absolute;
     top:50vh;
 }
 .user_name{
