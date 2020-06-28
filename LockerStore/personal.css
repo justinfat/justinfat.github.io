@@ -21,10 +21,11 @@
     background-color: #2C50B1;
      border-radius: 50%;
     border: none;
+    margin-top:10vh;
 }
 .arrow-img{
     background-color: #2C50B1;
-    margin-top:50%;
+    margin-top:50vh;
     border: none;
 }
 .user_name{
