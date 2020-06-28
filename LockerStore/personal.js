@@ -5,11 +5,11 @@ function showDetail()
      if (count % 2 == 0) {
          $('.right_side').css("display", "inline-block");
          $('.arrow-img').css("transform", "rotate(180deg)");
-      $('.left_side').css("float", "left");
+      $('.middle').css("float", "left");
      }
      else {
          $('.right_side').css("display", "none");
          $('.arrow-img').css("transform", "rotate(0deg)");
-      $('.left_side').css("float", "right");
+      $('.middle').css("float", "right");
      }
  }
