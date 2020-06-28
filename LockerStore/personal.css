@@ -10,6 +10,16 @@
     height: 100%;
     float:left;
 }
+.status{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+}
+.cart{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+}
 .middle{
     display: inline-block;
     background-color: #2C50C1;
