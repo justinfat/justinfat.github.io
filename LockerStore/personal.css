@@ -17,6 +17,13 @@
     height: 100%;
     float: right;
 }
+.photo{
+    background-color: #2C50B1;
+}
+.arrow-img{
+    background-color: #2C50B1;
+    margin-top:50%;
+}
 .user_name{
     height:10%;
     color:#FFFFFF;
