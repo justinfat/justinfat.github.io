@@ -21,21 +21,26 @@
     height:10%;
     color:#FFFFFF;
     line-height: 8vh;
+    margin-left:10%;
 }
 .history{
     height:10%;
     color:#F39700;
     line-height: 8vh;
+    margin-left:10%;
 }
 .info{
 color:#FFFFFF;
     line-height: 8vh;
+    margin-left:10%;
 }
 .sub_history{
 color:#FFFFFF;
      line-height: 8vh;
+    margin-left:10%;
 }
 .edit{
     margin-top:90%;
     color:#F39700;
+    margin-left:10%;
 }
