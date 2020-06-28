@@ -25,9 +25,10 @@
 }
 .arrow-img{
     background-color: #2C50B1;
-    margin-top:40vh;
+    /*margin-top:40vh;*/
     border: none;
     transform:rotate(180deg);
+    margin:auto;
 }
 .user_name{
     height:10%;
