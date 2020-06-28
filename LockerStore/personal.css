@@ -3,6 +3,13 @@
     height:100vh;
     margin:auto;
 }
+.left_side{
+     display: none;
+    background-color: #2C50A1;
+     width:80%;
+    height: 100%;
+    float:left;
+}
 .middle{
     display: inline-block;
     background-color: #2C50C1;
