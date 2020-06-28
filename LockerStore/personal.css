@@ -27,9 +27,11 @@
 }
 .info{
 color:#FFFFFF;
+    line-height: 24pt;
 }
 .sub_history{
 color:#FFFFFF;
+     line-height: 24pt;
 }
 .edit{
     margin-top:90%;
