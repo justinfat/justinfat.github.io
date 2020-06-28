@@ -20,18 +20,20 @@
 .user_name{
     height:10%;
     color:#FFFFFF;
+    line-height: 8vh;
 }
 .history{
     height:10%;
     color:#F39700;
+    line-height: 8vh;
 }
 .info{
 color:#FFFFFF;
-    line-height: 24pt;
+    line-height: 8vh;
 }
 .sub_history{
 color:#FFFFFF;
-     line-height: 24pt;
+     line-height: 8vh;
 }
 .edit{
     margin-top:90%;
