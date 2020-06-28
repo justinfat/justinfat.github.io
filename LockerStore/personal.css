@@ -6,14 +6,14 @@
 .left_side{
     display: inline-block;
     background-color: #2C50C1;
-     width:23%;
+     width:20%;
     height: 100%;
     float: left;
 }
 .right_side{
     display: inline-block;
     background-color: #2C50A1;
-     width:77%;
+     width:80%;
     height: 100%;
     float: right;
 }
