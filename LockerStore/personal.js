@@ -9,5 +9,6 @@ function showDetail()
      else {
          $('.right_side').css("display", "none");
          $('.arrow-img').css("transform", "rotate(0deg)");
+      $('.right_side').css("float", "right");
      }
  }
