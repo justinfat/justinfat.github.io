@@ -2,11 +2,11 @@
  {
      count++;
      if (count % 2 == 1) {
-         $('.sub-menu').css("display", "inline-block");
-         $('.arrow-btn').css("transform", "rotate(180deg)");
+         $('.right_side').css("display", "inline-block");
+         $('.arrow-img').css("transform", "rotate(180deg)");
      }
      else {
-         $('.sub-menu').css("display", "none");
-         $('.arrow-btn').css("transform", "rotate(0deg)");
+         $('.right_side').css("display", "none");
+         $('.arrow-img').css("transform", "rotate(0deg)");
      }
  }
