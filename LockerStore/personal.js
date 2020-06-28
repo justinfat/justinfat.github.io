@@ -1,4 +1,5 @@
- function showDetail()
+var count = 0;
+function showDetail()
  {
      count++;
      if (count % 2 == 1) {
