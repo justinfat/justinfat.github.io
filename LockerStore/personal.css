@@ -28,7 +28,7 @@
     /*margin-top:40vh;*/
     border: none;
     transform:rotate(180deg);
-    margin:auto;
+    margin: 0px auto;
 }
 .user_name{
     height:10%;
