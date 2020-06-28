@@ -65,14 +65,39 @@
     line-height: 8vh;
     margin-left:10%;
 }
-.info{
+.phone_number{
 color:#FFFFFF;
     line-height: 8vh;
     margin-left:10%;
 }
-.sub_history{
+.mail{
 color:#FFFFFF;
      line-height: 8vh;
+    margin-left:10%;
+}
+.score_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+}
+.purchase_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+}
+.comment_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+}
+.follow_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+}
+.launch_count{
+    color:#FFFFFF;
+    line-height: 8vh;
     margin-left:10%;
 }
 .edit{
