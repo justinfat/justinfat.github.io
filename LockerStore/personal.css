@@ -82,10 +82,9 @@
 }
 .arrow-img{
     background-color: #2C50B1;
-    /*margin-top:40vh;*/
     border: none;
     transform:rotate(180deg);
-    margin: 0px auto;
+    vertical-align: middle;
 }
 .user_name{
     height:10%;
