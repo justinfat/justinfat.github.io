@@ -19,10 +19,13 @@
 }
 .photo{
     background-color: #2C50B1;
+     border-radius: 30pt;
+    border: none;
 }
 .arrow-img{
     background-color: #2C50B1;
     margin-top:50%;
+    border: none;
 }
 .user_name{
     height:10%;
