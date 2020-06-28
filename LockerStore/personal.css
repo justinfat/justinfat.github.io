@@ -27,6 +27,7 @@
     background-color: #2C50B1;
     margin-top:40vh;
     border: none;
+    transform:rotate(180deg);
 }
 .user_name{
     height:10%;
