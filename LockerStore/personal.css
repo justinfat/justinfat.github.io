@@ -1,41 +1,3 @@
-#MyBlog{
-
-    position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
-
-    top: 50%;  /*設置垂直位置*/
-
-    right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
-
-    background: #ffffff;  /*背景顏色*/
-
-    padding: 10px 20px;
-
-    border-radius: 10px;  /*圓角*/
-
-    -moz-border-radius: 10px;
-
-    -webkit-border-radius: 10px;
-
-}
-
-#MyBlog:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
-
-    right: -10px;
-
-}
-
-#MyBlog #title{
-
-    padding-right: 5px;  /*讓標題與連結中間有空隙*/
-
-}
-
-#MyBlog_1{margin-top: -50px;}
-
-#MyBlog_2{margin-top: 0px;}
-
-#MyBlog_3{margin-top: 50px;}
-
 .float_window{
     width: 30vw;
     height:100vh;
@@ -61,11 +23,15 @@
 }
 .history{
     height:10%;
-    color:#FFFFFF;
+    color:#F39700;
 }
-.info .sub_history{
+.info{
+color:#FFFFFF;
+}
+.sub_history{
 color:#FFFFFF;
 }
 .edit{
     margin-top:90%;
+    color:#F39700;
 }
