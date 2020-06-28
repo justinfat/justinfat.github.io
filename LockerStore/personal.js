@@ -2,7 +2,7 @@ var count = 0;
 function showDetail()
  {
      count++;
-     if (count % 2 == 1) {
+     if (count % 2 == 0) {
          $('.right_side').css("display", "inline-block");
          $('.arrow-img').css("transform", "rotate(180deg)");
       $('.left_side').css("float", "left");
