@@ -121,44 +121,57 @@
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:14px;
 }
 .title{
     height:10%;
-    color:#F39700;
+    color:#EBB600;
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:12px;
 }
 .history{
     height:10%;
-    color:#F39700;
+    color:#EBB600;
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:14px;
 }
 .phone_number{
 color:#FFFFFF;
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:12px;
 }
 .mail{
 color:#FFFFFF;
      line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
-}
-.score_count{
-    color:#FFFFFF;
-    line-height: 8vh;
-    margin-left:10%;
-    font-family:"century gothic";
+    font-size:12px;
 }
 .purchase_count{
     color:#FFFFFF;
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:12px;
+}
+.purchase_num{
+    color:#EBB600;
+}
+.score_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.score_num{
+    color:#EBB600;
 }
 .comment_count{
     color:#FFFFFF;
@@ -166,17 +179,28 @@ color:#FFFFFF;
     margin-left:10%;
     font-family:"century gothic";
 }
+.comment_num{
+    color:#EBB600;
+}
 .follow_count{
     color:#FFFFFF;
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:12px;
+}
+.follow_num{
+    color:#EBB600;
 }
 .launch_count{
     color:#FFFFFF;
     line-height: 8vh;
     margin-left:10%;
     font-family:"century gothic";
+    font-size:12px;
+}
+.launch_num{
+    color:#EBB600;
 }
 .edit{
     line-height: 8vh;
