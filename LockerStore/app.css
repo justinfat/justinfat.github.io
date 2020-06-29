@@ -18,6 +18,9 @@
 .color-orange {
     color: #eb871b;
 }
+.color-gray {
+    color: #919090;
+}
 .font-14 {
     font-size: 1.17rem;
 }
@@ -145,15 +148,47 @@ img {
     top: 2.8vmin;
     left: 4.5vmin;
 }
-#keywordBlank{
-    border-width: 0.13rem;
+#keywordOuter {
+    border-width: 0.15rem;
     border-color: #2C50A1;
     border-radius: 0.4rem;
+    border-style: solid;
     width: 99.6%;
     height: 50%;
     padding: 1vmin 12.5vmin 1vmin 15.2vmin;
     margin: 0.05rem;
     z-index: 0;
+    background-color: #FFFFFF;
+}
+#keywordBlank{
+    border-width: 0.15rem;
+    border-style: none;
+    border-radius: 0.4rem;
+    width: auto;
+    height: auto;
+    padding: 2.9vmin 0;
+    margin: 0.05rem;
+    z-index: 0;
+    position: absolute;
+    top: 0.05rem;
+    left: 15.2vmin;
+    max-inline-size: calc(100% - 27vmin);
+
+}
+#relatedTag{
+    border-width: 0.15rem;
+    border-style: none;
+    border-radius: 0.4rem;
+    width: auto;
+    height: auto;
+    padding: 2.9vmin 0;
+    margin: 0.05rem;
+    z-index: 1;
+    position: absolute;
+    top: 0.05rem;
+    left: 15.2vmin;
+    line-height: 1.2rem;
+    background-color: #FFFFFF;
 }
 #clear_btn {
     position: absolute;

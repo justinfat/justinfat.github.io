@@ -22,7 +22,7 @@ import time
 #     time.sleep(2)
 
 # fin = open('./crawler_data/shopData.txt', "r")
-# fout = open('./crawler_data/shopUrl.txt', "w")
+# fout = open('./shopUrl.txt', "w")
 # lines = fin.readlines()
 
 # names = []
@@ -47,12 +47,12 @@ import time
 
 ######################## Crawl items of shop" ##########################
 fin = open('./crawler_data/shopUrl.txt', "r")
-fout = open('./crawler_data/itemData.txt', "w")
+fout = open('./itemData.txt', "w")
 lines = fin.readlines()
 
 browser = webdriver.Chrome()
 for i in range(len(lines)):
-    browser.get(lines[i])
+    browser.get(lines[i].replace("/en/", "/"))
     time.sleep(1)
     try:
         shop = browser.find_element_by_class_name("fn").text
@@ -76,9 +76,15 @@ for i in range(len(lines)):
         except:
             continue
         print(price)
+        try:
+            img = j.find_element_by_class_name("photo").get_attribute("data-src")
+        except:
+            img = ""
+        print(img)
         fout.write(name+'\n')
         fout.write(intro+'\n')
         fout.write(price+'\n')
+        fout.write(img+'\n')
 
 fin.close()
 fout.close()

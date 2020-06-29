@@ -1,3 +1,5 @@
+const request = require('request');
+const cheerio = require("cheerio");
 // include `express`
 const express = require('express')
 
@@ -24,6 +26,15 @@ const lockerSchema = new mongoose.Schema({
 }, { collection: 'lockers' })
 const lockerModel = conn.model('lockers', lockerSchema)
 
+var item = new mongoose.Schema({
+  id: mongoose.Schema.Types.Number,
+  name: String,
+  introduce: String,
+  price: mongoose.Schema.Types.Number,
+  img: String,
+  // isGroup: mongoose.Schema.Types.Number,
+  // groupAmount: mongoose.Schema.Types.Number
+})
 const shopSchema = new mongoose.Schema({
   name: String,
   starNum: mongoose.Schema.Types.Number,
@@ -34,8 +45,9 @@ const shopSchema = new mongoose.Schema({
   img: String,
   tag: String,
   shopType: String,
-  isGroup: mongoose.Schema.Types.Number
-}, { collection: 'shops' })
+  isGroup: mongoose.Schema.Types.Number,
+  items: [item]
+}, { strict: false }, { collection: 'shops' })
 const shopModel = conn.model('shops', shopSchema)
 
 // start the server
@@ -125,15 +137,39 @@ app.get('/searchShop', (req, res) => {
   });
 })
 
-// app.get('/getItem_single', (req, res) => {
-//   connection.query(
-//     `SELECT * FROM shop_${req.query.id} WHERE isGroup = 0`, function (error, results, fields) {
-//       // if (error) throw error
-//       res.send({
-//         results: results,
-//       })
-//     })
-// })
+app.get('/getItem_single', (req, res) => {
+  shopModel.findOne({ _id: req.query.id }).select({ items: 1 }).exec(function (err, result) {
+    if (err) throw err;
+    console.log(result)
+    res.send({
+      results: result
+    });
+  });
+})
+
+const crawl_root = "https://www.tagsfinder.com/en-tw/related/"
+const english = /^[A-Za-z0-9]*$/;
+app.get('/getRelatedTag', (req, res) => {
+  var keyword = encodeURIComponent(req.query.keyword)
+  request({
+    url: crawl_root + keyword,
+    method: "GET",
+  }, function (error, response, body) {
+    if (error || !body) {
+      res.send('');
+      return;
+    }
+    const $ = cheerio.load(body);
+    const elements = $(".card-table a")
+    var tags = elements.text().split("#")
+    var result = []
+    for (let i = 2; i<tags.length && result.length<5; i++) {
+      if (!english.test(tags[i]))
+        result.push(tags[i])
+    }
+    res.send(result);
+  });
+})
 
 // app.get('/getItem_group', (req, res) => {
 //   connection.query(
