@@ -1,6 +1,6 @@
 .float_window{
-    width: 25vw;
-    height:100vh;
+    width: 320px;
+    height:568px;
     margin:auto;
 }
 .left_side{
@@ -74,7 +74,7 @@
 .middle{
     display: inline-block;
     background-color: #004092;
-     width:20%;
+     width:110px;
     height: 100%;
     float: left;
 }
@@ -88,8 +88,8 @@
 .photo{
     background-color: #2C50B1;
    border-radius:50%;
-    width:50px;
-    height:50px;
+    width:42px;
+    height:42px;
     border: none;
     margin:auto;
     position: relative;
