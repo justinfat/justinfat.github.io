@@ -93,14 +93,16 @@
 }
 .small_camera{
     position: relative;
-    left:60%;
+    left:70%;
+    background-color: #2C50B1;
 }
 .arrow-img{
     background-color: #2C50B1;
     border: none;
     transform:rotate(180deg);
     position: relative;
-    top:45%;
+    top:40%;
+    left:50%;
 }
 .user_name{
     height:10%;
