@@ -3,3 +3,39 @@
     height:568px;
     margin:auto;
 }
+.order-navbar{
+    width: 100%;
+    height: 7%;
+    margin: 0;
+}
+.btn {
+    color: #2C50A1;
+    font-family: "Century Gothic";
+    font-weight: bold;
+    font-size: 14pt;
+}
+.btn:focus{box-shadow:none;}
+
+.order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {
+    border-radius: 15px 15px 0px 0px;
+    outline: none;
+    height: 100%;
+}
+
+.order-nav-lbtn {
+    width: 33.334%;
+    background-color: #F39700;
+    border: hidden;
+}
+
+.order-nav-mbtn {
+    width: 33.333%;
+    background-color: #E8C41C;
+    border: hidden;
+}
+
+.order-nav-rbtn {
+    width: 33.333%;
+    background-color: #C9C9CA;
+    border: hidden;
+}
