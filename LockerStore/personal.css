@@ -96,7 +96,7 @@
     border: none;
     transform:rotate(180deg);
     position: relative;
-    top:50vh;
+    top:50%;
 }
 .user_name{
     height:10%;
