@@ -97,8 +97,9 @@
     position: relative;
     left:70%;
     background-color: #2C50B1;
-    top:-3%;
-    border-radius: 50%;
+    top:8%;
+   border-radius:999em;
+
 }
 .arrow-img{
     background-color: #2C50B1;
@@ -106,7 +107,7 @@
     transform:rotate(180deg);
     position: relative;
     top:40%;
-    left:25%;
+    left:20%;
 }
 .user_name{
     height:10%;
