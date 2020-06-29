@@ -95,11 +95,11 @@
 }
 .small_camera{
     position: relative;
-    left:55%;
+    left:50%;
     background-color: #2C50B1;
     top:2.5%;
    border-radius:999em;
-    width:20%;
+    width:25%;
 }
 .arrow-img{
     background-color: #2C50B1;
