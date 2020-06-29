@@ -97,7 +97,7 @@
 }
 .photo{
     background-color: #2C50B1;
-   border-radius:50%;
+    border-radius:50%;
     width:42px;
     height:42px;
     border: none;
@@ -110,9 +110,10 @@
     left:50%;
     background-color: #2C50B1;
     top:2%;
-   border-radius:999em;
+    border-radius:50%;
     width:30px;
     height:30px;
+    border: none;
 }
 .arrow-img{
     background-color: #2C50B1;
@@ -120,7 +121,7 @@
     transform:rotate(180deg);
     position: relative;
     top:40%;
-    left:15%;
+    left:25%;
     border-radius:50%;
     width:33.61px;
     height:33.61px;
