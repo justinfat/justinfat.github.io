@@ -91,12 +91,16 @@
     border: none;
     margin:auto;
 }
+.small_camera{
+    position: relative;
+    left:60%;
+}
 .arrow-img{
     background-color: #2C50B1;
     border: none;
     transform:rotate(180deg);
     position: relative;
-    top:50%;
+    top:45%;
 }
 .user_name{
     height:10%;
