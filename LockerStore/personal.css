@@ -92,14 +92,15 @@
     margin:auto;
     position: relative;
     top:5%;
+    z-index:2;
 }
 .small_camera{
     position: relative;
     left:70%;
     background-color: #2C50B1;
-    top:8%;
+    top:-3%;
    border-radius:999em;
-
+z-index:1;
 }
 .arrow-img{
     background-color: #2C50B1;
