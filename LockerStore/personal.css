@@ -87,7 +87,9 @@
 }
 .photo{
     background-color: #2C50B1;
-     border-radius: 50%;
+   border-radius:50%;
+    width:12px;
+    height:12px;
     border: none;
     margin:auto;
     position: relative;
@@ -108,7 +110,9 @@
     position: relative;
     top:40%;
     left:20%;
-    border-radius:30pt;
+    border-radius:50%;
+    width:12px;
+    height:12px;
 }
 .user_name{
     height:10%;
