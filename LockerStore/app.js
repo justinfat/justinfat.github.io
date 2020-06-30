@@ -1210,11 +1210,11 @@ $('#line_btn').click(function () {
     window.open(link);
 });
 $('#facebook_btn').click(function () {
-    var link = "http://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent("http://zhi-yuan-chenge.blogspot.com/2014/10/jsfb.html");
+    var link = "http://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href);
     window.open(link);
 });
 $('#messenger_btn').click(function () {
-    window.open('fb-messenger://share?link=' + encodeURIComponent(window.location.href) + '&app_id=' + encodeURIComponent(app_id));
+    window.open('fb-messenger://share?link=' + encodeURIComponent(window.location.href));
 });
 /************************ Handle finger swipe event **************************/
 document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
