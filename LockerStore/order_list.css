@@ -18,7 +18,7 @@
 
 .order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {
     border-radius: 30px 30px 30px 30px;
-   /* outline: none;*/
+    outline: none;
     height: 100%;
 }
 
