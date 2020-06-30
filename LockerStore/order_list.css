@@ -17,15 +17,15 @@
 .btn:focus{box-shadow:none;}
 
 .order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {
-    border-radius: 15px 15px 0px 0px;
-    outline: none;
+    border-radius: 30px 30px 30px 30px;
+   /* outline: none;*/
     height: 100%;
 }
 
 .order-nav-lbtn {
     width: 33.334%;
     background-color: #F39700;
-    border: hidden;
+    /*border: hidden;*/
 }
 
 .order-nav-mbtn {
