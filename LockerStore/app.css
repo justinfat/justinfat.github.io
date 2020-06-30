@@ -166,11 +166,11 @@ img {
     border-radius: 0.4rem;
     width: auto;
     height: auto;
-    padding: 2.9vmin 0;
+    padding: 2.7vmin 0;
     margin: 0.05rem;
     z-index: 0;
     position: absolute;
-    top: 0.05rem;
+    top: 0.1rem;
     left: 15.2vmin;
     max-inline-size: calc(100% - 27vmin);
 
@@ -181,11 +181,11 @@ img {
     border-radius: 0.4rem;
     width: auto;
     height: auto;
-    padding: 2.9vmin 0;
+    padding: 2.7vmin 0;
     margin: 0.05rem;
     z-index: 1;
     position: absolute;
-    top: 0.05rem;
+    top: 0.1rem;
     left: 15.2vmin;
     line-height: 1.2rem;
     background-color: #FFFFFF;
@@ -366,15 +366,23 @@ img {
     position: absolute;
     bottom: 0;
 }
-.onMap_bottom_left {
+/* .onMap_bottom_left {
     position: relative;
-}
+} */
 #infoBox {
     position: absolute;
-    bottom: 25%;
-    left: 37.7%;
+    bottom: 12.5vmin;
+    left: 12.8%;
+    width: 78%;
+    min-height: 12.5vmin;
+    background-color: #FFFFFF;
+    border-radius: 0.4rem;
+    border-width: 0.2rem;
+    border-color: #2C50A1;
+    border-style: solid;
+    padding: 0.5vmin 4.3vmin 1vmin 4.3vmin;
 }
-.ib_outer {
+/*.ib_outer {
     width: 27vw;
 }
 #heart {
@@ -382,38 +390,25 @@ img {
     top: 37%;
     left: 6.5%;
     width: 2vw;
-}
+} */
 #info_t1{
-    position: absolute;
-    top: 15%;
-    left: 19.5%;
-    font-size: 1.05rem;
-    color: #2C50A1;
-    font-weight: bold;
-    width: 15.4vw;
-    margin: 0;
-}
-#info_t2 {
-    position: absolute;
-    top: 50%;
-    left: 19.5%;
-    font-size: 0.8rem;
-    width: 15.4vw;
-    line-height: 1.12rem;
-    margin: 0;
     word-wrap: break-word;
 }
-#infoBox_close {
+#info_t2 {
+    word-wrap: break-word;
+}
+/* #infoBox_close {
     position: absolute;
     top: 10.7%;
     right: 2.1%;
     width: 0.75vw;
-}
+} */
 #goto {
-    position: absolute;
-    top: 32%;
-    right: 7.8%;
-    width: 2.3vw;
+    background-color: #e8c41c;
+    width: 15.4vmin;
+    height: 6.9vmin;
+    border-radius: 1rem;
+    padding: 0.8vmin 0;
 }
 .shortcut{
     width: 7.8vmin;
@@ -725,10 +720,10 @@ p.explore {
     position: absolute;
     top: calc(100vh - 6.4vmin);
 } */
-@keyframes example {
+/* @keyframes example {
     from {top: 0px; background-color: yellow;}
     to {top: 200px;}
-  }
+  } */
 #slipShop_btn {
     position: relative;
     width: 100%;
@@ -768,7 +763,7 @@ p.explore {
 .shopInfo_left {
     width: 70%;
 }
-.shopTab_btn {
+.switchTab_btn {
     height: 7.8vmin;
 }
 .shopTag {
@@ -812,15 +807,19 @@ p.explore {
     border-top-right-radius: 0.2rem;
     z-index: 2;
 }
-.tab_container {
+.tab_container.single {
     width: max-content;
     padding: 2.35vmin 3vmin;
 }
-.tab_btn {
+.tab_container.group {
+    width: 100%;
+    padding: 2.35vmin 3vmin;
+}
+.tabBtn-single {
     height: 7.8vmin;
     margin: 0 1.5vmin;
 }
-#shopTab_single {
+#singleItemTab {
     background-color: #ffffff;
 }
 .shopItem {
@@ -834,7 +833,8 @@ p.explore {
     margin: 2.1vmin 0 2.1vmin 4vmin;
 }
 .shopItem_mid {
-    padding: 2.3vmin 0 2.3vmin 4vmin;
+    width: 1vmin;
+    padding: 2.3vmin 2vmin 2.3vmin 4vmin;
     overflow: auto;
 }
 .shopItem_name {
@@ -867,32 +867,104 @@ p.explore {
 }
 .optionBtn_right {
     height: 2.2vmin;
+    pointer-events: all;
 }
 #shopCard_bottom {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    min-height: 17.2vmin;
+    height: 17.2vmin;
     background-color: #e6e5e6;
-    padding: 3.6vmin 0;
+    text-align: center;
+    vertical-align: middle;
 }
 .addBtn {
-    height: 100%;
+    height: 10vmin;
 }
-#shopTab_group {
-    padding: 3.2% 2.5% 15% 2.5%;
-    background-color: #2c50a1;
+#groupCaseTab {
+    background-color: #ffffff;
 }
-.border-white {
+.tabBtn-group {
+    position: relative;
+    width: 31vmin;
+    height: 7.8vmin;
+    margin: 0 1.5vmin;
+    border-radius: 1rem;
+    color: #2C50A1;
+    background-color: #FFFFFF;
+    border-width: 0.1rem;
+    border-color: #2C50A1;
+    border-style: solid;
+}
+.tabBtn-group.select {
+    background-color: #2C50A1;
+    color: #FFFFFF;
+}
+.tabText-group {
+    position: absolute;
+    top: 1vmin;
+    left: 6.3vmin;
+}
+#tabTitle {
+    text-align: center;
+    height: 12.5vmin;
+    padding: 3.2vmin 2%;
+}
+.groupCase {
+    position: relative;
+    height: 31.25vmin;
+    border-top: 0.1rem solid #d2d3d4;
+}
+.groupCase_top {
+    height: 22.75vmin;
+    padding: 2vmin 5% 1.5vmin 5%;
+}
+.groupCase_bottom {
+    position: relative;
+    height: 9.5vmin;
+    padding: 0 5% 2vmin 5%;
+}
+.progressLine {
+    width: 90%;
+    position: absolute;
+    top: 2.75vw;
+}
+.progressPeople {
+    padding: 0 5%;
+}
+.people {
+    position: relative;
+}
+.circle-big {
+    width: 7.5vw;
+}
+.circle-small {
+    width: 5.6vw;
+}
+.peoplePhoto-big {
+    width: 6.3vw;
+    position: absolute;
+    top: 0.6vw;
+    left: 0.64vw;
+}
+.peoplePhoto-small {
+    width: 4.37vw;
+    position: absolute;
+    top: 0.55vw;
+    left: 0.62vw;
+}
+/* .border-white {
     border-color: #ffffff;
     border-style: solid;
     border-width: 0.05rem;
-}
+} 
 .groupAmount_text {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
+} 
 .groupAmount_top {
     text-align: center;
     font-size: 1.5rem;
@@ -907,32 +979,45 @@ p.explore {
     position:relative;
     width: 100%;
     min-height: 15%;
-}
+} */
 #shareBox {
     position: absolute;
-    bottom: 25%;
-    left: 37.7%;
+    bottom: 21.1vmin;
+    /*left: 37.7%; */
+    width: 86.2%;
+    height: 15.6vmin;
+    background-color: #e8c41c;
+    border-radius: 0.4rem;
+    border-width: 0.2rem;
+    border-color: #2C50A1;
+    border-style: solid;
+    padding: 3vmin 4.3vmin 3vmin 4.3vmin;
+    margin: 0 6.5%;
+
 }
 #shareBox_content {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 4.5% 0 3% 6%;
+    padding: 4.5% 0 3% 6%; */
 }
-#shareBox_close {
+/* #shareBox_close {
     position: absolute;
     top: 10.7%;
     right: 2.1%;
     width: 0.75vw;
-}
+} */
 #shareBox_txt {
-    width: 100%;
+    /* width: 100%; */
 }
 #appBar {
-    width: 68%;
+    /* width: 68%; */
 }
 .appIcon {
-    width: 14.2%;
+    height: 7.8vmin;;
+}
+.shopCard_tab {
+    height: calc(100% - 36vmin);
 }

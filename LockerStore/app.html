@@ -20,7 +20,8 @@
             <div class="on-map" id="searchBox">
                 <img class="btn btn-square menuIcon" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
                 <div id="keywordOuter"></div>
-                <input class="color-blue" type="text" id="keywordBlank" name="keyword" placeholder="# 今天你想要來點什麼 :)" size="20">
+                <input class="color-blue" type="text" id="keywordBlank" name="keyword" placeholder="# 今天你想要來點什麼 :)"
+                    size="20">
                 <div class="color-gray" id="relatedTag"></div>
                 <img class="btn btn-square" id="clear_btn" src="public/images/a1/a1-21.svg" alt="a1-21"
                     style="display:none">
@@ -216,171 +217,6 @@
 
                 </div>
             </div>
-
-
-
-
-
-
-
-            <!-- <div class="card square" id="shop_card" style="display:none">
-                <div class="scrollbar" id="shopCard_content">
-                    <div class="d-flex flex-column">
-                        <div class="shopInfo_top">
-                            <img class="shopImg">
-                        </div>
-                        <div class="d-flex border-bottom shopInfo on-card">
-                            <div class="d-flex flex-column mr-auto shopInfo_left">
-                                <p class="shopName color-blue">Name</p>
-                                <div class="d-flex">
-                                    <div class="d-flex starBar">
-                                        <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                                        <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                                        <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                                        <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                                        <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
-                                    </div>
-                                    <span class="starNum color-yellow"></span>
-                                    <span class="commentNum color-normal"></span>
-                                </div>
-                                <div class="shopTag">
-                                    <div class="tag">#&nbsp;Drinks</div>
-                                    <div class="tag">#&nbsp;tea</div>
-                                    <div class="tag">#&nbsp;Cheap</div>
-                                    <div class="tag">#&nbsp;Boba</div>
-                                    <div class="tag">#&nbsp;juice</div>
-                                    <div class="tag">#&nbsp;Tainan</div>
-                                    <div class="tag">#&nbsp;friendly</div>
-                                </div>
-                            </div>
-                            <img class="btn btn-square shopTab_btn align-self-center" src="public/images/a4/a4-04.svg"
-                                alt="a4-04">
-                        </div>
-                        <div class="d-flex flex-column border-bottom moreInfo on-card">
-                            <div class="d-flex align-items-start">
-                                <img class="btn btn-square shopAddr_icon" src="public/images/a4/a4-15.svg" alt="a4-15">
-                                <span class="shopAddr_txt color-normal"></span>
-                            </div>
-                            <div class="d-flex align-items-start mt-1">
-                                <img class="btn btn-square shopTel_icon" src="public/images/a4/a4-14.svg" alt="a4-14">
-                                <span class="shopTel_txt color-normal"></span>
-                            </div>
-                        </div>
-
-                        <div class="on-card" id="shopTab_single">
-                            <div class="d-flex flex-column" id="singleItemList">
-                                <p class="color-blue shopTab_title">Enjoy yourself !</p>
-                                <div class="shopItem" style="display:none;">
-                                    <img class="shopItem_outer" src="public/images/a4/a4-24.svg" alt="a4-24">
-                                    <div class="d-flex flex-column shopItem_content">
-                                        <div class="shopItem_top">
-                                            <img class="shopItem_inner" src="public/images/a4/a4-19.svg" alt="a4-19">
-                                            <div class="d-flex shopItem_detail">
-                                                <div class="shopItem_left">
-                                                    <img class="shopItem_imgBorder" src="public/images/a4/a4-20.svg"
-                                                        alt="a4-20">
-                                                    <img class="shopItem_img">
-                                                </div>
-                                                <div class="d-flex flex-column flex-grow-1 shopItem_mid">
-                                                    <div class="shopItem_name color-blue"></div>
-                                                    <span class="shopItem_intro color-normal mb-auto"></span>
-                                                    <div class="shopItem_price color-blue"></div>
-                                                </div>
-                                                <div class="d-flex flex-column shopItem_control">
-                                                    <button type="button"
-                                                        class="list-group-item list-group-item-action rounded-0 border-blue shopItem_plus">
-                                                        <img class="plusIcon" src="public/images/a1/a1-24前.svg"
-                                                            alt="a1-24前">
-                                                    </button>
-                                                    <button
-                                                        class="list-group-item list-group-item-action rounded-0 border-blue shopItem_minus">
-                                                        <img class="minusIcon" src="public/images/a1/a1-25前.svg"
-                                                            alt="a1-25前">
-                                                    </button>
-                                                </div>
-                                                <div class="shopItem_right">
-                                                    <img class="itemAmount_outer" src="public/images/a4/a4-23-02.svg"
-                                                        alt="a4-23-02">
-                                                    <p class="itemAmount_txt color-blue">0</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div type="button" class="d-flex shopItem_bottom">
-                                            <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
-                                            <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg"
-                                                alt="a4-26">
-                                            <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collapse optionContent">
-                                    <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="on-card" id="shopTab_group" style="display:none">
-                            <div class="d-flex flex-column" id="groupItemList">
-                                <p class="color-blue shopTab_title color-white">Group buying !</p>
-                                <div class="shopItem" style="display:none;">
-                                    <img class="shopItem_outer" src="public/images/a4/a4-32.svg" alt="a4-32">
-                                    <div class="d-flex flex-column shopItem_content">
-                                        <div class="shopItem_top">
-                                            <img class="shopItem_inner" src="public/images/a4/a4-40.svg" alt="a4-40">
-                                            <div class="d-flex shopItem_detail">
-                                                <div class="shopItem_left">
-                                                    <img class="shopItem_imgBorder" src="public/images/a4/a4-33.svg"
-                                                        alt="a4-33">
-                                                    <img class="shopItem_img">
-                                                </div>
-                                                <div class="d-flex flex-column flex-grow-1 shopItem_mid">
-                                                    <div class="shopItem_name color-blue">Name</div>
-                                                    <span class="shopItem_intro color-normal mb-auto">introduce</span>
-                                                    <div class="shopItem_price color-blue">$ 100</div>
-                                                </div>
-                                                <div class="d-flex flex-column shopItem_control">
-                                                    <button type="button"
-                                                        class="list-group-item list-group-item-action rounded-0 border-white shopItem_plus">
-                                                        <img class="plusIcon" src="public/images/a1/a1-24前.svg"
-                                                            alt="a1-24前">
-                                                    </button>
-                                                    <button
-                                                        class="list-group-item list-group-item-action rounded-0 border-white shopItem_minus">
-                                                        <img class="minusIcon" src="public/images/a1/a1-25前.svg"
-                                                            alt="a1-25前">
-                                                    </button>
-                                                </div>
-                                                <div class="shopItem_right">
-                                                    <img class="itemAmount_outer" src="public/images/a4/a4-41.svg"
-                                                        alt="a4-41">
-                                                    <div
-                                                        class="d-flex flex-column justify-content-around groupAmount_text">
-                                                        <p class="groupAmount_top color-orange">0</p>
-                                                        <p class="groupAmount_bottom color-blue">5</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div type="button" class="d-flex shopItem_bottom">
-                                            <img class="optionBtn_left" src="public/images/a4/a4-25.svg" alt="a4-25">
-                                            <img class="optionBtn_mid mr-auto" src="public/images/a4/a4-26.svg"
-                                                alt="a4-26">
-                                            <img class="optionBtn_right" src="public/images/a4/a4-27.svg" alt="a4-27">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collapse optionContent">
-                                    <img class="optionBox" src="public/images/a4/a4-40.svg" alt="a4-40">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn btn-square on-card" id="shopCard_bottom">
-                    <img class="addBtn" src="public/images/a4/a4-28.svg" alt="a2-28" data-toggle="modal"
-                        data-target="#exampleModalCenter">
-                </div>
-                <img class="btn btn-square in foldCard_btn" src="public/images/a2/a2-04.svg" alt="a2-04">
-            </div> -->
         </div>
     </div>
 
@@ -406,7 +242,7 @@
                                 <div class="shopType align-self-center color-white font-10">手搖飲料</div>
                             </div>
                         </div>
-                        <img class="btn btn-square shopTab_btn align-self-center" src="public/images/b1/開始使用部分-23.svg"
+                        <img class="btn btn-square switchTab_btn align-self-center" src="public/images/b1/開始使用部分-23.svg"
                             alt="b1-23">
                     </div>
                 </div>
@@ -440,18 +276,36 @@
                     <img id="slipShop_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
                 </div>
                 <div class="shopCard_top">
-                    <div class="d-flex tab_container">
-                        <img class="btn btn-square tab_btn select" id="hot_btn" src="public/images/b1/開始使用部分-37.svg"
-                            alt="b1-37">
-                        <img class="btn btn-square tab_btn" id="cheap_btn" src="public/images/b1/開始使用部分-39.svg"
-                            alt="b1-39">
-                        <img class="btn btn-square tab_btn" id="guess_btn" src="public/images/b1/開始使用部分-40.svg"
-                            alt="b1-40">
-                        <img class="btn btn-square tab_btn" id="class_btn" src="public/images/b1/開始使用部分-42.svg"
-                            alt="b1-42">
+                    <div class="single-item" id="tabContainer_single">
+                        <div class="d-flex tab_container single">
+                            <img class="btn btn-square tab_btn tabBtn-single select" id="hot_btn"
+                                src="public/images/b1/開始使用部分-37.svg" alt="b1-37">
+                            <img class="btn btn-square tab_btn tabBtn-single" id="cheap_btn"
+                                src="public/images/b1/開始使用部分-39.svg" alt="b1-39">
+                            <img class="btn btn-square tab_btn tabBtn-single" id="guess_btn"
+                                src="public/images/b1/開始使用部分-40.svg" alt="b1-40">
+                            <img class="btn btn-square tab_btn tabBtn-single" id="class_btn"
+                                src="public/images/b1/開始使用部分-42.svg" alt="b1-42">
+                        </div>
+                    </div>
+                    <div class="group-case" id="tabContainer_group" style="display:none;">
+                        <div class="d-flex tab_container group justify-content-between align-items-center">
+                            <div class="btn btn-square font-12 tab_btn tabBtn-group select" id="followGroup_btn">
+                                <span class="tabText-group">跟團享優惠</span>
+                            </div>
+                            <div class="font-12 color-normal">或</div>
+                            <div class="btn btn-square font-12 tab_btn tabBtn-group" id="openGroup_btn">
+                                <span class="tabText-group">揪團拚福利</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-item" id="tabTitle" style="display:none;">
+                        <span class="color-blue font-12">團購活動精選商品，&nbsp;活動期間為</span>
+                        <span class="color-blue font-12" id="saleDate">07/01 - 08/31</span>
+                        <span>。</span>
                     </div>
                 </div>
-                <div class="on-card scrollbar" id="shopTab_single">
+                <div class="on-card scrollbar single-item shopCard_tab" id="singleItemTab">
                     <div class="d-flex flex-column" id="singleItemList">
                         <div class="d-flex shopItem" style="display:none;">
                             <img class="shopItem_img">
@@ -470,11 +324,366 @@
                         </div>
                     </div>
                 </div>
+                <div class="on-card scrollbar group-case shopCard_tab" id="groupCaseTab" style="display:none;">
+                    <div class="d-flex flex-column" id="groupCaseList">
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">5</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">5</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">成大長榮櫃&nbsp;-&nbsp;01</span>
+                                    <span class="groupDeadline font-10 color-normal">2020-07-02-16:00</span>
+                                    <span class="groupAddr font-10 color-normal">台南市東區長榮路三段139號</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                        <img class="peoplePhoto-big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">十在滿意拚經濟</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">10</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">10</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">成大醫院櫃&nbsp;-&nbsp;01</span>
+                                    <span class="groupDeadline font-10 color-normal">2020-07-02-18:00</span>
+                                    <span class="groupAddr font-10 color-normal">台南市北區勝利路138號</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                        <img class="peoplePhoto-big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">10</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">10</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">成大醫院櫃&nbsp;-&nbsp;01</span>
+                                    <span class="groupDeadline font-10 color-normal">2020-07-02-18:00</span>
+                                    <span class="groupAddr font-10 color-normal">台南市北區勝利路138號</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                        <img class="peoplePhoto-big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar group-case shopCard_tab" id="openCaseTab" style="display:none;">
+                    <div class="d-flex flex-column" id="openCaseList">
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">5</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">5</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">選定櫃位</span>
+                                    <span class="groupDeadline font-10 color-normal">團購截止時間</span>
+                                    <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">十在滿意拚經濟</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">10</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">10</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">選定櫃位</span>
+                                    <span class="groupDeadline font-10 color-normal">團購截止時間</span>
+                                    <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar shopCard_tab" id="setCaseTab" style="display:none;">
+                    <div class="d-flex flex-column" id="setCaseList">
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">5</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">5</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">選定櫃位</span>
+                                    <span class="groupDeadline font-10 color-normal">團購截止時間</span>
+                                    <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="on-map" id="shareBox">
+                        <div class="d-flex align-items-center justify-content-around" id="shareBox_content">
+                            <div class="color-normal font-12 mr-4">分享給好友:&nbsp;</div>
+                            <div class="d-flex justify-content-between flex-grow-1" id="appBar">
+                                <img class="btn btn-square appIcon" id="link_btn" src="public/images/b2/團購-18.svg"
+                                    alt="b2-18">
+                                <a id="line_btn">
+                                    <img class="btn btn-square appIcon" src="public/images/b2/團購-19.svg"
+                                    alt="b2-19">
+                                </a>
+                                <img class="btn btn-square appIcon" id="messenger_btn" src="public/images/b2/團購-20.svg"
+                                    alt="b2-20">
+                                <img class="btn btn-square appIcon" id="facebook_btn" src="public/images/b2/團購-21.svg"
+                                    alt="b2-21">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar group-item shopCard_tab" id="groupItemTab" style="display:none;">
+                    <div class="d-flex flex-column" id="groupItemList">
+                        <div class="d-flex shopItem" style="display:none;">
+                            <img class="shopItem_img">
+                            <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                                <div class="shopItem_name color-normal font-12"></div>
+                                <span class="shopItem_intro color-normal font-10 mb-auto"></span>
+                                <div class="shopItem_price color-normal font-10"></div>
+                            </div>
+                            <div class="d-flex flex-column shopItem_control">
+                                <img class="btn btn-square shopItem_plus" type="button"
+                                    src="./public/images/b1/開始使用部分-48.svg" alt="b1-48">
+                                <img class="btn btn-square shopItem_minus" type="button"
+                                    src="./public/images/b1/開始使用部分-49.svg" alt="b1-49">
+                            </div>
+                            <div class="itemAmount_txt color-blue">0</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="btn btn-square on-card" id="shopCard_bottom">
-                    <img class="addBtn" src="public/images/b1/開始使用部分-44.svg" alt="b1-44" data-toggle="modal"
-                        data-target="#exampleModalCenter">
+                    <div class="d-flex flex-column align-items-center justify-content-around" style="width: 100%; height: 100%;">
+                        <img class="addBtn" id="addItem_btn" src="public/images/b1/開始使用部分-44.svg" alt="b1-44"
+                            data-toggle="modal" data-target="#exampleModalCenter">
+                        <img class="addBtn" id="chooseGroup_btn" src="public/images/b2/團購-11.svg" alt="b2-11"
+                            style="display: none;">
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- <div class="container-fluid d-flex justify-content-end layer onMap_mid">
@@ -484,39 +693,17 @@
             <img class="btn btn-square" id="group_filter" src="public/images/a1/a1-13前團購.svg" alt="a1-13">
         </div>
     </div> -->
-    <div class="container-fluid d-flex layer onMap_bottom">
-        <div class="flex-fill onMap_bottom_left">
-            <div class="on-map" id="infoBox" style="display:none">
-                <img class="ib_outer" src="public/images/a1/a1-22.svg" alt="a1-22">
-                <img class="btn btn-square" id="heart" src="public/images/a1/a1-18前.svg" alt="a1-18">
-                <p id="info_t1"></p>
-                <p id="info_t2"></p>
-                <img class="btn btn-square" id="infoBox_close" src="public/images/a1/a1-21.svg" alt="a1-21">
-                <img class="btn btn-square" id="goto" src="public/images/a1/a1-16前.svg" alt="a1-16">
-            </div>
-            <div class="on-map" id="shareBox" style="display:none">
-                <img class="ib_outer" src="public/images/a1/a1-22.svg" alt="a1-22">
-                <div class="d-flex flex-column align-items-start" id="shareBox_content">
-                    <img class="mb-auto" id="shareBox_txt" src="public/images/a4++/a4++-11.svg" alt="a1-22">
-                    <div class="d-flex justify-content-between" id="appBar">
-                        <img class="btn btn-square appIcon" id="message_btn" src="public/images/a4++/a4++-04.svg"
-                            alt="a4++-04">
-                        <img class="btn btn-square appIcon" id="email_btn" src="public/images/a4++/a4++-05.svg"
-                            alt="a4++-05">
-                        <img class="btn btn-square appIcon" id="line_btn" src="public/images/a4++/a4++-06.svg"
-                            alt="a4++-06">
-                        <img class="btn btn-square appIcon" id="messenger_btn" src="public/images/a4++/a4++-07.svg"
-                            alt="a4++-07">
-                        <img class="btn btn-square appIcon" id="facebook_btn" src="public/images/a4++/a4++-08.svg"
-                            alt="a4++-08">
-                        <img class="btn btn-square appIcon" id="otherApp_btn" src="public/images/a4++/a4++-09.svg"
-                            alt="a4++-09">
-                    </div>
+    <div class="container-fluid layer onMap_bottom">
+        <div class="on-map" id="infoBox" style="display:none">
+            <div class="d-flex align-items-center" style="min-height: 10vmin;">
+                <div class="d-flex flex-column mr-auto">
+                    <div class="color-normal font-12 mb-1" id="info_t1">成大醫院櫃</div>
+                    <div class="color-normal font-8" id="info_t2">台南市北區小東路35號門診大樓1樓</div>
                 </div>
-                <img class="btn btn-square" id="shareBox_close" src="public/images/a1/a1-21.svg" alt="a1-21">
+                <div class="btn btn-square color-blue font-12" id="goto">確認</div>
             </div>
         </div>
-        <div class="d-flex flex-column on-map" id="shortcut_box">
+        <div class="d-flex flex-column align-items-end on-map" id="shortcut_box">
             <img class="btn btn-square on-map shortcut" id="locate" src="public/images/a1/a1-14定位.svg" alt="a1-14"
                 onclick="locate_once()">
             <img class="btn btn-square shortcut" id="cart_shortcut" src="public/images/b1/登入增加-02.svg" alt="b1-02">

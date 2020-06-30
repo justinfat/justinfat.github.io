@@ -140,7 +140,6 @@ app.get('/searchShop', (req, res) => {
 app.get('/getItem_single', (req, res) => {
   shopModel.findOne({ _id: req.query.id }).select({ items: 1 }).exec(function (err, result) {
     if (err) throw err;
-    console.log(result)
     res.send({
       results: result
     });
@@ -150,6 +149,7 @@ app.get('/getItem_single', (req, res) => {
 const crawl_root = "https://www.tagsfinder.com/en-tw/related/"
 const english = /^[A-Za-z0-9]*$/;
 app.get('/getRelatedTag', (req, res) => {
+  console.log(req.query.keyword)
   var keyword = encodeURIComponent(req.query.keyword)
   request({
     url: crawl_root + keyword,
@@ -162,12 +162,17 @@ app.get('/getRelatedTag', (req, res) => {
     const $ = cheerio.load(body);
     const elements = $(".card-table a")
     var tags = elements.text().split("#")
-    var result = []
-    for (let i = 2; i<tags.length && result.length<5; i++) {
-      if (!english.test(tags[i]))
-        result.push(tags[i])
+    if (!english.test(req.query.keyword)) {
+      var result = []
+      for (let i = 2; i < tags.length && result.length < 3; i++) {
+        if (!english.test(tags[i]))
+          result.push(tags[i])
+      }
+      res.send(result);
     }
-    res.send(result);
+    else {
+      res.send(tags.slice(1, 4))
+    }
   });
 })
 

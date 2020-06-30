@@ -36,12 +36,12 @@
     margin: 0;
 }
 
-.btn {
+/* .btn {
     color: #2C50A1;
     font-family: "Century Gothic";
     font-weight: bold;
     font-size: 14pt;
-}
+} */
 .btn:focus{box-shadow:none;}
 
 .order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {

@@ -15,7 +15,7 @@ $(document).ready(function () {
     //$('#shareBox').hide();
     $('#type_result').hide();
 });
-
+const english = /^[A-Za-z0-9]*$/;
 var map, marker, lat, lng;
 var autocomplte, autocompleteLsr;
 var pos_marker = './public/images/a1/a1-08.svg';
@@ -51,7 +51,7 @@ var itemName = []
 var itemAmount = []
 var itemPrice = []
 var typingTimer;                //timer identifier
-var doneTypingInterval = 200;
+var doneTypingInterval = 400;
 var html_1 = '&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$'
 var html_2 = '</span>&emsp;<img src="public/images/a5/a5-49.svg"></img>'
 var styles = {
@@ -224,10 +224,10 @@ function createMarker(marker_url, location, isDrop) {
             stationName = data.name;
             stationAddr = data.addr + '站';
         })
-        $('#shareBox').hide();
+        // $('#shareBox').hide();
         $('#infoBox').show();
         isSelectLocker = false;
-        $('#goto').attr('src', 'public/images/a1/a1-16前.svg')
+        // $('#goto').attr('src', 'public/images/a1/a1-16前.svg')
     });
 }
 
@@ -496,7 +496,6 @@ function getShopItem_group(id) {
                 $('#groupItemList img.shopItem_img').eq(i).attr('src', data.results.items[i].img);
             }
             else {
-                console.log('i=' + i)
                 $('#groupItemList img.shopItem_img').eq(i).removeAttr('src').replaceWith($('#groupItemList img.shopItem_img').eq(i).clone());
             }
         }
@@ -550,31 +549,46 @@ function clear_result_card() {
     $('#menu_btn').addClass('menuIcon');
     $('#shop_card').hide();
     $('.onMap_shop').css('z-index', '-1');
+    $('#keywordBlank').attr('size', "20");
     // card_state = 1;
 }
 //user is "finished typing," do something
 function doneTyping() {
-    if ($('#keywordBlank').val().length > 2) {
-        console.log('request')
-        $.get('/getRelatedTag', {
-            keyword: $('#keywordBlank').val().split("# ").pop(),
-        }, (data) => {
-            var tmp = ""
-            for (var i = 0; i < data.length; ++i) {
-                tmp = tmp + "&nbsp#&nbsp" + data[i];
-            }
-            $('#relatedTag').html(tmp)
-        })
+    var str = $('#keywordBlank').val();
+    if (str.length > 2) {
+        // console.log('request')
+        var request = str.split("# ").pop().trim();
+        if (request.length > 0) {
+            $.get('/getRelatedTag', {
+                keyword: request,
+            }, (data) => {
+                var tmp = ""
+                for (var i = 0; i < data.length; ++i) {
+                    tmp = tmp + "&nbsp#&nbsp" + data[i];
+                }
+                $('#relatedTag').html(tmp)
+            })
+        }
     }
-    else
-    {
+    else {
         $('#relatedTag').html('')
     }
 }
+function copyLink() {
+    var dummy = document.createElement('input'),
+        text = window.location.href;
 
-$('#infoBox_close').click(function () {
-    $('#infoBox').hide();
-});
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    alert("The link is copied");
+    document.body.removeChild(dummy);
+}
+
+// $('#infoBox_close').click(function () {
+//     $('#infoBox').hide();
+// });
 // $('#search_btn').click(function () {
 //     console.log('card_state=' + card_state);
 //     if ($('#keywordBlank').val().length < 3) {
@@ -616,7 +630,7 @@ $('#infoBox_close').click(function () {
 
 //                     // You can also set the caret: this.selectionStart = 2;
 //                 });
-//             });
+//        h     });
 $("#keywordBlank").focus(function () {
     console.log(input_state);
     if (input_state == 1) {
@@ -634,7 +648,7 @@ $("#keywordBlank").focus(function () {
 
 $('#keywordBlank').keyup(function (e) {
     if (input_state == 1) {
-        $(this).attr('size', $(this).val().length * 1.4);
+        $(this).attr('size', $(this).val().length + 1);
         var start_x = $(this).position().left + $(this).width()
         if (start_x + $('#relatedTag').width() >= $('#clear_btn').position().left) {
             $('#relatedTag').css("top", "50%");
@@ -642,12 +656,12 @@ $('#keywordBlank').keyup(function (e) {
         }
         else {
             $('#relatedTag').css("left", start_x);
-            $('#relatedTag').css("top", "0.05rem");
+            $('#relatedTag').css("top", "0.1rem");
         }
         clearTimeout(typingTimer);
         typingTimer = setTimeout(doneTyping, doneTypingInterval);
         if (e.keyCode == 13) { // user has pressed enter
-            console.log('card_state=' + card_state);
+            // console.log('card_state=' + card_state);
             if ($('#keywordBlank').val().length < 3) {
                 event.preventDefault();
                 alert("Please enter what you want to search");
@@ -741,7 +755,7 @@ $('.sorter').children().click(function () {
     $('.sorterBox_after').hide();
 });
 $('.explore_btn').click(function () {
-    console.log(card_state)
+    // console.log(card_state)
     if (card_state != 3) {
         $('.recommend.init').show();
         $('#explore_card').collapse('show');
@@ -757,7 +771,7 @@ $('.explore_btn').click(function () {
         $('#dropDown_btn').hide();
         card_state = 1;
     }
-    console.log(card_state)
+    // console.log(card_state)
 });
 $('#explore_card').on('hidden.bs.collapse', function () {
     if (!otherExpand) {
@@ -809,7 +823,7 @@ $('#slipResult_btn').mousedown(function (e) {
 });
 
 $('#clear_btn').click(function () {
-    console.log(card_state);
+    // console.log(card_state);
     $('#keywordBlank').val('');
     $('#relatedTag').html('');
     $(this).hide();
@@ -961,83 +975,94 @@ $('#result_list div:nth-child(n).result_content').click(function () {
     $('#nameBox').hide();
 
 });
-$('.shopTab_btn').click(function () {
+$('.switchTab_btn').click(function () {
     if (shopTab_state == 1) {
         $(this).attr('src', './public/images/b1/開始使用部分-24.svg');
-        $('#shopTab_single').hide();
-        $('#shopTab_group').show();
-        $('#shareBox').show();
+        $('.single-item').hide();
+        $('.group-case').show();
+        if ($('#openGroup_btn').hasClass('select')) {
+            $('#groupCaseTab').hide();
+            $('#openCaseTab').show();
+        }
+        else {
+            $('#openCaseTab').hide();
+            $('#groupCaseTab').show();
+        }
+        $('.group-item').hide();
+        $('#addItem_btn').hide()
+        $('#chooseGroup_btn').show();
+        // $('#shareBox').show();
         shopTab_state = 2;
     }
     else {
         $(this).attr('src', './public/images/b1/開始使用部分-23.svg');
-        $('#shopTab_group').hide();
-        $('#shopTab_single').show();
-        $('#shareBox').hide();
+        $('.single-item').show();
+        $('.group-case').hide();
+        $('.group-item').hide();
+        $('#chooseGroup_btn').hide()
+        $('#addItem_btn').show()
+        // $('#shareBox').hide();
         shopTab_state = 1;
     }
 });
-$('#shopTab_single div:nth-child(n).shopItem img.shopItem_plus').click(function () {
+$('#singleItemTab div:nth-child(n).shopItem img.shopItem_plus').click(function () {
     var tmp = $(this).closest('.shopItem').find('div.itemAmount_txt').first();
     tmp.text((+(tmp.text())) + 1);
 });
-$('#shopTab_single div:nth-child(n).shopItem img.shopItem_minus').click(function () {
+$('#singleItemTab div:nth-child(n).shopItem img.shopItem_minus').click(function () {
     var tmp = $(this).closest('.shopItem').find('div.itemAmount_txt').first();
     var val = +(tmp.text());
     if (val > 0) {
         tmp.text(val - 1);
     }
 });
-$('#shopTab_group div:nth-child(n).shopItem img.shopItem_plus').click(function () {
-    var tmp = $(this).closest('.shopItem').find('div.groupAmount_top ').first();
+$('#groupCaseList div:nth-child(n)').click(function () {
+    $(this).css("background-color", "#EACE7B");
+    $(this).children('div .groupCase_bottom').hide();
+    $('#chooseGroup_btn').attr("src", "public/images/b2/團購-12.svg")
+});
+$('#openCaseList div:nth-child(n)').click(function () {
+    $(this).css("background-color", "#EACE7B");
+    $('#chooseGroup_btn').attr("src", "public/images/b2/團購-12.svg")
+});
+$('#groupItemTab div:nth-child(n).shopItem img.shopItem_plus').click(function () {
+    var tmp = $(this).closest('.shopItem').find('div.itemAmount_txt').first();
     tmp.text((+(tmp.text())) + 1);
 });
-$('#shopTab_group div:nth-child(n).shopItem img.shopItem_minus').click(function () {
-    var tmp = $(this).closest('.shopItem').find('div.groupAmount_top ').first();
+$('#groupItemTab div:nth-child(n).shopItem img.shopItem_minus').click(function () {
+    var tmp = $(this).closest('.shopItem').find('div.itemAmount_txt').first();
     var val = +(tmp.text());
     if (val > 0) {
         tmp.text(val - 1);
     }
 });
-// $('#shopTab_group div:nth-child(n).shopItem div.shopItem_bottom').click(function () {
-//     tmp = $(this).parent().parent().next();
-//     if (tmp.hasClass('show')) {
-//         tmp.collapse('hide');
-
+// $('#shareBox_close').click(function () {
+//     $('#shareBox').hide();
+// });
+// $('#heart').click(function () {
+//     if ($(this).hasClass('liked')) {
+//         $(this).attr('src', './public/images/a1/a1-18前.svg');
+//         $(this).removeClass('liked')
 //     }
 //     else {
-//         tmp.collapse('show');
-
+//         $(this).attr('src', 'public/images/a1/a1-19後.svg');
+//         $(this).addClass('liked')
 //     }
 // });
-// $('#shopTab_group div:nth-child(n).shopItem').next().on('show.bs.collapse', function () {
-//     $(this).prev().find('img.optionBtn_right').first().toggleClass('flip');
-// });
-// $('#shopTab_group div:nth-child(n).shopItem').next().on('hide.bs.collapse', function () {
-//     $(this).prev().find('img.optionBtn_right').first().toggleClass('flip');
-// });
-$('#shareBox_close').click(function () {
-    $('#shareBox').hide();
-});
-$('#heart').click(function () {
-    if ($(this).hasClass('liked')) {
-        $(this).attr('src', './public/images/a1/a1-18前.svg');
-        $(this).removeClass('liked')
-    }
-    else {
-        $(this).attr('src', 'public/images/a1/a1-19後.svg');
-        $(this).addClass('liked')
-    }
-});
 $('#goto').click(function () {
     isSelectLocker = true;
-    $(this).attr('src', 'public/images/a1/a1-17後.svg')
+    $('#infoBox').show();
+    $('#tabContainer_group').show();
+    $('#setCaseTab').show();
+    $('#shop_card').animate({ position: "absolute", top: 0 }, 200);
+    $('.onMap_shop').css("pointer-events", "all");
+    // $(this).attr('src', 'public/images/a1/a1-17後.svg')
 });
 
-$('.addBtn').click(function () {
+$('#addItem_btn').click(function () {
     ++orderNum;
     var count = $('#singleItemList div.shopItem').length;
-    console.log('count' + count);
+    // console.log('count' + count);
     for (var i = 0; i < count; i++) {
         var amount = +($('#singleItemList div.itemAmount_txt').eq(i).text());
         if (amount > 0) {
@@ -1047,9 +1072,9 @@ $('.addBtn').click(function () {
             itemPrice.push(+($('#singleItemList div.shopItem_price').eq(i).text().substr(2)) * amount)
         }
     }
-    console.log('item=' + itemName)
-    console.log('amount=' + itemAmount)
-    console.log('price=' + itemPrice)
+    // console.log('item=' + itemName)
+    // console.log('amount=' + itemAmount)
+    // console.log('price=' + itemPrice)
     for (var i = 0; i < itemName.length; i++) {
         if (i) {
             $('ul.sub-menu .product-line').eq(i - 1).clone('withDataAndEvents').appendTo($('#SubMenu2'));
@@ -1075,6 +1100,21 @@ $('.addBtn').click(function () {
     $('.order-content-mid p.station-name').eq(orderNum - 1).text(stationName + ' - 02');
     $('.order-content-mid p.station-addr').eq(orderNum - 1).text(stationAddr);
 
+});
+
+$('#chooseGroup_btn').click(function () {
+    $('.single-item').hide();
+    $('.group-case').hide();
+    if ($('#followGroup_btn').hasClass('select'))
+        $('.group-item').show();
+    else {
+        var tmp = $('#shop_card').height() - $('#slipShop_btn').height() - parseInt($('#slipShop_btn').css("margin-bottom"));
+        $('#shop_card').animate({ position: "absolute", top: tmp }, 200);
+        isOut_shop = !isOut_shop;
+        $('.onMap_shop').css("pointer-events", "none");
+    }
+    $('#chooseGroup_btn').hide();
+    $('#addItem_btn').show();
 });
 
 $('.moreBar').click(function () {
@@ -1122,7 +1162,18 @@ $('#class_btn').click(function () {
         $('#guess_btn').attr('src', './public/images/b1/開始使用部分-40.svg');
     }
 });
-
+$('#followGroup_btn').click(function () {
+    if (!$(this).hasClass('select')) {
+        $('#openCaseTab').hide();
+        $('#groupCaseTab').show();
+    }
+});
+$('#openGroup_btn').click(function () {
+    if (!$(this).hasClass('select')) {
+        $('#groupCaseTab').hide();
+        $('#openCaseTab').show();
+    }
+});
 $('.tab_btn').click(function () {
     if (!$(this).hasClass('select')) {
         $(this).toggleClass('select');
@@ -1149,6 +1200,22 @@ $('#back_btn').click(function () {
     card_state = 1;
 });
 
+$('#link_btn').click(function () {
+    copyLink();
+});
+
+$('#line_btn').click(function () {
+    var link = "http://line.naver.jp/R/msg/text/?";
+    link += encodeURIComponent("來看看我發起的團購") + "%0D%0A" + encodeURIComponent(window.location.href);
+    window.open(link);
+});
+$('#facebook_btn').click(function () {
+    var link = "http://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent("http://zhi-yuan-chenge.blogspot.com/2014/10/jsfb.html");
+    window.open(link);
+});
+$('#messenger_btn').click(function () {
+    window.open('fb-messenger://share?link=' + encodeURIComponent(window.location.href) + '&app_id=' + encodeURIComponent(app_id));
+});
 /************************ Handle finger swipe event **************************/
 document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
 document.getElementById("slipResult_btn").addEventListener("touchmove", handleTouchMove, false);
