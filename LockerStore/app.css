@@ -904,7 +904,7 @@ p.explore {
 }
 .groupCase {
     position: relative;
-    height: 31.25vmin;
+    min-height: 31.25vmin;
     border-top: 0.1rem solid #d2d3d4;
 }
 .groupCase_top {
@@ -917,7 +917,7 @@ p.explore {
 }
 .groupCase_bottom {
     position: relative;
-    height: 9.5vmin;
+    min-height: 9.5vmin;
     padding: 0 5% 2vmin 5%;
 }
 .progressLine {
@@ -1023,3 +1023,15 @@ p.explore {
     margin: 0vmin 5% 5vmin 5%;
     border: 0.1rem solid #eb871b;
 }
+.modal-content {
+    border-radius: 1rem;
+    border-color: #BDBEBF;
+    border-width: 0.2rem;
+    border-style: solid;
+}
+#closeModal_btn {
+    position: absolute;
+    right: 0;
+    top: 8.6vmin;
+    width: 7.8vmin;
+} 

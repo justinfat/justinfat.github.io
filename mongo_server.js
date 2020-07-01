@@ -77,7 +77,8 @@ app.get('/insertLocker', (req, res) => {
   try {
     var myobj = { lat: req.query.lat, lng: req.query.lng, name: req.query.name, addr: req.query.addr };
     lockerModel.updateOne({ "name": req.query.name }, { $setOnInsert: myobj }, { upsert: true }, function (err, result) {
-      if (err) throw err;
+      if (err) return res.json(err);
+      if (result === null) return res.json(err);
       res.send(`ok`);
     });
   }
@@ -90,10 +91,29 @@ app.get('/insertLocker', (req, res) => {
 app.get('/searchLocker', (req, res) => {
   try {
     lockerModel.findOne({ lat: req.query.lat, lng: req.query.lng }).select({ name: 1, addr: 1 }).exec(function (err, result) {
-      if (err) throw err;
+      if (err) return res.json(err);
+      if (result === null) return res.json(err);
       res.send({
         name: result.name,
         addr: result.addr,
+      });
+    });
+  }
+  catch (e) {
+    res.send(`fail`);
+  }
+
+})
+
+app.get('/getLockerInfo', (req, res) => {
+  try {
+    lockerModel.findOne({ name: req.query.name }).select({ lat: 1, lng: 1, addr: 1 }).exec(function (err, result) {
+      if (err) return res.json(err);
+      if (result === null) return res.json(err);
+      res.send({
+        lat: result.lat,
+        lng: result.lng,
+        addr: result.addr
       });
     });
   }
@@ -112,7 +132,8 @@ app.get('/searchTag', (req, res) => {
     if (req.query.sorter === 'priceNum') {
       query[sorter] = 1;
       shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
-        if (err) throw err;
+        if (err) return res.json(err);
+        if (result === null) return res.json(err);
         if (results.length > 60) {
           res.send({
             results: results.slice(0, 60),
@@ -128,7 +149,8 @@ app.get('/searchTag', (req, res) => {
     else {
       query[sorter] = -1;
       shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
-        if (err) throw err;
+        if (err) return res.json(err);
+        if (result === null) return res.json(err);
         if (results.length > 60) {
           res.send({
             results: results.slice(0, 60),
@@ -151,7 +173,8 @@ app.get('/searchTag', (req, res) => {
 app.get('/searchShop', (req, res) => {
   try {
     shopModel.findOne({ name: req.query.name }, function (err, result) {
-      if (err) throw err;
+      if (err) return res.json(err);
+      if (result === null) return res.json(err);
       res.send({
         id: result._id,
         name: result.name,
@@ -175,7 +198,8 @@ app.get('/searchShop', (req, res) => {
 app.get('/getItem_single', (req, res) => {
   try {
     shopModel.findOne({ _id: req.query.id }).select({ items: 1 }).exec(function (err, result) {
-      if (err) throw err;
+      if (err) return res.json(err);
+      if (result === null) return res.json(err);
       res.send({
         results: result
       });

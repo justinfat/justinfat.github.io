@@ -1200,6 +1200,7 @@ $('#chooseGroup_btn').click(function () {
     if ($('#followGroup_btn').hasClass('select'))
         $('.group-item').show();
     else {
+        console.log('enter')
         var tmp = $('#shop_card').height() - $('#slipShop_btn').height() - parseInt($('#slipShop_btn').css("margin-bottom"));
         $('#shop_card').animate({ position: "absolute", top: tmp }, 200);
         isOut_shop = !isOut_shop;
@@ -1348,6 +1349,7 @@ $('#spc-order').click(function () {
     else {
         $('#cko-store-name').text($('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-store-name').text());
         $('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') div.spc-item').clone('withDataAndEvents').appendTo($('#check-out-content'));
+        $('#cko-station-name-value').text($('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-station-name').text());
     }
     $('#check-out-content .spc-qty-plus').remove();
     $('#check-out-content .spc-qty-minus').remove();
@@ -1372,15 +1374,51 @@ $('#raise_btn').click(function () {
 $('.group-spc-share').click(function () {
     $('#shareBox_white').show();
 });
+$('#cko-station-position').click(function () {
+    document.getElementById('map-position-map').style.opacity = '0';
+    var query = $('#cko-station-name-value').text();
+    $.get('/getLockerInfo', {
+        name: query
+    }, (data) => {
+        $('#cko-station-address-value').text(data.addr);
+        var smallMap = new google.maps.Map(document.getElementById('map-position-map'), {
+            zoom: 16,
+            center: { lat: data.lat, lng: data.lng },
+            styles: styles['hide_more'],
+            mapTypeControl: false,
+            fullscreenControl: false,
+            streetViewControl: false,
+            zoomControl: false,
+        });
+        var marker;
+        marker = new google.maps.Marker({
+            map: smallMap,
+            position: { lat: data.lat, lng: data.lng },
+            icon: {
+                url: locker_marker,
+                scaledSize: new google.maps.Size(60, 60),
+            },
+        });
+    })
+    document.getElementById('map-position-map').style.opacity = '1';
+    // if (isAuto) {
+    //     locate_once();
+    //     document.getElementById('map-canvas').style.opacity = '1';
+    // }
+    // else {
+    //     var addr = urlParams.get('address');
+    //     codeAddress(addr);
+    //     document.getElementById('map-canvas').style.opacity = '1';
+    // }
+    // addAutocomplete();
+});
 
 
-$(document).mouseup(function(e) 
-{
+$(document).mouseup(function (e) {
     var container = $("#shareBox_white");
 
     // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0) 
-    {
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.hide();
     }
 });

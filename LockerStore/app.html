@@ -897,7 +897,8 @@
                         <button class="spc-item-delete">刪除</button>
                     </div>
                     <div class="group-spc-footer">
-                        <button class="group-spc-progress" type="button">查看進度</button>
+                        <button class="group-spc-progress" type="button" data-toggle="modal"
+                            data-target="#progressModal">查看進度</button>
                         <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
                         <button class="group-spc-share">分享</button>
                     </div>
@@ -962,7 +963,7 @@
         <!-- locker station  -->
         <div id="cko-station-block">
             <div id="cko-station-info">櫃站資訊</div>
-            <button id="cko-station-position" type="button">查看位置</button>
+            <button id="cko-station-position" type="button" onclick="OpenMap()">查看位置</button>
         </div>
         <div id="cko-station-discribe">
             <div id="cko-station-name">櫃站名稱：</div>
@@ -973,7 +974,7 @@
         <!-- payment -->
         <div id="cko-payment-block">
             <div id="cko-payment-way">付款方式</div>
-            <button id="cko-payment-choose" type="button">選擇付款方式</button>
+            <button id="cko-payment-choose" type="button" onclick=" OpenPayment()">選擇付款方式</button>
         </div>
         <div id="cko-payment-discribe">
             <div id="cko-total-item">商品總額：</div>
@@ -989,6 +990,51 @@
         </div>
     </div>
 
+    <!-- position confirm -->
+    <div id="map-position">
+        <div id="map-position-map"></div>
+        <div id="map-position-footer">
+            <button id="map-position-confirm" type="button" onclick="CloseMap()">確認</button>
+        </div>
+    </div>
+
+    <!-- choose payment -->
+    <div id="choose-payment">
+        <p style="position: absolute; left: 6.1%; top: 8.7%;">付款方式：</p>
+        <button id="choose-payment-cash" class="choose-payment-btn" onclick="PaymentCash()">貨到付款</button>
+        <button id="choose-payment-bank" class="choose-payment-btn" onclick="PaymentBank()">銀行轉帳</button>
+        <button id="choose-payment-card" class="choose-payment-btn" onclick="PaymentCard()">信用卡 / 金融卡</button>
+        <div id="choose-payment-footer">
+            <button id="choose-payment-confirm" type="button" onclick="ClosePayment()">確認</button>
+        </div>
+    </div>
+
+    <!-- item option -->
+    <div id="item-option">
+        <div id="item-option-pic"></div>
+        <p id="item-option-name">商品名稱</p>
+        <p id="item-option-price">$ 50</p>
+        <div id="item-option-option">
+            <p style="position: absolute; left: 9.6%; top: 36.6%;">選項</p>
+            <div id="item-option-ice">冰塊</div>
+            <button id="item-option-ice-10" class="item-option-ice-btn" onclick="Ice10()">正常</button>
+            <button id="item-option-ice-7" class="item-option-ice-btn" onclick="Ice7()">少冰</button>
+            <button id="item-option-ice-3" class="item-option-ice-btn" onclick="Ice3()">微冰</button>
+            <button id="item-option-ice-0" class="item-option-ice-btn" onclick="Ice0()">去冰</button>
+            <div id="item-option-sugar">甜度</div>
+            <button id="item-option-sugar-10" class="item-option-sugar-btn" onclick="Sugar10()">正常</button>
+            <button id="item-option-sugar-5" class="item-option-sugar-btn" onclick="Sugar5()">半糖</button>
+            <button id="item-option-sugar-3" class="item-option-sugar-btn" onclick="Sugar3()">微糖</button>
+            <button id="item-option-sugar-0" class="item-option-sugar-btn" onclick="Sugar0()">無糖</button>
+        </div>
+        <div id="item-option-number">
+            <p style="position: absolute; left: 9.6%; top: 28.6%;">數量</p>
+            <p style="position: absolute; left: 88%; top: 28.6%;">1</p>
+        </div>
+        <div id="item-option-footer">
+            <button id="item-option-confirm" type="button" onclick="CloseOption()">確認</button>
+        </div>
+    </div>
 
 
     <!------------------------------------------------------- Order-list --------------------------------------------------->
@@ -1418,24 +1464,80 @@
     </div>
 
 
+    <div class="modal fade" id="progressModal" tabindex="-1" role="dialog" aria-labelledby="progressModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="d-flex flex-column groupCase" style="border-top: none;">
+                    <div class="d-flex mb-auto groupCase_top">
+                        <div class="d-flex flex-column groupCase_left">
+                            <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                            <div style="line-height: 1.2rem;">
+                                <span class="font-10 color-normal">集滿</span>
+                                <span class="target font-10 color-normal">5</span>
+                                <span class="font-10 color-normal">份即享免運費</span>
+                            </div>
+                            <div style="line-height: 1.2rem;">
+                                <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                <span class="discount font-10 color-orange">5</span>
+                                <span class="font-10 color-orange">&nbsp;元</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                            <span class="groupLocker font-12 color-blue">成大長榮櫃&nbsp;-&nbsp;01</span>
+                            <span class="groupDeadline font-10 color-normal">2020-07-02-16:00</span>
+                            <span class="groupAddr font-10 color-normal">台南市東區長榮路三段139號</span>
+                        </div>
+                    </div>
+                    <div class="groupCase_bottom">
+                        <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                        <div class="d-flex justify-content-around align-items-center progressPeople">
+                            <div class="people">
+                                <img class="circle-big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                <img class="peoplePhoto-big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                            </div>
+                            <div class="people">
+                                <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                            <div class="people">
+                                <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                            <div class="people">
+                                <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                            <div class="people">
+                                <img class="circle-small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto-small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal_btn">
+                <img src="public/images/a5/a5-08.svg"></img>
+            </button>
+        </div>
 
-    <div w3-include-html="order_extra.html"></div>
-    <div w3-include-html="shopping_cart_extra.html"></div>
+        <div w3-include-html="order_extra.html"></div>
+        <div w3-include-html="shopping_cart_extra.html"></div>
 
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places"></script>
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script>w3.includeHTML();</script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="./app.js"></script>
-    <script src="./personal.js"></script>
-    <script src='./shopping-cart.js'></script>
-    <script src="./order-list.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script>w3.includeHTML();</script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="./app.js"></script>
+        <script src="./personal.js"></script>
+        <script src='./shopping-cart.js'></script>
+        <script src="./order-list.js"></script>
 </body>
 
 </html>

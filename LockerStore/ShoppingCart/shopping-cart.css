@@ -689,7 +689,7 @@ a{
 /* item option */
 #item-option{
     position: fixed;
-    /*display: none;*/
+    display: none;
     height: 42.3vh;
     width: 100vw;
     bottom: 0;
