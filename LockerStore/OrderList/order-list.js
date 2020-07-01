@@ -73,3 +73,4 @@ function UnSeeDetailPickup(Obj){
   Obj.setAttribute("style", "transform:rotate(0)");
   $('.ol-pickup-info').css("display","none");
 }
+
