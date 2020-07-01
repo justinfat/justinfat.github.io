@@ -434,6 +434,21 @@ a{
     font-size: 12px;
     color: #2C50A1;
 }
+#cko-arrive-time{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 59.8%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-arrive-time-value{
+    position: absolute;
+    top: 59.8%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #2C50A1;
+}
 /* payment */
 #cko-payment-block{
     position: absolute;

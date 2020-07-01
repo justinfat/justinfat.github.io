@@ -30,8 +30,8 @@ a{
   width: 100vw;
 }
 
-/* shopping cart header  */
-#shopping-cart-header, #check-out-header{
+/* header*/
+#order-list-header{
     position: relative;
     width: 100%;
     height: 14.8%; 
@@ -54,87 +54,134 @@ a{
     color: #717071;
     text-align: center;
 }
-#blue-space{
+#page-swift{
     position: absolute;
     width: 100%;
-    height: 25.2%;
+    height: 35.7%;
     top: 74.8%;
-    background-color: #2C50A1;
-}
-
-/* shopping cart content */
-#shopping-cart-content{
-    position: relative;
-    width: 100%;
-    height: 68.4%;
-}
-/* personal/group shopping cart */
-.personal-spc, .group-spc{
-    width: 100%;
-    height: auto;
-}
-.personal-spc-header{
-    position: relative;
-    width: 100%;
-    height: 38.5px;
     background-color: #C9C9CA;
 }
-.group-spc-header{
-    position: relative;
-    width: 100%;
-    height: 38.5px;
-    background-color: #717071;
-}
-/* header */
-.spc-checkbox{
-    position: absolute;
-    margin: 0;
-    height: 36.4%;
-    top: 31.8%;
-    left: 9.4%;
-}
-.spc-store-name{
-    height: 51.9%;
+.page-swift-button{
     width: 20.3%;
-    top: 24%;
-    left: 25.1%;
+    height: 66.7%;
+    top: 16.7%;
+    font-size: 12px;
+    font-weight: lighter;
+    color: #2C50A1;
     border-radius: 10px;
+    background-color: white;
+    border-color: #2C50A1;
+}
+#ol-grouping-button{
     background-color: #2C50A1;
-    font-size: 12px;
-    font-weight: lighter;
     color: white;
+    left: 3.7%;
 }
-.spc-station-name{
-    height: 51.9%;
-    width: 20.3%;
-    top: 24%;
-    left: 54.8%;
-    border-radius: 10px;
-    background-color: #E8C41C;
-    font-size: 12px;
-    font-weight: lighter;
-    color: #221814;
+#ol-undelivered-button{
+    left: 27.7%;
 }
-.to-arrow{
-    width: 2.2%;
-    top: 32.7%;
-    left: 48.9%;
+#ol-arrived-button{
+    left: 51.9%;
 }
-.spc-edit{
+#ol-done-button{
+    left: 75.8%;
+}
+
+.ol-page{
     position: absolute;
-    width: 8.2%;
-    top: 12%;
-    left: 84.3%;
+    width: 100%;
+    top: 16.4%;
+    height: 82.7%;
 }
-.spc-edit-dark{
-    color: #717071 !important;
-    font-family: 'Noto Sans TC';
-    font-size: 12px;
+
+#ol-grouping{
+
 }
-.spc-edit-light{
-    color: #C9C9CA !important;
-    font-family: 'Noto Sans TC';
+#ol-undelivered{
+    display: none;
+}
+#ol-arrived{
+    display: none;
+}
+#ol-done{
+    display: none;
+}
+
+.ol-order{
+    width:100%;
+    height: auto;
+    margin-top: 5px;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #C9C9CA; 
+}
+.ol-store-header{
+    position: relative;
+    height: 10.6vh;
+    width: 100%;
+    top: 0;
+}
+.ol-store-img{
+    position: absolute;
+    height: 75%;
+    width: 14.1%;
+    top: 12.5%;
+    left: 7.6%;
+    background-color: #2C50A1;
+}
+.ol-store-name{
+    position: absolute;
+    top: 12.5%;
+    left: 30.4%;
     font-size: 12px;
+    color: #717071;
+}
+.ol-station-name{
+    position: absolute;
+    top: 56.7%;
+    left: 30.4%;
+    font-size: 12px;
+    color: #717071;
+}
+.ol-status{
+    position: absolute;
+    top: 12.5%;
+    left: 80.5%;
+    font-size: 12px;
+    color: #F38200;
+}
+.ol-position{
+    width: 20.3%;
+    height: 33.3%;
+    top: 57.3%;
+    left: 75.8%;
+    font-size: 12px;
+    color: #F38200;
+    border-radius: 10px;
+    background-color: white;
+    border-color: #F38200;
+}
+.ol-order-detail{
+    position: relative;
+    height: 5.3vh;
+    width: 100vw;
+    background-color: #2C50A1;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding-top: 6.5px;
+    font-weight: lighter;
+}
+.ol-detail-arrow{
+    width: 4.2vw;
+    left: 83.8vw;
+    top: 38.3%;
+}
+.ol-item-list{
+    position: relative;
+    display: none;
+    width: 100%;
+    max-height: 31.7vh;
 }
 /* item */
 .spc-item{
@@ -192,53 +239,58 @@ a{
     border-color: #C9C9CA;
     text-align: center;
     color: #2C50A1;
-    line-height: 14px;
-}
-.spc-qty-plus {
-    position: absolute;
-    width: 33.3%;
-    height: 100%;
-    left: 66.7%;
-    top: 0;
-    padding: 0;
-    border-width: 1px 1px 1px 0;
-    border-style: solid;
-    border-radius: 0 5px 5px 0;
-    border-color: #C9C9CA;
-    color: #2C50A1;
-    background-color: white;
-    line-height: 14px;
-    font-size: 14px;
-    font-weight: bold;
-}
-.spc-qty-minus {
-    position: absolute;
-    width: 33.3%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    padding: 0;
-    border-width: 1px 0 1px 1px;
-    border-style: solid;
-    border-radius: 5px 0 0 5px;
-    border-color: #C9C9CA;
-    color: #2C50A1;
-    background-color: white;
-    line-height: 14px;
-    font-size: 14px;
-    font-weight: bold;
-}
-.spc-item-delete{
-    position: absolute;
-    display: none;
-    top: 0;
-    right: 2.2%;
-    height: 100%;
-    width: 18.8%;
-    background-color: red;
-    color: white;
     font-size: 12px;
 }
+
+.ol-total-price{
+    position: relative;
+    height: 5.5vh;
+    width: 100vw;
+    font-size: 12px;
+    color: #717071;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #C9C9CA;
+}
+.ol-item-number{
+    position: absolute;
+    top: 23.3%; 
+    left: 44.3vw;
+    color: #F38200;
+}
+.ol-total-price-value{
+    position: absolute;
+    top: 23.3%; 
+    right: 14vw;
+    color: #F38200;
+}
+.ol-payment{
+    position: relative;
+    height: 5.5vh;
+    width: 100vw;
+    font-size: 12px;
+    color: #717071;
+}
+.ol-payment-value{
+    position: absolute;
+    width: 28.9vw;
+    height: 3.5vh;
+    top: 18.2%;
+    left: 30.4%;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #F38200;
+    border-color: #F38200;
+}
+.ol-payment-change{
+    position: absolute;
+    top: 23.3%; 
+    right: 9.4vw;
+    color: #F38200 !important;
+}
+
 /* footer */
 .group-spc-footer{
     position: relative;
@@ -278,255 +330,67 @@ a{
     color: white;
 }
 
-/* shopping cart footer */
-#spc-footer-upper{
-    position: absolute;
-    height: 7%;
-    width: 100%;
-    bottom: 9.7%;
-    border-width: 1px 0 0 0;
-    border-color: #C9C9CA;
-    border-style: solid;
-}
-#spc-footer-lower, #cko-footer{
-    position: absolute;
-    height: 9.7%;
-    width: 100%;
-    bottom: 0;
+.ol-group-cancel{
+    position: relative;
+    width: 100vw;
+    height: 5.3vh;
     background-color: #C9C9CA;
-}
-#spc-order, #cko-order{
-    height: 58.2%;
-    width: 78.1%;
-    top: 20.9%;
-    left: 10.85%;
-    background-color: #E8C41C;
-    color: #221814;
+    color: #F38200;
     border: 0;
-    border-radius: 3px;
-    font-size: 12px;
+    font-size: 14px;
 }
-#spc-order:disabled{
-    background: #717071;
-}
-.spc-footer-checkbox{
-    position: absolute;
-    margin: 0;
-    height: 35%;
-    top: 32.5%;
-    left: 9.4%;
-}
-#spc-select-all{
-    position: absolute;
-    top: 27.4%;
-    left: 17%;
-    font-size: 12px;
+.ol-order-footer{
+    position: relative;
+    width: 100vw;
+    height: 5.3vh;
+    background-color: #C9C9CA;
     color: #717071;
-}
-#spc-total-price{
-    position: absolute;
-    top: 27.4%;
-    right: 9.4%;
     font-size: 12px;
-    color: #717071;
 }
-#spc-total-price-number{
-    font-size: 12px;
-    color: red;
-} 
 
-/* checkout */
-#check-out{
+.ol-pickup-detail{
+    position: relative;
+    height: 5.3vh;
+    width: 100vw;
+    background-color: #E8C41C;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    padding-top: 6.5px;
+    font-weight: lighter;
+}
+.ol-pickup-info{
+    position: relative;
     display: none;
-}
-/* store & items */
-#cko-name-block{
-    position: absolute;
-    height: 6.8%;
     width: 100%;
-    background-color: #C9C9CA;
 }
-#cko-store-name{
-    position: absolute;
-    margin: 0;
-    top: 25.6%;
-    left: 6.2%;
-    color: #2C50A1;
+.ol-order-number{
+    position: relative;
+    height: 5.5vh;
+    width: 100vw;
     font-size: 12px;
-}
-#check-out-content{
-    position: absolute;
-    top: 21.6%;
-    height: 31.7%;
-    width: 100%;
-}
-/* locker station */
-#cko-station-block{
-    position: absolute;
-    height: 6.8%;
-    width: 100%;
-    top: 53.3%;
-    background-color: #C9C9CA;
-}
-#cko-station-info{
-    position: absolute;
-    height: 51.9%;
-    width: 20.3%;
-    top: 23.7%;
-    left: 3.4%;
-    border-radius: 10px;
-    border-width: 1px; 
+    color: #717071;
     border-style: solid;
-    border-color: white;
-    background-color: #E8C41C;
+    border-width: 0 0 1px 0;
+    border-color: #C9C9CA;
+}
+.ol-order-qrcode{
+    position: relative;
+    height: 100vw;
+    width: 100vw;
+}
+.ol-order-qrcode-img{
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+}
+.ol-order-footer-arrived{
+    position: relative;
+    width: 100vw;
+    height: 5.3vh;
+    background-color: #F38200;
+    color: white;
     font-size: 12px;
-    font-weight: lighter;
-    text-align: center;
-    color: #221814;
 }
-#cko-station-position{
-    position: absolute;
-    height: 51.9%;
-    width: 20.3%;
-    top: 23.7%;
-    right: 8%;
-    border-radius: 10px;
-    border-width: 1px; 
-    border-style: solid;
-    border-color: #F38200;
-    background-color: white;
-    font-size: 12px;
-    color: #F38200;
-}
-#cko-station-discribe{
-    position: absolute;
-    height: 11.9%;
-    width: 100%;
-    top: 60%;
-}
-#cko-station-name{
-    position: absolute;
-    width: 100%;
-    padding-left: 5.8%;
-    top: 11.8%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-station-address{
-    position: absolute;
-    width: 100%;
-    padding-left: 5.8%;
-    top: 36.3%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-station-name-value{
-    position: absolute;
-    top: 11.8%;
-    right: 11.1%;
-    font-size: 12px;
-    color: #2C50A1;
-}
-#cko-station-address-value{
-    position: absolute;
-    top: 36.3%;
-    right: 11.1%;
-    font-size: 12px;
-    color: #2C50A1;
-}
-/* payment */
-#cko-payment-block{
-    position: absolute;
-    height: 6.8%;
-    width: 100%;
-    top: 72%;
-    background-color: #C9C9CA;
-}
-#cko-payment-way{
-    position: absolute;
-    height: 51.9%;
-    width: 20.3%;
-    top: 23.7%;
-    left: 3.4%;
-    border-radius: 10px;
-    border-width: 1px; 
-    border-style: solid;
-    border-color: white;
-    background-color: #E8C41C;
-    font-size: 12px;
-    font-weight: lighter;
-    text-align: center;
-    color: #221814;
-}
-#cko-payment-choose{
-    position: absolute;
-    height: 51.9%;
-    width: 28.9%;
-    top: 23.7%;
-    right: 8%;
-    border-radius: 10px;
-    border-width: 1px; 
-    border-style: solid;
-    border-color: #F38200;
-    background-color: white;
-    font-size: 12px;
-    color: #F38200;
-}
-#cko-payment-discribe{
-    position: absolute;
-    height: 11.9%;
-    width: 100%;
-    top: 78.8%;
-}
-#cko-total-item{
-    position: absolute;
-    width: 100%;
-    padding-left: 5.8%;
-    top: 11.8%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-total-item-value{
-    position: absolute;
-    top: 11.8%;
-    right: 11.1%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-total-fare{
-    position: absolute;
-    width: 100%;
-    padding-left: 5.8%;
-    top: 36.3%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-total-fare-value{
-    position: absolute;
-    top: 36.3%;
-    right: 11.1%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-total{
-    position: absolute;
-    width: 100%;
-    padding-left: 5.8%;
-    top: 59.8%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-total-value{
-    position: absolute;
-    top: 59.8%;
-    right: 11.1%;
-    font-size: 12px;
-    color: #717071;
-}
-#cko-total-value-red{
-    font-size: 12px;
-    font-family: 'Noto Sans TC';
-    color: red;
-}
-
-
