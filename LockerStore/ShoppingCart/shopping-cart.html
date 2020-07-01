@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
+
   <body>
     <!-- shopping cart -->
     <div id="shopping-cart" class="screen">
@@ -129,7 +130,7 @@
               <div class="group-spc-footer">
                   <button class="group-spc-progress" type="button">查看進度</button>
                   <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
-                  <button class="group-spc-share">分享</button>
+                  <button class="group-spc-share" onclick="GroupShare()">分享</button>
               </div>
             </div>
 
@@ -206,7 +207,7 @@
       <!-- locker station  -->
       <div id="cko-station-block">
         <div id="cko-station-info">櫃站資訊</div>
-        <button id="cko-station-position" type="button">查看位置</button>
+        <button id="cko-station-position" type="button" onclick="OpenMap()">查看位置</button>
       </div>
       <div id="cko-station-discribe">
         <div id="cko-station-name">櫃站名稱：</div>
@@ -219,7 +220,7 @@
       <!-- payment -->
       <div id="cko-payment-block">
         <div id="cko-payment-way">付款方式</div>
-        <button id="cko-payment-choose" type="button">選擇付款方式</button>
+        <button id="cko-payment-choose" type="button" onclick=" OpenPayment()">選擇付款方式</button>
       </div>
       <div id="cko-payment-discribe">
         <div id="cko-total-item">商品總額：</div>
@@ -235,6 +236,60 @@
       </div>  
     </div>
 
+    <!-- group share -->
+    <div id="group-share">
+      <p nowrap style="position: absolute;left: 6.7%;top: 36.7%">分享給好友：</p>
+      <img id="share-link" src="./src/img/share-link.svg">
+      <img id="share-line" src="./src/img/share-line.svg">
+      <img id="share-ms" src="./src/img/share-ms.svg">
+      <img id="share-fb" src="./src/img/share-fb.svg">
+    </div>
+
+    <!-- position confirm -->
+    <div id="map-position">
+      <div id="map-position-map"></div>
+      <div id="map-position-footer">
+        <button id="map-position-confirm" type="button" onclick="CloseMap()">確認</button>
+      </div>
+    </div>
+
+    <!-- choose payment -->
+    <div id="choose-payment">
+      <p style="position: absolute; left: 6.1%; top: 8.7%;">付款方式：</p>
+      <button id="choose-payment-cash" class="choose-payment-btn" onclick="PaymentCash()">貨到付款</button>
+      <button id="choose-payment-bank" class="choose-payment-btn" onclick="PaymentBank()">銀行轉帳</button>
+      <button id="choose-payment-card" class="choose-payment-btn" onclick="PaymentCard()">信用卡 / 金融卡</button>
+      <div id="choose-payment-footer">
+        <button id="choose-payment-confirm" type="button" onclick="ClosePayment()">確認</button>
+      </div>
+    </div>
+
+    <!-- item option -->
+    <div id="item-option">
+      <div id="item-option-pic"></div>
+      <p id="item-option-name">商品名稱</p>
+      <p id="item-option-price">$ 50</p>
+      <div id="item-option-option">
+        <p style="position: absolute; left: 9.6%; top: 36.6%;">選項</p>
+        <div id="item-option-ice">冰塊</div>
+        <button id="item-option-ice-10" class="item-option-ice-btn" onclick="Ice10()">正常</button>
+        <button id="item-option-ice-7" class="item-option-ice-btn" onclick="Ice7()">少冰</button>
+        <button id="item-option-ice-3" class="item-option-ice-btn" onclick="Ice3()">微冰</button>
+        <button id="item-option-ice-0" class="item-option-ice-btn" onclick="Ice0()">去冰</button>
+        <div id="item-option-sugar">甜度</div>
+        <button id="item-option-sugar-10" class="item-option-sugar-btn" onclick="Sugar10()">正常</button>
+        <button id="item-option-sugar-5" class="item-option-sugar-btn" onclick="Sugar5()">半糖</button>
+        <button id="item-option-sugar-3" class="item-option-sugar-btn" onclick="Sugar3()">微糖</button>
+        <button id="item-option-sugar-0" class="item-option-sugar-btn" onclick="Sugar0()">無糖</button>
+      </div>
+      <div id="item-option-number">
+        <p style="position: absolute; left: 9.6%; top: 28.6%;">數量</p>
+        <p style="position: absolute; left: 88%; top: 28.6%;">1</p>
+      </div>
+      <div id="item-option-footer">
+        <button id="item-option-confirm" type="button" onclick="CloseOption()">確認</button>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="./shopping-cart.js"></script>

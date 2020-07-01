@@ -544,4 +544,267 @@ a{
     color: red;
 }
 
+/* group share */
+#group-share{
+    position: fixed;
+    display: none;
+    width: 78.2vw;
+    height: 9.7vh;
+    bottom: 0;
+    left: 10.9vw;
+    border-style: solid;
+    border-color: #2C50A1;
+    border-width: 2px;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+    font-size: 12px;
+    color: #717071;
+}
+#share-link{
+    position: absolute;
+    width: 10%;
+    left: 38.9%;
+    top: 31.2%;
+}
+#share-line{
+    position: absolute;
+    width: 10%;
+    left: 53.7%;
+    top: 31.2%;
+}
+#share-ms{
+    position: absolute;
+    width: 10%;
+    left: 68.5%;
+    top: 31.2%;
+}
+#share-fb{
+    position: absolute;
+    width: 10%;
+    left: 83.3%;
+    top: 31.2%;
+}
 
+/* position confirm */
+#map-position{
+    position: fixed;
+    display: none;
+    height: 46.7vh;
+    width: 100vw;
+    bottom: 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #C9C9CA;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+}
+#map-position-map{
+    position: absolute;
+    height: 64%;
+    width: 78.1%;
+    top: 8.3%;
+    left: 10.9%;
+    background-color: #C9C9CA;
+}
+#map-position-footer{
+    position: absolute;
+    height: 20.7%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#map-position-confirm{
+    position: absolute;
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.9%;
+    bottom: 0;
+    background-color: #F38200;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    border-width: 0;
+}
+
+/* choose payment */
+#choose-payment{
+    position: fixed;
+    display: none;
+    height: 28vh;
+    width: 100vw;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #C9C9CA;
+    background-color: white;
+    font-size: 12px;
+    color: #717071;
+}
+#choose-payment-footer{
+    position: absolute;
+    height: 34.6%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#choose-payment-confirm{
+    position: absolute;
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.9%;
+    bottom: 0;
+    background-color: #F38200;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    border-width: 0;
+}
+.choose-payment-btn{
+    position: absolute;
+    width: 28.9%;
+    height: 12.6%;
+    left: 35.4%;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #F38200;
+    background-color: white;
+    font-weight: lighter;
+    color: #F38200;
+    font-size: 12px;
+}
+#choose-payment-cash{
+    top: 8.1%;
+}
+#choose-payment-bank{
+    top: 26.6%;
+}
+#choose-payment-card{
+    top: 45.6%;
+}
+
+/* item option */
+#item-option{
+    position: fixed;
+    /*display: none;*/
+    height: 42.3vh;
+    width: 100vw;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #C9C9CA;
+    background-color: white;
+    font-size: 12px;
+    color: #717071;
+}
+#item-option-pic{
+    position: absolute;
+    width: 12.5%;
+    height: 18.8%;
+    left: 7.4%;
+    top: 8.9%;
+    background-color: #E8C41C;
+}
+#item-option-name{
+    position: absolute; 
+    left: 27.7%; 
+    top: 7.4%;
+}
+#item-option-price{
+    position: absolute; 
+    left: 27.7%; 
+    top: 21.1%;
+}
+#item-option-option{
+    position: absolute;
+    width: 100%;
+    height: 29.3%;
+    top: 30.8%;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #C9C9CA;
+}
+#item-option-number{
+    position: absolute;
+    width: 100%;
+    height: 16.9%;
+    top: 60.1%;
+}
+#item-option-footer{
+    position: absolute;
+    height: 22.9%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#item-option-confirm{
+    position: absolute;
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.9%;
+    bottom: 0;
+    background-color: #F38200;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    border-width: 0;
+}
+#item-option-ice{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    left: 25.5%;
+    top: 19.9%;
+    background-color: #221814;
+    color: #C9C9CA;
+    font-size: 12px;
+    text-align: center;
+}
+#item-option-sugar{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    left: 25.5%;
+    top: 56.2%;
+    background-color: #221814;
+    color: #C9C9CA;
+    font-size: 12px;
+    text-align: center;
+}
+.item-option-ice-btn{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    top: 19.9%;
+    background-color: #C9C9CA;
+    color: #717071;
+    font-size: 12px;
+    border: 0;
+}
+.item-option-sugar-btn{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    top: 56.2%;
+    background-color: #C9C9CA;
+    color: #717071;
+    font-size: 12px;
+    border: 0;
+}
+#item-option-ice-10, #item-option-sugar-10{
+    left: 39.1%;
+}
+#item-option-ice-7, #item-option-sugar-5{
+    left: 53.7%;
+}
+#item-option-ice-3, #item-option-sugar-3{
+    left: 68.4%;
+}
+#item-option-ice-0, #item-option-sugar-0{
+    left: 83%;
+}
