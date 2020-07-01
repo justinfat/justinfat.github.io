@@ -11,8 +11,7 @@
     <link href="./app.css" rel="stylesheet" type="text/css" />
     <link href="./personal.css" rel="stylesheet" type="text/css" />
     <link href="./shopping-cart.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="order.css">
-    <link href="./shopping_cart.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./order-list.css"/>
 </head>
 
 <body>
@@ -839,140 +838,90 @@
         <div id="shopping-cart-header">
             <div id="header-title">我的購物車</div>
             <img class="abs back-arrow" id="back_shop" type="button" src="./src/img/back-arrow.svg">
-            <img class="abs"id="cross" type="button" src="./src/img/cross.svg">
+            <img class="abs" id="cross" type="button" src="./src/img/cross.svg">
             <div id="blue-space"></div>
         </div>
         <!-- content -->
         <div id="shopping-cart-content" class="overflow-auto">
-            <div class="personal-spc">
-                <div class="personal-spc-header">
-                    <input class="spc-checkbox" type="checkbox" name="c" />
-                    <button class="spc-store-name">店家名稱</button>
-                    <img class="abs to-arrow" src="./src/img/to-arrow-gray.svg">
-                    <button class="spc-station-name">櫃站名稱</button>
-                    <div class="spc-edit"><a class="spc-edit-dark" onclick="SpcEdit(this)">編輯</a></div>
-                </div>
-                <div class="spc-item">
-                    <div class="spc-item-pic"></div>
-                    <div class="spc-item-discribe">
-                        <p class="spc-item-name">商品名稱</p>
-                        <p class="spc-item-option">選項： 微糖 微冰</p>
-                        <p class="spc-item-price">$50</p>
+            <div class="d-flex flex-column" id="personal-spc-list">
+                <div class="personal-spc">
+                    <div class="personal-spc-header">
+                        <input class="spc-checkbox" type="checkbox" name="c" />
+                        <button class="spc-store-name">店家名稱</button>
+                        <img class="abs to-arrow" src="./src/img/to-arrow-gray.svg">
+                        <button class="spc-station-name">選擇櫃站</button>
+                        <div class="spc-edit"><a class="spc-edit-dark" onclick="SpcEdit(this)">編輯</a></div>
                     </div>
-                    <form class="spc-qty" method='POST' action='#'>
-                        <input type='button' value='-' class='spc-qty-minus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                        <input type='button' value='+' class='spc-qty-plus' field='quantity' />
-                    </form>
-                    <button class="spc-item-delete">刪除</button>
-                </div>
-                <div class="spc-item">
-                    <div class="spc-item-pic"></div>
-                    <div class="spc-item-discribe">
-                        <p class="spc-item-name">商品名稱</p>
-                        <p class="spc-item-option">選項： 微糖 微冰</p>
-                        <p class="spc-item-price">$50</p>
+                    <div class="spc-item" style="display: none;">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='button' value='-' class='spc-qty-minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='spc-qty-number' />
+                            <input type='button' value='+' class='spc-qty-plus' field='quantity' />
+                        </form>
+                        <button class="spc-item-delete">刪除</button>
                     </div>
-                    <form class="spc-qty" method='POST' action='#'>
-                        <input type='button' value='-' class='spc-qty-minus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                        <input type='button' value='+' class='spc-qty-plus' field='quantity' />
-                    </form>
-                    <button class="spc-item-delete">刪除</button>
-                </div>
-                <div class="spc-item">
-                    <div class="spc-item-pic"></div>
-                    <div class="spc-item-discribe">
-                        <p class="spc-item-name">商品名稱</p>
-                        <p class="spc-item-option">選項： 微糖 微冰</p>
-                        <p class="spc-item-price">$50</p>
-                    </div>
-                    <form class="spc-qty" method='POST' action='#'>
-                        <input type='button' value='-' class='spc-qty-minus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                        <input type='button' value='+' class='spc-qty-plus' field='quantity' />
-                    </form>
-                    <button class="spc-item-delete">刪除</button>
                 </div>
             </div>
-
-            <div class="group-spc">
-                <div class="group-spc-header">
-                    <input class="spc-checkbox" type="checkbox" name="c" />
-                    <button class="spc-store-name">店家名稱</button>
-                    <img class="abs to-arrow" src="./src/img/to-arrow-white.svg">
-                    <button class="spc-station-name">櫃站名稱</button>
-                    <div class="spc-edit"><a class="spc-edit-light" onclick="SpcEdit(this)">編輯</a></div>
-                </div>
-                <div class="spc-item">
-                    <div class="spc-item-pic"></div>
-                    <div class="spc-item-discribe">
-                        <p class="spc-item-name">商品名稱</p>
-                        <p class="spc-item-option">選項： 微糖 微冰</p>
-                        <p class="spc-item-price">$50</p>
+            <div class="d-flex flex-column" id="group-spc-list">
+                <div class="group-spc">
+                    <div class="group-spc-header">
+                        <input class="spc-checkbox" type="checkbox" name="c" />
+                        <button class="spc-store-name" style="cursor: default;">店家名稱</button>
+                        <img class="abs to-arrow" src="./src/img/to-arrow-white.svg">
+                        <button class="spc-station-name" style="cursor: default;">櫃站名稱</button>
+                        <div class="spc-edit"><a class="spc-edit-light" onclick="SpcEdit(this)">編輯</a></div>
                     </div>
-                    <form class="spc-qty" method='POST' action='#'>
-                        <input type='button' value='-' class='spc-qty-minus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                        <input type='button' value='+' class='spc-qty-plus' field='quantity' />
-                    </form>
-                    <button class="spc-item-delete">刪除</button>
-                </div>
-                <div class="spc-item">
-                    <div class="spc-item-pic"></div>
-                    <div class="spc-item-discribe">
-                        <p class="spc-item-name">商品名稱</p>
-                        <p class="spc-item-option">選項： 微糖 微冰</p>
-                        <p class="spc-item-price">$50</p>
+                    <div class="spc-item" style="display: none;">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='button' value='-' class='spc-qty-minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='spc-qty-number' />
+                            <input type='button' value='+' class='spc-qty-plus' field='quantity' />
+                        </form>
+                        <button class="spc-item-delete">刪除</button>
                     </div>
-                    <form class="spc-qty" method='POST' action='#'>
-                        <input type='button' value='-' class='spc-qty-minus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                        <input type='button' value='+' class='spc-qty-plus' field='quantity' />
-                    </form>
-                    <button class="spc-item-delete">刪除</button>
-                </div>
-                <div class="spc-item">
-                    <div class="spc-item-pic"></div>
-                    <div class="spc-item-discribe">
-                        <p class="spc-item-name">商品名稱</p>
-                        <p class="spc-item-option">選項： 微糖 微冰</p>
-                        <p class="spc-item-price">$50</p>
+                    <div class="group-spc-footer">
+                        <button class="group-spc-progress" type="button">查看進度</button>
+                        <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
+                        <button class="group-spc-share">分享</button>
                     </div>
-                    <form class="spc-qty" method='POST' action='#'>
-                        <input type='button' value='-' class='spc-qty-minus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                        <input type='button' value='+' class='spc-qty-plus' field='quantity' />
-                    </form>
-                    <button class="spc-item-delete">刪除</button>
-                </div>
-                <div class="group-spc-footer">
-                    <button class="group-spc-progress" type="button">查看進度</button>
-                    <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
-                    <button class="group-spc-share">分享</button>
                 </div>
             </div>
 
         </div>
         <!-- footer -->
         <div id="shopping-cart-footer">
-            <div id="spc-footer-upper">
+            <!-- <div id="spc-footer-upper">
                 <input class="spc-footer-checkbox" type="checkbox" onclick="SelectAll(this,'c')" />
                 <div id="spc-select-all">全選</div>
                 <div id="spc-total-price">總計：<a id="spc-total-price-number">150</a>元</div>
-            </div>
+            </div> -->
             <div id="spc-footer-lower">
                 <button id="spc-order" type="button" onclick="SwitchToCheckout()">確認下單</button>
             </div>
         </div>
     </div>
 
-    <!-- checkout -->
+
+
+    <!----------------------------------------------------- Checkout ----------------------------------------------------->
     <div id="check-out" class="screen">
         <!-- header -->
         <div id="check-out-header">
             <div id="header-title">結帳</div>
-            <img class="abs back-arrow" id="back_cart" src="./src/img/back-arrow.svg" type="button" onclick="SwitchToShoppingcart()">
+            <img class="abs back-arrow" id="back_cart" src="./src/img/back-arrow.svg" type="button"
+                onclick="SwitchToShoppingcart()">
             <div id="blue-space"></div>
         </div>
         <!-- store & items -->
@@ -980,7 +929,7 @@
             <p id="cko-store-name">店家名稱</p>
         </div>
         <div id="check-out-content" class="overflow-auto">
-            <div class="spc-item">
+            <!-- <div class="spc-item">
                 <div class="spc-item-pic"></div>
                 <div class="spc-item-discribe">
                     <p class="spc-item-name">商品名稱</p>
@@ -990,40 +939,7 @@
                 <form class="spc-qty" method='POST' action='#'>
                     <input type='text' name='quantity' value='0' class='spc-qty-number' />
                 </form>
-            </div>
-            <div class="spc-item">
-                <div class="spc-item-pic"></div>
-                <div class="spc-item-discribe">
-                    <p class="spc-item-name">商品名稱</p>
-                    <p class="spc-item-option">選項： 微糖 微冰</p>
-                    <p class="spc-item-price">$50</p>
-                </div>
-                <form class="spc-qty" method='POST' action='#'>
-                    <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                </form>
-            </div>
-            <div class="spc-item">
-                <div class="spc-item-pic"></div>
-                <div class="spc-item-discribe">
-                    <p class="spc-item-name">商品名稱</p>
-                    <p class="spc-item-option">選項： 微糖 微冰</p>
-                    <p class="spc-item-price">$50</p>
-                </div>
-                <form class="spc-qty" method='POST' action='#'>
-                    <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                </form>
-            </div>
-            <div class="spc-item">
-                <div class="spc-item-pic"></div>
-                <div class="spc-item-discribe">
-                    <p class="spc-item-name">商品名稱</p>
-                    <p class="spc-item-option">選項： 微糖 微冰</p>
-                    <p class="spc-item-price">$50</p>
-                </div>
-                <form class="spc-qty" method='POST' action='#'>
-                    <input type='text' name='quantity' value='0' class='spc-qty-number' />
-                </form>
-            </div>
+            </div> -->
         </div>
         <!-- locker station  -->
         <div id="cko-station-block">
@@ -1051,9 +967,438 @@
         </div>
         <!-- footer -->
         <div id="cko-footer">
-            <button id="cko-order" type="button" onclick="SwitchToCheckout()">結帳</button>
+            <button id="cko-order" type="button" onclick="SwitchToOrderlist()">結帳</button>
         </div>
     </div>
+
+
+
+    <!------------------------------------------------------- Order-list --------------------------------------------------->
+    <div id="order-list" class="screen">
+        <div id="order-list-header">
+            <div id="header-title">購買清單</div>
+            <img class="abs" id="back-arrow" src="./src/img/back-arrow.svg">
+            <img class="abs" id="cross" src="./src/img/cross.svg">
+            <div id="page-swift">
+                <button type="button" class="page-swift-button" id="ol-grouping-button"
+                    onclick="SwitchToGrouping()">團購中</button>
+                <button type="button" class="page-swift-button" id="ol-undelivered-button"
+                    onclick="SwitchToUndelivered()">未出貨</button>
+                <button type="button" class="page-swift-button" id="ol-arrived-button"
+                    onclick="SwitchToArrived()">已送達</button>
+                <button type="button" class="page-swift-button" id="ol-done-button"
+                    onclick="SwitchToDone()">已完成</button>
+            </div>
+        </div>
+        <!-- grouping page -->
+        <div id="ol-grouping" class="ol-page overflow-auto">
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="ol-store-img"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">團購中</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="group-spc-footer">
+                    <button class="group-spc-progress" type="button">查看進度</button>
+                    <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
+                    <button class="group-spc-share">分享</button>
+                </div>
+                <button class="ol-group-cancel">取消團購</button>
+            </div>
+        </div>
+        <!-- undelivered page -->
+        <div id="ol-undelivered" class="ol-page overflow-auto">
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="ol-store-img"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">未出貨</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-order-footer">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">預計到貨時間：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 17:00</p>
+                </div>
+            </div>
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="ol-store-img"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">未出貨</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-order-footer">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">預計到貨時間：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 17:00</p>
+                </div>
+            </div>
+        </div>
+        <!-- arrived page -->
+        <div id="ol-arrived" class="ol-page overflow-auto">
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="ol-store-img"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">已送達</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-pickup-detail">
+                    檢視取貨資訊
+                    <img class="ol-detail-arrow abs" src="./src/img/black-arrow.svg" onclick="SeeDetailPickup(this)">
+                </div>
+                <div class="ol-pickup-info">
+                    <div class="ol-order-number">
+                        <p nowrap style="position:absolute;top: 23.3%; left:4vw">訂單編號：</p>
+                        <p nowrap style="position:absolute;top: 23.3%; right: 8.8vw">A12345678</p>
+                    </div>
+                    <div class="ol-order-qrcode">
+                        <img class="ol-order-qrcode-img abs" src="./src/img/qr-code.svg">
+                    </div>
+                </div>
+                <div class="ol-order-footer-arrived">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">取貨期限：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 24:00</p>
+                </div>
+            </div>
+        </div>
+        <!-- done page -->
+        <div id="ol-done" class="ol-page overflow-auto">
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="ol-store-img"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">已完成</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <div class="spc-item-pic"></div>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-order-footer">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">完成時間：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 18:30</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <div w3-include-html="order_extra.html"></div>
@@ -1072,8 +1417,7 @@
     <script src="./app.js"></script>
     <script src="./personal.js"></script>
     <script src='./shopping-cart.js'></script>
-    <script src="order.js"></script>
-    <script src='./shopping_cart.js'></script>
+    <script src="./order-list.js"></script>
 </body>
 
 </html>

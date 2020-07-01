@@ -107,6 +107,7 @@ a{
     font-size: 12px;
     font-weight: lighter;
     color: white;
+    overflow: auto;
 }
 .spc-station-name{
     height: 51.9%;
@@ -538,4 +539,7 @@ a{
 input[type="checkbox"]{
     width: auto;
 }
-
+button {
+    outline: none;
+}
+button:focus {outline:0;}
