@@ -1,10 +1,14 @@
 .float_window{
-    width: 320px;
-    height:568px;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
     margin:auto;
 }
 .left_side{
-     display: none;
+    display: inline-block;
     background-color: #2C50A1;
     width: 80%;
     height: 100%;
@@ -89,7 +93,7 @@
     float: left;
 }
 .right_side{
-    display: inline-block;
+    display: none;
     background-color: #2C50A1;
     width:80%;
     height: 100%;
@@ -223,4 +227,8 @@ color:#FFFFFF;
      margin-bottom:10%;
     font-family:"century gothic";
     font-size:12px;
+}
+button[type="button"]
+{
+    outline:none;
 }

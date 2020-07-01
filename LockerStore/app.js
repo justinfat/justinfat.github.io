@@ -1216,6 +1216,9 @@ $('#facebook_btn').click(function () {
 $('#messenger_btn').click(function () {
     window.open('fb-messenger://share?link=' + encodeURIComponent(window.location.href));
 });
+$('#menu_btn').click(function () {
+    $('.float_window').animate({ left: "0" }, 200);
+});
 /************************ Handle finger swipe event **************************/
 document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
 document.getElementById("slipResult_btn").addEventListener("touchmove", handleTouchMove, false);
