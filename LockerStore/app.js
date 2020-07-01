@@ -1060,45 +1060,47 @@ $('#goto').click(function () {
 });
 
 $('#addItem_btn').click(function () {
-    ++orderNum;
-    var count = $('#singleItemList div.shopItem').length;
-    // console.log('count' + count);
-    for (var i = 0; i < count; i++) {
-        var amount = +($('#singleItemList div.itemAmount_txt').eq(i).text());
-        if (amount > 0) {
-            itemName.push($('#singleItemList div.shopItem_name').eq(i).text())
-            itemAmount.push(amount);
-            console.log('shopItmePrice=' + $('#singleItemList div.shopItem_price').eq(i).text())
-            itemPrice.push(+($('#singleItemList div.shopItem_price').eq(i).text().substr(2)) * amount)
-        }
-    }
-    // console.log('item=' + itemName)
-    // console.log('amount=' + itemAmount)
-    // console.log('price=' + itemPrice)
-    for (var i = 0; i < itemName.length; i++) {
-        if (i) {
-            $('ul.sub-menu .product-line').eq(i - 1).clone('withDataAndEvents').appendTo($('#SubMenu2'));
-            var tmp = $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(i - 1);
-            tmp.clone('withDataAndEvents').insertAfter(tmp);
-        }
-        else {
-            $('ul.sub-menu .product-line').eq(0).css('display', 'block');
-            $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(0).css('display', 'block');
-        }
-        $('ul.sub-menu .product-line').eq(i).html(itemName[i] + html_1 + itemPrice[i] + html_2);
-        $('.order-content-mid :nth-child(' + orderNum + ') p.product-name-text').eq(i).text(itemName[i]);
-        $('.order-content-mid :nth-child(' + orderNum + ') div.product-number').eq(i).text(itemAmount[i]);
-        $('.order-content-mid :nth-child(' + orderNum + ') p.product-price-text').eq(i).text(itemPrice[i]);
-    }
-    $('#default span.store-name').eq(orderNum - 1).text(storeName);
-    $('#default span.store-tel').eq(orderNum - 1).html(storeTel);
-    $('#default span.store-addr').eq(orderNum - 1).html(storeAddr);
-    $('#default span.station-name').eq(orderNum - 1).text(stationName + ' - 02');
-    $('#default span.station-addr').eq(orderNum - 1).text(stationAddr);
-    $('.order-content-mid p.store-name').eq(orderNum - 1).text(storeName);
-    $('.order-content-mid p.store-tel-addr').eq(orderNum - 1).html(storeTel + '<br>' + storeAddr);
-    $('.order-content-mid p.station-name').eq(orderNum - 1).text(stationName + ' - 02');
-    $('.order-content-mid p.station-addr').eq(orderNum - 1).text(stationAddr);
+    // ++orderNum;
+    // var count = $('#singleItemList div.shopItem').length;
+    // // console.log('count' + count);
+    // for (var i = 0; i < count; i++) {
+    //     var amount = +($('#singleItemList div.itemAmount_txt').eq(i).text());
+    //     if (amount > 0) {
+    //         itemName.push($('#singleItemList div.shopItem_name').eq(i).text())
+    //         itemAmount.push(amount);
+    //         console.log('shopItmePrice=' + $('#singleItemList div.shopItem_price').eq(i).text())
+    //         itemPrice.push(+($('#singleItemList div.shopItem_price').eq(i).text().substr(2)) * amount)
+    //     }
+    // }
+    // // console.log('item=' + itemName)
+    // // console.log('amount=' + itemAmount)
+    // // console.log('price=' + itemPrice)
+    // for (var i = 0; i < itemName.length; i++) {
+    //     if (i) {
+    //         $('ul.sub-menu .product-line').eq(i - 1).clone('withDataAndEvents').appendTo($('#SubMenu2'));
+    //         var tmp = $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(i - 1);
+    //         tmp.clone('withDataAndEvents').insertAfter(tmp);
+    //     }
+    //     else {
+    //         $('ul.sub-menu .product-line').eq(0).css('display', 'block');
+    //         $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(0).css('display', 'block');
+    //     }
+    //     $('ul.sub-menu .product-line').eq(i).html(itemName[i] + html_1 + itemPrice[i] + html_2);
+    //     $('.order-content-mid :nth-child(' + orderNum + ') p.product-name-text').eq(i).text(itemName[i]);
+    //     $('.order-content-mid :nth-child(' + orderNum + ') div.product-number').eq(i).text(itemAmount[i]);
+    //     $('.order-content-mid :nth-child(' + orderNum + ') p.product-price-text').eq(i).text(itemPrice[i]);
+    // }
+    // $('#default span.store-name').eq(orderNum - 1).text(storeName);
+    // $('#default span.store-tel').eq(orderNum - 1).html(storeTel);
+    // $('#default span.store-addr').eq(orderNum - 1).html(storeAddr);
+    // $('#default span.station-name').eq(orderNum - 1).text(stationName + ' - 02');
+    // $('#default span.station-addr').eq(orderNum - 1).text(stationAddr);
+    // $('.order-content-mid p.store-name').eq(orderNum - 1).text(storeName);
+    // $('.order-content-mid p.store-tel-addr').eq(orderNum - 1).html(storeTel + '<br>' + storeAddr);
+    // $('.order-content-mid p.station-name').eq(orderNum - 1).text(stationName + ' - 02');
+    // $('.order-content-mid p.station-addr').eq(orderNum - 1).text(stationAddr);
+    $('.onMap_shop').hide();
+    SwitchToShoppingcart();
 
 });
 
@@ -1216,9 +1218,11 @@ $('#facebook_btn').click(function () {
 $('#messenger_btn').click(function () {
     window.open('fb-messenger://share?link=' + encodeURIComponent(window.location.href));
 });
-$('#menu_btn').click(function () {
-    $('.float_window').animate({ left: "0" }, 200);
+
+$('#back_shop').click(function () {
+    
 });
+
 /************************ Handle finger swipe event **************************/
 document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
 document.getElementById("slipResult_btn").addEventListener("touchmove", handleTouchMove, false);

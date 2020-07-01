@@ -18,13 +18,13 @@
 
 var personal_state = 1;
 $('#menu_btn').click(function () {
-    $('.float_window').animate({ left: "0" }, 200);
+    $('#hamburger').animate({ left: "0" }, 200);
 });
 $('#foldPersonal_btn').click(function () {
     switch (personal_state) {
         case 1:
             {
-                $('.float_window').animate({ left: "-100vw" }, 200);
+                $('#hamburger').animate({ left: "-100vw" }, 200);
                 personal_state = 1;
                 break;
             }
