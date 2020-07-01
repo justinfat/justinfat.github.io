@@ -1,3 +1,7 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 .modal-content{
     height: 90vh;
@@ -171,6 +175,9 @@
     font-size: 14pt;
 }
 .arrow-btn {
+    background-image: url(public/images/a6/a6-22.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
     background-color: #2C50A1;
     width: 20pt;
     height: 20pt;

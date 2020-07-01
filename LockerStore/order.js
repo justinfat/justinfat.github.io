@@ -20,15 +20,17 @@ function showRight()
 }
 
 var count = 0;
-function showDetail()
+function showDetail(myObj)
 {
+    
+
     count++;
     if (count % 2 == 1) {
         $('.order-object-detail').css("display", "inline-block");
-        $('.arrow-img').css("transform", "rotate(180deg)");
+        (myObj.id).css("transform", "rotate(180deg)");
     }
     else {
         $('.order-object-detail').css("display", "none");
-        $('.arrow-img').css("transform", "rotate(0deg)");
+        (myObj.id).css("transform", "rotate(0deg)");
     }
 }
