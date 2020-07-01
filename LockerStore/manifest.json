@@ -1,7 +1,7 @@
 {
   "name": "LockerStore",
   "short_name": "LockerStore",
-  "start_url": "./index.html",
+  "start_url": "./login.html",
   "display": "standalone",
   "icons": [
     {

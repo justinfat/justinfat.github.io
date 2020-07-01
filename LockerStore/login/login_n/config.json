@@ -1,0 +1,8 @@
+{
+  "port": 9288,
+  "ssl":{
+    "ca": "./ssl/ca_bundle.crt",
+    "key": "./ssl/private.key",
+    "cert": "./ssl/certificate.crt"
+  }
+}
