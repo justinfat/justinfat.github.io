@@ -991,6 +991,20 @@ p.explore {
     margin: 0 6.5%;
 
 }
+#shareBox_white {
+    position: absolute;
+    bottom: 0;
+    width: 86.2%;
+    height: 15.6vmin;
+    background-color: #ffffff;
+    border-radius: 0.4rem;
+    border-width: 0.2rem;
+    border-color: #2C50A1;
+    border-style: solid;
+    padding: 3vmin 4.3vmin 3vmin 4.3vmin;
+    margin: 0 6.5%;
+    z-index: 101;
+}
 /* #shareBox_close {
     position: absolute;
     top: 10.7%;

@@ -1100,7 +1100,7 @@ $('#goto').click(function () {
     if ($('#openGroup_btn').hasClass('select')) {
         console.log(stationName)
         console.log(stationAddr)
-        $('#setCaseList span.groupLocker').text(stationName + '櫃 - ' + (Math.floor(Math.random()*25)+1));
+        $('#setCaseList span.groupLocker').text(stationName + '櫃 - ' + (Math.floor(Math.random() * 25) + 1));
         $('#setCaseList span.groupAddr').text(stationAddr);
         $('#addItem_btn').hide();
         $('#chooseGroup_btn').hide();
@@ -1353,23 +1353,37 @@ $('#spc-order').click(function () {
     $('#check-out-content .spc-qty-minus').remove();
     $('#check-out-content .spc-qty-number').prop('disabled', true);
     var all = 0;
-    $('#check-out-content .spc-item-price').each(function() {
-        all += +($( this ).text().slice(2));
-      });
-    $('#cko-total-item-value').text(all+'元');
-    var total = all + (+($('#cko-total-fare-value').text().slice(0,-1)));
+    $('#check-out-content .spc-item-price').each(function () {
+        all += +($(this).text().slice(2));
+    });
+    $('#cko-total-item-value').text(all + '元');
+    var total = all + (+($('#cko-total-fare-value').text().slice(0, -1)));
     $('#cko-total-value-red').text(total);
 });
 
 $('#raise_btn').click(function () {
-    if(!$(this).hasClass('disabled')){
+    if (!$(this).hasClass('disabled')) {
         $('#setCaseTab').hide();
         $('#groupItemTab').show();
         $('#raise_btn').hide();
         $('#addItem_btn').show();
     }
 });
+$('.group-spc-share').click(function () {
+    $('#shareBox_white').show();
+});
 
+
+$(document).mouseup(function(e) 
+{
+    var container = $("#shareBox_white");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        container.hide();
+    }
+});
 /************************ Handle finger swipe event **************************/
 document.getElementById("slipResult_btn").addEventListener("touchstart", resultTouchStart, false);
 document.getElementById("slipResult_btn").addEventListener("touchmove", handleTouchMove, false);
