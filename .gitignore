@@ -1,4 +1,4 @@
 config.js
 node_modules/
 mongo-express/
-login/ssl/
+LockerStore/login/ssl/
