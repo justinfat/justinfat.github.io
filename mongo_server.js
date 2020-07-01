@@ -35,6 +35,16 @@ var item = new mongoose.Schema({
   // isGroup: mongoose.Schema.Types.Number,
   // groupAmount: mongoose.Schema.Types.Number
 })
+var group = new mongoose.Schema({
+  name: String,
+  target: mongoose.Schema.Types.Number,
+  discount: mongoose.Schema.Types.Number,
+  station: String,
+  lockerNum: mongoose.Schema.Types.Number,
+  arrivalTime: String,
+  addr: String,
+  people: mongoose.Schema.Types.Number
+})
 const shopSchema = new mongoose.Schema({
   name: String,
   starNum: mongoose.Schema.Types.Number,
@@ -46,7 +56,8 @@ const shopSchema = new mongoose.Schema({
   tag: String,
   shopType: String,
   isGroup: mongoose.Schema.Types.Number,
-  items: [item]
+  items: [item],
+  groups: [group]
 }, { strict: false }, { collection: 'shops' })
 const shopModel = conn.model('shops', shopSchema)
 
@@ -63,125 +74,150 @@ app.get('/sign_up', (req, res) => {
 })
 
 app.get('/insertLocker', (req, res) => {
-  var myobj = { lat: req.query.lat, lng: req.query.lng, name: req.query.name, addr: req.query.addr };
-  lockerModel.updateOne({ "name": req.query.name }, { $setOnInsert: myobj }, { upsert: true }, function (err, result) {
-    if (err) throw err;
-    res.send(`ok`);
-  });
+  try {
+    var myobj = { lat: req.query.lat, lng: req.query.lng, name: req.query.name, addr: req.query.addr };
+    lockerModel.updateOne({ "name": req.query.name }, { $setOnInsert: myobj }, { upsert: true }, function (err, result) {
+      if (err) throw err;
+      res.send(`ok`);
+    });
+  }
+  catch (e) {
+    res.send(`fail`);
+  }
+
 })
 
 app.get('/searchLocker', (req, res) => {
-  lockerModel.findOne({ lat: req.query.lat, lng: req.query.lng }).select({ name: 1, addr: 1 }).exec(function (err, result) {
-    if (err) throw err;
-    res.send({
-      name: result.name,
-      addr: result.addr,
+  try {
+    lockerModel.findOne({ lat: req.query.lat, lng: req.query.lng }).select({ name: 1, addr: 1 }).exec(function (err, result) {
+      if (err) throw err;
+      res.send({
+        name: result.name,
+        addr: result.addr,
+      });
     });
-  });
+  }
+  catch (e) {
+    res.send(`fail`);
+  }
+
 })
 
 app.get('/searchTag', (req, res) => {
-  var arr = req.query.keywords.split('#');
-  var keywords = arr.join('');
-  var sorter = req.query.sorter;
-  var query = {};
-  if (req.query.sorter === 'priceNum') {
-    query[sorter] = 1;
-    shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
-      if (err) throw err;
-      if (results.length > 60) {
-        res.send({
-          results: results.slice(0, 60),
-        })
-      }
-      else {
-        res.send({
-          results: results,
-        })
-      }
-    });
+  try {
+    var arr = req.query.keywords.split('#');
+    var keywords = arr.join('');
+    var sorter = req.query.sorter;
+    var query = {};
+    if (req.query.sorter === 'priceNum') {
+      query[sorter] = 1;
+      shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
+        if (err) throw err;
+        if (results.length > 60) {
+          res.send({
+            results: results.slice(0, 60),
+          })
+        }
+        else {
+          res.send({
+            results: results,
+          })
+        }
+      });
+    }
+    else {
+      query[sorter] = -1;
+      shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
+        if (err) throw err;
+        if (results.length > 60) {
+          res.send({
+            results: results.slice(0, 60),
+          })
+        }
+        else {
+          res.send({
+            results: results,
+          })
+        }
+      });
+    }
   }
-  else {
-    query[sorter] = -1;
-    shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
-      if (err) throw err;
-      if (results.length > 60) {
-        res.send({
-          results: results.slice(0, 60),
-        })
-      }
-      else {
-        res.send({
-          results: results,
-        })
-      }
-    });
+  catch (e) {
+    res.send(`fail`);
   }
+
 })
 
 app.get('/searchShop', (req, res) => {
-  shopModel.findOne({ name: req.query.name }, function (err, result) {
-    if (err) throw err;
-    res.send({
-      id: result._id,
-      name: result.name,
-      starNum: result.starNum,
-      priceNum: result.priceNum,
-      commentNum: result.commentNum,
-      openTime: result.openTime,
-      addr: result.addr,
-      img: result.img,
-      tag: result.tag,
-      shopType: result.shopType
+  try {
+    shopModel.findOne({ name: req.query.name }, function (err, result) {
+      if (err) throw err;
+      res.send({
+        id: result._id,
+        name: result.name,
+        starNum: result.starNum,
+        priceNum: result.priceNum,
+        commentNum: result.commentNum,
+        openTime: result.openTime,
+        addr: result.addr,
+        img: result.img,
+        tag: result.tag,
+        shopType: result.shopType
+      });
     });
-  });
+  }
+  catch (e) {
+    res.send(`fail`);
+  }
+
 })
 
 app.get('/getItem_single', (req, res) => {
-  shopModel.findOne({ _id: req.query.id }).select({ items: 1 }).exec(function (err, result) {
-    if (err) throw err;
-    res.send({
-      results: result
+  try {
+    shopModel.findOne({ _id: req.query.id }).select({ items: 1 }).exec(function (err, result) {
+      if (err) throw err;
+      res.send({
+        results: result
+      });
     });
-  });
+  }
+  catch (e) {
+    res.send(`fail`);
+  }
+
 })
 
 const crawl_root = "https://www.tagsfinder.com/en-tw/related/"
 const english = /^[A-Za-z0-9]*$/;
 app.get('/getRelatedTag', (req, res) => {
-  console.log(req.query.keyword)
-  var keyword = encodeURIComponent(req.query.keyword)
-  request({
-    url: crawl_root + keyword,
-    method: "GET",
-  }, function (error, response, body) {
-    if (error || !body) {
-      res.send('');
-      return;
-    }
-    const $ = cheerio.load(body);
-    const elements = $(".card-table a")
-    var tags = elements.text().split("#")
-    if (!english.test(req.query.keyword)) {
-      var result = []
-      for (let i = 2; i < tags.length && result.length < 3; i++) {
-        if (!english.test(tags[i]))
-          result.push(tags[i])
+  try {
+    var keyword = encodeURIComponent(req.query.keyword)
+    request({
+      url: crawl_root + keyword,
+      method: "GET",
+    }, function (error, response, body) {
+      if (error || !body) {
+        res.send('');
+        return;
       }
-      res.send(result);
-    }
-    else {
-      res.send(tags.slice(1, 4))
-    }
-  });
+      const $ = cheerio.load(body);
+      const elements = $(".card-table a")
+      var tags = elements.text().split("#")
+      if (!english.test(req.query.keyword)) {
+        var result = []
+        for (let i = 2; i < tags.length && result.length < 3; i++) {
+          if (!english.test(tags[i]))
+            result.push(tags[i])
+        }
+        res.send(result);
+      }
+      else {
+        res.send(tags.slice(1, 4))
+      }
+    });
+  }
+  catch (e) {
+    res.send(`fail`);
+  }
 })
 
-// app.get('/getItem_group', (req, res) => {
-//   connection.query(
-//     `SELECT * FROM shop_${req.query.id} WHERE isGroup = 1`, function (error, results, fields) {
-//       // if (error) throw error
-//       res.send({
-//         results: results,
-//       })
-//     })
-// })

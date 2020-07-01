@@ -224,7 +224,7 @@ function createMarker(marker_url, location, isDrop) {
             $('#info_t1').html(data.name + '站');
             $('#info_t2').html(data.addr);
             stationName = data.name;
-            stationAddr = data.addr + '站';
+            stationAddr = data.addr;
         })
         // $('#shareBox').hide();
         $('#infoBox').show();
@@ -473,7 +473,6 @@ function getShopItem_single(id) {
             }
         }
         for (var i = 0; i < data.results.items.length; i += 2) {
-            console.log(i)
             if (i) {
                 if (data.results.items[i].img.length > 1) {
                     $('#groupItemList div.shopItem').eq(i / 2 - 1).clone('withDataAndEvents').appendTo($('#groupItemList'));
@@ -627,7 +626,11 @@ function copyLink() {
     alert("The link is copied");
     document.body.removeChild(dummy);
 }
-
+function timeChange() {
+    $('#raise_btn').attr("src", "public/images/b2/團購-22.svg");
+    $('#raise_btn').removeClass('disabled')
+    $('#shareBox').show();
+}
 // $('#infoBox_close').click(function () {
 //     $('#infoBox').hide();
 // });
@@ -1031,7 +1034,7 @@ $('.switchTab_btn').click(function () {
             $('#groupCaseTab').show();
         }
         $('.group-item').hide();
-        $('#addItem_btn').hide()
+        $('#addItem_btn').hide();
         $('#chooseGroup_btn').show();
         // $('#shareBox').show();
         shopTab_state = 2;
@@ -1095,7 +1098,16 @@ $('#goto').click(function () {
     isSelectLocker = true;
     $('#infoBox').show();
     if ($('#openGroup_btn').hasClass('select')) {
+        console.log(stationName)
+        console.log(stationAddr)
+        $('#setCaseList span.groupLocker').text(stationName + '櫃 - ' + (Math.floor(Math.random()*25)+1));
+        $('#setCaseList span.groupAddr').text(stationAddr);
+        $('#addItem_btn').hide();
+        $('#chooseGroup_btn').hide();
+        $('#raise_btn').show();
         $('#tabContainer_group').show();
+        $('#raise_btn').addClass('disabled')
+        $('#shareBox').hide();
         $('#setCaseTab').show();
     }
     else {
@@ -1156,7 +1168,7 @@ $('#addItem_btn').click(function () {
                 itemAmount.push(amount);
                 // console.log('shopItmePrice=' + $('#singleItemList div.shopItem_price').eq(i).text())
                 itemPrice.push(+($('#groupItemList div.shopItem_price').eq(i).text().substr(2)) * amount)
-                itemImg.push($('#singleItemList img.shopItem_img').eq(i).attr('src'));
+                itemImg.push($('#groupItemList img.shopItem_img').eq(i).attr('src'));
             }
         }
         for (var i = 0; i < itemName.length; i++) {
@@ -1347,6 +1359,15 @@ $('#spc-order').click(function () {
     $('#cko-total-item-value').text(all+'元');
     var total = all + (+($('#cko-total-fare-value').text().slice(0,-1)));
     $('#cko-total-value-red').text(total);
+});
+
+$('#raise_btn').click(function () {
+    if(!$(this).hasClass('disabled')){
+        $('#setCaseTab').hide();
+        $('#groupItemTab').show();
+        $('#raise_btn').hide();
+        $('#addItem_btn').show();
+    }
 });
 
 /************************ Handle finger swipe event **************************/

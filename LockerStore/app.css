@@ -911,6 +911,10 @@ p.explore {
     height: 22.75vmin;
     padding: 2vmin 5% 1.5vmin 5%;
 }
+.groupCase_top.set {
+    height: auto;
+    padding: 2vmin 5% 1.5vmin 5%;
+}
 .groupCase_bottom {
     position: relative;
     height: 9.5vmin;
@@ -998,4 +1002,10 @@ p.explore {
 }
 .shopCard_tab {
     height: calc(100% - 36vmin);
+}
+#time-selector {
+    width: auto;
+    padding: 0;
+    margin: 0vmin 5% 5vmin 5%;
+    border: 0.1rem solid #eb871b;
 }

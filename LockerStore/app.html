@@ -11,7 +11,7 @@
     <link href="./app.css" rel="stylesheet" type="text/css" />
     <link href="./personal.css" rel="stylesheet" type="text/css" />
     <link href="./shopping-cart.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./order-list.css"/>
+    <link rel="stylesheet" href="./order-list.css" />
 </head>
 
 <body>
@@ -596,7 +596,7 @@
                 <div class="on-card scrollbar shopCard_tab" id="setCaseTab" style="display:none;">
                     <div class="d-flex flex-column" id="setCaseList">
                         <div class="d-flex flex-column groupCase">
-                            <div class="d-flex mb-auto groupCase_top">
+                            <div class="d-flex mb-auto groupCase_top set">
                                 <div class="d-flex flex-column groupCase_left">
                                     <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
                                     <div style="line-height: 1.2rem;">
@@ -614,8 +614,10 @@
                                     <span class="groupLocker font-12 color-blue">選定櫃位</span>
                                     <span class="groupDeadline font-10 color-normal">團購截止時間</span>
                                     <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                    <span class="groupArrival font-10 color-orange">設定到貨時間</span>
                                 </div>
                             </div>
+                            <input class="align-self-end" type="datetime-local" name="bdaytime" id="time-selector" onchange="timeChange()">
                             <div class="groupCase_bottom">
                                 <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
                                 <div class="d-flex justify-content-around align-items-center progressPeople">
@@ -638,7 +640,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="on-map" id="shareBox">
+                    <div class="on-map" id="shareBox" style="display: none;">
                         <div class="d-flex align-items-center justify-content-around" id="shareBox_content">
                             <div class="color-normal font-12 mr-4">分享給好友:&nbsp;</div>
                             <div class="d-flex justify-content-between flex-grow-1" id="appBar">
@@ -679,6 +681,8 @@
                         style="width: 100%; height: 100%;">
                         <img class="addBtn" id="addItem_btn" src="public/images/b1/開始使用部分-44.svg" alt="b1-44">
                         <img class="addBtn" id="chooseGroup_btn" src="public/images/b2/團購-11.svg" alt="b2-11"
+                            style="display: none;">
+                        <img class="addBtn disabled" id="raise_btn" src="public/images/b2/團購-23.svg" alt="b2-23"
                             style="display: none;">
                     </div>
                 </div>
@@ -878,7 +882,7 @@
                         <div class="spc-edit"><a class="spc-edit-light" onclick="SpcEdit(this)">編輯</a></div>
                     </div>
                     <div class="spc-item" style="display: none;">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -930,7 +934,7 @@
         </div>
         <div id="check-out-content" class="overflow-auto">
             <!-- <div class="spc-item">
-                <div class="spc-item-pic"></div>
+                <img class="spc-item-pic"></img>
                 <div class="spc-item-discribe">
                     <p class="spc-item-name">商品名稱</p>
                     <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1006,7 +1010,7 @@
                 </div>
                 <div class="ol-item-list overflow-auto" id="ol-order1">
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1017,7 +1021,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1028,7 +1032,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1039,7 +1043,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1087,7 +1091,7 @@
                 </div>
                 <div class="ol-item-list overflow-auto" id="ol-order1">
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1098,7 +1102,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1109,7 +1113,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1120,7 +1124,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1163,7 +1167,7 @@
                 </div>
                 <div class="ol-item-list overflow-auto" id="ol-order1">
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1174,7 +1178,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1185,7 +1189,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1196,7 +1200,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1242,7 +1246,7 @@
                 </div>
                 <div class="ol-item-list overflow-auto" id="ol-order1">
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1253,7 +1257,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1264,7 +1268,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1275,7 +1279,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1334,7 +1338,7 @@
                 </div>
                 <div class="ol-item-list overflow-auto" id="ol-order1">
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1345,7 +1349,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1356,7 +1360,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
@@ -1367,7 +1371,7 @@
                         </form>
                     </div>
                     <div class="spc-item">
-                        <div class="spc-item-pic"></div>
+                        <img class="spc-item-pic"></img>
                         <div class="spc-item-discribe">
                             <p class="spc-item-name">商品名稱</p>
                             <p class="spc-item-option">選項： 微糖 微冰</p>
