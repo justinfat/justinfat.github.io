@@ -40,12 +40,12 @@ img {
     margin: 0;
 }
 
-.btn {
+/* .btn {
     color: #2C50A1;
     font-family: "Century Gothic";
     font-weight: bold;
     font-size: 14pt;
-}
+} */
 .btn:focus{box-shadow:none;}
 
 .order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {
@@ -187,6 +187,9 @@ img {
     top: 15%;
     right: 6pt;
     float: right;
+    background-image: url(public/images/a6/a6-22.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .arrow-img {
     display: inline-block;
@@ -202,12 +205,10 @@ img {
 .order-object-detail-fake{
     display: inline-block;
     width: 25%;
-    height: 100%;
 }
 .order-object-detail-content {
     display: inline-block;
     width: calc(75% - 6pt);
-    height: 100%;
     float: right;
 }
 .order-object-detail-content-item {

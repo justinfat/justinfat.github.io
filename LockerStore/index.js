@@ -1,4 +1,16 @@
-var map, marker, lat, lng, addr;
+$(() => {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => {
+                console.log(`SW is registered with scope: ${reg.scope}`)
+            })
+            .catch(err => {
+                console.log('SW Error ', err)
+            })
+    }
+})
+
+var map, marker, autocomplete, lat, lng, addr;
 var isLocate = false;
 var styles = {
     default: null,
@@ -44,6 +56,20 @@ function initMap() {
         streetViewControl: false,
         zoomControl: false,
     });
+    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('addressBlank'));
+    autocomplete.setFields(
+        ['address_components', 'geometry', 'icon', 'name']);
+    autocomplete.addListener('place_changed', function () {
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+    });
+
 }
 
 /* Only locate once when click */
@@ -171,5 +197,5 @@ $('#find_btn').click((event) => {
     }
 })
 $(document).ready(function () {
-
+    initMap();
 });

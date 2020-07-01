@@ -22,7 +22,7 @@
 	<!--small window-->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
-        		<div class="modal-content">
+        		<div class="modal-content" style="border-radius: 15px 15px 15px 15px;">
 		 		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         		<img src="public/images/a5/a5-08.svg"></img>
                     		</button>
@@ -30,8 +30,9 @@
 			    		<img class="cart_logo" src="public/images/a5/a5-07.svg"></img> <!--My Kart字樣-->
 		    		</div> <!--modal-header-->
 		 	<div class="modal-body">
+				
 				<!--div class="grid-container"-->
-				<div class="item1_all">
+				<div id="default" class="item1_all" type="button" onclick="submit(this)">
 					<div class="item1">
 						<div class="shop_pic">
 						<!--img style="display:block; z-index:1;" src="public/images/a5/a5-11.svg"-->
@@ -62,17 +63,21 @@
 				
 	
 	
-				<div class="main-menu" onclick="switchMenu( this, 'SubMenu2' )">
-					<span class="more-info">More Information</span>
+				<div class="main-menu">
+					<span class="more-info">More Information</span>  
+					<button type="button" class="btn arrow-btn" onclick="showDetail()">
+                                    	<!--img class="arrow-img" src="public/images/a6/a6-22.svg" /-->
+                                	</button>
     					<ul id="SubMenu2" class="sub-menu">
         					<li>Product Name 1&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li>
         					<li>Product Name 2&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li>
-        					<li>Product Name 3&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li>
-						<img src="public/images/a5/a5-35.svg"></img><br>
+        					<li>Product Name 3&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li><br>
+						<img src="public/images/a5/a5-35.svg"></img><br><br>
 						<img src="public/images/a5/a5-33.svg"></img>
     					</ul>
 				</div>  <!--main-menu-->
 		 		</div>  <!--item1_all-->
+
 		 </div> <!--modal-body-->
 		<div class="modal-footer" type="button" data-dismiss="modal" aria-label="Close">
 				<button type="button" class="order_btn">
@@ -88,5 +93,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>

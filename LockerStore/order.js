@@ -22,6 +22,7 @@ function showRight()
 var count = 0;
 function showDetail(myObj)
 {
+<<<<<<< HEAD
     
 
     count++;
@@ -32,5 +33,14 @@ function showDetail(myObj)
     else {
         $('.order-object-detail').css("display", "none");
         (myObj.id).css("transform", "rotate(0deg)");
+=======
+    if($('.order-object-detail').css("display")=='none') {
+        $('.order-object-detail').css("display", "inline-block");
+        $('.arrow-btn').css("transform", "rotate(180deg)");
+    }
+    else {
+        $('.order-object-detail').css("display", "none");
+        $('.arrow-btn').css("transform", "rotate(0deg)");
+>>>>>>> 3ed5fc50cb46fcf07732df13ae63f91d8a9dd57a
     }
 }
