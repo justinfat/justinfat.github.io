@@ -716,14 +716,6 @@ p.explore {
     border-color: #2C50A1;
     background-color: #FFFFFF;
 }
-/* .slip-out {
-    position: absolute;
-    top: calc(100vh - 6.4vmin);
-} */
-/* @keyframes example {
-    from {top: 0px; background-color: yellow;}
-    to {top: 200px;}
-  } */
 #slipShop_btn {
     position: relative;
     width: 100%;
@@ -995,26 +987,12 @@ p.explore {
     margin: 0 6.5%;
 
 }
-#shareBox_content {
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 4.5% 0 3% 6%; */
-}
 /* #shareBox_close {
     position: absolute;
     top: 10.7%;
     right: 2.1%;
     width: 0.75vw;
 } */
-#shareBox_txt {
-    /* width: 100%; */
-}
-#appBar {
-    /* width: 68%; */
-}
 .appIcon {
     height: 7.8vmin;;
 }
