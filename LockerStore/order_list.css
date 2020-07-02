@@ -24,27 +24,31 @@
 .btn:focus{box-shadow:none;}
 
 .order-nav-lbtn, .order-nav-mbtn, .order-nav-rbtn {
-    border-radius: 30px 30px 30px 30px;
+    /*border-radius: 30px 30px 30px 30px;*/
     outline: none;
     height: 100%;
+    font-family: "Century Gothic";
 }
 
 .order-nav-lbtn {
     width: 33.334%;
     background-color: #F39700;
     /*border: hidden;*/
+    border-radius:50%;
 }
 
 .order-nav-mbtn {
     width: 33.333%;
     background-color: #E8C41C;
-    border: hidden;
+    /*border: hidden;*/
+    border-radius:50%;
 }
 
 .order-nav-rbtn {
     width: 33.333%;
     background-color: #C9C9CA;
-    border: hidden;
+    /*border: hidden;*/
+    border-radius:50%;
 }
 .order-content {
     width: 100%;
