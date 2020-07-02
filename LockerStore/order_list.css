@@ -6,9 +6,9 @@
 .title{
     margin:auto;
     font-size:14pt;
-     background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
     font-family: "Century Gothic";
-    line-height: 10pt;
+    line-height: 20pt;
 }
 .order-navbar{
     width: 100%;
