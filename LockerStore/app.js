@@ -1497,6 +1497,9 @@ $('#cko-order').click(function () {
     $('#ol-arrived .ol-total-price-value').text($('#cko-total-value-red').text())
 });
 
+$('.ol-group-cancel').click(function() {
+    $(this).parent().empty();
+})
 $(document).mouseup(function (e) {
     var share_1 = $("#shareBox");
     var share_2 = $(".shareBox-white");
