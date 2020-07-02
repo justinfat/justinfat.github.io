@@ -1347,20 +1347,20 @@ $('#back_btn').click(function () {
     card_state = 1;
 });
 
-$('#link_btn').click(function () {
+$('.link_btn').click(function () {
     copyLink();
 });
 
-$('#line_btn').click(function () {
+$('.line_btn').click(function () {
     var link = "http://line.naver.jp/R/msg/text/?";
     link += encodeURIComponent("來看看我發起的團購") + "%0D%0A" + encodeURIComponent(window.location.href);
     window.open(link);
 });
-$('#facebook_btn').click(function () {
+$('.facebook_btn').click(function () {
     var link = "http://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
     window.open(link);
 });
-$('#messenger_btn').click(function () {
+$('.messenger_btn').click(function () {
     window.open('fb-messenger://share?link=' + encodeURIComponent(window.location.href));
 });
 
