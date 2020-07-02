@@ -63,6 +63,13 @@ app.get('/sign_up', (req, res) => {
   res.send(`${req.query.account}`)
 })
 
+var userID = 0;
+app.get('/getNewID', (req, res) => {
+  ++userID;
+  res.send(`${userID}`);
+  console.log(userID)
+})
+
 app.get('/insertLocker', (req, res) => {
   try {
     var myobj = { lat: req.query.lat, lng: req.query.lng, name: req.query.name, addr: req.query.addr };
@@ -234,6 +241,7 @@ app.get('/getRelatedTag', (req, res) => {
     res.send(`fail`);
   }
 })
+
 
 
 
