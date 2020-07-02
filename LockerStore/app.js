@@ -1408,17 +1408,25 @@ $('#group-spc-list input.spc-checkbox:nth-of-type(n)').click(function () {
     checkNum = $(this).index('#group-spc-list input.spc-checkbox');
 });
 $('#spc-order').click(function () {
+    var query;
     if (shopTab_state == 1) {
         $('#cko-store-name').text($('#personal-spc-list div.personal-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-store-name').text());
         $('#personal-spc-list div.personal-spc:nth-of-type(' + (checkNum + 1) + ') div.spc-item').clone('withDataAndEvents').appendTo($('#check-out-content'));
         $('#cko-station-name-value').text($('#personal-spc-list div.personal-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-station-name').text());
+        query = $('#personal-spc-list div.personal-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-station-name').text();
     }
     else {
         $('#cko-store-name').text($('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-store-name').text());
         $('#check-out-content').empty();
         $('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') div.spc-item').clone('withDataAndEvents').appendTo($('#check-out-content'));
         $('#cko-station-name-value').text($('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-station-name').text());
+        query = $('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-station-name').text();
     }
+    $.get('/getLockerInfo', {
+        name: query
+    }, (data) => {
+        $('#cko-station-address-value').text(data.addr);
+    })
     $('#check-out-content .spc-qty-plus').remove();
     $('#check-out-content .spc-qty-minus').remove();
     $('#check-out-content .spc-qty-number').prop('disabled', true);
@@ -1478,6 +1486,7 @@ $('#cko-order').click(function () {
     $('#check-out .spc-item').appendTo('#ol-order1');
     console.log($('#ol-grouping .spc-item').length);
     $('#ol-grouping .ol-item-number').text($('#ol-grouping .spc-item').length);
+    $('#ol-grouping .ol-total-price-value').text($('#cko-total-value-red').text());
 
     $('#ol-arrived .ol-store-name').text($('#cko-store-name').text());
     $('#ol-arrived .ol-station-name').text($('#cko-station-name-value').text());
@@ -1485,6 +1494,7 @@ $('#cko-order').click(function () {
     $('#ol-order1 .spc-item').appendTo('#ol-order4');
     console.log($('#ol-arrived .spc-item').length);
     $('#ol-arrived .ol-item-number').text($('#ol-arrived .spc-item').length);
+    $('#ol-arrived .ol-total-price-value').text($('#cko-total-value-red').text())
 });
 
 $(document).mouseup(function (e) {
