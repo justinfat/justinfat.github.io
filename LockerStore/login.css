@@ -80,11 +80,16 @@ input{
 }
 
 /* sign-up & sign-in entry */
-#header{
+/* #header{
  top: 4.8%;
  left: 31.2%;
  width: 37.1%;
-}
+} */
+#header{
+  top: 15%;
+  left: 28%;
+  width: 45%;
+ }
 #fb{
   position: absolute;
   width: 78.1%;

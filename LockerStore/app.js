@@ -1081,6 +1081,35 @@ $('#groupItemTab div:nth-child(n).shopItem img.shopItem_minus').click(function (
         tmp.text(val - 1);
     }
 });
+$('#shopping-cart-content input.spc-qty-plus').click(function () {
+    var tmp = $(this).closest('.spc-item').find('input.spc-qty-number').first();
+    var total = +($(this).closest('.spc-item').find('p.spc-item-price').first().text().slice(2));
+    var price = total / (+(tmp.val()));
+    tmp.val((+(tmp.val())) + 1);
+    total = price * (+(tmp.val()))
+    $(this).closest('.spc-item').find('p.spc-item-price').first().text('$ ' + total)
+});
+$('#shopping-cart-content input.spc-qty-minus').click(function () {
+    var tmp = $(this).closest('.spc-item').find('input.spc-qty-number').first();
+    var val = +(tmp.val());
+    if (val > 1) {
+        var total = +($(this).closest('.spc-item').find('p.spc-item-price').first().text().slice(2));
+        var price = total / val;
+        total = price * val
+        tmp.val(val - 1);
+        total = price * (+(tmp.val()))
+        $(this).closest('.spc-item').find('p.spc-item-price').first().text('$ ' + total)
+    }
+});
+$('#shopping-cart-content button.spc-item-delete').click(function () {
+    $(this).closest('.spc-item').remove();
+});
+// $('#group-spc-list div:nth-child(n) div.spc-edit').click(function () {
+//      $(this).innerText = "完成";
+//      $(this).setAttribute("onclick","SpcEditDone(this)");
+//      $(this).closest('.personal-spc').find('.spc-qty').css("display","none");
+//      $(this).closest('.personal-spc').find('.spc-item-delete').css("display","block");
+// });
 // $('#shareBox_close').click(function () {
 //     $('#shareBox').hide();
 // });
@@ -1314,13 +1343,26 @@ $('#back_shop').click(function () {
     $('.onMap_shop').css('z-index', '2');
     $('#shopping-cart').css("display", "none");
 });
-
-$('#cross').click(function () {
+$('#back_checkout').click(function () {
+    $('#check-out').css("display", "block");
+    $('#order-list').css("display", "none");
+});
+$('#cross_cart').click(function () {
     $('#shopping-cart').css("display", "none");
     $('#shop_card').hide();
     clear_result_card();
     $('#searchBox').show();
     $('#nameBox').hide();
+    $('#infoBox').hide();
+    card_state = 1;
+});
+$('#cross_order').click(function () {
+    $('#order-list').css("display", "none");
+    $('#shop_card').hide();
+    clear_result_card();
+    $('#searchBox').show();
+    $('#nameBox').hide();
+    $('#infoBox').hide();
     card_state = 1;
 });
 
@@ -1372,7 +1414,7 @@ $('#raise_btn').click(function () {
     }
 });
 $('.group-spc-share').click(function () {
-    $('#shareBox_white').show();
+    $('.shareBox-white').show();
 });
 $('#cko-station-position').click(function () {
     document.getElementById('map-position-map').style.opacity = '0';
@@ -1401,25 +1443,19 @@ $('#cko-station-position').click(function () {
         });
     })
     document.getElementById('map-position-map').style.opacity = '1';
-    // if (isAuto) {
-    //     locate_once();
-    //     document.getElementById('map-canvas').style.opacity = '1';
-    // }
-    // else {
-    //     var addr = urlParams.get('address');
-    //     codeAddress(addr);
-    //     document.getElementById('map-canvas').style.opacity = '1';
-    // }
-    // addAutocomplete();
 });
 
 
 $(document).mouseup(function (e) {
-    var container = $("#shareBox_white");
+    var share_1 = $("#shareBox");
+    var share_2 = $(".shareBox-white");
 
     // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-        container.hide();
+    if (!share_2.is(e.target) && share_2.has(e.target).length === 0) {
+        share_2.hide();
+    }
+    if (!share_1.is(e.target) && share_1.has(e.target).length === 0) {
+        share_1.hide();
     }
 });
 /************************ Handle finger swipe event **************************/

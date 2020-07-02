@@ -991,7 +991,7 @@ p.explore {
     margin: 0 6.5%;
 
 }
-#shareBox_white {
+.shareBox-white {
     position: absolute;
     bottom: 0;
     width: 86.2%;

@@ -61,6 +61,15 @@ const shopSchema = new mongoose.Schema({
 }, { strict: false }, { collection: 'shops' })
 const shopModel = conn.model('shops', shopSchema)
 
+// const orderSchema = new mongoose.Schema({
+//   userID: String,
+//   shop: String,
+//   station: String,
+//   addr: String,
+//   goods: 
+// }, { collection: 'lockers' })
+// const lockerModel = conn.model('lockers', lockerSchema)
+
 // start the server
 app.listen(port, () => {
   console.log(`listening on port: ${port}`)
@@ -71,6 +80,13 @@ app.use(express.static(`${__dirname}/LockerStore`))
 
 app.get('/sign_up', (req, res) => {
   res.send(`${req.query.account}`)
+})
+
+var userID = 0;
+app.get('/getNewID', (req, res) => {
+  ++userID;
+  res.send(`${userID}`);
+  console.log(userID)
 })
 
 app.get('/insertLocker', (req, res) => {
@@ -133,7 +149,7 @@ app.get('/searchTag', (req, res) => {
       query[sorter] = 1;
       shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
         if (err) return res.json(err);
-        if (result === null) return res.json(err);
+        if (results.length < 1) return res.json(err);
         if (results.length > 60) {
           res.send({
             results: results.slice(0, 60),
@@ -150,7 +166,7 @@ app.get('/searchTag', (req, res) => {
       query[sorter] = -1;
       shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
         if (err) return res.json(err);
-        if (result === null) return res.json(err);
+        if (results.length < 1) return res.json(err);
         if (results.length > 60) {
           res.send({
             results: results.slice(0, 60),

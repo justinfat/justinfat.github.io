@@ -123,7 +123,7 @@ app.get('/searchTag', (req, res) => {
       query[sorter] = 1;
       shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
         if (err) return res.json(err);
-        if (result === null) return res.json(err);
+        if (results.length < 1) return res.json(err);
         if (results.length > 60) {
           res.send({
             results: results.slice(0, 60),
@@ -140,7 +140,7 @@ app.get('/searchTag', (req, res) => {
       query[sorter] = -1;
       shopModel.find({ $text: { $search: keywords } }).sort(query).exec(function (err, results) {
         if (err) return res.json(err);
-        if (result === null) return res.json(err);
+        if (results.length < 1) return res.json(err);
         if (results.length > 60) {
           res.send({
             results: results.slice(0, 60),
@@ -234,6 +234,7 @@ app.get('/getRelatedTag', (req, res) => {
     res.send(`fail`);
   }
 })
+
 
 
 // app.get('/getItem_group', (req, res) => {

@@ -1,3 +1,4 @@
+var userID;
 var autocomplte, autocompleteLsr;
 $(document).ready(function () {
   addAutocomplete();
@@ -5,15 +6,15 @@ $(document).ready(function () {
 function addAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(document.getElementById('location'));
   autocomplete.setFields(
-      ['address_components', 'geometry', 'icon', 'name']);
+    ['address_components', 'geometry', 'icon', 'name']);
   autocompleteLsr = autocomplete.addListener('place_changed', function () {
-      // var place = autocomplete.getPlace();
-      // if (!place.geometry) {
-      //     // User entered the name of a Place that was not suggested and
-      //     // pressed the Enter key, or the Place Details request failed.
-      //     window.alert("No details available for input: '" + place.name + "'");
-      //     return;
-      // }
+    // var place = autocomplete.getPlace();
+    // if (!place.geometry) {
+    //     // User entered the name of a Place that was not suggested and
+    //     // pressed the Enter key, or the Place Details request failed.
+    //     window.alert("No details available for input: '" + place.name + "'");
+    //     return;
+    // }
   });
 
 }
@@ -51,10 +52,20 @@ function SwitchToSigninVerify() {
   $('#page-sign-in-verify').css("display", "block");
 }
 
-$('#send-locate').click((event) => {
+$('#send-locate').click(function (e) {
+  e.preventDefault();
   if (!$('#location').val()) {
     event.preventDefault();
     alert("您尚未輸入地址");
   }
-})
+  else {
+    $.get('/getNewID', {
+      msg: "Get"
+    }, (data) => {
+      $('#userID').attr('value', data);
+      $('#searchBar').submit();
+    })
+
+  }
+});
 
