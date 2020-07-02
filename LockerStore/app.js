@@ -1072,6 +1072,8 @@ $('#groupCaseList div:nth-child(n)').click(function () {
     $(this).css("background-color", "#EACE7B");
     $(this).children('div .groupCase_bottom').hide();
     $('#chooseGroup_btn').attr("src", "public/images/b2/團購-12.svg")
+    stationName = $(this).find('span.groupLocker').first().text().split('站')[0];
+    storeAddr = $(this).find('span.groupAddr').first().text()
 });
 $('#openCaseList div:nth-child(n)').click(function () {
     peopleNum = 1;
@@ -1222,7 +1224,7 @@ $('#addItem_btn').click(function () {
             $('#group-spc-list :nth-child(' + orderNum + ') img.spc-item-pic').eq(i).attr('src', itemImg[i]);
             $('#group-spc-list :nth-child(' + orderNum + ') p.spc-item-name').eq(i).text(itemName[i]);
             $('#group-spc-list :nth-child(' + orderNum + ') input.spc-qty-number').eq(i).val(itemAmount[i]);
-            $('#group-spc-list :nth-child(' + orderNum + ') p.spc-item-price').eq(i).text(itemPrice[i]);
+            $('#group-spc-list :nth-child(' + orderNum + ') p.spc-item-price').eq(i).text('$ ' +itemPrice[i]);
         }
     }
     // var htmlString = $.parseHTML('<img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">');
@@ -1247,7 +1249,10 @@ $('#chooseGroup_btn').click(function () {
     $('.single-item').hide();
     $('.group-case').hide();
     if ($('#followGroup_btn').hasClass('select'))
+    {
         $('.group-item').show();
+
+    }
     else {
         console.log('enter')
         var tmp = $('#shop_card').height() - $('#slipShop_btn').height() - parseInt($('#slipShop_btn').css("margin-bottom"));
@@ -1410,6 +1415,7 @@ $('#spc-order').click(function () {
     }
     else {
         $('#cko-store-name').text($('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-store-name').text());
+        $('#check-out-content').empty();
         $('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') div.spc-item').clone('withDataAndEvents').appendTo($('#check-out-content'));
         $('#cko-station-name-value').text($('#group-spc-list div.group-spc:nth-of-type(' + (checkNum + 1) + ') button.spc-station-name').text());
     }
@@ -1466,9 +1472,19 @@ $('#cko-station-position').click(function () {
 });
 
 $('#cko-order').click(function () {
-    $('#ol-store-name').text($('#cko-store-name').text());
-    $('#ol-station-name').text($('#cko-station-name-value').text());
-    $('#ol-store-img').attr('src',storeImg);
+    $('#ol-grouping .ol-store-name').text($('#cko-store-name').text());
+    $('#ol-grouping .ol-station-name').text($('#cko-station-name-value').text());
+    $('#ol-grouping .ol-store-img').attr('src',storeImg);
+    $('#check-out .spc-item').appendTo('#ol-order1');
+    console.log($('#ol-grouping .spc-item').length);
+    $('#ol-grouping .ol-item-number').text($('#ol-grouping .spc-item').length);
+
+    $('#ol-arrived .ol-store-name').text($('#cko-store-name').text());
+    $('#ol-arrived .ol-station-name').text($('#cko-station-name-value').text());
+    $('#ol-arrived .ol-store-img').attr('src',storeImg);
+    $('#ol-order1 .spc-item').appendTo('#ol-order4');
+    console.log($('#ol-arrived .spc-item').length);
+    $('#ol-arrived .ol-item-number').text($('#ol-arrived .spc-item').length);
 });
 
 $(document).mouseup(function (e) {
