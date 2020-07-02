@@ -931,19 +931,19 @@ p.explore {
 .people {
     position: relative;
 }
-.circle-big {
+.circle.big {
     width: 7.5vw;
 }
-.circle-small {
+.circle.small {
     width: 5.6vw;
 }
-.peoplePhoto-big {
+.peoplePhoto.big {
     width: 6.3vw;
     position: absolute;
     top: 0.6vw;
     left: 0.64vw;
 }
-.peoplePhoto-small {
+.peoplePhoto.small {
     width: 4.37vw;
     position: absolute;
     top: 0.55vw;

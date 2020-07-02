@@ -46,16 +46,17 @@ var storeID;
 var storeName;
 var storeAddr;
 var storeTel;
+var storeImg;
 var singleItemNum;
 var orderNum = 0;
 var itemName = []
 var itemAmount = []
 var itemPrice = []
 var itemImg = []
+var peopleNum = 0;
+var targetNum = 0;
 var typingTimer;                //timer identifier
 var doneTypingInterval = 400;
-var html_1 = '&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$'
-var html_2 = '</span>&emsp;<img src="public/images/a5/a5-49.svg"></img>'
 var styles = {
     default: null,
     hide: [ // Hide stores and bus stations in the map
@@ -441,8 +442,8 @@ function getShopInfo(name) {
         // getShopItem_group(data.id);
         storeName = data.name;
         storeAddr = data.addr;
-        storeTel = data.tel;
-        storeID = data.id;
+        storeID = data._id;
+        storeImg = data.img;
     })
 }
 
@@ -1062,11 +1063,18 @@ $('#singleItemTab div:nth-child(n).shopItem img.shopItem_minus').click(function 
     }
 });
 $('#groupCaseList div:nth-child(n)').click(function () {
+    peopleNum = $(this).find('img.peoplePhoto').length;
+    targetNum = $(this).find('img.circle').length;
+    $('#progressModal div.modal-content').empty();
+    $(this).clone('withDataAndEvents').appendTo($('#progressModal div.modal-content'));
+    $('#progressModal div.groupCase').css('border-top', 'none');
+    $('#progressModal img.peoplePhoto[style="display: none;"]').eq(0).show();
     $(this).css("background-color", "#EACE7B");
     $(this).children('div .groupCase_bottom').hide();
     $('#chooseGroup_btn').attr("src", "public/images/b2/團購-12.svg")
 });
 $('#openCaseList div:nth-child(n)').click(function () {
+    peopleNum = 1;
     $(this).css("background-color", "#EACE7B");
     $('#chooseGroup_btn').attr("src", "public/images/b2/團購-12.svg")
 });
@@ -1211,13 +1219,25 @@ $('#addItem_btn').click(function () {
                 $('#group-spc-list :nth-child(' + orderNum + ') div.spc-item').eq(0).show();
                 // $('.order-content-mid :nth-child(' + orderNum + ') .order-object-detail-content-item').eq(0).css('display', 'block');
             }
-            // $('ul.sub-menu .product-line').eq(i).html(itemName[i] + html_1 + itemPrice[i] + html_2);
             $('#group-spc-list :nth-child(' + orderNum + ') img.spc-item-pic').eq(i).attr('src', itemImg[i]);
             $('#group-spc-list :nth-child(' + orderNum + ') p.spc-item-name').eq(i).text(itemName[i]);
             $('#group-spc-list :nth-child(' + orderNum + ') input.spc-qty-number').eq(i).val(itemAmount[i]);
             $('#group-spc-list :nth-child(' + orderNum + ') p.spc-item-price').eq(i).text(itemPrice[i]);
         }
     }
+    // var htmlString = $.parseHTML('<img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">');
+    // peopleNum += 1;
+    // console.log(peopleNum);
+    // for (var i = 1; i < targetNum; ++i) {
+    //     if(i < targetNum)
+    //     {
+    //         $('#progressModal img.peoplePhoto').eq(i).show();
+    //     }
+    //     else
+    //     {
+    //         $('#progressModal img.peoplePhoto').eq(i).hide();
+    //     }
+    // }
     $('.onMap_shop').css('z-index', '-1');
     SwitchToShoppingcart();
 
@@ -1445,6 +1465,11 @@ $('#cko-station-position').click(function () {
     document.getElementById('map-position-map').style.opacity = '1';
 });
 
+$('#cko-order').click(function () {
+    $('#ol-store-name').text($('#cko-store-name').text());
+    $('#ol-station-name').text($('#cko-station-name-value').text());
+    $('#ol-store-img').attr('src',storeImg);
+});
 
 $(document).mouseup(function (e) {
     var share_1 = $("#shareBox");
